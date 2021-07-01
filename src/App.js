@@ -6,6 +6,7 @@ import Template from './components/templates/Template';
 const MainContainer = styled.div`
   * {
     font-family: 'Noto Sans TC', sans-serif;
+    box-sizing: border-box;
   }
 `;
 

@@ -1,10 +1,9 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 
 import Intro from './input/Intro';
 import Dropdown from './input/Dropdown';
 import TagArea from './input/TagArea';
+import { LocationIcon, ProfessionIcon } from '../icons';
 
 const Edit1A = ({
   intro,
@@ -15,14 +14,16 @@ const Edit1A = ({
   professionOptions,
   profession,
   setProfession,
+  introTags,
+  setIntroTags,
 }) => {
   return (
     <>
       <Intro title="我的介紹" intro={intro} setIntro={setIntro} />
       <div style={{ display: 'flex' }}>
-        <FontAwesomeIcon icon={faMapMarkerAlt} />
+        <LocationIcon />
         <Dropdown placeholder="縣市" options={cityOptions} value={city} setValue={setCity} />
-        <FontAwesomeIcon icon={faBriefcase} />
+        <ProfessionIcon />
         <Dropdown
           placeholder="專長"
           options={professionOptions}
@@ -30,7 +31,7 @@ const Edit1A = ({
           setValue={setProfession}
         />
       </div>
-      <TagArea title="關鍵字標籤" />
+      <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
     </>
   );
 };

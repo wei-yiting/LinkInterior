@@ -29,8 +29,7 @@ yarn-error.log*
 
 # dependencies setting
 .eslintcache
-.eslintrc.js
-.prettierrc
+
 
 # certificates
 /certs

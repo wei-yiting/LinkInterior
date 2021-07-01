@@ -52,6 +52,7 @@ const Template = () => {
   const [isEdit, setIsEdit] = useState(true);
   const [city, setCity] = useState('');
   const [profession, setProfession] = useState('');
+  const [introTags, setIntroTags] = useState([]);
 
   return (
     <div>
@@ -67,6 +68,8 @@ const Template = () => {
         professionOptions={professionOptions}
         profession={profession}
         setProfession={setProfession}
+        introTags={introTags}
+        setIntroTags={setIntroTags}
       />
     </div>
   );

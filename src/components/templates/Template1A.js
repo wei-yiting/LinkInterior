@@ -12,6 +12,8 @@ const Template1A = ({
   professionOptions,
   profession,
   setProfession,
+  introTags,
+  setIntroTags,
 }) => {
   return (
     <div>
@@ -25,9 +27,11 @@ const Template1A = ({
           professionOptions={professionOptions}
           profession={profession}
           setProfession={setProfession}
+          introTags={introTags}
+          setIntroTags={setIntroTags}
         />
       ) : (
-        <Preview1A intro={intro} city={city} profession={profession} />
+        <Preview1A intro={intro} city={city} profession={profession} introTags={introTags} />
       )}
     </div>
   );

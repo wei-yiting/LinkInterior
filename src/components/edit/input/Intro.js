@@ -1,10 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 const Intro = ({ title, intro, setIntro }) => {
-  useEffect(() => {
-    console.log(intro);
-  }, [intro]);
-
   return (
     <div>
       <h4>{title}</h4>

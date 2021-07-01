@@ -1,18 +1,19 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 
 import IntroParagraph from './items/IntroParagraph';
 import InfoSpan from './items/InfoSpan';
+import KeywordTags from './items/KeywordTags';
+import { LocationIcon, ProfessionIcon } from '../icons';
 
-const Preview1A = ({ intro, city, profession }) => {
+const Preview1A = ({ intro, city, profession, introTags }) => {
   return (
     <div>
       <IntroParagraph title="業者介紹" intro={intro} />
-      <FontAwesomeIcon icon={faMapMarkerAlt} />
-      <InfoSpan info={city} />
-      <FontAwesomeIcon icon={faBriefcase} />
-      <InfoSpan info={profession} />
+      <LocationIcon />
+      <InfoSpan>{city}</InfoSpan>
+      <ProfessionIcon />
+      <InfoSpan>{profession}</InfoSpan>
+      <KeywordTags tags={introTags} />
     </div>
   );
 };

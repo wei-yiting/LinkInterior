@@ -1,7 +1,7 @@
 import React from 'react';
 
-const InfoSpan = ({ info }) => {
-  return <span>{info}</span>;
+const InfoSpan = ({ children }) => {
+  return <span>{children}</span>;
 };
 
 export default InfoSpan;
