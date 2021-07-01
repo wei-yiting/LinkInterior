@@ -21,3 +21,20 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# env file
+.env
+.env.example
+
+
+# dependencies setting
+.eslintcache
+.eslintrc.js
+.prettierrc
+
+# certificates
+/certs
+
+# md
+CHANGELOG.md
+
