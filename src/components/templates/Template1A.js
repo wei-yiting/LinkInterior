@@ -1,6 +1,6 @@
 import React from 'react';
-import Edit1A from '../edit/Edit1A';
-import Preview1A from '../preview/Preview1A';
+import EditTemplate1A from '../edit/EditTemplate1A';
+import PreviewTemplate1A from '../preview/PreviewTemplate1A';
 
 const Template1A = ({
   intro,
@@ -18,7 +18,7 @@ const Template1A = ({
   return (
     <div>
       {isEdit ? (
-        <Edit1A
+        <EditTemplate1A
           intro={intro}
           setIntro={setIntro}
           cityOptions={cityOptions}
@@ -31,7 +31,12 @@ const Template1A = ({
           setIntroTags={setIntroTags}
         />
       ) : (
-        <Preview1A intro={intro} city={city} profession={profession} introTags={introTags} />
+        <PreviewTemplate1A
+          intro={intro}
+          city={city}
+          profession={profession}
+          introTags={introTags}
+        />
       )}
     </div>
   );

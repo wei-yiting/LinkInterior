@@ -5,7 +5,7 @@ import Dropdown from './input/Dropdown';
 import TagArea from './input/TagArea';
 import { LocationIcon, ProfessionIcon } from '../icons';
 
-const Edit1A = ({
+const EditTemplate1A = ({
   intro,
   setIntro,
   cityOptions,
@@ -36,4 +36,4 @@ const Edit1A = ({
   );
 };
 
-export default Edit1A;
+export default EditTemplate1A;

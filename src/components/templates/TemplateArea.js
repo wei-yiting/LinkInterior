@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import ToggleSwitch from './ToggleSwitch';
+
 import TemplateMenu from './TemplateMenu';
 import Template1A from './Template1A';
 
-const Template = () => {
+const TemplateArea = ({ isEdit }) => {
   const cityOptions = [
     '台北市',
     '新北市',
@@ -49,19 +49,17 @@ const Template = () => {
   ];
 
   const [intro, setIntro] = useState('');
-  const [isEdit, setIsEdit] = useState(true);
   const [city, setCity] = useState('');
   const [profession, setProfession] = useState('');
   const [introTags, setIntroTags] = useState([]);
 
   return (
     <div>
-      <ToggleSwitch isEdit={isEdit} setIsEdit={setIsEdit} />
       <TemplateMenu />
       <Template1A
+        isEdit={isEdit}
         intro={intro}
         setIntro={setIntro}
-        isEdit={isEdit}
         cityOptions={cityOptions}
         city={city}
         setCity={setCity}
@@ -75,4 +73,4 @@ const Template = () => {
   );
 };
 
-export default Template;
+export default TemplateArea;

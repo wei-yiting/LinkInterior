@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Template from './components/templates/Template';
+import ServiceIntroCompile from './pages/ServiceIntroCompile';
 
 const MainContainer = styled.div`
   * {
@@ -13,7 +13,7 @@ const MainContainer = styled.div`
 const App = () => {
   return (
     <MainContainer>
-      <Template />
+      <ServiceIntroCompile />
     </MainContainer>
   );
 };
