@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import { CloseIcon } from '../../icons';
+import { CloseIcon } from '../../../utils/icons';
 
 const TagInput = styled.div`
    {

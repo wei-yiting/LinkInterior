@@ -14,6 +14,8 @@ const Template1A = ({
   setProfession,
   introTags,
   setIntroTags,
+  heroImageUrl,
+  setHeroImageUrl,
 }) => {
   return (
     <div>
@@ -29,6 +31,8 @@ const Template1A = ({
           setProfession={setProfession}
           introTags={introTags}
           setIntroTags={setIntroTags}
+          heroImageUrl={heroImageUrl}
+          setHeroImageUrl={setHeroImageUrl}
         />
       ) : (
         <PreviewTemplate1A
@@ -36,6 +40,7 @@ const Template1A = ({
           city={city}
           profession={profession}
           introTags={introTags}
+          heroImageUrl={heroImageUrl}
         />
       )}
     </div>

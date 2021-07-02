@@ -52,6 +52,7 @@ const TemplateArea = ({ isEdit }) => {
   const [city, setCity] = useState('');
   const [profession, setProfession] = useState('');
   const [introTags, setIntroTags] = useState([]);
+  const [heroImageUrl, setHeroImageUrl] = useState('');
 
   return (
     <div>
@@ -68,6 +69,8 @@ const TemplateArea = ({ isEdit }) => {
         setProfession={setProfession}
         introTags={introTags}
         setIntroTags={setIntroTags}
+        heroImageUrl={heroImageUrl}
+        setHeroImageUrl={setHeroImageUrl}
       />
     </div>
   );

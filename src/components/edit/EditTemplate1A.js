@@ -3,7 +3,8 @@ import React from 'react';
 import Intro from './input/Intro';
 import Dropdown from './input/Dropdown';
 import TagArea from './input/TagArea';
-import { LocationIcon, ProfessionIcon } from '../icons';
+import HeroImageField from './input/HeroImageField';
+import { LocationIcon, ProfessionIcon } from '../../utils/icons';
 
 const EditTemplate1A = ({
   intro,
@@ -16,10 +17,12 @@ const EditTemplate1A = ({
   setProfession,
   introTags,
   setIntroTags,
+  heroImageUrl,
+  setHeroImageUrl,
 }) => {
   return (
     <>
-      <Intro title="我的介紹" intro={intro} setIntro={setIntro} />
+      <HeroImageField heroImageUrl={heroImageUrl} setHeroImageUrl={setHeroImageUrl} />
       <div style={{ display: 'flex' }}>
         <LocationIcon />
         <Dropdown placeholder="縣市" options={cityOptions} value={city} setValue={setCity} />
@@ -31,6 +34,7 @@ const EditTemplate1A = ({
           setValue={setProfession}
         />
       </div>
+      <Intro title="我的介紹" intro={intro} setIntro={setIntro} />
       <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
     </>
   );

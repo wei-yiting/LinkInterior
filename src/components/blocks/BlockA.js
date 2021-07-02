@@ -1,12 +1,12 @@
 import React from 'react';
-import BlockSideTextInput from '../edit/input/BlockSideTextInput';
-import BlockSideText from '../preview/items/BlockSideText';
+import EditBlockA from '../edit/EditBlockA';
+import PreviewBlockA from '../preview/PreviewBlockA';
 
 const BlockA = ({ isEdit, blockList, setBlockList, blockIdx, block }) => {
   return isEdit ? (
-    <BlockSideTextInput blockList={blockList} setBlockList={setBlockList} blockIdx={blockIdx} />
+    <EditBlockA blockList={blockList} setBlockList={setBlockList} blockIdx={blockIdx} />
   ) : (
-    <BlockSideText block={block} />
+    <PreviewBlockA block={block} />
   );
 };
 

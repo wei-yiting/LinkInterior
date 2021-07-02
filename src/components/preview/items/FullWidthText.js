@@ -4,11 +4,10 @@ import styled from 'styled-components';
 const Paragraph = styled.p`
   white-space: pre-wrap;
   text-align: center;
-  width: 40%;
 `;
 
-const BlockSideText = ({ block }) => {
+const FullWidthText = ({ block }) => {
   return <Paragraph>{block.text}</Paragraph>;
 };
 
-export default BlockSideText;
+export default FullWidthText;

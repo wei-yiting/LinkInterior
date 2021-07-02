@@ -1,14 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import BlockMenu from './BlockMenu';
 import BlockA from './BlockA';
 
 const BlockArea = ({ isEdit }) => {
   const [blockList, setBlockList] = useState([]);
-
-  useEffect(() => {
-    console.log(blockList);
-  }, [blockList]);
 
   const renderedBlocks = blockList.map((block, index) => {
     switch (block.type) {

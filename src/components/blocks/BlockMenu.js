@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AddIcon } from '../icons';
+import { AddIcon } from '../../utils/icons';
 
 const BlockMenu = ({ blockList, setBlockList }) => {
   const addBlock = () => {
