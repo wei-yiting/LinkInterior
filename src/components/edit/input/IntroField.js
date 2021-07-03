@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Intro = ({ title, intro, setIntro }) => {
+const IntroField = ({ title, intro, setIntro }) => {
   return (
     <div>
       <h4>{title}</h4>
@@ -19,4 +19,4 @@ const Intro = ({ title, intro, setIntro }) => {
   );
 };
 
-export default Intro;
+export default IntroField;

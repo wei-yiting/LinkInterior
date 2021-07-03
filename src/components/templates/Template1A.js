@@ -18,6 +18,8 @@ const Template1A = ({
   setHeroImageUrl,
   contactInfo,
   setContactInfo,
+  selectedServiceCities,
+  setSelectedServiceCities,
 }) => {
   return (
     <div>
@@ -37,6 +39,8 @@ const Template1A = ({
           setHeroImageUrl={setHeroImageUrl}
           contactInfo={contactInfo}
           setContactInfo={setContactInfo}
+          selectedServiceCities={selectedServiceCities}
+          setSelectedServiceCities={setSelectedServiceCities}
         />
       ) : (
         <PreviewTemplate1A
@@ -46,6 +50,7 @@ const Template1A = ({
           introTags={introTags}
           heroImageUrl={heroImageUrl}
           contactInfo={contactInfo}
+          selectedServiceCities={selectedServiceCities}
         />
       )}
     </div>

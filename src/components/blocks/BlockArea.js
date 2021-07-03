@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import BlockMenu from './BlockMenu';
 import BlockA from './BlockA';
 
-const BlockArea = ({ isEdit }) => {
+const BlockArea = ({ isEdit, serviceCompanyName }) => {
   const [blockList, setBlockList] = useState([]);
 
   const renderedBlocks = blockList.map((block, index) => {
@@ -25,6 +25,7 @@ const BlockArea = ({ isEdit }) => {
 
   return (
     <div>
+      <h3>{isEdit ? '更多關於我的介紹' : `更多關於  ${serviceCompanyName}`}</h3>
       {renderedBlocks}
       {isEdit ? (
         <BlockMenu blockList={blockList} setBlockList={setBlockList} isEdit={isEdit} />

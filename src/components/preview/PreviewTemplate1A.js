@@ -5,9 +5,18 @@ import InfoSpan from './items/InfoSpan';
 import KeywordTags from './items/KeywordTags';
 import HeroImage from './items/HeroImage';
 import ContactInfoArea from './items/ContactInfoArea';
+import ServiceProvideCity from './items/ServiceProvideCity';
 import { LocationIcon, ProfessionIcon } from '../../utils/icons';
 
-const Preview1A = ({ intro, city, profession, introTags, heroImageUrl, contactInfo }) => {
+const Preview1A = ({
+  intro,
+  city,
+  profession,
+  introTags,
+  heroImageUrl,
+  contactInfo,
+  selectedServiceCities,
+}) => {
   return (
     <div>
       <HeroImage heroImageUrl={heroImageUrl} />
@@ -18,6 +27,7 @@ const Preview1A = ({ intro, city, profession, introTags, heroImageUrl, contactIn
       <IntroParagraph title="業者介紹" intro={intro} />
       <KeywordTags tags={introTags} />
       <ContactInfoArea contactInfo={contactInfo} />
+      <ServiceProvideCity selectedServiceCities={selectedServiceCities} />
     </div>
   );
 };
