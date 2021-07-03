@@ -1,6 +1,18 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faBriefcase, faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMapMarkerAlt,
+  faBriefcase,
+  faTimes,
+  faPlus,
+  faMobileAlt,
+  faPhoneAlt,
+  faEnvelope,
+  faHome,
+  faLaptop,
+} from '@fortawesome/free-solid-svg-icons';
+
+import { faLine, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 export const LocationIcon = () => {
   return <FontAwesomeIcon icon={faMapMarkerAlt} />;
@@ -16,4 +28,36 @@ export const CloseIcon = () => {
 
 export const AddIcon = () => {
   return <FontAwesomeIcon icon={faPlus} />;
+};
+
+export const MobileIcon = () => {
+  return <FontAwesomeIcon icon={faMobileAlt} />;
+};
+
+export const PhoneIcon = () => {
+  return <FontAwesomeIcon icon={faPhoneAlt} />;
+};
+
+export const LineIcon = () => {
+  return <FontAwesomeIcon icon={faLine} />;
+};
+
+export const EmailIcon = () => {
+  return <FontAwesomeIcon icon={faEnvelope} />;
+};
+
+export const AddressIcon = () => {
+  return <FontAwesomeIcon icon={faHome} />;
+};
+
+export const WebsiteIcon = () => {
+  return <FontAwesomeIcon icon={faLaptop} />;
+};
+
+export const FacebookIcon = () => {
+  return <FontAwesomeIcon icon={faFacebookSquare} />;
+};
+
+export const InstagramIcon = () => {
+  return <FontAwesomeIcon icon={faInstagram} />;
 };

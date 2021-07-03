@@ -4,6 +4,7 @@ import Intro from './input/Intro';
 import Dropdown from './input/Dropdown';
 import TagArea from './input/TagArea';
 import HeroImageField from './input/HeroImageField';
+import ContactInputFields from './input/ContactInputFields';
 import { LocationIcon, ProfessionIcon } from '../../utils/icons';
 
 const EditTemplate1A = ({
@@ -19,6 +20,8 @@ const EditTemplate1A = ({
   setIntroTags,
   heroImageUrl,
   setHeroImageUrl,
+  contactInfo,
+  setContactInfo,
 }) => {
   return (
     <>
@@ -36,6 +39,7 @@ const EditTemplate1A = ({
       </div>
       <Intro title="我的介紹" intro={intro} setIntro={setIntro} />
       <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
+      <ContactInputFields contactInfo={contactInfo} setContactInfo={setContactInfo} />
     </>
   );
 };

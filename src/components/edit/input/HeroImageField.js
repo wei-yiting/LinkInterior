@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import imageUpload from '../../../utils/firebase/imageUpload';
+import singleImageUpload from '../../../utils/firebase/singleImageUpload';
 
 const ImageContainer = styled.div`
   width: 800px;
@@ -16,6 +16,7 @@ const ImageContainer = styled.div`
 
 const HeroImageField = ({ heroImageUrl, setHeroImageUrl }) => {
   const [selectedHeroImage, setSelectedHeroImage] = useState(null);
+  const [progress, setProgress] = useState(0);
 
   const handleImageSelected = (evt) => {
     if (evt.target.files[0]) {
@@ -24,13 +25,14 @@ const HeroImageField = ({ heroImageUrl, setHeroImageUrl }) => {
   };
 
   const handleImageUpload = () => {
-    imageUpload(selectedHeroImage, setHeroImageUrl);
+    singleImageUpload(selectedHeroImage, setHeroImageUrl, setProgress);
   };
 
   return (
     <div>
       <ImageContainer style={{ backgroundImage: `url("${heroImageUrl}")` }}>
         <input type="file" onChange={handleImageSelected} />
+        <span>{progress} %</span>
         <button type="button" onClick={handleImageUpload}>
           上傳圖片
         </button>

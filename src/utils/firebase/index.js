@@ -4,6 +4,7 @@ import 'firebase/storage';
 const firebaseConfig = {
   apiKey: 'AIzaSyAlHD8N6ru23sdoj80lAJ6iZ2G09oPVknA',
   authDomain: 'linkinterior-450c8.firebaseapp.com',
+  databaseURL: 'gs://linkinterior-450c8.appspot.com',
   projectId: 'linkinterior-450c8',
   storageBucket: 'linkinterior-450c8.appspot.com',
   messagingSenderId: '134359721744',
