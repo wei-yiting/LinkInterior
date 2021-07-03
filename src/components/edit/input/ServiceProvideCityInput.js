@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import uuid from 'react-uuid';
 import styled from 'styled-components';
 
 import CheckBox from './CheckBox';
@@ -34,7 +35,7 @@ const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCiti
   const northrenCitiesCheckbox = northernCities.map((city) => {
     return (
       <CheckBox
-        key={city}
+        key={uuid()}
         labelName={city}
         list={selectedServiceCities}
         listSetter={setSelectedServiceCities}
@@ -45,7 +46,7 @@ const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCiti
   const centralCitiesCheckbox = centralCities.map((city) => {
     return (
       <CheckBox
-        key={city}
+        key={uuid()}
         labelName={city}
         list={selectedServiceCities}
         listSetter={setSelectedServiceCities}
@@ -56,7 +57,7 @@ const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCiti
   const southernCitiesCheckbox = southernCities.map((city) => {
     return (
       <CheckBox
-        key={city}
+        key={uuid()}
         labelName={city}
         list={selectedServiceCities}
         listSetter={setSelectedServiceCities}
@@ -67,7 +68,7 @@ const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCiti
   const easternCitiesCheckbox = easternCities.map((city) => {
     return (
       <CheckBox
-        key={city}
+        key={uuid()}
         labelName={city}
         list={selectedServiceCities}
         listSetter={setSelectedServiceCities}
@@ -78,7 +79,7 @@ const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCiti
   const islandsCheckbox = islands.map((city) => {
     return (
       <CheckBox
-        key={city}
+        key={uuid()}
         labelName={city}
         list={selectedServiceCities}
         listSetter={setSelectedServiceCities}

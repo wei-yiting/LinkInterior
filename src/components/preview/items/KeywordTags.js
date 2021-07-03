@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import uuid from 'react-uuid';
 
 const TagArea = styled.div`
    {
@@ -41,7 +42,7 @@ const Tag = styled.li`
 const KeywordTags = ({ tags }) => {
   const renderedTags = tags.map((tag) => {
     return (
-      <Tag key={tag}>
+      <Tag key={uuid()}>
         <span>{tag}</span>
       </Tag>
     );

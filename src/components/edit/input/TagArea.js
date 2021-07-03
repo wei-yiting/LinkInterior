@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import uuid from 'react-uuid';
 
 import { CloseIcon } from '../../../utils/icons';
 
@@ -75,7 +76,7 @@ const TagArea = ({ title, tags, setTags }) => {
 
   const renderedTags = tags.map((tag, index) => {
     return (
-      <Tag key={tag}>
+      <Tag key={uuid()}>
         <span>{tag}</span>
         <button
           type="button"

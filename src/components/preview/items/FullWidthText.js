@@ -6,8 +6,8 @@ const Paragraph = styled.p`
   text-align: center;
 `;
 
-const FullWidthText = ({ block }) => {
-  return <Paragraph>{block.text}</Paragraph>;
+const FullWidthText = ({ blockContent }) => {
+  return <Paragraph>{blockContent.text}</Paragraph>;
 };
 
 export default FullWidthText;

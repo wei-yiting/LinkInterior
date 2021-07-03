@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import uuid from 'react-uuid';
 
 import BlockMenu from './BlockMenu';
 import BlockA from './BlockA';
@@ -6,16 +7,17 @@ import BlockA from './BlockA';
 const BlockArea = ({ isEdit, serviceCompanyName }) => {
   const [blockList, setBlockList] = useState([]);
 
-  const renderedBlocks = blockList.map((block, index) => {
-    switch (block.type) {
+  const renderedBlocks = blockList.map((blockContent, index) => {
+    switch (blockContent.type) {
       case 'A':
         return (
           <BlockA
+            // key={uuid()}
             blockList={blockList}
             setBlockList={setBlockList}
             blockIdx={index}
             isEdit={isEdit}
-            block={block}
+            blockContent={blockContent}
           />
         );
       default:

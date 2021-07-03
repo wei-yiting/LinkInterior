@@ -1,9 +1,10 @@
 import React from 'react';
+import uuid from 'react-uuid';
 
 const Dropdown = ({ placeholder, options, value, setValue }) => {
   const renderedOptions = options.map((option) => {
     return (
-      <option key={option} value={option}>
+      <option key={uuid()} value={option}>
         {option}
       </option>
     );
