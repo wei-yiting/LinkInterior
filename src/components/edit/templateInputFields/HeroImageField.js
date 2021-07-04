@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import singleImageUpload from '../../../utils/firebase/singleImageUpload';
+import { randomLinearGradient } from '../../../utils/data/linearGradient';
 
 const ImageContainer = styled.div`
   position: relative;
@@ -29,6 +30,7 @@ const ButtonWrapper = styled.div`
 
 const HeroImageField = ({ serviceCompanyName, heroImageUrl, setHeroImageUrl }) => {
   const [selectedHeroImage, setSelectedHeroImage] = useState(null);
+  const [imageContainerStyle, setimageContainerStyle] = useState({});
 
   const handleImageSelected = (evt) => {
     if (evt.target.files[0]) {
@@ -40,13 +42,21 @@ const HeroImageField = ({ serviceCompanyName, heroImageUrl, setHeroImageUrl }) =
     singleImageUpload(selectedHeroImage, setHeroImageUrl);
   };
 
+  useEffect(() => {
+    console.log(heroImageUrl);
+    const containerStyle = heroImageUrl
+      ? {
+          background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), center / cover no-repeat url("${heroImageUrl}")`,
+        }
+      : {
+          background: `linear-gradient( 135deg, ${randomLinearGradient[0]}, ${randomLinearGradient[1]})`,
+        };
+    setimageContainerStyle(containerStyle);
+  }, [heroImageUrl]);
+
   return (
     <div>
-      <ImageContainer
-        style={{
-          background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), center / cover no-repeat url("${heroImageUrl}")`,
-        }}
-      >
+      <ImageContainer style={imageContainerStyle}>
         <CompanyName>{serviceCompanyName}</CompanyName>
         <ButtonWrapper>
           <input type="file" onChange={handleImageSelected} />

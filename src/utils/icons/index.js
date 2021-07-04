@@ -10,6 +10,8 @@ import {
   faEnvelope,
   faHome,
   faLaptop,
+  faImage,
+  faTrashAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faLine, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -60,4 +62,12 @@ export const FacebookIcon = () => {
 
 export const InstagramIcon = () => {
   return <FontAwesomeIcon icon={faInstagram} />;
+};
+
+export const ImageIcon = () => {
+  return <FontAwesomeIcon icon={faImage} style={{ color: '#bbb', fontSize: '3rem' }} />;
+};
+
+export const TrashIcon = () => {
+  return <FontAwesomeIcon icon={faTrashAlt} />;
 };
