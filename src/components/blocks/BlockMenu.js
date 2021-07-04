@@ -9,7 +9,7 @@ const BlockMenu = ({ blockList, setBlockList }) => {
       {
         type,
         text: '',
-        image: '',
+        imageUrl: '',
       },
     ]);
   };
@@ -33,6 +33,15 @@ const BlockMenu = ({ blockList, setBlockList }) => {
       >
         <AddIcon />
         <span>左圖右文</span>
+      </button>
+      <button
+        type="button"
+        onClick={() => {
+          addBlock('C');
+        }}
+      >
+        <AddIcon />
+        <span>左文右圖</span>
       </button>
     </div>
   );

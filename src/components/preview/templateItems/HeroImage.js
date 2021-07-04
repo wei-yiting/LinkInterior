@@ -26,7 +26,6 @@ const HeroImage = ({ serviceCompanyName, heroImageUrl }) => {
   const [imageContainerStyle, setimageContainerStyle] = useState({});
 
   useEffect(() => {
-    console.log(heroImageUrl);
     const containerStyle = heroImageUrl
       ? {
           background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), center / cover no-repeat url("${heroImageUrl}")`,

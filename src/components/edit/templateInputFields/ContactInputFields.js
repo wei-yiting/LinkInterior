@@ -18,6 +18,13 @@ const ContactInputsArea = styled.div`
 const InputContainer = styled.div``;
 const ContactInputField = styled.input``;
 
+const addHttp = (url) => {
+  if (!url.startsWith('http')) {
+    return `http://${url}`;
+  }
+  return url;
+};
+
 const ContactInputFields = ({ contactInfo, setContactInfo }) => {
   return (
     <div>
@@ -74,7 +81,7 @@ const ContactInputFields = ({ contactInfo, setContactInfo }) => {
             type="url"
             placeholder="網站連結"
             value={contactInfo.website}
-            onChange={(e) => setContactInfo({ ...contactInfo, website: e.target.value })}
+            onChange={(e) => setContactInfo({ ...contactInfo, website: addHttp(e.target.value) })}
           />
         </InputContainer>
         <InputContainer>
@@ -83,7 +90,7 @@ const ContactInputFields = ({ contactInfo, setContactInfo }) => {
             type="url"
             placeholder="Facebook 專頁連結"
             value={contactInfo.fb}
-            onChange={(e) => setContactInfo({ ...contactInfo, fb: e.target.value })}
+            onChange={(e) => setContactInfo({ ...contactInfo, fb: addHttp(e.target.value) })}
           />
         </InputContainer>
         <InputContainer>
@@ -92,7 +99,7 @@ const ContactInputFields = ({ contactInfo, setContactInfo }) => {
             type="text"
             placeholder="Instragram 帳號連結"
             value={contactInfo.ig}
-            onChange={(e) => setContactInfo({ ...contactInfo, ig: e.target.value })}
+            onChange={(e) => setContactInfo({ ...contactInfo, ig: addHttp(e.target.value) })}
           />
         </InputContainer>
       </ContactInputsArea>

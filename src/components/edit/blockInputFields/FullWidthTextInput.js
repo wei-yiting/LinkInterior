@@ -1,4 +1,19 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
+
+const TextAreaWrapper = styled.div`
+  width: 80%;
+  height: 100%;
+`;
+
+const textareaStyle = {
+  width: '100%',
+  height: '100%',
+  resize: 'none',
+  padding: '1rem',
+  textAlign: 'justify',
+  textAlignLast: 'center',
+};
 
 const FullWidthTextInput = ({ blockList, setBlockList, blockIdx }) => {
   const [inputText, setInputText] = useState(blockList[blockIdx].text);
@@ -16,17 +31,15 @@ const FullWidthTextInput = ({ blockList, setBlockList, blockIdx }) => {
   };
 
   return (
-    <div>
+    <TextAreaWrapper>
       <textarea
-        id="story"
-        rows="4"
-        cols="100"
-        style={{ resize: 'none', width: '80%', padding: '10px' }}
+        id="blockA"
+        style={textareaStyle}
         value={inputText}
         onChange={handleTextareaChange}
         placeholder="請填入文字說明"
       />
-    </div>
+    </TextAreaWrapper>
   );
 };
 

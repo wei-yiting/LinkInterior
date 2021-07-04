@@ -43,7 +43,6 @@ const HeroImageField = ({ serviceCompanyName, heroImageUrl, setHeroImageUrl }) =
   };
 
   useEffect(() => {
-    console.log(heroImageUrl);
     const containerStyle = heroImageUrl
       ? {
           background: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), center / cover no-repeat url("${heroImageUrl}")`,

@@ -6,9 +6,7 @@ import { TrashIcon } from '../../utils/icons';
 
 const EditBlockA = ({ blockList, setBlockList, blockIdx }) => {
   const deleteBlock = () => {
-    console.log('delete!', blockIdx);
     setBlockList(blockList.filter((_, index) => index !== blockIdx));
-    console.log(blockList);
   };
 
   return (

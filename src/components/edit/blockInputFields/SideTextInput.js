@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const BlockSideTextInput = ({ blockList, setBlockList, blockIdx }) => {
+const TextAreaWrapper = styled.div`
+  width: 40%;
+  height: 100%;
+`;
+
+const textareaStyle = {
+  width: '100%',
+  height: '100%',
+  resize: 'none',
+  padding: '1rem',
+  textAlign: 'justify',
+  textAlignLast: 'center',
+};
+
+const SideTextInput = ({ blockList, setBlockList, blockIdx }) => {
   const [inputText, setInputText] = useState(blockList[blockIdx].text);
 
   const handleTextareaChange = (evt) => {
@@ -16,18 +31,16 @@ const BlockSideTextInput = ({ blockList, setBlockList, blockIdx }) => {
   };
 
   return (
-    <div>
+    <TextAreaWrapper>
       <textarea
-        id="story"
-        rows="4"
-        cols="100"
-        style={{ resize: 'none', width: '40%', padding: '10px' }}
+        id="blockB"
+        style={textareaStyle}
         value={inputText}
         onChange={handleTextareaChange}
         placeholder="請填入文字說明"
       />
-    </div>
+    </TextAreaWrapper>
   );
 };
 
-export default BlockSideTextInput;
+export default SideTextInput;

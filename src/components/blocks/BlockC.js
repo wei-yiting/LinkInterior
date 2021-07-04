@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import EditBlockB from '../edit/EditBlockB';
-import PreviewBlockB from '../preview/PreviewBlockB';
+import EditBlockC from '../edit/EditBlockC';
+import PreviewBlockC from '../preview/PreviewBlockC';
 import { lightLinearGradients } from '../../utils/data/linearGradient';
 
-const BlockB = ({ isEdit, blockList, setBlockList, blockIdx, blockContent }) => {
+const BlockC = ({ isEdit, blockList, setBlockList, blockIdx, blockContent }) => {
   const [randomBgIdx, setRandomBgIdx] = useState(0);
 
   useEffect(() => {
@@ -12,15 +12,15 @@ const BlockB = ({ isEdit, blockList, setBlockList, blockIdx, blockContent }) => 
   }, []);
 
   return isEdit ? (
-    <EditBlockB
+    <EditBlockC
       blockList={blockList}
       setBlockList={setBlockList}
       blockIdx={blockIdx}
       randomBgIdx={randomBgIdx}
     />
   ) : (
-    <PreviewBlockB blockContent={blockContent} randomBgIdx={randomBgIdx} />
+    <PreviewBlockC blockContent={blockContent} randomBgIdx={randomBgIdx} />
   );
 };
 
-export default BlockB;
+export default BlockC;
