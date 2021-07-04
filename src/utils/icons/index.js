@@ -12,6 +12,8 @@ import {
   faLaptop,
   faImage,
   faTrashAlt,
+  faEdit,
+  faEye,
 } from '@fortawesome/free-solid-svg-icons';
 
 import { faLine, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
@@ -70,4 +72,12 @@ export const ImageIcon = () => {
 
 export const TrashIcon = () => {
   return <FontAwesomeIcon icon={faTrashAlt} />;
+};
+
+export const EditIcon = () => {
+  return <FontAwesomeIcon icon={faEdit} />;
+};
+
+export const EyeIcon = () => {
+  return <FontAwesomeIcon icon={faEye} />;
 };

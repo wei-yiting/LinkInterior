@@ -3,7 +3,7 @@ import ToggleSwitch from '../components/templates/ToggleSwitch';
 import TemplateArea from '../components/templates/TemplateArea';
 import BlockArea from '../components/blocks/BlockArea';
 
-const serviceCompanyName = '二三設計';
+const serviceCompanyName = '二三設計 23Design';
 
 const ServiceIntroEdit = () => {
   const [isEdit, setIsEdit] = useState(true);

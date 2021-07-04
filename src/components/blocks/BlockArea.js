@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 
 import BlockMenu from './BlockMenu';
 import BlockA from './BlockA';
+import BlockB from './BlockB';
 
 const BlockArea = ({ isEdit, serviceCompanyName }) => {
   const [blockList, setBlockList] = useState([]);
@@ -12,6 +13,17 @@ const BlockArea = ({ isEdit, serviceCompanyName }) => {
       case 'A':
         return (
           <BlockA
+            // key={uuid()}
+            blockList={blockList}
+            setBlockList={setBlockList}
+            blockIdx={index}
+            isEdit={isEdit}
+            blockContent={blockContent}
+          />
+        );
+      case 'B':
+        return (
+          <BlockB
             // key={uuid()}
             blockList={blockList}
             setBlockList={setBlockList}
