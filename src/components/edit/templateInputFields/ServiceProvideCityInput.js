@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import uuid from 'react-uuid';
 import styled from 'styled-components';
 
@@ -28,10 +28,6 @@ const Cities = styled.div`
 `;
 
 const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCities }) => {
-  useEffect(() => {
-    console.log(selectedServiceCities);
-  }, [selectedServiceCities]);
-
   const northrenCitiesCheckbox = northernCities.map((city) => {
     return (
       <CheckBox

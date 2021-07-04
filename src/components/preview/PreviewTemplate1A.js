@@ -1,14 +1,16 @@
 import React from 'react';
 
-import IntroParagraph from './items/IntroParagraph';
-import InfoSpan from './items/InfoSpan';
-import KeywordTags from './items/KeywordTags';
-import HeroImage from './items/HeroImage';
-import ContactInfoArea from './items/ContactInfoArea';
-import ServiceProvideCity from './items/ServiceProvideCity';
+import IntroParagraph from './templateItems/IntroParagraph';
+import InfoSpan from './templateItems/InfoSpan';
+import KeywordTags from './templateItems/KeywordTags';
+import HeroImage from './templateItems/HeroImage';
+import ContactInfoArea from './templateItems/ContactInfoArea';
+import ServiceProvideCity from './templateItems/ServiceProvideCity';
+import ImagesWall from './templateItems/ImagesWall';
 import { LocationIcon, ProfessionIcon } from '../../utils/icons';
 
 const Preview1A = ({
+  serviceCompanyName,
   intro,
   city,
   profession,
@@ -16,16 +18,18 @@ const Preview1A = ({
   heroImageUrl,
   contactInfo,
   selectedServiceCities,
+  imagesGalleryUrls,
 }) => {
   return (
     <div>
-      <HeroImage heroImageUrl={heroImageUrl} />
+      <HeroImage serviceCompanyName={serviceCompanyName} heroImageUrl={heroImageUrl} />
       <LocationIcon />
       <InfoSpan>{city}</InfoSpan>
       <ProfessionIcon />
       <InfoSpan>{profession}</InfoSpan>
       <IntroParagraph title="業者介紹" intro={intro} />
       <KeywordTags tags={introTags} />
+      <ImagesWall imagesGalleryUrls={imagesGalleryUrls} />
       <ContactInfoArea contactInfo={contactInfo} />
       <ServiceProvideCity selectedServiceCities={selectedServiceCities} />
     </div>

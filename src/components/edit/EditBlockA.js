@@ -1,5 +1,5 @@
 import React from 'react';
-import FullWidthTextInput from './input/FullWidthTextInput';
+import FullWidthTextInput from './blockInputFields/FullWidthTextInput';
 
 const EditBlockA = ({ blockList, setBlockList, blockIdx }) => {
   return (

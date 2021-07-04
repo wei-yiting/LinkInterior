@@ -22,6 +22,7 @@ const TemplateArea = ({ isEdit, serviceCompanyName }) => {
     ig: '',
   });
   const [selectedServiceCities, setSelectedServiceCities] = useState([]);
+  const [imagesGalleryUrls, setImagesGalleryUrls] = useState([]);
 
   return (
     <div>
@@ -45,6 +46,8 @@ const TemplateArea = ({ isEdit, serviceCompanyName }) => {
         setContactInfo={setContactInfo}
         selectedServiceCities={selectedServiceCities}
         setSelectedServiceCities={setSelectedServiceCities}
+        imagesGalleryUrls={imagesGalleryUrls}
+        setImagesGalleryUrls={setImagesGalleryUrls}
       />
     </div>
   );

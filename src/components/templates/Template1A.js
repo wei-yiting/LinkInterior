@@ -3,6 +3,7 @@ import EditTemplate1A from '../edit/EditTemplate1A';
 import PreviewTemplate1A from '../preview/PreviewTemplate1A';
 
 const Template1A = ({
+  serviceCompanyName,
   intro,
   setIntro,
   isEdit,
@@ -20,11 +21,14 @@ const Template1A = ({
   setContactInfo,
   selectedServiceCities,
   setSelectedServiceCities,
+  imagesGalleryUrls,
+  setImagesGalleryUrls,
 }) => {
   return (
     <div>
       {isEdit ? (
         <EditTemplate1A
+          serviceCompanyName={serviceCompanyName}
           intro={intro}
           setIntro={setIntro}
           cityOptions={cityOptions}
@@ -41,9 +45,12 @@ const Template1A = ({
           setContactInfo={setContactInfo}
           selectedServiceCities={selectedServiceCities}
           setSelectedServiceCities={setSelectedServiceCities}
+          imagesGalleryUrls={imagesGalleryUrls}
+          setImagesGalleryUrls={setImagesGalleryUrls}
         />
       ) : (
         <PreviewTemplate1A
+          serviceCompanyName={serviceCompanyName}
           intro={intro}
           city={city}
           profession={profession}
@@ -51,6 +58,7 @@ const Template1A = ({
           heroImageUrl={heroImageUrl}
           contactInfo={contactInfo}
           selectedServiceCities={selectedServiceCities}
+          imagesGalleryUrls={imagesGalleryUrls}
         />
       )}
     </div>

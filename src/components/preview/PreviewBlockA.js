@@ -1,5 +1,5 @@
 import React from 'react';
-import FullWidthText from './items/FullWidthText';
+import FullWidthText from './blockItems/FullWidthText';
 
 const PreviewBlockA = ({ blockContent }) => {
   return <FullWidthText blockContent={blockContent} />;

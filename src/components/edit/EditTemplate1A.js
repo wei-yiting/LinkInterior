@@ -1,11 +1,12 @@
 import React from 'react';
 
-import IntroField from './input/IntroField';
-import Dropdown from './input/Dropdown';
-import TagArea from './input/TagArea';
-import HeroImageField from './input/HeroImageField';
-import ContactInputFields from './input/ContactInputFields';
-import ServiceProvideCityInput from './input/ServiceProvideCityInput';
+import IntroField from './templateInputFields/IntroField';
+import Dropdown from './templateInputFields/Dropdown';
+import TagArea from './templateInputFields/TagArea';
+import HeroImageField from './templateInputFields/HeroImageField';
+import ContactInputFields from './templateInputFields/ContactInputFields';
+import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInput';
+import ImageWallField from './templateInputFields/ImageWallField';
 import { LocationIcon, ProfessionIcon } from '../../utils/icons';
 
 const EditTemplate1A = ({
@@ -26,6 +27,8 @@ const EditTemplate1A = ({
   setContactInfo,
   selectedServiceCities,
   setSelectedServiceCities,
+  imagesGalleryUrls,
+  setImagesGalleryUrls,
 }) => {
   return (
     <>
@@ -47,6 +50,10 @@ const EditTemplate1A = ({
       </div>
       <IntroField title="我的介紹" intro={intro} setIntro={setIntro} />
       <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
+      <ImageWallField
+        imagesGalleryUrls={imagesGalleryUrls}
+        setImagesGalleryUrls={setImagesGalleryUrls}
+      />
       <ContactInputFields contactInfo={contactInfo} setContactInfo={setContactInfo} />
       <ServiceProvideCityInput
         selectedServiceCities={selectedServiceCities}
