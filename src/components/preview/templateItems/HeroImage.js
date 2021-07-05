@@ -2,17 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { randomLinearGradient } from '../../../utils/data/linearGradient';
-
-const ImageContainer = styled.div`
-  width: 800px;
-  height: 300px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backgoround: linear-gradient(#eeeeeeee, #eeeeeeeee);
-`;
+import { HeroImageContainer } from '../../../styles/TemplateStyle';
 
 const CompanyName = styled.span`
   font-size: 3rem;
@@ -37,9 +27,9 @@ const HeroImage = ({ serviceCompanyName, heroImageUrl }) => {
   }, [heroImageUrl]);
 
   return (
-    <ImageContainer style={imageContainerStyle}>
+    <HeroImageContainer style={imageContainerStyle}>
       <CompanyName>{serviceCompanyName}</CompanyName>
-    </ImageContainer>
+    </HeroImageContainer>
   );
 };
 

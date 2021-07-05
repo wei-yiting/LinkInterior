@@ -92,7 +92,7 @@ const TagArea = ({ title, tags, setTags }) => {
   });
 
   return (
-    <div>
+    <>
       <h4>{title}</h4>
       <TagInput>
         <Tags>{renderedTags}</Tags>
@@ -106,7 +106,7 @@ const TagArea = ({ title, tags, setTags }) => {
           }}
         />
       </TagInput>
-    </div>
+    </>
   );
 };
 

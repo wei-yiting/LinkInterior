@@ -2,7 +2,7 @@ import React from 'react';
 
 const IntroField = ({ title, intro, setIntro }) => {
   return (
-    <div>
+    <>
       <h4>{title}</h4>
       <textarea
         id="story"
@@ -15,7 +15,7 @@ const IntroField = ({ title, intro, setIntro }) => {
         }}
         placeholder="請填入您的介紹"
       />
-    </div>
+    </>
   );
 };
 

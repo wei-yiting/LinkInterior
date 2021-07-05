@@ -8,6 +8,7 @@ import ContactInfoArea from './templateItems/ContactInfoArea';
 import ServiceProvideCity from './templateItems/ServiceProvideCity';
 import ImagesWall from './templateItems/ImagesWall';
 import { LocationIcon, ProfessionIcon } from '../../utils/icons';
+import { SectionWrapper, DropdownContainer } from '../../styles/TemplateStyle';
 
 const Preview1A = ({
   serviceCompanyName,
@@ -21,18 +22,34 @@ const Preview1A = ({
   imagesGalleryUrls,
 }) => {
   return (
-    <div>
+    <>
       <HeroImage serviceCompanyName={serviceCompanyName} heroImageUrl={heroImageUrl} />
-      <LocationIcon />
-      <InfoSpan>{city}</InfoSpan>
-      <ProfessionIcon />
-      <InfoSpan>{profession}</InfoSpan>
-      <IntroParagraph title="業者介紹" intro={intro} />
-      <KeywordTags tags={introTags} />
-      <ImagesWall imagesGalleryUrls={imagesGalleryUrls} />
-      <ContactInfoArea contactInfo={contactInfo} />
-      <ServiceProvideCity selectedServiceCities={selectedServiceCities} />
-    </div>
+      <SectionWrapper>
+        <div style={{ display: 'flex' }}>
+          <DropdownContainer>
+            <LocationIcon />
+            <InfoSpan>{city}</InfoSpan>
+          </DropdownContainer>
+          <DropdownContainer>
+            <ProfessionIcon />
+            <InfoSpan>{profession}</InfoSpan>
+          </DropdownContainer>
+        </div>
+      </SectionWrapper>
+      <SectionWrapper>
+        <IntroParagraph title="業者介紹" intro={intro} />
+        <KeywordTags tags={introTags} />
+      </SectionWrapper>
+      <SectionWrapper>
+        <ImagesWall imagesGalleryUrls={imagesGalleryUrls} />
+      </SectionWrapper>
+      <SectionWrapper>
+        <ContactInfoArea contactInfo={contactInfo} />
+      </SectionWrapper>
+      <SectionWrapper>
+        <ServiceProvideCity selectedServiceCities={selectedServiceCities} />
+      </SectionWrapper>
+    </>
   );
 };
 

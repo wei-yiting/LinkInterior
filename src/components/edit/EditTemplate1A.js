@@ -8,6 +8,7 @@ import ContactInputFields from './templateInputFields/ContactInputFields';
 import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInput';
 import ImageWallField from './templateInputFields/ImageWallField';
 import { LocationIcon, ProfessionIcon } from '../../utils/icons';
+import { SectionWrapper, DropdownContainer } from '../../styles/TemplateStyle';
 
 const EditTemplate1A = ({
   serviceCompanyName,
@@ -37,23 +38,35 @@ const EditTemplate1A = ({
         heroImageUrl={heroImageUrl}
         setHeroImageUrl={setHeroImageUrl}
       />
-      <div style={{ display: 'flex' }}>
-        <LocationIcon />
-        <Dropdown placeholder="縣市" options={cityOptions} value={city} setValue={setCity} />
-        <ProfessionIcon />
-        <Dropdown
-          placeholder="專長"
-          options={professionOptions}
-          value={profession}
-          setValue={setProfession}
+      <SectionWrapper>
+        <div style={{ display: 'flex' }}>
+          <DropdownContainer>
+            <LocationIcon />
+            <Dropdown placeholder="縣市" options={cityOptions} value={city} setValue={setCity} />
+          </DropdownContainer>
+          <DropdownContainer>
+            <ProfessionIcon />
+            <Dropdown
+              placeholder="專長"
+              options={professionOptions}
+              value={profession}
+              setValue={setProfession}
+            />
+          </DropdownContainer>
+        </div>
+      </SectionWrapper>
+      <SectionWrapper>
+        <IntroField title="我的介紹" intro={intro} setIntro={setIntro} />
+      </SectionWrapper>
+      <SectionWrapper>
+        <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
+      </SectionWrapper>
+      <SectionWrapper>
+        <ImageWallField
+          imagesGalleryUrls={imagesGalleryUrls}
+          setImagesGalleryUrls={setImagesGalleryUrls}
         />
-      </div>
-      <IntroField title="我的介紹" intro={intro} setIntro={setIntro} />
-      <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
-      <ImageWallField
-        imagesGalleryUrls={imagesGalleryUrls}
-        setImagesGalleryUrls={setImagesGalleryUrls}
-      />
+      </SectionWrapper>
       <ContactInputFields contactInfo={contactInfo} setContactInfo={setContactInfo} />
       <ServiceProvideCityInput
         selectedServiceCities={selectedServiceCities}

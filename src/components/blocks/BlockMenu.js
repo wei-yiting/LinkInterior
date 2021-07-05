@@ -32,7 +32,7 @@ const BlockMenu = ({ blockList, setBlockList }) => {
         }}
       >
         <AddIcon />
-        <span>左圖右文</span>
+        <span>左文右圖</span>
       </button>
       <button
         type="button"
@@ -41,7 +41,7 @@ const BlockMenu = ({ blockList, setBlockList }) => {
         }}
       >
         <AddIcon />
-        <span>左文右圖</span>
+        <span>右文左圖</span>
       </button>
     </div>
   );

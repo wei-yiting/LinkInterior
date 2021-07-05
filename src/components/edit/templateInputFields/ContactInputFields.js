@@ -27,7 +27,7 @@ const addHttp = (url) => {
 
 const ContactInputFields = ({ contactInfo, setContactInfo }) => {
   return (
-    <div>
+    <>
       <h5>我的聯絡資訊</h5>
       <ContactInputsArea>
         <InputContainer>
@@ -103,7 +103,7 @@ const ContactInputFields = ({ contactInfo, setContactInfo }) => {
           />
         </InputContainer>
       </ContactInputsArea>
-    </div>
+    </>
   );
 };
 

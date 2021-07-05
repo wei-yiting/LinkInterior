@@ -3,15 +3,7 @@ import styled from 'styled-components';
 
 import singleImageUpload from '../../../utils/firebase/singleImageUpload';
 import { randomLinearGradient } from '../../../utils/data/linearGradient';
-
-const ImageContainer = styled.div`
-  position: relative;
-  width: 800px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+import { HeroImageContainer } from '../../../styles/TemplateStyle';
 
 const CompanyName = styled.span`
   font-size: 3rem;
@@ -55,7 +47,7 @@ const HeroImageField = ({ serviceCompanyName, heroImageUrl, setHeroImageUrl }) =
 
   return (
     <div>
-      <ImageContainer style={imageContainerStyle}>
+      <HeroImageContainer style={imageContainerStyle}>
         <CompanyName>{serviceCompanyName}</CompanyName>
         <ButtonWrapper>
           <input type="file" onChange={handleImageSelected} />
@@ -63,7 +55,7 @@ const HeroImageField = ({ serviceCompanyName, heroImageUrl, setHeroImageUrl }) =
             上傳圖片
           </button>
         </ButtonWrapper>
-      </ImageContainer>
+      </HeroImageContainer>
     </div>
   );
 };
