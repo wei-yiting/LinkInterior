@@ -8,7 +8,7 @@ import ContactInfoArea from './templateItems/ContactInfoArea';
 import ServiceProvideCity from './templateItems/ServiceProvideCity';
 import ImagesWall from './templateItems/ImagesWall';
 import { LocationIcon, ProfessionIcon } from '../../utils/icons';
-import { SectionWrapper, DropdownContainer } from '../../styles/TemplateStyle';
+import { SectionWrapper, DropdownContainer } from '../../styles/TemplateLayout';
 
 const Preview1A = ({
   serviceCompanyName,
@@ -28,11 +28,11 @@ const Preview1A = ({
         <div style={{ display: 'flex' }}>
           <DropdownContainer>
             <LocationIcon />
-            <InfoSpan>{city}</InfoSpan>
+            <InfoSpan>{city.name}</InfoSpan>
           </DropdownContainer>
           <DropdownContainer>
             <ProfessionIcon />
-            <InfoSpan>{profession}</InfoSpan>
+            <InfoSpan>{profession.name}</InfoSpan>
           </DropdownContainer>
         </div>
       </SectionWrapper>

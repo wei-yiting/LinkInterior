@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 
 import TemplateMenu from './TemplateMenu';
 import Template1A from './Template1A';
-import professions from '../../utils/data/profession';
-import { allCities } from '../../utils/data/city';
+import { allCityOptions } from '../../utils/data/city';
+import professionOptions from '../../utils/data/profession';
 
 const TemplateArea = ({ isEdit, serviceCompanyName }) => {
   const [intro, setIntro] = useState('');
-  const [city, setCity] = useState('');
-  const [profession, setProfession] = useState('');
+  const [city, setCity] = useState(allCityOptions[0]);
+  const [profession, setProfession] = useState(professionOptions[0]);
   const [introTags, setIntroTags] = useState([]);
   const [heroImageUrl, setHeroImageUrl] = useState('');
   const [contactInfo, setContactInfo] = useState({
@@ -32,10 +32,8 @@ const TemplateArea = ({ isEdit, serviceCompanyName }) => {
         serviceCompanyName={serviceCompanyName}
         intro={intro}
         setIntro={setIntro}
-        cityOptions={allCities}
         city={city}
         setCity={setCity}
-        professionOptions={professions}
         profession={profession}
         setProfession={setProfession}
         introTags={introTags}

@@ -1,3 +1,5 @@
+import uuid from 'react-uuid';
+
 const professions = [
   '室內統包',
   '室內設計',
@@ -17,4 +19,8 @@ const professions = [
   '其他',
 ];
 
-export default professions;
+const professionOptions = professions.map((profession) => {
+  return { id: uuid(), name: profession };
+});
+
+export default professionOptions;

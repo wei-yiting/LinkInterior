@@ -1,3 +1,5 @@
+import uuid from 'react-uuid';
+
 export const allCities = [
   '臺北市',
   '新北市',
@@ -22,6 +24,10 @@ export const allCities = [
   '金門縣',
   '連江縣',
 ];
+
+export const allCityOptions = allCities.map((city) => {
+  return { id: uuid(), name: city };
+});
 
 export const northernCities = ['臺北市', '新北市', '基隆市', '桃園市', '新竹市', '新竹縣'];
 export const centralCities = ['臺中市', '彰化縣', '雲林縣', '苗栗縣', '南投縣'];

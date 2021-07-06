@@ -1,23 +1,23 @@
 import React from 'react';
 
 import IntroField from './templateInputFields/IntroField';
-import Dropdown from './templateInputFields/Dropdown';
 import TagArea from './templateInputFields/TagArea';
 import HeroImageField from './templateInputFields/HeroImageField';
 import ContactInputFields from './templateInputFields/ContactInputFields';
 import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInput';
 import ImageWallField from './templateInputFields/ImageWallField';
 import { LocationIcon, ProfessionIcon } from '../../utils/icons';
-import { SectionWrapper, DropdownContainer } from '../../styles/TemplateStyle';
+import { SectionWrapper, DropdownContainer } from '../../styles/TemplateLayout';
+import Dropdown from '../../styles/TailwindUI/Dropdown';
+import { allCityOptions } from '../../utils/data/city';
+import professionOptions from '../../utils/data/profession';
 
 const EditTemplate1A = ({
   serviceCompanyName,
   intro,
   setIntro,
-  cityOptions,
   city,
   setCity,
-  professionOptions,
   profession,
   setProfession,
   introTags,
@@ -39,10 +39,10 @@ const EditTemplate1A = ({
         setHeroImageUrl={setHeroImageUrl}
       />
       <SectionWrapper>
-        <div style={{ display: 'flex' }}>
+        <div style={{ display: 'flex', width: '100%' }}>
           <DropdownContainer>
             <LocationIcon />
-            <Dropdown placeholder="縣市" options={cityOptions} value={city} setValue={setCity} />
+            <Dropdown placeholder="縣市" options={allCityOptions} value={city} setValue={setCity} />
           </DropdownContainer>
           <DropdownContainer>
             <ProfessionIcon />

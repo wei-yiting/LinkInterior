@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { randomLinearGradient } from '../../../utils/data/linearGradient';
-import { HeroImageContainer } from '../../../styles/TemplateStyle';
+import { HeroImageContainer } from '../../../styles/TemplateLayout';
 
 const CompanyName = styled.span`
   font-size: 3rem;
