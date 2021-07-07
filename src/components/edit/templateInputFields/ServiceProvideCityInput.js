@@ -2,6 +2,7 @@ import React from 'react';
 import uuid from 'react-uuid';
 import styled from 'styled-components';
 
+import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 import CheckBox from './CheckBox';
 import {
   northernCities,
@@ -84,7 +85,7 @@ const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCiti
   });
 
   return (
-    <div>
+    <SectionWrapper>
       <h5>我的服務地區</h5>
       <CityCheckBoxContainer>
         <Region>
@@ -108,7 +109,7 @@ const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCiti
           <Cities>{islandsCheckbox}</Cities>
         </Region>
       </CityCheckBoxContainer>
-    </div>
+    </SectionWrapper>
   );
 };
 

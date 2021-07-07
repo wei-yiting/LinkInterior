@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import uuid from 'react-uuid';
 
 import { CloseIcon } from '../../../utils/icons';
+import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 
 const TagInput = styled.div`
    {
@@ -92,7 +93,7 @@ const TagArea = ({ title, tags, setTags }) => {
   });
 
   return (
-    <>
+    <SectionWrapper>
       <h4>{title}</h4>
       <TagInput>
         <Tags>{renderedTags}</Tags>
@@ -106,7 +107,7 @@ const TagArea = ({ title, tags, setTags }) => {
           }}
         />
       </TagInput>
-    </>
+    </SectionWrapper>
   );
 };
 

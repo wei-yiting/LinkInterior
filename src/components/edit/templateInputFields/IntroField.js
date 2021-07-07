@@ -1,8 +1,10 @@
 import React from 'react';
 
+import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+
 const IntroField = ({ title, intro, setIntro }) => {
   return (
-    <>
+    <SectionWrapper>
       <h4>{title}</h4>
       <textarea
         id="story"
@@ -15,7 +17,7 @@ const IntroField = ({ title, intro, setIntro }) => {
         }}
         placeholder="請填入您的介紹"
       />
-    </>
+    </SectionWrapper>
   );
 };
 

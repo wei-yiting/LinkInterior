@@ -4,9 +4,16 @@ export const SectionWrapper = styled.div`
   margin: 30px auto;
   display: flex;
   flex: 1;
-  width: 90%;
+  width: 100%;
   justify-content: space-around;
-  flex-direction: column;
+  flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
+`;
+
+export const RowWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  width: 100%;
+  justify-content: space-around;
 `;
 
 export const HeroImageContainer = styled.div`
@@ -22,7 +29,8 @@ export const DropdownContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40%;
+  width: 100%;
+  flex:1;
   }
 `;
 

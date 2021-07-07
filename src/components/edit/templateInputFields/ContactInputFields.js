@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+
 import {
   MobileIcon,
   PhoneIcon,
@@ -27,7 +29,7 @@ const addHttp = (url) => {
 
 const ContactInputFields = ({ contactInfo, setContactInfo }) => {
   return (
-    <>
+    <SectionWrapper>
       <h5>我的聯絡資訊</h5>
       <ContactInputsArea>
         <InputContainer>
@@ -103,7 +105,7 @@ const ContactInputFields = ({ contactInfo, setContactInfo }) => {
           />
         </InputContainer>
       </ContactInputsArea>
-    </>
+    </SectionWrapper>
   );
 };
 

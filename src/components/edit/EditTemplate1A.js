@@ -1,16 +1,13 @@
 import React from 'react';
 
+import InfoDropdownFields from './templateInputFields/InfoDropdownFeilds';
 import IntroField from './templateInputFields/IntroField';
 import TagArea from './templateInputFields/TagArea';
 import HeroImageField from './templateInputFields/HeroImageField';
 import ContactInputFields from './templateInputFields/ContactInputFields';
 import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInput';
 import ImageWallField from './templateInputFields/ImageWallField';
-import { LocationIcon, ProfessionIcon } from '../../utils/icons';
-import { SectionWrapper, DropdownContainer } from '../../styles/TemplateLayout';
-import Dropdown from '../../styles/TailwindUI/Dropdown';
-import { allCityOptions } from '../../utils/data/city';
-import professionOptions from '../../utils/data/profession';
+import { RowWrapper } from '../../styles/layout/TemplateLayout';
 
 const EditTemplate1A = ({
   serviceCompanyName,
@@ -38,40 +35,26 @@ const EditTemplate1A = ({
         heroImageUrl={heroImageUrl}
         setHeroImageUrl={setHeroImageUrl}
       />
-      <SectionWrapper>
-        <div style={{ display: 'flex', width: '100%' }}>
-          <DropdownContainer>
-            <LocationIcon />
-            <Dropdown placeholder="縣市" options={allCityOptions} value={city} setValue={setCity} />
-          </DropdownContainer>
-          <DropdownContainer>
-            <ProfessionIcon />
-            <Dropdown
-              placeholder="專長"
-              options={professionOptions}
-              value={profession}
-              setValue={setProfession}
-            />
-          </DropdownContainer>
-        </div>
-      </SectionWrapper>
-      <SectionWrapper>
-        <IntroField title="我的介紹" intro={intro} setIntro={setIntro} />
-      </SectionWrapper>
-      <SectionWrapper>
-        <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
-      </SectionWrapper>
-      <SectionWrapper>
-        <ImageWallField
-          imagesGalleryUrls={imagesGalleryUrls}
-          setImagesGalleryUrls={setImagesGalleryUrls}
-        />
-      </SectionWrapper>
-      <ContactInputFields contactInfo={contactInfo} setContactInfo={setContactInfo} />
-      <ServiceProvideCityInput
-        selectedServiceCities={selectedServiceCities}
-        setSelectedServiceCities={setSelectedServiceCities}
+      <InfoDropdownFields
+        city={city}
+        setCity={setCity}
+        profession={profession}
+        setProfession={setProfession}
+        flexDirection="row"
       />
+      <IntroField title="我的介紹" intro={intro} setIntro={setIntro} />
+      <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
+      <ImageWallField
+        imagesGalleryUrls={imagesGalleryUrls}
+        setImagesGalleryUrls={setImagesGalleryUrls}
+      />
+      <RowWrapper>
+        <ContactInputFields contactInfo={contactInfo} setContactInfo={setContactInfo} />
+        <ServiceProvideCityInput
+          selectedServiceCities={selectedServiceCities}
+          setSelectedServiceCities={setSelectedServiceCities}
+        />
+      </RowWrapper>
     </>
   );
 };

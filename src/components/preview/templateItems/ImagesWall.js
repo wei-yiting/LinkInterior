@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import uuid from 'react-uuid';
 
+import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+
 const ImageUploadContainer = styled.div`
   width: 1200px;
   height: auto;
@@ -34,9 +36,9 @@ const ImagesWall = ({ imagesGalleryUrls }) => {
   }, [imagesGalleryUrls]);
 
   return (
-    <div>
+    <SectionWrapper>
       <ImageUploadContainer>{uploadedGalleryImages}</ImageUploadContainer>
-    </div>
+    </SectionWrapper>
   );
 };
 

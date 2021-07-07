@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import uuid from 'react-uuid';
 
+import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+
 const TagArea = styled.div`
    {
     display: flex;
@@ -49,9 +51,11 @@ const KeywordTags = ({ tags }) => {
   });
 
   return (
-    <TagArea>
-      <Tags>{renderedTags}</Tags>
-    </TagArea>
+    <SectionWrapper>
+      <TagArea>
+        <Tags>{renderedTags}</Tags>
+      </TagArea>
+    </SectionWrapper>
   );
 };
 

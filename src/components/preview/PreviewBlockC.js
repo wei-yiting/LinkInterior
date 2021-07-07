@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BlockContainer from '../../styles/BlockContainer';
+import BlockContainer from '../../styles/sharedStyledComponents/BlockContainer';
 import SideText from './blockItems/SideText';
 import SideImage from './blockItems/SideImage';
 

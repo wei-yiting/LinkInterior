@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+
 import {
   MobileIcon,
   PhoneIcon,
@@ -21,7 +23,7 @@ const SocailMediaContainer = styled.div``;
 
 const ContactInfoArea = ({ contactInfo }) => {
   return (
-    <>
+    <SectionWrapper>
       <h5>業者聯絡資訊</h5>
       <ContactInfosArea>
         {contactInfo.website || contactInfo.fb || contactInfo.ig ? (
@@ -74,7 +76,7 @@ const ContactInfoArea = ({ contactInfo }) => {
           </ContactInfoWrapper>
         ) : null}
       </ContactInfosArea>
-    </>
+    </SectionWrapper>
   );
 };
 

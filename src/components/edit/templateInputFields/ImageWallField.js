@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import ImagePlaceholder from './ImagePlaceholder';
 import multipleImagesUpload from '../../../utils/firebase/multipleImageUpload';
 import { lightLinearGradients } from '../../../utils/data/linearGradient';
+import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 
 const numberOfImages = 8;
 
@@ -90,7 +91,7 @@ const ImageWallField = ({ imagesGalleryUrls, setImagesGalleryUrls }) => {
   });
 
   return (
-    <div>
+    <SectionWrapper>
       <h5>我的相簿</h5>
       <ImageUploadContainer>
         {uploadedGalleryImages}
@@ -102,7 +103,7 @@ const ImageWallField = ({ imagesGalleryUrls, setImagesGalleryUrls }) => {
           </button>
         </ButtonWrapper>
       </ImageUploadContainer>
-    </div>
+    </SectionWrapper>
   );
 };
 
