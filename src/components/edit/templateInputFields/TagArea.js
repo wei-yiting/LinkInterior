@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import uuid from 'react-uuid';
 
 import { CloseIcon } from '../../../utils/icons';

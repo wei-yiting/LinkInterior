@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import singleImageUpload from '../../../utils/firebase/singleImageUpload';
 import { randomLinearGradient } from '../../../utils/data/linearGradient';

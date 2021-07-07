@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import uuid from 'react-uuid';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import ImagePlaceholder from './ImagePlaceholder';
 import multipleImagesUpload from '../../../utils/firebase/multipleImageUpload';
