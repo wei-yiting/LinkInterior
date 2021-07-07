@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import uuid from 'react-uuid';
 
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';

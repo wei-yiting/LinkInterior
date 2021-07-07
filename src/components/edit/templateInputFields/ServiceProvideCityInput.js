@@ -1,6 +1,6 @@
 import React from 'react';
 import uuid from 'react-uuid';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 import CheckBox from './CheckBox';
