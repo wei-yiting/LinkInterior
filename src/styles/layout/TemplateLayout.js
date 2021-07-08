@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const SectionWrapper = styled.div`
   margin: 30px auto;

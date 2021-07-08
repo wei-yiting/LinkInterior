@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import ToggleSwitch from '../components/templates/ToggleSwitch';
 import TemplateArea from '../components/templates/TemplateArea';

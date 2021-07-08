@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { ImageIcon } from '../../../utils/icons';
 import { lightLinearGradients } from '../../../utils/data/linearGradient';
