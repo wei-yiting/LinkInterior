@@ -15,69 +15,69 @@ import {
   faEdit,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-
 import { faLine, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { contactIconStyle, introIconStyle, imageIconStyle } from '../../styles/styleObject/icons';
 
 export const LocationIcon = () => {
-  return <FontAwesomeIcon icon={faMapMarkerAlt} />;
+  return <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth style={introIconStyle} />;
 };
 
 export const ProfessionIcon = () => {
-  return <FontAwesomeIcon icon={faBriefcase} />;
+  return <FontAwesomeIcon icon={faBriefcase} fixedWidth style={introIconStyle} />;
 };
 
 export const CloseIcon = () => {
-  return <FontAwesomeIcon icon={faTimes} />;
+  return <FontAwesomeIcon icon={faTimes} fixedWidth />;
 };
 
 export const AddIcon = () => {
-  return <FontAwesomeIcon icon={faPlus} />;
+  return <FontAwesomeIcon icon={faPlus} fixedWidth />;
 };
 
 export const MobileIcon = () => {
-  return <FontAwesomeIcon icon={faMobileAlt} />;
+  return <FontAwesomeIcon icon={faMobileAlt} fixedWidth style={contactIconStyle} />;
 };
 
 export const PhoneIcon = () => {
-  return <FontAwesomeIcon icon={faPhoneAlt} />;
+  return <FontAwesomeIcon icon={faPhoneAlt} fixedWidth style={contactIconStyle} />;
 };
 
 export const LineIcon = () => {
-  return <FontAwesomeIcon icon={faLine} />;
+  return <FontAwesomeIcon icon={faLine} fixedWidth style={contactIconStyle} />;
 };
 
 export const EmailIcon = () => {
-  return <FontAwesomeIcon icon={faEnvelope} />;
+  return <FontAwesomeIcon icon={faEnvelope} fixedWidth style={contactIconStyle} />;
 };
 
 export const AddressIcon = () => {
-  return <FontAwesomeIcon icon={faHome} />;
+  return <FontAwesomeIcon icon={faHome} fixedWidth style={contactIconStyle} />;
 };
 
 export const WebsiteIcon = () => {
-  return <FontAwesomeIcon icon={faLaptop} />;
+  return <FontAwesomeIcon icon={faLaptop} fixedWidth style={contactIconStyle} />;
 };
 
 export const FacebookIcon = () => {
-  return <FontAwesomeIcon icon={faFacebookSquare} />;
+  return <FontAwesomeIcon icon={faFacebookSquare} fixedWidth style={contactIconStyle} />;
 };
 
 export const InstagramIcon = () => {
-  return <FontAwesomeIcon icon={faInstagram} />;
+  return <FontAwesomeIcon icon={faInstagram} fixedWidth style={contactIconStyle} />;
 };
 
 export const ImageIcon = () => {
-  return <FontAwesomeIcon icon={faImage} style={{ color: '#bbb', fontSize: '3rem' }} />;
+  return <FontAwesomeIcon icon={faImage} style={imageIconStyle} fixedWidth />;
 };
 
 export const TrashIcon = () => {
-  return <FontAwesomeIcon icon={faTrashAlt} />;
+  return <FontAwesomeIcon icon={faTrashAlt} fixedWidth />;
 };
 
 export const EditIcon = () => {
-  return <FontAwesomeIcon icon={faEdit} />;
+  return <FontAwesomeIcon icon={faEdit} fixedWidth />;
 };
 
 export const EyeIcon = () => {
-  return <FontAwesomeIcon icon={faEye} />;
+  return <FontAwesomeIcon icon={faEye} fixedWidth />;
 };

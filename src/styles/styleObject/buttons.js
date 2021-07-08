@@ -1,13 +1,12 @@
-export const theme = {
-  inputBorder: '1px solid #eee',
-  color: '#eee',
-};
+import theme from '../theme';
 
 export const uploadButtonStyle = {
   backgroundColor: '#fff',
-  color: '#888',
+  color: theme.color.main,
   border: 'none',
   font: '1rem',
   padding: '0.5em 1em',
   borderRadius: '10px',
 };
+
+export default uploadButtonStyle;
