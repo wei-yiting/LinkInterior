@@ -2,7 +2,7 @@ import React from 'react';
 
 import { SectionWrapper, DropdownContainer } from '../../../styles/layout/TemplateLayout';
 import { LocationIcon, ProfessionIcon } from '../../../utils/icons';
-import Dropdown from '../../../styles/TailwindUI/Dropdown';
+import Dropdown from './Dropdown';
 import { allCityOptions } from '../../../utils/data/city';
 import professionOptions from '../../../utils/data/profession';
 

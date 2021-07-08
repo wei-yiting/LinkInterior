@@ -3,42 +3,37 @@ import styled from 'styled-components/macro';
 import uuid from 'react-uuid';
 
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+import theme from '../../../styles/theme';
 
 const TagArea = styled.div`
-   {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    min-height: 48px;
-    width: 75%;
-    padding: 0 8px;
-  }
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-height: 48px;
+  width: 75%;
+  padding: 0 8px;
 `;
 
 const Tags = styled.ul`
-   {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 8px 0 0 0;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 8px 0 0 0;
 `;
 
 const Tag = styled.li`
-   {
-    width: auto;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    padding: 0 8px;
-    font-size: 14px;
-    list-style: none;
-    border-radius: 6px;
-    margin: 0 8px 8px 0;
-    background: #0052cc;
-  }
+  width: auto;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0 8px;
+  font-size: 14px;
+  list-style: none;
+  border-radius: 6px;
+  margin: 0 8px 8px 0;
+  background: ${theme.color.yellow[600]};
 `;
 
 const KeywordTags = ({ tags }) => {

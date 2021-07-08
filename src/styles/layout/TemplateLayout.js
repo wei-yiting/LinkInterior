@@ -32,8 +32,7 @@ export const DropdownContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  flex:1;
-  }
+  flex: 1;
 `;
 
 export const ContactArea = styled.div`

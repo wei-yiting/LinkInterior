@@ -1,18 +1,18 @@
 import React from 'react';
-import { theme } from '../../../styles/theme/theme';
 
-const TextArea = ({ placeholder, width, height }) => {
+const TextArea = ({ placeholder, width, height, value, setValue }) => {
   return (
     <textarea
       placeholder={placeholder}
-      className="my-5 p-1 align-middle shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-900 rounded-md"
+      className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-500 sm:text-sm"
       style={{
         resize: 'none',
-        width,
+        width: width || '100%',
         padding: '10px',
         height,
-        border: theme.inputBorder,
       }}
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
     />
   );
 };

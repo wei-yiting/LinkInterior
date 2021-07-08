@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { SectionWrapper, ContactArea } from '../../../styles/layout/TemplateLayout';
-import { ContactInputField, MediaInputField } from '../../../styles/TailwindUI/InfoInputField';
+import { ContactInputField, MediaInputField } from './InfoInputField';
 
 import {
   MobileIcon,

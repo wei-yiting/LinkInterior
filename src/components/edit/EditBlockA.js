@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BlockContainer from '../../styles/sharedStyledComponents/BlockContainer';
+import { BlockContainer } from '../../styles/layout/BlockLayout';
 import FullWidthTextInput from './blockInputFields/FullWidthTextInput';
 import { TrashIcon } from '../../utils/icons';
 

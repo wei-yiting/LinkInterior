@@ -2,63 +2,50 @@ import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 import uuid from 'react-uuid';
 
-import { CloseIcon } from '../../../utils/icons';
+import { RemoveTagIcon } from '../../../utils/icons';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+import theme from '../../../styles/theme';
 
 const TagInput = styled.div`
-   {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    min-height: 48px;
-    width: 75%;
-    padding: 0 8px;
-    border: 1px solid rgb(214, 216, 218);
-    border-radius: 6px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-height: 48px;
 
-    &:focus-within {
-      border: 1px solid #0052cc;
-    }
-
-    input {
-      display: inline;
-      flex: 1;
-      width: 100%;
-      border: none;
-      height: 46px;
-      font-size: 14px;
-      padding: 4px 0 0 0;
-      &:focus {
-        outline: transparent;
-      }
+  input {
+    display: inline;
+    flex: 1;
+    width: 100%;
+    border: none;
+    height: 46px;
+    font-size: 14px;
+    padding: 4px 0 0 0;
+    &:focus {
+      outline: transparent;
     }
   }
 `;
 
 const Tags = styled.ul`
-   {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0;
-    margin: 8px 0 0 0;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 8px 0 0 0;
 `;
 
 const Tag = styled.li`
-   {
-    width: auto;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    padding: 0 8px;
-    font-size: 14px;
-    list-style: none;
-    border-radius: 6px;
-    margin: 0 8px 8px 0;
-    background: #0052cc;
-  }
+  width: auto;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 0 8px;
+  font-size: 14px;
+  list-style: none;
+  border-radius: 6px;
+  margin: 0 8px 8px 0;
+  background: ${theme.color.yellow[600]};
 `;
 
 const TagArea = ({ title, tags, setTags }) => {
@@ -86,7 +73,7 @@ const TagArea = ({ title, tags, setTags }) => {
             console.log('clicked delete');
           }}
         >
-          <CloseIcon />
+          <RemoveTagIcon />
         </button>
       </Tag>
     );
@@ -95,7 +82,7 @@ const TagArea = ({ title, tags, setTags }) => {
   return (
     <SectionWrapper>
       <h4>{title}</h4>
-      <TagInput>
+      <TagInput className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-500 sm:text-sm">
         <Tags>{renderedTags}</Tags>
         <input
           type="text"
