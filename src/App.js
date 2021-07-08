@@ -1,20 +1,14 @@
 import React from 'react';
-import styled from 'styled-components/macro';
 
+import GlobalStyles from './styles/GlobalStyle';
 import ServiceIntroCompile from './pages/ServiceIntroCompile';
-
-const MainContainer = styled.div`
-  * {
-    font-family: 'Noto Sans TC', sans-serif;
-    box-sizing: border-box;
-  }
-`;
 
 const App = () => {
   return (
-    <MainContainer>
+    <>
+      <GlobalStyles />
       <ServiceIntroCompile />
-    </MainContainer>
+    </>
   );
 };
 

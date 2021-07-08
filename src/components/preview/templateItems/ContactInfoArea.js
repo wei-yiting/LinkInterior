@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+import { SectionWrapper, ContactArea } from '../../../styles/layout/TemplateLayout';
 
 import {
   MobileIcon,
@@ -14,68 +14,72 @@ import {
   InstagramIcon,
 } from '../../../utils/icons';
 
-const ContactInfosArea = styled.div`
-  background-color: #eee;
-`;
 const ContactInfoWrapper = styled.div``;
 const InfoSpan = styled.span``;
 const SocailMediaContainer = styled.div``;
+
+const addHttp = (url) => {
+  if (!url.startsWith('http')) {
+    return `http://${url}`;
+  }
+  return url;
+};
 
 const ContactInfoArea = ({ contactInfo }) => {
   return (
     <SectionWrapper>
       <h5>業者聯絡資訊</h5>
-      <ContactInfosArea>
+      <ContactArea>
         {contactInfo.website || contactInfo.fb || contactInfo.ig ? (
           <SocailMediaContainer>
             {contactInfo.website ? (
-              <a href={contactInfo.website}>
+              <a href={addHttp(contactInfo.website)}>
                 <WebsiteIcon />
               </a>
             ) : null}
             {contactInfo.fb ? (
-              <a href={contactInfo.fb}>
+              <a href={addHttp(contactInfo.fb)}>
                 <FacebookIcon />
               </a>
             ) : null}
             {contactInfo.ig ? (
-              <a href={contactInfo.ig}>
+              <a href={addHttp(contactInfo.ig)}>
                 <InstagramIcon />
               </a>
             ) : null}
           </SocailMediaContainer>
         ) : null}
         {contactInfo.mobile ? (
-          <ContactInfoWrapper>
+          <ContactInfoWrapper className="mb-5">
             <MobileIcon />
-            <InfoSpan>{contactInfo.mobile}</InfoSpan>
+            <InfoSpan className="ml-2">{contactInfo.mobile}</InfoSpan>
           </ContactInfoWrapper>
         ) : null}
         {contactInfo.phone ? (
-          <ContactInfoWrapper>
+          <ContactInfoWrapper className="mb-5">
             <PhoneIcon />
-            <InfoSpan>{contactInfo.phone}</InfoSpan>
+            <InfoSpan className="ml-2">{contactInfo.phone}</InfoSpan>
           </ContactInfoWrapper>
         ) : null}
         {contactInfo.line ? (
-          <ContactInfoWrapper>
+          <ContactInfoWrapper className="mb-5">
             <LineIcon />
-            <InfoSpan>{contactInfo.line}</InfoSpan>
+            <InfoSpan className="ml-2">{contactInfo.line}</InfoSpan>
           </ContactInfoWrapper>
         ) : null}
         {contactInfo.email ? (
-          <ContactInfoWrapper>
+          <ContactInfoWrapper className="mb-5">
             <EmailIcon />
-            <InfoSpan>{contactInfo.email}</InfoSpan>
+            <InfoSpan className="ml-2">{contactInfo.email}</InfoSpan>
           </ContactInfoWrapper>
         ) : null}
         {contactInfo.address ? (
-          <ContactInfoWrapper>
+          <ContactInfoWrapper className="mb-5">
             <AddressIcon />
-            <InfoSpan>{contactInfo.address}</InfoSpan>
+            <InfoSpan className="ml-2">{contactInfo.address}</InfoSpan>
           </ContactInfoWrapper>
         ) : null}
-      </ContactInfosArea>
+      </ContactArea>
     </SectionWrapper>
   );
 };

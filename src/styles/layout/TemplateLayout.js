@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
 
+import theme from '../theme';
+
 export const SectionWrapper = styled.div`
   margin: 30px auto;
   display: flex;
@@ -34,4 +36,7 @@ export const DropdownContainer = styled.div`
   }
 `;
 
-export const ImageWallContainer = styled.div``;
+export const ContactArea = styled.div`
+  background-color: ${theme.color.gray[100]};
+  padding: 2rem;
+`;

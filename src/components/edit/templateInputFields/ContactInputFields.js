@@ -1,7 +1,7 @@
 import React from 'react';
-import styled from 'styled-components/macro';
 
-import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+import { SectionWrapper, ContactArea } from '../../../styles/layout/TemplateLayout';
+import { ContactInputField, MediaInputField } from '../../../styles/TailwindUI/InfoInputField';
 
 import {
   MobileIcon,
@@ -14,97 +14,84 @@ import {
   InstagramIcon,
 } from '../../../utils/icons';
 
-const ContactInputsArea = styled.div`
-  background-color: #eee;
-`;
-const InputContainer = styled.div``;
-const ContactInputField = styled.input``;
-
-const addHttp = (url) => {
-  if (!url.startsWith('http')) {
-    return `http://${url}`;
-  }
-  return url;
-};
-
 const ContactInputFields = ({ contactInfo, setContactInfo }) => {
   return (
     <SectionWrapper>
       <h5>我的聯絡資訊</h5>
-      <ContactInputsArea>
-        <InputContainer>
+      <ContactArea>
+        <ContactInputField
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          type="tel"
+          placeholder="手機號碼"
+          name="mobile"
+        >
           <MobileIcon />
-          <ContactInputField
-            type="tel"
-            placeholder="手機號碼"
-            value={contactInfo.mobile}
-            onChange={(e) => setContactInfo({ ...contactInfo, mobile: e.target.value })}
-          />
-        </InputContainer>
-        <InputContainer>
+        </ContactInputField>
+        <ContactInputField
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          type="tel"
+          placeholder="市話號碼"
+          name="phone"
+        >
           <PhoneIcon />
-          <ContactInputField
-            type="tel"
-            placeholder="市話號碼"
-            value={contactInfo.phone}
-            onChange={(e) => setContactInfo({ ...contactInfo, phone: e.target.value })}
-          />
-        </InputContainer>
-        <InputContainer>
+        </ContactInputField>
+        <ContactInputField
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          type="text"
+          placeholder="Line ID"
+          name="line"
+        >
           <LineIcon />
-          <ContactInputField
-            type="text"
-            placeholder="Line ID"
-            value={contactInfo.line}
-            onChange={(e) => setContactInfo({ ...contactInfo, line: e.target.value })}
-          />
-        </InputContainer>
-        <InputContainer>
+        </ContactInputField>
+        <ContactInputField
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          type="email"
+          placeholder="電子信箱"
+          name="email"
+        >
           <EmailIcon />
-          <ContactInputField
-            type="email"
-            placeholder="電子信箱"
-            value={contactInfo.email}
-            onChange={(e) => setContactInfo({ ...contactInfo, email: e.target.value })}
-          />
-        </InputContainer>
-        <InputContainer>
+        </ContactInputField>
+        <ContactInputField
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          type="text"
+          placeholder="聯絡地址"
+          name="address"
+        >
           <AddressIcon />
-          <ContactInputField
-            type="text"
-            placeholder="聯絡地址"
-            value={contactInfo.address}
-            onChange={(e) => setContactInfo({ ...contactInfo, address: e.target.value })}
-          />
-        </InputContainer>
-        <InputContainer>
+        </ContactInputField>
+        <MediaInputField
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          type="url"
+          placeholder="網站連結"
+          name="website"
+        >
           <WebsiteIcon />
-          <ContactInputField
-            type="url"
-            placeholder="網站連結"
-            value={contactInfo.website}
-            onChange={(e) => setContactInfo({ ...contactInfo, website: addHttp(e.target.value) })}
-          />
-        </InputContainer>
-        <InputContainer>
+        </MediaInputField>
+        <MediaInputField
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          type="url"
+          placeholder="Facebook 專頁連結"
+          name="fb"
+        >
           <FacebookIcon />
-          <ContactInputField
-            type="url"
-            placeholder="Facebook 專頁連結"
-            value={contactInfo.fb}
-            onChange={(e) => setContactInfo({ ...contactInfo, fb: addHttp(e.target.value) })}
-          />
-        </InputContainer>
-        <InputContainer>
+        </MediaInputField>
+        <MediaInputField
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          type="text"
+          placeholder="Instragram 帳號連結"
+          name="ig"
+        >
           <InstagramIcon />
-          <ContactInputField
-            type="text"
-            placeholder="Instragram 帳號連結"
-            value={contactInfo.ig}
-            onChange={(e) => setContactInfo({ ...contactInfo, ig: addHttp(e.target.value) })}
-          />
-        </InputContainer>
-      </ContactInputsArea>
+        </MediaInputField>
+      </ContactArea>
     </SectionWrapper>
   );
 };
