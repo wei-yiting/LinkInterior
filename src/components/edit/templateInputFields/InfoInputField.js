@@ -16,7 +16,7 @@ export const ContactInputField = ({
         </div>
         <input
           name={name}
-          className="focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-500 block w-full pl-10 py-3 sm:text-sm border-gray-300 rounded-md placeholder-gray-600"
+          className="text-base focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-500 block w-full pl-10 py-3 border-0 rounded-md placeholder-gray-600"
           type={type}
           value={contactInfo[name]}
           onChange={(e) => setContactInfo({ ...contactInfo, [name]: e.target.value })}
@@ -44,7 +44,7 @@ export const MediaInputField = ({
         </span>
         <input
           name={name}
-          className="flex-1 min-w-0 block w-full px-3 py-3 rounded-none rounded-r-md focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-500 sm:text-sm border-gray-300 placeholder-gray-600"
+          className="flex-1 min-w-0 block w-full px-3 py-3 rounded-none rounded-r-md focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-500 text-base border-0 placeholder-gray-600"
           type={type}
           value={contactInfo[name]}
           onChange={(e) => setContactInfo({ ...contactInfo, [name]: e.target.value })}

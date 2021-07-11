@@ -2,20 +2,19 @@ import styled from 'styled-components/macro';
 
 import { color } from '../theme';
 
-export const SectionWrapper = styled.div`
-  margin: 30px auto;
+export const SectionWrapper = styled.section`
+  margin: ${({ margin }) => margin || '30px auto'};
   display: flex;
-  flex: 1;
-  width: 100%;
-  justify-content: space-around;
+  flex: ${({ flex }) => flex || '1'};
+  width: ${({ width }) => width || '100%'};
+  justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
 `;
 
 export const RowWrapper = styled.div`
   display: flex;
-  flex: 1;
   width: 100%;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 export const HeroImageContainer = styled.div`

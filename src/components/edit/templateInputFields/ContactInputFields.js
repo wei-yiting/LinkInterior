@@ -16,7 +16,7 @@ import {
 
 const ContactInputFields = ({ contactInfo, setContactInfo }) => {
   return (
-    <SectionWrapper>
+    <SectionWrapper width="55%" flex="none" margin="30px 0">
       <h5>我的聯絡資訊</h5>
       <ContactArea>
         <ContactInputField
