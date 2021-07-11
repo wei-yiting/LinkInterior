@@ -6,13 +6,16 @@ import ImagePlaceholder from './ImagePlaceholder';
 import multipleImagesUpload from '../../../utils/firebase/multipleImageUpload';
 import { lightLinearGradients } from '../../../utils/data/linearGradient';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+import { inputField } from '../../../styles/theme';
 
 const numberOfImages = 8;
 
 const ImageUploadContainer = styled.div`
-  width: 1200px;
+  width: 100%;
   height: 400px;
-  background-color: #eee;
+  border: ${inputField.border};
+  border-radius: ${inputField.borderRadius};
+  background-color: white;
   padding: 1rem;
   display: flex;
   align-items: space-between;

@@ -10,43 +10,26 @@ const BlockArea = ({ isEdit, serviceCompanyName }) => {
   const [blockList, setBlockList] = useState([]);
 
   const renderedBlocks = blockList.map((blockContent, index) => {
-    switch (blockContent.type) {
-      case 'A':
-        return (
-          <BlockA
-            // key={uuid()}
-            blockList={blockList}
-            setBlockList={setBlockList}
-            blockIdx={index}
-            isEdit={isEdit}
-            blockContent={blockContent}
-          />
-        );
-      case 'B':
-        return (
-          <BlockB
-            // key={uuid()}
-            blockList={blockList}
-            setBlockList={setBlockList}
-            blockIdx={index}
-            isEdit={isEdit}
-            blockContent={blockContent}
-          />
-        );
-      case 'C':
-        return (
-          <BlockC
-            // key={uuid()}
-            blockList={blockList}
-            setBlockList={setBlockList}
-            blockIdx={index}
-            isEdit={isEdit}
-            blockContent={blockContent}
-          />
-        );
-      default:
-        return null;
+    let Block;
+    if (blockContent.type === 'A') {
+      Block = BlockA;
+    } else if (blockContent.type === 'B') {
+      Block = BlockB;
+    } else if (blockContent.type === 'C') {
+      Block = BlockC;
+    } else {
+      return null;
     }
+    return (
+      <Block
+        isEdit={isEdit}
+        key={blockContent.id}
+        blockList={blockList}
+        setBlockList={setBlockList}
+        blockIdx={index}
+        blockContent={blockContent}
+      />
+    );
   });
 
   return (

@@ -16,11 +16,11 @@ const MainContainer = styled.main`
   flex-direction: column;
 `;
 
-const ServiceIntroEdit = () => {
+const ServiceIntrCompile = () => {
   const [isEdit, setIsEdit] = useState(true);
 
   return (
-    <div className={isEdit && 'bg-gray-50'}>
+    <div className={isEdit ? 'bg-gray-50' : ''}>
       <MainContainer>
         <ToggleSwitch isEdit={isEdit} setIsEdit={setIsEdit} />
         <TemplateArea isEdit={isEdit} serviceCompanyName={serviceCompanyName} />
@@ -30,4 +30,4 @@ const ServiceIntroEdit = () => {
   );
 };
 
-export default ServiceIntroEdit;
+export default ServiceIntrCompile;

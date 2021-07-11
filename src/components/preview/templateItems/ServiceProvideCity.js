@@ -4,13 +4,7 @@ import { allCities } from '../../../utils/data/city';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 
 const ServiceProvideCity = ({ selectedServiceCities }) => {
-  const sortedCities = [];
-
-  allCities.forEach((city) => {
-    if (selectedServiceCities.includes(city)) {
-      sortedCities.push(city);
-    }
-  });
+  const sortedCities = allCities.filter((city) => selectedServiceCities.includes(city));
 
   return (
     <SectionWrapper>

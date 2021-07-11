@@ -4,7 +4,7 @@ import uuid from 'react-uuid';
 
 import { RemoveTagIcon } from '../../../utils/icons';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
-import theme from '../../../styles/theme';
+import { color } from '../../../styles/theme';
 
 const TagInput = styled.div`
   display: flex;
@@ -45,7 +45,7 @@ const Tag = styled.li`
   list-style: none;
   border-radius: 6px;
   margin: 0 8px 8px 0;
-  background: ${theme.color.yellow[600]};
+  background: ${color.yellow[600]};
 `;
 
 const TagArea = ({ title, tags, setTags }) => {

@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components/macro';
 import uuid from 'react-uuid';
 
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 
 const ImageUploadContainer = styled.div`
-  width: 1200px;
+  width: 100%;
   height: auto;
   padding: 1rem;
   display: flex;
@@ -16,7 +16,7 @@ const ImageUploadContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: calc(20vw - 0.5rem);
+  width: calc(25% - 1rem);
   height: 15vw;
   margin: 0 0.25rem;
   background-size: cover;
@@ -24,20 +24,13 @@ const ImageContainer = styled.div`
 `;
 
 const ImagesWall = ({ imagesGalleryUrls }) => {
-  const [uploadedGalleryImages, setUploadedGalleryImages] = useState(null);
-
-  useEffect(() => {
-    if (imagesGalleryUrls) {
-      const currentImages = imagesGalleryUrls.map((imageUrl) => {
-        return <ImageContainer key={uuid()} style={{ backgroundImage: `url("${imageUrl}")` }} />;
-      });
-      setUploadedGalleryImages(currentImages);
-    }
-  }, [imagesGalleryUrls]);
-
   return (
     <SectionWrapper>
-      <ImageUploadContainer>{uploadedGalleryImages}</ImageUploadContainer>
+      <ImageUploadContainer>
+        {imagesGalleryUrls.map((imageUrl) => (
+          <ImageContainer key={uuid()} style={{ backgroundImage: `url("${imageUrl}")` }} />
+        ))}
+      </ImageUploadContainer>
     </SectionWrapper>
   );
 };

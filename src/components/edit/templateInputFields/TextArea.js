@@ -9,7 +9,7 @@ const TextArea = ({ placeholder, width, height, value, setValue }) => {
         resize: 'none',
         width: width || '100%',
         padding: '10px',
-        height,
+        height: height || 'auto',
       }}
       value={value}
       onChange={(e) => setValue(e.target.value)}

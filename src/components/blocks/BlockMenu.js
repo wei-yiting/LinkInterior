@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'react-uuid';
 
 import { AddIcon } from '../../utils/icons';
 
@@ -7,6 +8,7 @@ const BlockMenu = ({ blockList, setBlockList }) => {
     setBlockList([
       ...blockList,
       {
+        id: uuid(),
         type,
         text: '',
         imageUrl: '',

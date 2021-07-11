@@ -23,7 +23,7 @@ const multipleImagesUpload = (images, urlsSetter) => {
     );
   });
   Promise.all(promises)
-    .then(() => console.log('All images uploaded'))
+    .then()
     .catch((err) => console.log(err));
 };
 
