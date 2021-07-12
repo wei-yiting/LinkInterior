@@ -27,7 +27,7 @@ const addHttp = (url) => {
 
 const ContactInfoArea = ({ contactInfo }) => {
   return (
-    <SectionWrapper>
+    <SectionWrapper width="55%" flex="none" margin="30px 0">
       <h5>業者聯絡資訊</h5>
       <ContactArea>
         {contactInfo.website || contactInfo.fb || contactInfo.ig ? (

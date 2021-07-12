@@ -7,7 +7,7 @@ const ServiceProvideCity = ({ selectedServiceCities }) => {
   const sortedCities = allCities.filter((city) => selectedServiceCities.includes(city));
 
   return (
-    <SectionWrapper>
+    <SectionWrapper width="40%" flex="none" margin="30px 0">
       <h5>服務地區</h5>
       <p>{sortedCities.join('、')}</p>
     </SectionWrapper>

@@ -1,13 +1,17 @@
 import React from 'react';
 
 import GlobalStyles from './styles/GlobalStyle';
-import ServiceIntroCompile from './pages/ServiceIntroCompile';
+import Header from './components/Header/Header';
+// import ServiceIntroCompile from './pages/ServiceIntroCompile';
+import SignUpLogIn from './components/membership/LogIn';
 
 const App = () => {
   return (
     <>
       <GlobalStyles />
-      <ServiceIntroCompile />
+      <Header />
+      {/* <ServiceIntroCompile /> */}
+      <SignUpLogIn />
     </>
   );
 };

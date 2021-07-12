@@ -13,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
   }
   
   * {
-  font-family: 'Noto Sans TC', sans-serif;
+  font-family: 'latte', sans-serif;
   box-sizing: border-box;
   }
 
