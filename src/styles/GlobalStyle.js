@@ -13,8 +13,9 @@ const GlobalStyles = createGlobalStyle`
   }
   
   * {
-  font-family: 'latte', sans-serif;
-  box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+    letter-spacing:0.025em;
+    box-sizing: border-box;
   }
 
   main {
