@@ -1,12 +1,22 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState } from 'react';
+// import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
 import UploadImageForm from '../components/shared/UploadImageForm';
 import Main from '../styles/layout/GeneralLayout';
 import Logo from '../utils/logo/Logo';
 
+// const ProfileImage = styled.img`
+//   width: 100%;
+//   height: 100%;
+//   object-fit: cover;
+//   object-position:center;
+// `;
+
 const SignUp = () => {
+  const [profileUrl, setProfileUrl] = useState(null);
+
   return (
     <Main className="min-h-screen bg-gray-50 flex flex-col justify-center pt-12 sm:px-6 lg:px-8 pb-20 ">
       <div className="h-16 w-16 sm:mx-auto">
@@ -18,27 +28,29 @@ const SignUp = () => {
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <UploadImageForm />
           <div className="flex flex-col justify-center">
             <label htmlFor="photo" className="sr-only">
               顯示圖片
             </label>
             <div className="mt-1 flex flex-col items-center">
-              <span className="h-20 w-20 rounded-full overflow-hidden bg-gray-100">
-                <svg
-                  className="h-full w-full text-gray-300"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-              </span>
-              <button
-                type="button"
-                className=" mt-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                選擇顯示圖片
-              </button>
+              {profileUrl ? (
+                <img src={profileUrl} alt="顯示圖片" />
+              ) : (
+                <span className="h-28 w-28 rounded-full overflow-hidden bg-gray-100">
+                  <svg
+                    className="h-full w-full text-gray-300"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
+                </span>
+              )}
+              <UploadImageForm url={profileUrl} setUrl={setProfileUrl}>
+                <div className="bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  選擇顯示圖片
+                </div>
+              </UploadImageForm>
             </div>
           </div>
           <form className="space-y-6" action="#" method="POST">

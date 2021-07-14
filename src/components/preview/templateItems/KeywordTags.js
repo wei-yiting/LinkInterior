@@ -33,7 +33,7 @@ const Tag = styled.li`
   list-style: none;
   border-radius: 6px;
   margin: 0 8px 8px 0;
-  background: ${color.yellow[600]};
+  background: ${color.main[600]};
 `;
 
 const KeywordTags = ({ tags }) => {

@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import Main from '../../styles/layout/GeneralLayout';
-import Logo from '../../utils/logo/Logo';
+import Main from '../styles/layout/GeneralLayout';
+import Logo from '../utils/logo/Logo';
 
 const LogIn = () => {
   return (
@@ -57,9 +58,11 @@ const LogIn = () => {
           </div>
         </form>
         <div className="text-base flex justify-center">
-          <a href="http://google.com" className="font-medium text-main-600 hover:text-main-500">
-            還沒有帳戶？點此註冊
-          </a>
+          <Link to="/signUp">
+            <span className="font-medium text-main-600 hover:text-main-500">
+              還沒有帳戶？點此註冊
+            </span>
+          </Link>
         </div>
       </div>
     </Main>
