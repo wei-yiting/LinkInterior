@@ -1,13 +1,15 @@
 import React from 'react';
 
 const shape1style = {
-  fill: '#6cacbb',
-  opacity: '0.9',
+  fill: '#2f575e',
 };
 
 const shape2style = {
-  fill: '#9ca3af',
-  opacity: '0.75',
+  fill: '#bbbec5',
+};
+
+const shape3style = {
+  fill: '#778489',
 };
 
 const Logo = () => {
@@ -24,6 +26,11 @@ const Logo = () => {
               style={shape2style}
               d="M113.69,61.44l0,94.46L170.2,99.44a16.8,16.8,0,0,0,0-23.76L99.44,4.92a16.8,16.8,0,0,0-23.76,0L19.22,61.38Z"
             />
+            <polygon
+              style={shape3style}
+              points="155.9 113.74 113.72 113.72 113.74 155.9 155.9 113.74"
+            />
+            <polygon style={shape3style} points="61.4 61.4 61.38 19.22 19.22 61.38 61.4 61.4" />
           </g>
         </g>
       </svg>
