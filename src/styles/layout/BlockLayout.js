@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 export const BlockContainer = styled.div`
   display: flex;
-  width: 80%;
+  width: 100%;
   max-width: 1200px;
   height: 250px;
   justify-content: center;
@@ -15,7 +15,7 @@ export const BlockAreaContainer = styled.div`
   padding-top: 30px;
   display: flex;
   flex: 1;
-  width: 100%;
+  width: 80%;
   justify-content: space-around;
   flex-direction: column;
   border-top: 2px solid #eee;

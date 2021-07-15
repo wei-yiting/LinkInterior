@@ -4,48 +4,22 @@ import uuid from 'react-uuid';
 
 import { RemoveTagIcon } from '../../../utils/icons';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
+import { TagsList, Tag } from '../../../styles/sharedStyledComponents/tags';
+import { Header4 } from '../../../styles/sharedStyledComponents/headers';
 import { color } from '../../../styles/theme';
 
-const TagInput = styled.div`
+const TagsField = styled.div`
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
   min-height: 48px;
 
-  input {
-    display: inline;
-    flex: 1;
-    width: 100%;
-    border: none;
-    height: 46px;
-    font-size: 14px;
-    padding: 4px 0 0 0;
-    &:focus {
-      outline: transparent;
-    }
+  &:focus-within {
+    border: 1px solid ${color.main[500]};
+    box-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width))
+      var(--tw-ring-color);
+    --tw-ring-color: ${color.main[500]};
   }
-`;
-
-const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 8px 0 0 0;
-`;
-
-const Tag = styled.li`
-  width: auto;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  padding: 0 8px;
-  font-size: 14px;
-  list-style: none;
-  border-radius: 6px;
-  margin: 0 8px 8px 0;
-  background: ${color.main[600]};
 `;
 
 const TagArea = ({ title, tags, setTags }) => {
@@ -70,7 +44,6 @@ const TagArea = ({ title, tags, setTags }) => {
           type="button"
           onClick={() => {
             removeTag(index);
-            console.log('clicked delete');
           }}
         >
           <RemoveTagIcon />
@@ -81,9 +54,9 @@ const TagArea = ({ title, tags, setTags }) => {
 
   return (
     <SectionWrapper>
-      <h4>{title}</h4>
-      <TagInput className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-500 sm:text-sm">
-        <Tags>{renderedTags}</Tags>
+      <Header4>{title}</Header4>
+      <TagsField className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default sm:text-base">
+        <TagsList>{renderedTags}</TagsList>
         <input
           type="text"
           value={tagInput}
@@ -92,8 +65,10 @@ const TagArea = ({ title, tags, setTags }) => {
           onChange={(e) => {
             setTagInput(e.target.value);
           }}
+          style={{ height: '48px' }}
+          className=" block w-full sm:text-base border-0 border-transparent focus:border-0 focus:ring-0 inline flex-1 align-bottom"
         />
-      </TagInput>
+      </TagsField>
     </SectionWrapper>
   );
 };

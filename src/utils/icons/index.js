@@ -18,8 +18,6 @@ import {
 import { faLine, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { contactIconStyle, introIconStyle, imageIconStyle } from '../../styles/styleObject/icons';
 
-import { color } from '../../styles/theme';
-
 export const LocationIcon = () => {
   return <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth style={introIconStyle} />;
 };
@@ -33,7 +31,7 @@ export const RemoveTagIcon = () => {
     <FontAwesomeIcon
       icon={faTimes}
       fixedWidth
-      style={{ color: color.yellow[100], marginLeft: '0.5rem' }}
+      style={{ color: 'white', marginLeft: '0.5rem', cursor: 'pointer' }}
     />
   );
 };

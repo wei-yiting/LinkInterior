@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 import uuid from 'react-uuid';
 
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
-import { color } from '../../../styles/theme';
+import { TagsList, Tag } from '../../../styles/sharedStyledComponents/tags';
 
 const TagArea = styled.div`
   display: flex;
@@ -12,28 +12,6 @@ const TagArea = styled.div`
   min-height: 48px;
   width: 75%;
   padding: 0 8px;
-`;
-
-const Tags = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 8px 0 0 0;
-`;
-
-const Tag = styled.li`
-  width: auto;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  padding: 0 8px;
-  font-size: 14px;
-  list-style: none;
-  border-radius: 6px;
-  margin: 0 8px 8px 0;
-  background: ${color.main[600]};
 `;
 
 const KeywordTags = ({ tags }) => {
@@ -48,7 +26,7 @@ const KeywordTags = ({ tags }) => {
   return (
     <SectionWrapper>
       <TagArea>
-        <Tags>{renderedTags}</Tags>
+        <TagsList>{renderedTags}</TagsList>
       </TagArea>
     </SectionWrapper>
   );

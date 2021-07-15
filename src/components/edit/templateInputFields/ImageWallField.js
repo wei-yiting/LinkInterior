@@ -7,6 +7,7 @@ import multipleImagesUpload from '../../../utils/firebase/multipleImageUpload';
 import { lightLinearGradients } from '../../../utils/data/linearGradient';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 import { inputField } from '../../../styles/theme';
+import { Header4 } from '../../../styles/sharedStyledComponents/headers';
 
 const numberOfImages = 8;
 
@@ -94,8 +95,8 @@ const ImageWallField = ({ imagesGalleryUrls, setImagesGalleryUrls }) => {
   });
 
   return (
-    <SectionWrapper>
-      <h5>我的相簿</h5>
+    <SectionWrapper width="90%">
+      <Header4>我的相簿</Header4>
       <ImageUploadContainer>
         {uploadedGalleryImages}
         {imagePlaceholders}

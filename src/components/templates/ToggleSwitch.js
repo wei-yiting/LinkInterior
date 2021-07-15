@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
+import { color } from '../../styles/theme';
+
 const Switch = styled.label`
   position: fixed;
   top: 20px;
@@ -17,12 +19,12 @@ const SwitchInput = styled.input`
   height: 0;
 
   :checked + span {
-    background-color: #2196f3;
+    background-color: ${color.main[300]};
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   }
 
   :focus + span {
-    box-shadow: 0 0 1px #2196f3;
+    box-shadow: 0 0 1px ${color.main[300]};
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   }
 
@@ -40,7 +42,7 @@ const Slider = styled.span`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: ${color.gray[300]};
   -webkit-transition: 0.4s;
   transition: 0.4s;
   border-radius: 34px;

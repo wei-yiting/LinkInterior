@@ -3,7 +3,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Link } from 'react-router-dom';
 
 import Breadcrumbs from './Breadcrumbs';
-import TextLogo from '../../styles/sharedStyledComponents/Logo';
+import TextLogo from '../../utils/logo/TextLogo';
 
 const textLogoStyle = {
   position: 'absolute',

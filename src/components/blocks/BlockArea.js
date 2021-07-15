@@ -5,6 +5,7 @@ import BlockA from './BlockA';
 import BlockB from './BlockB';
 import BlockC from './BlockC';
 import { BlockAreaContainer } from '../../styles/layout/BlockLayout';
+import { Header2 } from '../../styles/sharedStyledComponents/headers';
 
 const BlockArea = ({ isEdit, serviceCompanyName }) => {
   const [blockList, setBlockList] = useState([]);
@@ -34,7 +35,7 @@ const BlockArea = ({ isEdit, serviceCompanyName }) => {
 
   return (
     <BlockAreaContainer>
-      <h3>{isEdit ? '更多關於我的介紹' : `更多關於  ${serviceCompanyName}`}</h3>
+      <Header2>{isEdit ? '更多關於我的介紹' : `更多關於  ${serviceCompanyName}`}</Header2>
       {renderedBlocks}
       {isEdit ? (
         <BlockMenu blockList={blockList} setBlockList={setBlockList} isEdit={isEdit} />

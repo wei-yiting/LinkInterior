@@ -29,3 +29,12 @@ export const inputField = {
   border: `1px solid ${color.gray[300]}`,
   borderRadius: '0.375rem',
 };
+
+export const fontSize = {
+  large: {
+    1: '1.5rem',
+    2: '1.375rem',
+    3: '1.25rem',
+    4: '1.125rem',
+  },
+};

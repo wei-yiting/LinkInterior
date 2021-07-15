@@ -3,17 +3,18 @@ import styled from 'styled-components/macro';
 import { color } from '../theme';
 
 export const SectionWrapper = styled.section`
-  margin: ${({ margin }) => margin || '30px auto'};
+  margin: ${({ margin }) => margin || '50px auto 30px'};
   display: flex;
   flex: ${({ flex }) => flex || '1'};
-  width: ${({ width }) => width || '100%'};
+  width: ${({ width }) => width || '80%'};
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
 `;
 
 export const RowWrapper = styled.div`
   display: flex;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   justify-content: space-between;
 `;
 
