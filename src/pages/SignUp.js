@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-// import styled from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
 import UploadImageForm from '../components/shared/UploadImageForm';
 import Main from '../styles/layout/GeneralLayout';
 import Logo from '../utils/logo/Logo';
 
-// const ProfileImage = styled.img`
-//   width: 100%;
-//   height: 100%;
-//   object-fit: cover;
-//   object-position:center;
-// `;
+const ProfileImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+`;
 
 const SignUp = () => {
   const [profileUrl, setProfileUrl] = useState(null);
@@ -34,9 +34,11 @@ const SignUp = () => {
             </label>
             <div className="mt-1 flex flex-col items-center">
               {profileUrl ? (
-                <img src={profileUrl} alt="顯示圖片" />
+                <div className="h-32 w-32 rounded-full overflow-hidden bg-gray-100">
+                  <ProfileImage src={profileUrl} alt="顯示圖片" />
+                </div>
               ) : (
-                <span className="h-28 w-28 rounded-full overflow-hidden bg-gray-100">
+                <span className="h-32 w-32 rounded-full overflow-hidden bg-gray-100">
                   <svg
                     className="h-full w-full text-gray-300"
                     fill="currentColor"
@@ -47,7 +49,7 @@ const SignUp = () => {
                 </span>
               )}
               <UploadImageForm url={profileUrl} setUrl={setProfileUrl}>
-                <div className="bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                <div className="bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50  focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
                   選擇顯示圖片
                 </div>
               </UploadImageForm>

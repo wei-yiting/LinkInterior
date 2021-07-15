@@ -20,7 +20,7 @@ const ProgressBar = ({ image, setImage, url, setUrl }) => {
     }
   }, [url, setImage]);
 
-  return <Bar className="progress-bar" progress={progress} />;
+  return <Bar progress={progress} />;
 };
 
 export default ProgressBar;

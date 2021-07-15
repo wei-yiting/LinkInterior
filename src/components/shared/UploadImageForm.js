@@ -5,7 +5,10 @@ import { color } from '../../styles/theme';
 import ProgressBar from './ProgressBar';
 
 const UploadArea = styled.form`
-  /* margin: 30px auto 10px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 `;
 const FileInput = styled.input`
@@ -17,25 +20,13 @@ const FileInput = styled.input`
 const InputLabel = styled.label`
   display: block;
   width: fit-content;
-  height: 100%;
-  /* background: ${color.main[500]}; */
-
-  /* border: 1px solid ${color.main[500]};
-  border-radius: 50%;
-  margin: 10px auto;
-  /* line-height: 30px; */
-  /* color: ${color.main[500]}; */
-  /* font-weight: bold;
-  font-size: 24px; */ */
-
-  /* :hover {
-    color: white;
-  }*/
+  height: auto;
 `;
 
 const Output = styled.div`
-  /* height: 60px; */
+  margin-top: 1rem;
   font-size: 0.8rem;
+  text-align: center;
 `;
 
 const Error = styled.div`
@@ -61,15 +52,15 @@ const UploadImageForm = ({ children, url, setUrl }) => {
 
   return (
     <UploadArea>
-      <InputLabel>
-        <FileInput type="file" onChange={handleInputChange} />
-        {children}
-      </InputLabel>
       <Output>
         {error && <Error>{error}</Error>}
         {image && <div>{image.name}</div>}
         {image && <ProgressBar image={image} setImage={setImage} url={url} setUrl={setUrl} />}
       </Output>
+      <InputLabel>
+        <FileInput type="file" onChange={handleInputChange} />
+        {children}
+      </InputLabel>
     </UploadArea>
   );
 };
