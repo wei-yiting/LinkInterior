@@ -45,6 +45,7 @@ const UploadImageForm = ({ children, url, setUrl }) => {
     const selectedFile = e.target.files[0];
     if (selectedFile && allowedFileType.includes(selectedFile.type)) {
       setImage(selectedFile);
+      // console.log('did setImage');
       setError('');
     } else {
       setImage(null);

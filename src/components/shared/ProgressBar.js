@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components/macro';
 
 import useStorage from '../../hooks/useStorage';
@@ -11,14 +11,8 @@ const Bar = styled.div`
   margin-top: 20px;
 `;
 
-const ProgressBar = ({ image, setImage, url, setUrl }) => {
-  const { progress } = useStorage(image, setUrl);
-
-  useEffect(() => {
-    if (url) {
-      setImage(null);
-    }
-  }, [url, setImage]);
+const ProgressBar = ({ image, setImage, setUrl }) => {
+  const { progress } = useStorage(image, setUrl, setImage);
 
   return <Bar progress={progress} />;
 };

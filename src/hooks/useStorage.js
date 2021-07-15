@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { storage } from '../utils/firebase';
 
-const useStorage = (file, setUrl) => {
+const useStorage = (file, setUrl, setImage) => {
   const [progress, setProgress] = useState(0);
   const [error, setError] = useState(null);
 
@@ -19,9 +19,11 @@ const useStorage = (file, setUrl) => {
       async () => {
         const fileUrl = await storageRef.getDownloadURL();
         setUrl(fileUrl);
+        setImage(null);
       },
     );
-  }, [file, setUrl]);
+  }, [file, setUrl, setImage]);
+
   return { progress, error };
 };
 

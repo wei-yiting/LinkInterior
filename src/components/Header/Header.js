@@ -91,7 +91,7 @@ const Header = () => {
                   </Menu>
                 ) : (
                   <Link to="/logIn">
-                    <div>登入</div>
+                    <div>業者登入</div>
                   </Link>
                 )}
               </div>
