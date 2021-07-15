@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
+import Loader from '../components/shared/Loader';
 import UploadImageForm from '../components/shared/UploadImageForm';
 import Main from '../styles/layout/GeneralLayout';
 import Logo from '../utils/logo/Logo';
@@ -16,6 +17,7 @@ const ProfileImage = styled.img`
 
 const SignUp = () => {
   const [profileUrl, setProfileUrl] = useState(null);
+  const [profileLoaded, setProfileLoaded] = useState(false);
 
   return (
     <Main className="min-h-screen bg-gray-50 flex flex-col justify-center pt-12 sm:px-6 lg:px-8 pb-20 ">
@@ -34,8 +36,15 @@ const SignUp = () => {
             </label>
             <div className="mt-1 flex flex-col items-center">
               {profileUrl ? (
-                <div className="h-32 w-32 rounded-full overflow-hidden bg-gray-100">
-                  <ProfileImage src={profileUrl} alt="顯示圖片" />
+                <div className="h-32 w-32 rounded-full overflow-hidden bg-gray-100 relative">
+                  {profileLoaded ? null : <Loader />}
+                  <ProfileImage
+                    src={profileUrl}
+                    alt="顯示圖片"
+                    onLoad={() => {
+                      setProfileLoaded(true);
+                    }}
+                  />
                 </div>
               ) : (
                 <span className="h-32 w-32 rounded-full overflow-hidden bg-gray-100">
@@ -50,7 +59,7 @@ const SignUp = () => {
               )}
               <UploadImageForm url={profileUrl} setUrl={setProfileUrl}>
                 <div className="bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50  focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer">
-                  選擇顯示圖片
+                  {profileUrl ? '更新顯示圖片' : '選擇顯示圖片'}
                 </div>
               </UploadImageForm>
             </div>

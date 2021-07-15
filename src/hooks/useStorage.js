@@ -6,7 +6,6 @@ const useStorage = (file, setUrl) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // reference
     const storageRef = storage.ref(file.name);
     storageRef.put(file).on(
       'state_changed',

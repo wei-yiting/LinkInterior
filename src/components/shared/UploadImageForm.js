@@ -10,11 +10,13 @@ const UploadArea = styled.form`
   justify-content: center;
   align-items: center;
   text-align: center;
+  position: relative;
 `;
 const FileInput = styled.input`
   height: 0;
   width: 0;
   opacity: 0;
+  position: absolute;
 `;
 
 const InputLabel = styled.label`
@@ -24,7 +26,7 @@ const InputLabel = styled.label`
 `;
 
 const Output = styled.div`
-  margin-top: 1rem;
+  margin: 1rem 0;
   font-size: 0.8rem;
   text-align: center;
 `;
