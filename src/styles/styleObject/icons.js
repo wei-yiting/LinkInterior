@@ -18,3 +18,8 @@ export const imageIconStyle = {
   color: color.gray[400],
   fontSize: '3rem',
 };
+
+export const toggleSwitchIconStyle = {
+  fontSize: '0.675rem',
+  color: color.main[400],
+};

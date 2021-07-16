@@ -1,83 +1,64 @@
+/* This example requires Tailwind CSS v2.0+ */
 import React from 'react';
 import styled from 'styled-components/macro';
+import { Switch } from '@headlessui/react';
 
-import { color } from '../../styles/theme';
+import { EditIcon, EyeIcon } from '../../utils/icons';
 
-const Switch = styled.label`
+const SwitchContainer = styled.label`
   position: fixed;
-  top: 20px;
-  right: 20px;
-  display: inline-block;
+  top: 100px;
+  right: 10vw;
   width: 60px;
   height: 34px;
   z-index: 10;
+  transform: scale(1.75);
 `;
 
-const SwitchInput = styled.input`
-  opacity: 0;
-  width: 0;
-  height: 0;
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ');
+}
 
-  :checked + span {
-    background-color: ${color.main[300]};
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-  }
-
-  :focus + span {
-    box-shadow: 0 0 1px ${color.main[300]};
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-  }
-
-  :checked + span:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-`;
-
-const Slider = styled.span`
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: ${color.gray[300]};
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  border-radius: 34px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
-
-  :before {
-    position: absolute;
-    content: '';
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-`;
-
-const ToggleSwitch = ({ isEdit, setIsEdit }) => {
+export default function Example({ isEdit, setIsEdit }) {
   return (
-    <div>
-      <Switch htmlFor="toggle">
-        <SwitchInput
-          id="toggle"
-          type="checkbox"
-          checked={!isEdit}
-          onChange={() => setIsEdit(!isEdit)}
-        />
-        <Slider />
+    <SwitchContainer>
+      <Switch
+        checked={!isEdit}
+        onChange={() => {
+          setIsEdit(!isEdit);
+        }}
+        className={classNames(
+          !isEdit ? 'bg-main-300' : 'bg-gray-200',
+          'relative inline-flex flex-shrink-0 h- w-11 border border-main-300 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-main-100 shadow-xl',
+        )}
+      >
+        <span className="sr-only">Use setting</span>
+        <span
+          className={classNames(
+            !isEdit ? 'translate-x-5' : 'translate-x-0',
+            'pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200',
+          )}
+        >
+          <span
+            className={classNames(
+              !isEdit ? 'opacity-0 ease-out duration-100' : 'opacity-100 ease-in duration-200',
+              'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity',
+            )}
+            aria-hidden="true"
+          >
+            <EditIcon />
+          </span>
+          <span
+            className={classNames(
+              !isEdit ? 'opacity-100 ease-in duration-200' : 'opacity-0 ease-out duration-100',
+              'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity',
+            )}
+            aria-hidden="true"
+          >
+            <EyeIcon />
+          </span>
+        </span>
       </Switch>
-      {/* <FontAwesomeIcon icon={faEdit} />
-            <FontAwesomeIcon icon={faEye}/> */}
-    </div>
+    </SwitchContainer>
   );
-};
-
-export default ToggleSwitch;
+}
