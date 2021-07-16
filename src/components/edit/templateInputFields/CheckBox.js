@@ -28,7 +28,7 @@ const CheckBox = ({ labelName, list, listSetter }) => {
           type="checkbox"
           checked={isChecked}
           onChange={handleInputChange}
-          className="focus:ring-gray-500 h-4 w-4 text-gray-600 bg-white border border-gray-200 rounded"
+          className="focus:ring-main-400 h-4 w-4 text-main-500 bg-white border border-gray-200 rounded"
         />
         <div className="ml-2 text-base">
           <label htmlFor={labelName}>{labelName}</label>

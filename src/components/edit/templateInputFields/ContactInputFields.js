@@ -2,7 +2,7 @@ import React from 'react';
 
 import { SectionWrapper, ContactArea } from '../../../styles/layout/TemplateLayout';
 import { ContactInputField, MediaInputField } from './InfoInputField';
-import { Header3 } from '../../../styles/sharedStyledComponents/headers';
+import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 
 import {
   MobileIcon,
@@ -18,7 +18,7 @@ import {
 const ContactInputFields = ({ contactInfo, setContactInfo }) => {
   return (
     <SectionWrapper width="55%" flex="none" margin="30px 0">
-      <Header3>我的聯絡資訊</Header3>
+      <Heading3>我的聯絡資訊</Heading3>
       <ContactArea>
         <ContactInputField
           contactInfo={contactInfo}

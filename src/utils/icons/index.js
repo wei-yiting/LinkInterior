@@ -12,11 +12,17 @@ import {
   faLaptop,
   faImage,
   faTrashAlt,
-  faEdit,
+  faPen,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLine, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { contactIconStyle, introIconStyle, imageIconStyle } from '../../styles/styleObject/icons';
+
+import {
+  contactIconStyle,
+  introIconStyle,
+  imageIconStyle,
+  toggleSwitchIconStyle,
+} from '../../styles/styleObject/icons';
 
 export const LocationIcon = () => {
   return <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth style={introIconStyle} />;
@@ -81,9 +87,9 @@ export const TrashIcon = () => {
 };
 
 export const EditIcon = () => {
-  return <FontAwesomeIcon icon={faEdit} fixedWidth />;
+  return <FontAwesomeIcon icon={faPen} fixedWidth style={toggleSwitchIconStyle} />;
 };
 
 export const EyeIcon = () => {
-  return <FontAwesomeIcon icon={faEye} fixedWidth />;
+  return <FontAwesomeIcon icon={faEye} fixedWidth style={toggleSwitchIconStyle} />;
 };

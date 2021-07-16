@@ -5,7 +5,7 @@ import uuid from 'react-uuid';
 import { RemoveTagIcon } from '../../../utils/icons';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 import { TagsList, Tag } from '../../../styles/sharedStyledComponents/tags';
-import { Header4 } from '../../../styles/sharedStyledComponents/headers';
+import { Heading4 } from '../../../styles/sharedStyledComponents/headings';
 import { color } from '../../../styles/theme';
 
 const TagsField = styled.div`
@@ -54,7 +54,7 @@ const TagArea = ({ title, tags, setTags }) => {
 
   return (
     <SectionWrapper>
-      <Header4>{title}</Header4>
+      <Heading4>{title}</Heading4>
       <TagsField className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default sm:text-base">
         <TagsList>{renderedTags}</TagsList>
         <input

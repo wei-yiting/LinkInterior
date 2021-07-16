@@ -12,7 +12,7 @@ import {
   islands,
 } from '../../../utils/data/city';
 import { inputField } from '../../../styles/theme';
-import { Header3 } from '../../../styles/sharedStyledComponents/headers';
+import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 
 const AllCheckBoxesArea = styled.div`
   width: fit-content;
@@ -81,7 +81,7 @@ const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCiti
 
   return (
     <SectionWrapper width="40%" flex="none" margin="30px 0">
-      <Header3>我的服務地區</Header3>
+      <Heading3>我的服務地區</Heading3>
       <AllCheckBoxesArea className="shadow-sm">
         {northrenCityCheckboxes}
         {centralCityCheckboxes}

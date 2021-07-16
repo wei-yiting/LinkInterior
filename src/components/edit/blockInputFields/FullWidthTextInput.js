@@ -38,7 +38,7 @@ const FullWidthTextInput = ({ blockList, setBlockList, blockIdx }) => {
         value={inputText}
         onChange={handleTextareaChange}
         placeholder="請填入文字說明"
-        className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-gray-300 focus:border-gray-500 sm:text-sm"
+        className="bg-white relative w-full border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-main-500 focus:border-main-500 sm:text-base"
       />
     </TextAreaWrapper>
   );

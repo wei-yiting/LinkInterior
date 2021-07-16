@@ -20,7 +20,7 @@ const logInStatus = false;
 
 const Header = () => {
   return (
-    <Disclosure as="nav" className="bg-white shadow relative">
+    <Disclosure as="nav" className="bg-white shadow fixed w-full z-10">
       {() => (
         <>
           <TextLogo style={textLogoStyle}>LinkInterior</TextLogo>
@@ -29,7 +29,6 @@ const Header = () => {
               <Breadcrumbs />
 
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
-                {/* Profile dropdown */}
                 {logInStatus ? (
                   <Menu as="div" className="ml-3 relative">
                     {({ opened }) => (

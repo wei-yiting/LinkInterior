@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import { SectionWrapper, ContactArea } from '../../../styles/layout/TemplateLayout';
-import { Header3 } from '../../../styles/sharedStyledComponents/headers';
+import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 import {
   MobileIcon,
   PhoneIcon,
@@ -28,7 +28,7 @@ const addHttp = (url) => {
 const ContactInfoArea = ({ contactInfo }) => {
   return (
     <SectionWrapper width="55%" flex="none" margin="30px 0">
-      <Header3>業者聯絡資訊</Header3>
+      <Heading3>業者聯絡資訊</Heading3>
       <ContactArea>
         {contactInfo.website || contactInfo.fb || contactInfo.ig ? (
           <SocailMediaContainer>

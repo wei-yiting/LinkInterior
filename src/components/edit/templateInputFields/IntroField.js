@@ -2,12 +2,12 @@ import React from 'react';
 
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 import TextArea from './TextArea';
-import { Header1 } from '../../../styles/sharedStyledComponents/headers';
+import { Heading1 } from '../../../styles/sharedStyledComponents/headings';
 
 const IntroField = ({ title, intro, setIntro }) => {
   return (
     <SectionWrapper>
-      <Header1>{title}</Header1>
+      <Heading1>{title}</Heading1>
       <TextArea value={intro} setValue={setIntro} height="24rem" />
     </SectionWrapper>
   );
