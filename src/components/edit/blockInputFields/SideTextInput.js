@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 
 const TextAreaWrapper = styled.div`
-  width: 40%;
+  width: 45%;
   height: 100%;
+  margin: auto;
 `;
 
 const textareaStyle = {

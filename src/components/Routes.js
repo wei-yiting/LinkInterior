@@ -7,6 +7,7 @@ import LogIn from '../pages/LogIn';
 import SignUp from '../pages/SignUp';
 import ServiceIntroCompile from '../pages/ServiceIntroCompile';
 import Header from './Header/Header';
+import Main from '../styles/layout/GeneralLayout';
 
 const Routes = () => {
   return (
@@ -15,10 +16,12 @@ const Routes = () => {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/" exact component={ServicesOverview} />
-          <Route path="/logIn" exact component={LogIn} />
-          <Route path="/signUp" exact component={SignUp} />
-          <Route path="/introCompile" exact component={ServiceIntroCompile} />
+          <Main>
+            <Route path="/" exact component={ServicesOverview} />
+            <Route path="/logIn" exact component={LogIn} />
+            <Route path="/signUp" exact component={SignUp} />
+            <Route path="/introCompile" exact component={ServiceIntroCompile} />
+          </Main>
         </Switch>
       </BrowserRouter>
     </>

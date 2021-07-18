@@ -5,12 +5,12 @@ export const BlockContainer = styled.div`
   width: 100%;
   max-width: 1200px;
   height: 250px;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 50px;
+  margin: 30px auto 50px;
 `;
 
-export const BlockAreaContainer = styled.div`
+export const BlocksAreaContainer = styled.div`
   margin: 20px auto;
   padding-top: 30px;
   display: flex;
@@ -19,4 +19,5 @@ export const BlockAreaContainer = styled.div`
   justify-content: space-around;
   flex-direction: column;
   border-top: 2px solid #eee;
+  margin: 0 auto;
 `;

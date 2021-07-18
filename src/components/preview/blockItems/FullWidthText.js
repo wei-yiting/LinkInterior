@@ -4,6 +4,7 @@ import styled from 'styled-components/macro';
 const Paragraph = styled.p`
   white-space: pre-wrap;
   text-align: center;
+  line-height: 1.5em;
 `;
 
 const FullWidthText = ({ blockContent }) => {

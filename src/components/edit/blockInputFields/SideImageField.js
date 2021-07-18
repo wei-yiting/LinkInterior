@@ -6,8 +6,9 @@ import ImagePlaceholder from '../templateInputFields/ImagePlaceholder';
 
 const ImageArea = styled.div`
   position: relative;
-  width: 40%;
+  width: 45%;
   height: 100%;
+  margin: auto;
 `;
 
 const UploadedImageContainer = styled.div`

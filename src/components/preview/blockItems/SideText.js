@@ -5,13 +5,14 @@ const TextWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40%;
+  width: 45%;
   height: 100%;
 `;
 
 const Text = styled.p`
   white-space: pre-wrap;
   text-align: center;
+  line-height: 1.5em;
 `;
 
 const SideText = ({ text }) => {

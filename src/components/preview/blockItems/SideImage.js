@@ -5,7 +5,7 @@ import ImagePlaceholder from '../../edit/templateInputFields/ImagePlaceholder';
 
 const ImageArea = styled.div`
   position: relative;
-  width: 40%;
+  width: 45%;
   height: 100%;
 `;
 

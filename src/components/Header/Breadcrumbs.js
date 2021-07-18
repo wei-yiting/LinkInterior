@@ -16,7 +16,7 @@ const Breadcrumbs = () => {
         <li>
           <div>
             <Link to="/">
-              <div className="flex-shrink-0 h-5 w-5" aria-hidden="true">
+              <div className="flex-shrink-0 h-6 w-6" aria-hidden="true">
                 <Logo />
               </div>
               <span className="sr-only">Home</span>
@@ -33,7 +33,7 @@ const Breadcrumbs = () => {
                 />
                 <Link
                   to={page.to}
-                  className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                  className="ml-4 text-base font-medium text-gray-500 hover:text-gray-700"
                   aria-current={page.current ? 'page' : undefined}
                 >
                   {page.name}
