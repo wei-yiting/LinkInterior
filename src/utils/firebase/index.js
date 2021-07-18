@@ -2,14 +2,14 @@ import firebase from 'firebase/app';
 import 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAlHD8N6ru23sdoj80lAJ6iZ2G09oPVknA',
-  authDomain: 'linkinterior-450c8.firebaseapp.com',
-  databaseURL: 'gs://linkinterior-450c8.appspot.com',
-  projectId: 'linkinterior-450c8',
-  storageBucket: 'linkinterior-450c8.appspot.com',
-  messagingSenderId: '134359721744',
-  appId: '1:134359721744:web:24ff89fac01ea3e3e26795',
-  measurementId: 'G-DCDN8VC2FJ',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
 firebase.initializeApp(firebaseConfig);
