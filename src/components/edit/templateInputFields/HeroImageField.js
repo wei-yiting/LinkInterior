@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 
 import singleImageUpload from '../../../utils/firebase/storage/singleImageUpload';
-import { randomLinearGradient } from '../../../utils/data/linearGradient';
+import { randomLinearGradient } from '../../../utils/constants/linearGradient';
 import { HeroImageContainer } from '../../../styles/layout/TemplateLayout';
 
 const CompanyName = styled.span`
@@ -20,7 +20,7 @@ const ButtonWrapper = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const HeroImageField = ({ serviceCompanyName, heroImageUrl, setHeroImageUrl }) => {
+export default function HeroImageField({ serviceCompanyName, heroImageUrl, setHeroImageUrl }) {
   const [selectedHeroImage, setSelectedHeroImage] = useState(null);
   const [imageContainerStyle, setimageContainerStyle] = useState({});
 
@@ -58,6 +58,4 @@ const HeroImageField = ({ serviceCompanyName, heroImageUrl, setHeroImageUrl }) =
       </HeroImageContainer>
     </div>
   );
-};
-
-export default HeroImageField;
+}

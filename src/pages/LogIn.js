@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { useAuth } from '../contexts/AuthContext';
 import Main from '../styles/layout/GeneralLayout';
@@ -12,7 +12,7 @@ const LogIn = () => {
   const { logIn } = useAuth();
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  // const history = useHistory();
+  const history = useHistory();
 
   const handleFormSumbit = async (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const LogIn = () => {
       setLoading(true);
       const logInInfo = await logIn(emailRef.current.value, passwordRef.current.value);
       console.log(logInInfo.uid);
-      // history.push('/');
+      history.push('/');
     } catch {
       setError('Failed to log in');
     }

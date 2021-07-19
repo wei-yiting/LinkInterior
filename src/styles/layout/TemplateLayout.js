@@ -8,6 +8,7 @@ export const SectionWrapper = styled.section`
   flex: ${({ flex }) => flex || '1'};
   width: ${({ width }) => width || '80%'};
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
+  align-items: ${({ alignItems }) => alignItems || 'flex-start'};
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
 `;
 
@@ -20,8 +21,8 @@ export const RowWrapper = styled.div`
 
 export const HeroImageContainer = styled.div`
   position: relative;
-  width: 100%;
-  height: 350px;
+  width: ${({ width }) => width || '100%'};
+  height: ${({ height }) => height || '350px'};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,13 +30,19 @@ export const HeroImageContainer = styled.div`
 
 export const DropdownContainer = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: ${({ justifyContent }) => justifyContent || 'center'};
+  align-items: ${({ alignItems }) => alignItems || 'center'};
   width: 100%;
   flex: 1;
+  margin: ${({ margin }) => margin || '0'};
 `;
 
 export const ContactArea = styled.div`
   background-color: ${color.gray[100]};
   padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
+  flex: 1;
+  justify-content: space-around;
 `;

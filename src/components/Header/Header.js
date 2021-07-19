@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { useAuth } from '../../contexts/AuthContext';
 import Breadcrumbs from './Breadcrumbs';
@@ -17,15 +17,15 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
 }
 
-// const logInStatus = false;
-
 const Header = () => {
   const { currentUser, logOut } = useAuth();
   const [error, setError] = useState('');
+  const history = useHistory();
 
   const handleLogout = async () => {
     try {
       await logOut();
+      history.push('/');
     } catch {
       setError('failed to log out');
     }

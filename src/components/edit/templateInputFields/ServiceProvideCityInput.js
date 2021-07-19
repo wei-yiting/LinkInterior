@@ -10,7 +10,7 @@ import {
   southernCities,
   easternCities,
   islands,
-} from '../../../utils/data/city';
+} from '../../../utils/constants/city';
 import { inputField } from '../../../styles/theme';
 import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 
@@ -43,7 +43,13 @@ const renderedRegionCheckBoxes = (regionName, regionCities, list, listSetter) =>
   );
 };
 
-const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCities }) => {
+const ServiceProvideCityInput = ({
+  selectedServiceCities,
+  setSelectedServiceCities,
+  width,
+  flex,
+  margin,
+}) => {
   const northrenCityCheckboxes = renderedRegionCheckBoxes(
     '北部',
     northernCities,
@@ -80,7 +86,7 @@ const ServiceProvideCityInput = ({ selectedServiceCities, setSelectedServiceCiti
   );
 
   return (
-    <SectionWrapper width="40%" flex="none" margin="30px 0">
+    <SectionWrapper width={width} flex={flex} margin={margin}>
       <Heading3>我的服務地區</Heading3>
       <AllCheckBoxesArea className="shadow-sm">
         {northrenCityCheckboxes}

@@ -9,6 +9,7 @@ import ServiceIntroCompile from './pages/ServiceIntroCompile';
 import Header from './components/Header/Header';
 import Main from './styles/layout/GeneralLayout';
 import AuthContextProvider from './contexts/AuthContext';
+import PrivateRoute from './components/PrivateRoutes';
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
               <Route path="/" exact component={ServicesOverview} />
               <Route path="/logIn" exact component={LogIn} />
               <Route path="/signUp" exact component={SignUp} />
-              <Route path="/introCompile" exact component={ServiceIntroCompile} />
+              <PrivateRoute path="/introCompile" exact component={ServiceIntroCompile} />
             </Main>
           </Switch>
         </AuthContextProvider>

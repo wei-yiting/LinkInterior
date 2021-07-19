@@ -5,6 +5,7 @@ const Paragraph = styled.p`
   white-space: pre-wrap;
   text-align: center;
   line-height: 1.5em;
+  margin: 50px auto;
 `;
 
 const FullWidthText = ({ blockContent }) => {

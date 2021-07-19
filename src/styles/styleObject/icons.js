@@ -23,3 +23,10 @@ export const toggleSwitchIconStyle = {
   fontSize: '0.675rem',
   color: color.main[400],
 };
+
+export const largeMediaIconStyle = {
+  color: color.gray[500],
+  width: '2rem',
+  height: '2rem',
+  marginRight: '1rem',
+};

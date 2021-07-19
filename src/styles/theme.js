@@ -32,6 +32,7 @@ export const inputField = {
 
 export const fontSize = {
   large: {
+    0: '2.5rem',
     1: '1.5rem',
     2: '1.375rem',
     3: '1.25rem',

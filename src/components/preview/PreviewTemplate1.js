@@ -9,7 +9,7 @@ import ServiceProvideCity from './templateItems/ServiceProvideCity';
 import ImagesWall from './templateItems/ImagesWall';
 import { RowWrapper } from '../../styles/layout/TemplateLayout';
 
-const Preview1A = ({
+const Preview1 = ({
   serviceCompanyName,
   intro,
   city,
@@ -28,11 +28,15 @@ const Preview1A = ({
       <KeywordTags tags={introTags} />
       <ImagesWall imagesGalleryUrls={imagesGalleryUrls} />
       <RowWrapper flexDirection="row">
-        <ContactInfoArea contactInfo={contactInfo} />
-        <ServiceProvideCity selectedServiceCities={selectedServiceCities} />
+        <ContactInfoArea contactInfo={contactInfo} width="55%" margin="30px 0" />
+        <ServiceProvideCity
+          selectedServiceCities={selectedServiceCities}
+          width="40%"
+          margin="30px 0"
+        />
       </RowWrapper>
     </>
   );
 };
 
-export default Preview1A;
+export default Preview1;

@@ -1,8 +1,8 @@
 import React from 'react';
-import EditTemplate1A from '../edit/EditTemplate1A';
-import PreviewTemplate1A from '../preview/PreviewTemplate1A';
+import EditTemplate2 from '../edit/EditTemplate2';
+import PreviewTemplate2 from '../preview/PreviewTemplate2';
 
-const Template1A = ({
+const Template2 = ({
   serviceCompanyName,
   intro,
   setIntro,
@@ -25,9 +25,9 @@ const Template1A = ({
   setImagesGalleryUrls,
 }) => {
   return (
-    <div>
+    <div style={{ marginTop: '80px' }}>
       {isEdit ? (
-        <EditTemplate1A
+        <EditTemplate2
           serviceCompanyName={serviceCompanyName}
           intro={intro}
           setIntro={setIntro}
@@ -49,7 +49,7 @@ const Template1A = ({
           setImagesGalleryUrls={setImagesGalleryUrls}
         />
       ) : (
-        <PreviewTemplate1A
+        <PreviewTemplate2
           serviceCompanyName={serviceCompanyName}
           intro={intro}
           city={city}
@@ -65,4 +65,4 @@ const Template1A = ({
   );
 };
 
-export default Template1A;
+export default Template2;

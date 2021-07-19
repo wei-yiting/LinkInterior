@@ -17,15 +17,15 @@ const ImageUploadContainer = styled.div`
 
 const ImageContainer = styled.div`
   width: calc(25% - 1rem);
-  height: 15vw;
-  margin: 0 0.25rem;
+  height: 175px;
+  margin: 0.5rem;
   background-size: cover;
   background-position: center;
 `;
 
 const ImagesWall = ({ imagesGalleryUrls }) => {
   return (
-    <SectionWrapper>
+    <SectionWrapper width="90%">
       <ImageUploadContainer>
         {imagesGalleryUrls.map((imageUrl) => (
           <ImageContainer key={uuid()} style={{ backgroundImage: `url("${imageUrl}")` }} />

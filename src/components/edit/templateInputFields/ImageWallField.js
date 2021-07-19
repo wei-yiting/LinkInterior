@@ -4,7 +4,7 @@ import styled from 'styled-components/macro';
 
 import ImagePlaceholder from './ImagePlaceholder';
 import multipleImagesUpload from '../../../utils/firebase/storage/multipleImageUpload';
-import { lightLinearGradients } from '../../../utils/data/linearGradient';
+import { lightLinearGradients } from '../../../utils/constants/linearGradient';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 import { inputField } from '../../../styles/theme';
 import { Heading4 } from '../../../styles/sharedStyledComponents/headings';

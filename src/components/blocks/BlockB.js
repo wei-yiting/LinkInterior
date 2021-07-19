@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import EditBlockB from '../edit/EditBlockB';
 import PreviewBlockB from '../preview/PreviewBlockB';
-import { lightLinearGradients } from '../../utils/data/linearGradient';
+import { lightLinearGradients } from '../../utils/constants/linearGradient';
 
 const BlockB = ({ isEdit, blockList, setBlockList, blockIdx, blockContent }) => {
   const [randomBgIdx, setRandomBgIdx] = useState(0);

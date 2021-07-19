@@ -4,6 +4,11 @@ import { fontSize, color } from '../theme';
 
 export const Title = styled.h1`
   font-size: ${({ size }) => size || '3rem'};
+  color: ${color.gray[600]};
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  line-height: 1.5em;
+  margin: 0.5em 0;
 `;
 
 export const Heading1 = styled.h2`

@@ -22,6 +22,7 @@ import {
   introIconStyle,
   imageIconStyle,
   toggleSwitchIconStyle,
+  largeMediaIconStyle,
 } from '../../styles/styleObject/icons';
 
 export const LocationIcon = () => {
@@ -92,4 +93,16 @@ export const EditIcon = () => {
 
 export const EyeIcon = () => {
   return <FontAwesomeIcon icon={faEye} fixedWidth style={toggleSwitchIconStyle} />;
+};
+
+export const LargeWebsiteIcon = () => {
+  return <FontAwesomeIcon icon={faLaptop} fixedWidth style={largeMediaIconStyle} />;
+};
+
+export const LargeFacebookIcon = () => {
+  return <FontAwesomeIcon icon={faFacebookSquare} fixedWidth style={largeMediaIconStyle} />;
+};
+
+export const LargeInstagramIcon = () => {
+  return <FontAwesomeIcon icon={faInstagram} fixedWidth style={largeMediaIconStyle} />;
 };

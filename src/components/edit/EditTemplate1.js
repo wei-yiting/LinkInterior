@@ -9,7 +9,7 @@ import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInp
 import ImageWallField from './templateInputFields/ImageWallField';
 import { RowWrapper } from '../../styles/layout/TemplateLayout';
 
-const EditTemplate1A = ({
+const EditTemplate1 = ({
   serviceCompanyName,
   intro,
   setIntro,
@@ -41,6 +41,7 @@ const EditTemplate1A = ({
         profession={profession}
         setProfession={setProfession}
         flexDirection="row"
+        dropdownWidth="50%"
       />
       <IntroField title="我的介紹" intro={intro} setIntro={setIntro} />
       <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
@@ -49,8 +50,16 @@ const EditTemplate1A = ({
         setImagesGalleryUrls={setImagesGalleryUrls}
       />
       <RowWrapper>
-        <ContactInputFields contactInfo={contactInfo} setContactInfo={setContactInfo} />
+        <ContactInputFields
+          contactInfo={contactInfo}
+          setContactInfo={setContactInfo}
+          width="55%"
+          margin="30px 0"
+        />
         <ServiceProvideCityInput
+          width="40%"
+          flex="none"
+          margin="30px 0"
           selectedServiceCities={selectedServiceCities}
           setSelectedServiceCities={setSelectedServiceCities}
         />
@@ -59,4 +68,4 @@ const EditTemplate1A = ({
   );
 };
 
-export default EditTemplate1A;
+export default EditTemplate1;
