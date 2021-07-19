@@ -1,4 +1,4 @@
-import { storage } from './index';
+import { storage } from '../index';
 
 const multipleImagesUpload = (images, urlsSetter) => {
   const promises = [];

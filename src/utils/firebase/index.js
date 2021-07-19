@@ -1,5 +1,7 @@
 import firebase from 'firebase/app';
+import 'firebase/firestore';
 import 'firebase/storage';
+import 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -13,7 +15,12 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
-const storage = firebase.storage();
+export const storage = firebase.storage();
+export const auth = firebase.auth();
+export const firebaseTimeStamp = firebase.firestore.FieldValue.serverTimestamp;
 
-export { storage, firebase };
+export const usersCollection = db.collection('users');
+
+export default firebase;

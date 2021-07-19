@@ -1,11 +1,32 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useAuth } from '../contexts/AuthContext';
 import Main from '../styles/layout/GeneralLayout';
 import Logo from '../utils/logo/Logo';
 
 const LogIn = () => {
+  const emailRef = useRef();
+  const passwordRef = useRef();
+  const { logIn } = useAuth();
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  // const history = useHistory();
+
+  const handleFormSumbit = async (e) => {
+    e.preventDefault();
+    try {
+      setError('');
+      setLoading(true);
+      const logInInfo = await logIn(emailRef.current.value, passwordRef.current.value);
+      console.log(logInInfo.uid);
+      // history.push('/');
+    } catch {
+      setError('Failed to log in');
+    }
+  };
+
   return (
     <Main className="flex flex-col items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 flex flex-col justify-center items-center">
@@ -17,13 +38,14 @@ const LogIn = () => {
         </h2>
       </div>
       <div className="max-w-md w-full space-y-8">
-        <form className="mt-8 space-y-6" action="#" method="POST">
+        <form className="mt-8 space-y-6" onSubmit={handleFormSumbit}>
           <div className="rounded-md shadow-sm -space-y-px">
             <div>
               <label className="sr-only" htmlFor="email-address">
                 電子信箱
               </label>
               <input
+                ref={emailRef}
                 id="email-address"
                 name="email"
                 type="email"
@@ -38,6 +60,7 @@ const LogIn = () => {
                 密碼
               </label>
               <input
+                ref={passwordRef}
                 id="password"
                 name="password"
                 type="password"
@@ -48,8 +71,11 @@ const LogIn = () => {
               />
             </div>
           </div>
+          {error && <div>{error}</div>}
+
           <div>
             <button
+              disabled={loading}
               type="submit"
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-base font-medium rounded-md text-white bg-main-600 hover:bg-main-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-500 tracking-widest font-semi-bold"
             >

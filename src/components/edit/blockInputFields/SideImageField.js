@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 
-import blockImageUpload from '../../../utils/firebase/blockImageUpload';
+import blockImageUpload from '../../../utils/firebase/storage/blockImageUpload';
 import ImagePlaceholder from '../templateInputFields/ImagePlaceholder';
 
 const ImageArea = styled.div`

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 
-import singleImageUpload from '../../../utils/firebase/singleImageUpload';
+import singleImageUpload from '../../../utils/firebase/storage/singleImageUpload';
 import { randomLinearGradient } from '../../../utils/data/linearGradient';
 import { HeroImageContainer } from '../../../styles/layout/TemplateLayout';
 

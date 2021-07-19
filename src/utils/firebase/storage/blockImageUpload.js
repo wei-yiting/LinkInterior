@@ -1,4 +1,4 @@
-import { storage } from './index';
+import { storage } from '../index';
 
 const imageUpload = (file, list, listSetter, idx) => {
   const uploadTask = storage.ref(`images/${file.name}`).put(file);

@@ -11,7 +11,7 @@ const MainContainer = styled.main`
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 70px 0 100px;
+  padding: 20px 0 100px;
   display: flex;
   flex-direction: column;
 `;

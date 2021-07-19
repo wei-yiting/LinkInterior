@@ -3,7 +3,7 @@ import uuid from 'react-uuid';
 import styled from 'styled-components/macro';
 
 import ImagePlaceholder from './ImagePlaceholder';
-import multipleImagesUpload from '../../../utils/firebase/multipleImageUpload';
+import multipleImagesUpload from '../../../utils/firebase/storage/multipleImageUpload';
 import { lightLinearGradients } from '../../../utils/data/linearGradient';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 import { inputField } from '../../../styles/theme';
