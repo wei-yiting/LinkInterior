@@ -1,8 +1,6 @@
 import React from 'react';
 import FullWidthText from './blockItems/FullWidthText';
 
-const PreviewBlockA = ({ blockContent }) => {
+export default function PreviewBlockA({ blockContent }) {
   return <FullWidthText blockContent={blockContent} />;
-};
-
-export default PreviewBlockA;
+}

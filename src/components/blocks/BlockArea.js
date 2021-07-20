@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+
+import { IntroCompileContext } from '../../contexts/IntroCompileContext';
+import { useAuth } from '../../contexts/AuthContext';
 
 import BlockMenu from './BlockMenu';
 import BlockA from './BlockA';
@@ -7,8 +10,9 @@ import BlockC from './BlockC';
 import { BlocksAreaContainer } from '../../styles/layout/BlockLayout';
 import { Heading2 } from '../../styles/sharedStyledComponents/headings';
 
-const BlockArea = ({ isEdit, serviceCompanyName }) => {
-  const [blockList, setBlockList] = useState([]);
+export default function BlockArea() {
+  const { isEditMode, blockList } = useContext(IntroCompileContext);
+  const { currentUser } = useAuth();
 
   const renderedBlocks = blockList.map((blockContent, index) => {
     let Block;
@@ -21,27 +25,14 @@ const BlockArea = ({ isEdit, serviceCompanyName }) => {
     } else {
       return null;
     }
-    return (
-      <Block
-        isEdit={isEdit}
-        key={blockContent.id}
-        blockList={blockList}
-        setBlockList={setBlockList}
-        blockIdx={index}
-        blockContent={blockContent}
-      />
-    );
+    return <Block key={blockContent.id} blockIdx={index} blockContent={blockContent} />;
   });
 
   return (
     <BlocksAreaContainer>
-      <Heading2>{isEdit ? '更多關於我的介紹' : `更多關於  ${serviceCompanyName}`}</Heading2>
+      <Heading2>{isEditMode ? '更多關於我的介紹' : `更多關於  ${currentUser.username}`}</Heading2>
       {renderedBlocks}
-      {isEdit ? (
-        <BlockMenu blockList={blockList} setBlockList={setBlockList} isEdit={isEdit} />
-      ) : null}
+      {isEditMode ? <BlockMenu /> : null}
     </BlocksAreaContainer>
   );
-};
-
-export default BlockArea;
+}

@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
+import IntroCompileContextProvider from './contexts/IntroCompileContext';
+
 import GlobalStyles from './styles/GlobalStyle';
 import ServicesOverview from './pages/ServicesOverview';
 import LogIn from './pages/LogIn';
@@ -23,7 +25,9 @@ const App = () => {
               <Route path="/" exact component={ServicesOverview} />
               <Route path="/logIn" exact component={LogIn} />
               <Route path="/signUp" exact component={SignUp} />
-              <PrivateRoute path="/introCompile" exact component={ServiceIntroCompile} />
+              <IntroCompileContextProvider>
+                <PrivateRoute path="/introCompile" exact component={ServiceIntroCompile} />
+              </IntroCompileContextProvider>
             </Main>
           </Switch>
         </AuthContextProvider>

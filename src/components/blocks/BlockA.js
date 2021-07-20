@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { IntroCompileContext } from '../../contexts/IntroCompileContext';
+
 import EditBlockA from '../edit/EditBlockA';
 import PreviewBlockA from '../preview/PreviewBlockA';
 
-const BlockA = ({ isEdit, blockList, setBlockList, blockIdx, blockContent }) => {
-  return isEdit ? (
-    <EditBlockA blockList={blockList} setBlockList={setBlockList} blockIdx={blockIdx} />
+export default function BlockA({ blockIdx, blockContent }) {
+  const { isEditMode } = useContext(IntroCompileContext);
+
+  return isEditMode ? (
+    <EditBlockA blockIdx={blockIdx} />
   ) : (
     <PreviewBlockA blockContent={blockContent} />
   );
-};
-
-export default BlockA;
+}

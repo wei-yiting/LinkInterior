@@ -1,30 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 
 import { BlockContainer } from '../../styles/layout/BlockLayout';
 import SideTextInput from './blockInputFields/SideTextInput';
 import SideImageField from './blockInputFields/SideImageField';
-
 import { TrashIcon } from '../../utils/icons';
 
-const EditBlockB = ({ blockList, setBlockList, blockIdx, randomBgIdx }) => {
+export default function EditBlockB({ blockIdx, randomBgIdx }) {
+  const { blockList, setBlockList } = useContext(IntroCompileContext);
+
   const deleteBlock = () => {
     setBlockList(blockList.filter((_, index) => index !== blockIdx));
   };
 
   return (
     <BlockContainer>
-      <SideTextInput blockList={blockList} setBlockList={setBlockList} blockIdx={blockIdx} />
-      <SideImageField
-        blockList={blockList}
-        setBlockList={setBlockList}
-        blockIdx={blockIdx}
-        randomBgIdx={randomBgIdx}
-      />
+      <SideTextInput blockIdx={blockIdx} />
+      <SideImageField blockIdx={blockIdx} randomBgIdx={randomBgIdx} />
       <button type="button" onClick={deleteBlock}>
         <TrashIcon />
       </button>
     </BlockContainer>
   );
-};
-
-export default EditBlockB;
+}

@@ -8,7 +8,7 @@ export const useAuth = () => {
   return useContext(AuthContext);
 };
 
-const AuthContextProvider = ({ children }) => {
+export default function AuthContextProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -65,6 +65,4 @@ const AuthContextProvider = ({ children }) => {
   };
 
   return <AuthContext.Provider value={valueProvided}>{!loading && children}</AuthContext.Provider>;
-};
-
-export default AuthContextProvider;
+}

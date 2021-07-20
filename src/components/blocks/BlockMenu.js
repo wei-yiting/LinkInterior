@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import uuid from 'react-uuid';
 
+import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 import { AddIcon } from '../../utils/icons';
 
-const BlockMenu = ({ blockList, setBlockList }) => {
+export default function BlockMenu() {
+  const { blockList, setBlockList } = useContext(IntroCompileContext);
+
   const addBlock = (type) => {
     setBlockList([
       ...blockList,
@@ -47,6 +50,4 @@ const BlockMenu = ({ blockList, setBlockList }) => {
       </button>
     </div>
   );
-};
-
-export default BlockMenu;
+}

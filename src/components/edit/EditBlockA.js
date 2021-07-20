@@ -1,22 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 
 import { BlockContainer } from '../../styles/layout/BlockLayout';
 import FullWidthTextInput from './blockInputFields/FullWidthTextInput';
 import { TrashIcon } from '../../utils/icons';
 
-const EditBlockA = ({ blockList, setBlockList, blockIdx }) => {
+export default function EditBlockA({ blockIdx }) {
+  const { blockList, setBlockList } = useContext(IntroCompileContext);
+
   const deleteBlock = () => {
     setBlockList(blockList.filter((_, index) => index !== blockIdx));
   };
 
   return (
     <BlockContainer>
-      <FullWidthTextInput blockList={blockList} setBlockList={setBlockList} blockIdx={blockIdx} />
+      <FullWidthTextInput blockIdx={blockIdx} />
       <button type="button" onClick={deleteBlock}>
         <TrashIcon />
       </button>
     </BlockContainer>
   );
-};
-
-export default EditBlockA;
+}

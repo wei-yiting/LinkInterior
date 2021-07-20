@@ -17,7 +17,7 @@ const UploadedImageContainer = styled.div`
   background-image: url('${(props) => props.url}');
 `;
 
-const SideImage = ({ imageUrl, randomBgIdx }) => {
+export default function SideImage({ imageUrl, randomBgIdx }) {
   return (
     <ImageArea>
       {imageUrl ? (
@@ -27,6 +27,4 @@ const SideImage = ({ imageUrl, randomBgIdx }) => {
       )}
     </ImageArea>
   );
-};
-
-export default SideImage;
+}

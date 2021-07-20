@@ -8,8 +8,6 @@ const Paragraph = styled.p`
   margin: 50px auto;
 `;
 
-const FullWidthText = ({ blockContent }) => {
+export default function FullWidthText({ blockContent }) {
   return <Paragraph>{blockContent.text}</Paragraph>;
-};
-
-export default FullWidthText;
+}

@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components/macro';
+
+import { IntroCompileContext } from '../contexts/IntroCompileContext';
 
 import ToggleSwitch from '../components/templates/ToggleSwitch';
 import TemplateArea from '../components/templates/TemplateArea';
 import BlockArea from '../components/blocks/BlockArea';
-import { useAuth } from '../contexts/AuthContext';
 
 const MainContainer = styled.main`
   width: 90%;
@@ -15,20 +16,16 @@ const MainContainer = styled.main`
   flex-direction: column;
 `;
 
-const ServiceIntrCompile = () => {
-  const [isEdit, setIsEdit] = useState(true);
-  const { currentUser } = useAuth();
-  const serviceCompanyName = currentUser.username;
+export default function ServiceIntrCompile() {
+  const { isEditMode } = useContext(IntroCompileContext);
 
   return (
-    <div className={isEdit ? 'bg-gray-50' : ''}>
+    <div className={isEditMode ? 'bg-gray-50' : ''}>
       <MainContainer>
-        <ToggleSwitch isEdit={isEdit} setIsEdit={setIsEdit} />
-        <TemplateArea isEdit={isEdit} serviceCompanyName={serviceCompanyName} />
-        <BlockArea isEdit={isEdit} serviceCompanyName={serviceCompanyName} />
+        <ToggleSwitch />
+        <TemplateArea />
+        <BlockArea />
       </MainContainer>
     </div>
   );
-};
-
-export default ServiceIntrCompile;
+}

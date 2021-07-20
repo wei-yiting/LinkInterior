@@ -4,13 +4,11 @@ import { BlockContainer } from '../../styles/layout/BlockLayout';
 import SideText from './blockItems/SideText';
 import SideImage from './blockItems/SideImage';
 
-const PreviewBlockC = ({ blockContent, randomBgIdx }) => {
+export default function PreviewBlockC({ blockContent, randomBgIdx }) {
   return (
     <BlockContainer>
       <SideImage imageUrl={blockContent.imageUrl} randomBgIdx={randomBgIdx} />
       <SideText text={blockContent.text} />
     </BlockContainer>
   );
-};
-
-export default PreviewBlockC;
+}

@@ -15,12 +15,10 @@ const Text = styled.p`
   line-height: 1.5em;
 `;
 
-const SideText = ({ text }) => {
+export default function SideText({ text }) {
   return (
     <TextWrapper>
       <Text>{text}</Text>
     </TextWrapper>
   );
-};
-
-export default SideText;
+}

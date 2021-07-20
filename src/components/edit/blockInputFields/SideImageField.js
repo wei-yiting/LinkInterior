@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components/macro';
 
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import blockImageUpload from '../../../utils/firebase/storage/blockImageUpload';
 import ImagePlaceholder from '../templateInputFields/ImagePlaceholder';
 
@@ -29,7 +30,8 @@ const ButtonWrapper = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-const SideImageField = ({ blockList, setBlockList, blockIdx, randomBgIdx }) => {
+export default function SideImageField({ blockIdx, randomBgIdx }) {
+  const { blockList, setBlockList } = useContext(IntroCompileContext);
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageSelected = (evt) => {
@@ -57,6 +59,4 @@ const SideImageField = ({ blockList, setBlockList, blockIdx, randomBgIdx }) => {
       </ButtonWrapper>
     </ImageArea>
   );
-};
-
-export default SideImageField;
+}

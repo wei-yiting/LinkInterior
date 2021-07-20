@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components/macro';
+
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 const TextAreaWrapper = styled.div`
   width: 80%;
@@ -16,7 +18,8 @@ const textareaStyle = {
   textAlignLast: 'center',
 };
 
-const FullWidthTextInput = ({ blockList, setBlockList, blockIdx }) => {
+export default function FullWidthTextInput({ blockIdx }) {
+  const { blockList, setBlockList } = useContext(IntroCompileContext);
   const [inputText, setInputText] = useState(blockList[blockIdx].text);
 
   const handleTextareaChange = (evt) => {
@@ -43,6 +46,4 @@ const FullWidthTextInput = ({ blockList, setBlockList, blockIdx }) => {
       />
     </TextAreaWrapper>
   );
-};
-
-export default FullWidthTextInput;
+}
