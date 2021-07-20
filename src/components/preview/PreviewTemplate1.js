@@ -9,34 +9,18 @@ import ServiceProvideCity from './templateItems/ServiceProvideCity';
 import ImagesWall from './templateItems/ImagesWall';
 import { RowWrapper } from '../../styles/layout/TemplateLayout';
 
-const Preview1 = ({
-  serviceCompanyName,
-  intro,
-  city,
-  profession,
-  introTags,
-  heroImageUrl,
-  contactInfo,
-  selectedServiceCities,
-  imagesGalleryUrls,
-}) => {
+export default function Preview1() {
   return (
     <>
-      <HeroImage serviceCompanyName={serviceCompanyName} heroImageUrl={heroImageUrl} />
-      <DropdownInfo city={city} profession={profession} flexDirection="row" />
-      <IntroParagraph title="業者介紹" intro={intro} />
-      <KeywordTags tags={introTags} />
-      <ImagesWall imagesGalleryUrls={imagesGalleryUrls} />
+      <HeroImage />
+      <DropdownInfo flexDirection="row" />
+      <IntroParagraph title="業者介紹" />
+      <KeywordTags />
+      <ImagesWall />
       <RowWrapper flexDirection="row">
-        <ContactInfoArea contactInfo={contactInfo} width="55%" margin="30px 0" />
-        <ServiceProvideCity
-          selectedServiceCities={selectedServiceCities}
-          width="40%"
-          margin="30px 0"
-        />
+        <ContactInfoArea width="55%" margin="30px 0" />
+        <ServiceProvideCity width="40%" margin="30px 0" />
       </RowWrapper>
     </>
   );
-};
-
-export default Preview1;
+}

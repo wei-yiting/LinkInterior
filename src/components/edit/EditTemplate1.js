@@ -9,63 +9,18 @@ import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInp
 import ImageWallField from './templateInputFields/ImageWallField';
 import { RowWrapper } from '../../styles/layout/TemplateLayout';
 
-const EditTemplate1 = ({
-  serviceCompanyName,
-  intro,
-  setIntro,
-  city,
-  setCity,
-  profession,
-  setProfession,
-  introTags,
-  setIntroTags,
-  heroImageUrl,
-  setHeroImageUrl,
-  contactInfo,
-  setContactInfo,
-  selectedServiceCities,
-  setSelectedServiceCities,
-  imagesGalleryUrls,
-  setImagesGalleryUrls,
-}) => {
+export default function EditTemplate1() {
   return (
     <>
-      <HeroImageField
-        serviceCompanyName={serviceCompanyName}
-        heroImageUrl={heroImageUrl}
-        setHeroImageUrl={setHeroImageUrl}
-      />
-      <InfoDropdownFields
-        city={city}
-        setCity={setCity}
-        profession={profession}
-        setProfession={setProfession}
-        flexDirection="row"
-        dropdownWidth="50%"
-      />
-      <IntroField title="我的介紹" intro={intro} setIntro={setIntro} />
-      <TagArea title="關鍵字標籤" tags={introTags} setTags={setIntroTags} />
-      <ImageWallField
-        imagesGalleryUrls={imagesGalleryUrls}
-        setImagesGalleryUrls={setImagesGalleryUrls}
-      />
+      <HeroImageField />
+      <InfoDropdownFields flexDirection="row" dropdownWidth="50%" />
+      <IntroField title="我的介紹" />
+      <TagArea title="關鍵字標籤" />
+      <ImageWallField />
       <RowWrapper>
-        <ContactInputFields
-          contactInfo={contactInfo}
-          setContactInfo={setContactInfo}
-          width="55%"
-          margin="30px 0"
-        />
-        <ServiceProvideCityInput
-          width="40%"
-          flex="none"
-          margin="30px 0"
-          selectedServiceCities={selectedServiceCities}
-          setSelectedServiceCities={setSelectedServiceCities}
-        />
+        <ContactInputFields width="55%" margin="30px 0" />
+        <ServiceProvideCityInput width="40%" flex="none" margin="30px 0" />
       </RowWrapper>
     </>
   );
-};
-
-export default EditTemplate1;
+}

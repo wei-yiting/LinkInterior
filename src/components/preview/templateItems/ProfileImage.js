@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import { randomLinearGradient } from '../../../utils/constants/linearGradient';
 import { HeroImageContainer } from '../../../styles/layout/TemplateLayout';
 
-export default function ProfileImage({ heroImageUrl }) {
+export default function ProfileImage() {
+  const { heroImageUrl } = useContext(IntroCompileContext);
   const [imageContainerStyle, setimageContainerStyle] = useState({});
 
   useEffect(() => {

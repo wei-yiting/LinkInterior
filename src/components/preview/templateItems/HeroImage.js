@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import styled from 'styled-components/macro';
 
+import { useAuth } from '../../../contexts/AuthContext';
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import { randomLinearGradient } from '../../../utils/constants/linearGradient';
 import { HeroImageContainer } from '../../../styles/layout/TemplateLayout';
 
@@ -12,7 +14,10 @@ const CompanyName = styled.span`
   letter-spacing: 0.1em;
 `;
 
-export default function HeroImage({ serviceCompanyName, heroImageUrl }) {
+export default function HeroImage() {
+  const { currentUser } = useAuth();
+  const { heroImageUrl } = useContext(IntroCompileContext);
+
   const [imageContainerStyle, setimageContainerStyle] = useState({});
 
   useEffect(() => {
@@ -28,7 +33,7 @@ export default function HeroImage({ serviceCompanyName, heroImageUrl }) {
 
   return (
     <HeroImageContainer style={imageContainerStyle}>
-      <CompanyName>{serviceCompanyName}</CompanyName>
+      <CompanyName>{currentUser.username}</CompanyName>
     </HeroImageContainer>
   );
 }

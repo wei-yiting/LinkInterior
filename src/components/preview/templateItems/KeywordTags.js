@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components/macro';
 import uuid from 'react-uuid';
 
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 import { TagsList, Tag } from '../../../styles/sharedStyledComponents/tags';
 
@@ -14,8 +15,10 @@ const TagArea = styled.div`
   padding: 0 8px;
 `;
 
-const KeywordTags = ({ tags }) => {
-  const renderedTags = tags.map((tag) => {
+export default function KeywordTags() {
+  const { introTags } = useContext(IntroCompileContext);
+
+  const renderedTags = introTags.map((tag) => {
     return (
       <Tag key={uuid()}>
         <span>{tag}</span>
@@ -30,6 +33,4 @@ const KeywordTags = ({ tags }) => {
       </TagArea>
     </SectionWrapper>
   );
-};
-
-export default KeywordTags;
+}

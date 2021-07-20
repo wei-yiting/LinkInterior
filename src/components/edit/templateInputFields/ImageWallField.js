@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import uuid from 'react-uuid';
 import styled from 'styled-components/macro';
+
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 import ImagePlaceholder from './ImagePlaceholder';
 import multipleImagesUpload from '../../../utils/firebase/storage/multipleImageUpload';
@@ -46,7 +48,8 @@ const ImagePlaceholderWrapper = styled.div`
   margin: 0 0.5rem;
 `;
 
-const ImageWallField = ({ imagesGalleryUrls, setImagesGalleryUrls }) => {
+export default function ImageWallField() {
+  const { imagesGalleryUrls, setImagesGalleryUrls } = useContext(IntroCompileContext);
   const [selectedGalleryImages, setSelectedGalleryImages] = useState([]);
   const [uploadedGalleryImages, setUploadedGalleryImages] = useState(null);
   const [numOfPlaceholders, setNumOfPlaceholders] = useState(numberOfImages);
@@ -109,6 +112,4 @@ const ImageWallField = ({ imagesGalleryUrls, setImagesGalleryUrls }) => {
       </ImageUploadContainer>
     </SectionWrapper>
   );
-};
-
-export default ImageWallField;
+}

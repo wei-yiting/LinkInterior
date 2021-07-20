@@ -43,47 +43,12 @@ const renderedRegionCheckBoxes = (regionName, regionCities, list, listSetter) =>
   );
 };
 
-const ServiceProvideCityInput = ({
-  selectedServiceCities,
-  setSelectedServiceCities,
-  width,
-  flex,
-  margin,
-}) => {
-  const northrenCityCheckboxes = renderedRegionCheckBoxes(
-    '北部',
-    northernCities,
-    selectedServiceCities,
-    setSelectedServiceCities,
-  );
-
-  const centralCityCheckboxes = renderedRegionCheckBoxes(
-    '中部',
-    centralCities,
-    selectedServiceCities,
-    setSelectedServiceCities,
-  );
-
-  const southernCityCheckboxes = renderedRegionCheckBoxes(
-    '南部',
-    southernCities,
-    selectedServiceCities,
-    setSelectedServiceCities,
-  );
-
-  const easternCityCheckboxes = renderedRegionCheckBoxes(
-    '東部',
-    easternCities,
-    selectedServiceCities,
-    setSelectedServiceCities,
-  );
-
-  const islandCheckboxes = renderedRegionCheckBoxes(
-    '離島',
-    islands,
-    selectedServiceCities,
-    setSelectedServiceCities,
-  );
+export default function ServiceProvideCityInput({ width, flex, margin }) {
+  const northrenCityCheckboxes = renderedRegionCheckBoxes('北部', northernCities);
+  const centralCityCheckboxes = renderedRegionCheckBoxes('中部', centralCities);
+  const southernCityCheckboxes = renderedRegionCheckBoxes('南部', southernCities);
+  const easternCityCheckboxes = renderedRegionCheckBoxes('東部', easternCities);
+  const islandCheckboxes = renderedRegionCheckBoxes('離島', islands);
 
   return (
     <SectionWrapper width={width} flex={flex} margin={margin}>
@@ -97,6 +62,4 @@ const ServiceProvideCityInput = ({
       </AllCheckBoxesArea>
     </SectionWrapper>
   );
-};
-
-export default ServiceProvideCityInput;
+}

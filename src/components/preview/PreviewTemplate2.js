@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useAuth } from '../../contexts/AuthContext';
+
 import { Title } from '../../styles/sharedStyledComponents/headings';
 import DropdownInfo from './templateItems/DropdownInfo';
 import IntroParagraph from './templateItems/IntroParagraph';
@@ -10,26 +12,15 @@ import ServiceProvideCity from './templateItems/ServiceProvideCity';
 import ImagesWall from './templateItems/ImagesWall';
 import { SectionWrapper, RowWrapper } from '../../styles/layout/TemplateLayout';
 
-export default function PreviewTemplate2({
-  serviceCompanyName,
-  intro,
-  city,
-  profession,
-  introTags,
-  heroImageUrl,
-  contactInfo,
-  selectedServiceCities,
-  imagesGalleryUrls,
-}) {
+export default function PreviewTemplate2() {
+  const { currentUser } = useAuth();
   return (
     <>
       <RowWrapper>
-        <ProfileImage heroImageUrl={heroImageUrl} />
+        <ProfileImage />
         <SectionWrapper margin="100px 0 50px 100px" width="100%">
-          <Title>{serviceCompanyName}</Title>
+          <Title>{currentUser.username}</Title>
           <DropdownInfo
-            city={city}
-            profession={profession}
             flexDirection="column"
             margin="0"
             flex="0"
@@ -38,12 +29,11 @@ export default function PreviewTemplate2({
           />
         </SectionWrapper>
       </RowWrapper>
-      <IntroParagraph title="業者介紹" intro={intro} />
-      <KeywordTags tags={introTags} />
-      <ImagesWall imagesGalleryUrls={imagesGalleryUrls} />
-      <ServiceProvideCity selectedServiceCities={selectedServiceCities} />
+      <IntroParagraph title="業者介紹" />
+      <KeywordTags />
+      <ImagesWall />
+      <ServiceProvideCity />
       <ContactInfoArea
-        contactInfo={contactInfo}
         width="80%"
         flexDirection="row"
         margin="30px auto"

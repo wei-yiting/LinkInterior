@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components/macro';
+
+import { useAuth } from '../../../contexts/AuthContext';
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 import singleImageUpload from '../../../utils/firebase/storage/singleImageUpload';
 import { randomLinearGradient } from '../../../utils/constants/linearGradient';
@@ -20,7 +23,9 @@ const ButtonWrapper = styled.div`
   transform: translate(-50%, -50%);
 `;
 
-export default function HeroImageField({ serviceCompanyName, heroImageUrl, setHeroImageUrl }) {
+export default function HeroImageField() {
+  const { currentUser } = useAuth();
+  const { heroImageUrl, setHeroImageUrl } = useContext(IntroCompileContext);
   const [selectedHeroImage, setSelectedHeroImage] = useState(null);
   const [imageContainerStyle, setimageContainerStyle] = useState({});
 
@@ -48,7 +53,7 @@ export default function HeroImageField({ serviceCompanyName, heroImageUrl, setHe
   return (
     <div>
       <HeroImageContainer style={imageContainerStyle}>
-        <CompanyName>{serviceCompanyName}</CompanyName>
+        <CompanyName>{currentUser.username}</CompanyName>
         <ButtonWrapper>
           <input type="file" onChange={handleImageSelected} />
           <button type="button" onClick={handleImageUpload}>

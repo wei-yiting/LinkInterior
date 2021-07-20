@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components/macro';
 
+import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 import { SectionWrapper } from '../../styles/layout/TemplateLayout';
 import { color } from '../../styles/theme';
 
@@ -19,7 +20,8 @@ const FixedContainer = styled.div`
   padding-top: 50px;
 `;
 
-const TemplateMenu = ({ templateType, setTemplateType }) => {
+export default function TemplateMenu() {
+  const { templateType, setTemplateType } = useContext(IntroCompileContext);
   return (
     <FixedContainer>
       <SectionWrapper justifyContent="center" flexDirection="row" margin="20px auto">
@@ -44,6 +46,4 @@ const TemplateMenu = ({ templateType, setTemplateType }) => {
       </SectionWrapper>
     </FixedContainer>
   );
-};
-
-export default TemplateMenu;
+}

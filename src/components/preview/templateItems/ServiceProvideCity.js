@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { allCities } from '../../../utils/constants/city';
 
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 
-const ServiceProvideCity = ({ selectedServiceCities, margin, width }) => {
+export default function ServiceProvideCity({ margin, width }) {
+  const { selectedServiceCities } = useContext(IntroCompileContext);
   const sortedCities = allCities.filter((city) => selectedServiceCities.includes(city));
 
   return (
@@ -13,6 +15,4 @@ const ServiceProvideCity = ({ selectedServiceCities, margin, width }) => {
       <p className="text-lg">{sortedCities.join('、')}</p>
     </SectionWrapper>
   );
-};
-
-export default ServiceProvideCity;
+}

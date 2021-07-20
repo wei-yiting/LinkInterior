@@ -33,6 +33,8 @@ export default function IntroCompileContextProvider({ children }) {
   const valueProvided = {
     isEditMode,
     setIsEditMode,
+    templateType,
+    setTemplateType,
     intro,
     setIntro,
     city,
@@ -49,8 +51,6 @@ export default function IntroCompileContextProvider({ children }) {
     setSelectedServiceCities,
     imagesGalleryUrls,
     setImagesGalleryUrls,
-    templateType,
-    setTemplateType,
     isPublished,
     setIsPublished,
     blockList,

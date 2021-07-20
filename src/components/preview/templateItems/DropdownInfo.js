@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import { SectionWrapper, DropdownContainer } from '../../../styles/layout/TemplateLayout';
 import { LocationIcon, ProfessionIcon } from '../../../utils/icons';
 
-const DropdownInfo = ({ city, profession, flexDirection, margin, justifyContent, infoMargin }) => {
+export default function DropdownInfo({ flexDirection, margin, justifyContent, infoMargin }) {
+  const { city, profession } = useContext(IntroCompileContext);
   return (
     <SectionWrapper flexDirection={flexDirection} margin={margin}>
       <DropdownContainer justifyContent={justifyContent} margin={infoMargin}>
@@ -16,6 +18,4 @@ const DropdownInfo = ({ city, profession, flexDirection, margin, justifyContent,
       </DropdownContainer>
     </SectionWrapper>
   );
-};
-
-export default DropdownInfo;
+}

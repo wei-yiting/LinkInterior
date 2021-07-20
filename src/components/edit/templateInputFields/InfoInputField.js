@@ -1,14 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-export const ContactInputField = ({
-  contactInfo,
-  setContactInfo,
-  name,
-  placeholder,
-  type,
-  children,
-  width,
-}) => {
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
+
+export function ContactInputField({ name, placeholder, type, children, width }) {
+  const { contactInfo, setContactInfo } = useContext(IntroCompileContext);
+
   return (
     <div style={{ width }}>
       <div className="mb-5">
@@ -28,17 +24,11 @@ export const ContactInputField = ({
       </div>
     </div>
   );
-};
+}
 
-export const MediaInputField = ({
-  contactInfo,
-  setContactInfo,
-  name,
-  placeholder,
-  type,
-  children,
-  width,
-}) => {
+export function MediaInputField({ name, placeholder, type, children, width }) {
+  const { contactInfo, setContactInfo } = useContext(IntroCompileContext);
+
   return (
     <div style={{ width }}>
       <div className="mb-5">
@@ -59,4 +49,4 @@ export const MediaInputField = ({
       </div>
     </div>
   );
-};
+}

@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import styled from 'styled-components/macro';
 import uuid from 'react-uuid';
+
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 import { RemoveTagIcon } from '../../../utils/icons';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
@@ -22,21 +24,22 @@ const TagsField = styled.div`
   }
 `;
 
-const TagArea = ({ title, tags, setTags }) => {
+export default function TagArea({ title }) {
+  const { introTags, setIntroTags } = useContext(IntroCompileContext);
   const [tagInput, setTagInput] = useState('');
 
   const removeTag = (removeIdx) => {
-    setTags(tags.filter((_, index) => index !== removeIdx));
+    setIntroTags(introTags.filter((_, index) => index !== removeIdx));
   };
 
   const addTag = (evt) => {
     if (evt.key === 'Enter' && evt.target.value !== '') {
-      setTags([...tags, evt.target.value]);
+      setIntroTags([...introTags, evt.target.value]);
       setTagInput('');
     }
   };
 
-  const renderedTags = tags.map((tag, index) => {
+  const renderedTags = introTags.map((tag, index) => {
     return (
       <Tag key={uuid()}>
         <span>{tag}</span>
@@ -71,6 +74,4 @@ const TagArea = ({ title, tags, setTags }) => {
       </TagsField>
     </SectionWrapper>
   );
-};
-
-export default TagArea;
+}

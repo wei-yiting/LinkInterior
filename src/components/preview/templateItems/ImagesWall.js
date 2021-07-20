@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components/macro';
 import uuid from 'react-uuid';
 
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import { SectionWrapper } from '../../../styles/layout/TemplateLayout';
 
 const ImageUploadContainer = styled.div`
@@ -23,7 +24,8 @@ const ImageContainer = styled.div`
   background-position: center;
 `;
 
-const ImagesWall = ({ imagesGalleryUrls }) => {
+export default function ImagesWall() {
+  const { imagesGalleryUrls } = useContext(IntroCompileContext);
   return (
     <SectionWrapper width="90%">
       <ImageUploadContainer>
@@ -33,6 +35,4 @@ const ImagesWall = ({ imagesGalleryUrls }) => {
       </ImageUploadContainer>
     </SectionWrapper>
   );
-};
-
-export default ImagesWall;
+}

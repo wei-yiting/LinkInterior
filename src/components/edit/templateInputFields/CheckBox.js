@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
-const CheckBox = ({ labelName, list, listSetter }) => {
-  const checkStatus = list.includes(labelName);
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
+export default function CheckBox({ labelName }) {
+  const { selectedServiceCities, setSelectedServiceCities } = useContext(IntroCompileContext);
+  const checkStatus = selectedServiceCities.includes(labelName);
   const [isChecked, setIsChecked] = useState(checkStatus);
 
   const handleInputChange = (evt) => {
     if (!isChecked) {
-      listSetter([...list, evt.target.name]);
+      setSelectedServiceCities([...selectedServiceCities, evt.target.name]);
     }
     if (isChecked) {
-      listSetter(
-        list.filter((item) => {
+      setSelectedServiceCities(
+        selectedServiceCities.filter((item) => {
           return item !== evt.target.name;
         }),
       );
@@ -36,6 +38,4 @@ const CheckBox = ({ labelName, list, listSetter }) => {
       </div>
     </div>
   );
-};
-
-export default CheckBox;
+}

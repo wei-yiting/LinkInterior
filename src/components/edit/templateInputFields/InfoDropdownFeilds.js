@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 import { SectionWrapper, DropdownContainer } from '../../../styles/layout/TemplateLayout';
 import { LocationIcon, ProfessionIcon } from '../../../utils/icons';
@@ -6,17 +8,15 @@ import Dropdown from './Dropdown';
 import { allCityOptions } from '../../../utils/constants/city';
 import professionOptions from '../../../utils/constants/profession';
 
-const InfoDropdownFields = ({
-  city,
-  setCity,
-  profession,
-  setProfession,
+export default function InfoDropdownFields({
   flexDirection,
   alignItems,
   margin,
   justifyContent,
   dropdownWidth,
-}) => {
+}) {
+  const { city, setCity, profession, setProfession } = useContext(IntroCompileContext);
+
   return (
     <SectionWrapper flexDirection={flexDirection} alignItems={alignItems} margin={margin}>
       <DropdownContainer justifyContent={justifyContent}>
@@ -38,6 +38,4 @@ const InfoDropdownFields = ({
       </DropdownContainer>
     </SectionWrapper>
   );
-};
-
-export default InfoDropdownFields;
+}

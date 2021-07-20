@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from 'react';
-// import styled from 'styled-components/macro';
+import React, { useState, useEffect, useContext } from 'react';
+
+import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 import singleImageUpload from '../../../utils/firebase/storage/singleImageUpload';
 import { randomLinearGradient } from '../../../utils/constants/linearGradient';
 import { SectionWrapper, HeroImageContainer } from '../../../styles/layout/TemplateLayout';
 
-export default function ProfileImageField({ heroImageUrl, setHeroImageUrl }) {
+export default function ProfileImageField() {
+  const { heroImageUrl, setHeroImageUrl } = useContext(IntroCompileContext);
   const [selectedHeroImage, setSelectedHeroImage] = useState(null);
   const [imageContainerStyle, setimageContainerStyle] = useState({});
 
