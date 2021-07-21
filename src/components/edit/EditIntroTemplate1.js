@@ -9,7 +9,7 @@ import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInp
 import ImageWallField from './templateInputFields/ImageWallField';
 import { RowWrapper } from '../../styles/layout/TemplateLayout';
 
-export default function EditTemplate1() {
+export default function EditIntroTemplate1() {
   return (
     <>
       <HeroImageField />

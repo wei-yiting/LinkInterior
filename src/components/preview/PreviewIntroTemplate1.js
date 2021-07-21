@@ -9,7 +9,7 @@ import ServiceProvideCity from './templateItems/ServiceProvideCity';
 import ImagesWall from './templateItems/ImagesWall';
 import { RowWrapper } from '../../styles/layout/TemplateLayout';
 
-export default function Preview1() {
+export default function PreviewIntroTemplate1() {
   return (
     <>
       <HeroImage />

@@ -12,7 +12,7 @@ import ImageWallField from './templateInputFields/ImageWallField';
 import { SectionWrapper, RowWrapper } from '../../styles/layout/TemplateLayout';
 import { Title } from '../../styles/sharedStyledComponents/headings';
 
-export default function EditTemplate2() {
+export default function EditIntroTemplate2() {
   const { currentUser } = useAuth();
   return (
     <>

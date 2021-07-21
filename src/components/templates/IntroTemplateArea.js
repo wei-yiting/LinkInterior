@@ -2,17 +2,17 @@ import React, { useContext } from 'react';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 import TemplateMenu from './TemplateMenu';
-import Template1 from './Template1';
-import Template2 from './Template2';
+import IntroTemplate1 from './IntroTemplate1';
+import IntroTemplate2 from './IntroTemplate2';
 
-export default function TemplateArea() {
+export default function IntroTemplateArea() {
   const { templateType } = useContext(IntroCompileContext);
 
   let Template;
   if (templateType === 1) {
-    Template = Template1;
+    Template = IntroTemplate1;
   } else if (templateType === 2) {
-    Template = Template2;
+    Template = IntroTemplate2;
   }
 
   return (

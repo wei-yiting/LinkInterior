@@ -12,7 +12,7 @@ import ServiceProvideCity from './templateItems/ServiceProvideCity';
 import ImagesWall from './templateItems/ImagesWall';
 import { SectionWrapper, RowWrapper } from '../../styles/layout/TemplateLayout';
 
-export default function PreviewTemplate2() {
+export default function PreviewIntroTemplate2() {
   const { currentUser } = useAuth();
   return (
     <>

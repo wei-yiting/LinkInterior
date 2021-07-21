@@ -4,7 +4,7 @@ import styled from 'styled-components/macro';
 import { IntroCompileContext } from '../contexts/IntroCompileContext';
 
 import ToggleSwitch from '../components/templates/ToggleSwitch';
-import TemplateArea from '../components/templates/TemplateArea';
+import TemplateArea from '../components/templates/IntroTemplateArea';
 import BlockArea from '../components/blocks/BlockArea';
 
 const MainContainer = styled.main`
