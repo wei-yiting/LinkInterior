@@ -86,7 +86,7 @@ const Header = () => {
                               <Menu.Item>
                                 {({ active }) => (
                                   <Link
-                                    to="introCompile"
+                                    to="intro-compile"
                                     className={classNames(
                                       active ? 'bg-gray-100' : '',
                                       'block px-4 py-2 text-sm text-gray-700',
@@ -118,7 +118,7 @@ const Header = () => {
                     </Menu>
                   </>
                 ) : (
-                  <Link to="/logIn">
+                  <Link to="/log-in">
                     <div>業者登入</div>
                   </Link>
                 )}

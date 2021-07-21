@@ -41,7 +41,7 @@ const SignUp = () => {
         usernameRef.current.value,
         profileUrl,
       );
-      history.push('/login');
+      history.push('/');
     } catch {
       setError('Failed to create an account');
     }
@@ -171,7 +171,7 @@ const SignUp = () => {
             </div>
           </form>
           <div className="text-base flex justify-center mt-5">
-            <Link to="/logIn">
+            <Link to="/log-in">
               <span className="font-medium text-main-600 hover:text-main-500">
                 已有帳戶？點此登入
               </span>

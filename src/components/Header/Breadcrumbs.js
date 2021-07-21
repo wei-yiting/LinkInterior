@@ -5,7 +5,7 @@ import { ChevronRightIcon } from '@heroicons/react/solid';
 import Logo from '../../utils/logo/Logo';
 
 const pages = [
-  { name: '我的介紹', to: '/introCompile', current: true },
+  { name: '我的介紹', to: '/intro-compile', current: true },
   { name: '隱世覓境', to: '#', current: false },
 ];
 

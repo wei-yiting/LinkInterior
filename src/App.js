@@ -23,10 +23,10 @@ const App = () => {
           <Switch>
             <Main>
               <Route path="/" exact component={ServicesOverview} />
-              <Route path="/logIn" exact component={LogIn} />
-              <Route path="/signUp" exact component={SignUp} />
+              <Route path="/log-in" component={LogIn} />
+              <Route path="/sign-up" component={SignUp} />
               <IntroCompileContextProvider>
-                <PrivateRoute path="/introCompile" exact component={ServiceIntroCompile} />
+                <PrivateRoute path="/intro-compile" component={ServiceIntroCompile} />
               </IntroCompileContextProvider>
             </Main>
           </Switch>

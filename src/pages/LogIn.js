@@ -84,7 +84,7 @@ const LogIn = () => {
           </div>
         </form>
         <div className="text-base flex justify-center">
-          <Link to="/signUp">
+          <Link to="/sign-up">
             <span className="font-medium text-main-600 hover:text-main-500">
               還沒有帳戶？點此註冊
             </span>
