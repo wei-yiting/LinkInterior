@@ -6,6 +6,7 @@ import { IntroCompileContext } from '../contexts/IntroCompileContext';
 import ToggleSwitch from '../components/templates/ToggleSwitch';
 import TemplateArea from '../components/templates/IntroTemplateArea';
 import BlockArea from '../components/blocks/BlockArea';
+import PublishOptions from '../components/shared/PublishOptions';
 
 const MainContainer = styled.main`
   width: 90%;
@@ -16,7 +17,7 @@ const MainContainer = styled.main`
   flex-direction: column;
 `;
 
-export default function ServiceIntrCompile() {
+export default function IntrCompile() {
   const { isEditMode } = useContext(IntroCompileContext);
 
   return (
@@ -25,6 +26,7 @@ export default function ServiceIntrCompile() {
         <ToggleSwitch />
         <TemplateArea />
         <BlockArea />
+        <PublishOptions />
       </MainContainer>
     </div>
   );

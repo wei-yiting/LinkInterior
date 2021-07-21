@@ -7,7 +7,8 @@ import GlobalStyles from './styles/GlobalStyle';
 import ServicesOverview from './pages/ServicesOverview';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
-import ServiceIntroCompile from './pages/ServiceIntroCompile';
+import IntroCompile from './pages/IntroCompile';
+import ServiceIntro from './pages/ServiceIntro';
 import Header from './components/Header/Header';
 import Main from './styles/layout/GeneralLayout';
 import AuthContextProvider from './contexts/AuthContext';
@@ -26,8 +27,9 @@ const App = () => {
               <Route path="/log-in" component={LogIn} />
               <Route path="/sign-up" component={SignUp} />
               <IntroCompileContextProvider>
-                <PrivateRoute path="/intro-compile" component={ServiceIntroCompile} />
+                <PrivateRoute path="/intro-compile" component={IntroCompile} />
               </IntroCompileContextProvider>
+              <Route path="/service/:id" component={ServiceIntro} />
             </Main>
           </Switch>
         </AuthContextProvider>

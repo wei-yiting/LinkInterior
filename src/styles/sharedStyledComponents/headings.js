@@ -22,9 +22,8 @@ export const Heading1 = styled.h2`
 
 export const Heading2 = styled.h3`
   font-size: ${fontSize.large[2]};
-  color: ${color.gray[600]};
-  font-weight: 600;
-
+  color: ${({ fontColor }) => fontColor || color.gray[600]};
+  font-weight: ${({ fontWeight }) => fontWeight || '600'};
   letter-spacing: 0.075em;
   line-height: 1.5em;
   margin: 0.5em 0;

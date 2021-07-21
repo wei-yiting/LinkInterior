@@ -1,5 +1,7 @@
 import styled from 'styled-components/macro';
 
+import { color } from '../theme';
+
 export const BlockContainer = styled.div`
   display: flex;
   width: 100%;
@@ -18,5 +20,5 @@ export const BlocksAreaContainer = styled.div`
   width: 80%;
   justify-content: space-around;
   flex-direction: column;
-  border-top: 2px solid #eee;
+  border-top: 2px solid ${color.gray[200]};
 `;
