@@ -26,11 +26,11 @@ export default function KeywordTags() {
     );
   });
 
-  return (
+  return introTags.length ? (
     <SectionWrapper>
       <TagArea>
         <TagsList>{renderedTags}</TagsList>
       </TagArea>
     </SectionWrapper>
-  );
+  ) : null;
 }

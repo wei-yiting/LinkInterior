@@ -28,11 +28,18 @@ export default function BlockArea() {
     return <Block key={blockContent.id} blockIdx={index} blockContent={blockContent} />;
   });
 
-  return (
+  return isEditMode ? (
     <BlocksAreaContainer>
-      <Heading2>{isEditMode ? '更多關於我的介紹' : `更多關於  ${currentUser.username}`}</Heading2>
+      <Heading2>更多關於我的介紹</Heading2>
       {renderedBlocks}
-      {isEditMode ? <BlockMenu /> : null}
+      <BlockMenu />
     </BlocksAreaContainer>
+  ) : (
+    blockList.length !== 0 && (
+      <BlocksAreaContainer>
+        <Heading2>{`更多關於  ${currentUser.username}`}</Heading2>
+        {renderedBlocks}
+      </BlocksAreaContainer>
+    )
   );
 }

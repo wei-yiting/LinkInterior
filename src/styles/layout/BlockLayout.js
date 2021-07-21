@@ -11,7 +11,7 @@ export const BlockContainer = styled.div`
 `;
 
 export const BlocksAreaContainer = styled.div`
-  margin: 20px auto;
+  margin: 35px auto 30px;
   padding-top: 30px;
   display: flex;
   flex: 1;
@@ -19,5 +19,4 @@ export const BlocksAreaContainer = styled.div`
   justify-content: space-around;
   flex-direction: column;
   border-top: 2px solid #eee;
-  margin: 0 auto;
 `;

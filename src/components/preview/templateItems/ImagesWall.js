@@ -26,7 +26,7 @@ const ImageContainer = styled.div`
 
 export default function ImagesWall() {
   const { imagesGalleryUrls } = useContext(IntroCompileContext);
-  return (
+  return imagesGalleryUrls.length ? (
     <SectionWrapper width="90%">
       <ImageUploadContainer>
         {imagesGalleryUrls.map((imageUrl) => (
@@ -34,5 +34,5 @@ export default function ImagesWall() {
         ))}
       </ImageUploadContainer>
     </SectionWrapper>
-  );
+  ) : null;
 }
