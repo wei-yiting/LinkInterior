@@ -37,14 +37,62 @@ export const DropdownContainer = styled.div`
   margin: ${({ margin }) => margin || '0'};
 `;
 
+export const IntroParagraphText = styled.p`
+  white-space: pre-wrap;
+  margin: 0.75rem 1.5rem;
+`;
+
+export const TagArea = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-height: 48px;
+  width: 75%;
+  padding: 0 8px;
+`;
+
+export const ImagesGalleryContainer = styled.div`
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  display: flex;
+  align-items: space-between;
+  justify-content: flex-start;
+  position: relative;
+  flex-wrap: wrap;
+`;
+
+export const ImageContainer = styled.div`
+  width: calc(33.3% - 1rem);
+  height: 225px;
+  margin: 0.5rem;
+  background-size: cover;
+  background-position: center;
+`;
+
 export const ContactArea = styled.div`
   background-color: ${color.gray[100]};
-  padding: 2rem;
+  padding: 1.75rem 3rem 1.25rem;
   width: 100%;
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
   flex: 1;
   justify-content: space-around;
+`;
+
+export const ContactInfoWrapper = styled.div`
+  margin-bottom: 1.25rem;
+`;
+export const InfoSpan = styled.span`
+  margin-left: 0.5rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: ${color.gray[700]};
+`;
+
+export const SocailMediaContainer = styled.div`
+  display: flex;
+  margin-bottom: 1.25rem;
 `;
 
 export const HeroImageCompanyName = styled.span`

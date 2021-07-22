@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
+import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
 import {
   SectionWrapper,
   ContactArea,
@@ -20,15 +20,8 @@ import {
   LargeInstagramIcon,
 } from '../../../utils/icons';
 
-const addHttp = (url) => {
-  if (!url.startsWith('http')) {
-    return `http://${url}`;
-  }
-  return url;
-};
-
-export default function ContactInfoArea({ width, flexDirection, margin }) {
-  const { contactInfo } = useContext(IntroCompileContext);
+export default function RenderContact({ width, flexDirection, margin }) {
+  const { contactInfo } = useContext(IntroRenderContext);
 
   return (
     <SectionWrapper width={width} flex="none" margin={margin}>
@@ -37,17 +30,17 @@ export default function ContactInfoArea({ width, flexDirection, margin }) {
         {contactInfo.website || contactInfo.fb || contactInfo.ig ? (
           <SocailMediaContainer>
             {contactInfo.website && (
-              <a href={addHttp(contactInfo.website)} target="_blank" rel="noreferrer">
+              <a href={contactInfo.website} target="_blank" rel="noreferrer">
                 <LargeWebsiteIcon />
               </a>
             )}
             {contactInfo.fb && (
-              <a href={addHttp(contactInfo.fb)} target="_blank" rel="noreferrer">
+              <a href={contactInfo.fb} target="_blank" rel="noreferrer">
                 <LargeFacebookIcon />
               </a>
             )}
             {contactInfo.ig && (
-              <a href={addHttp(contactInfo.ig)} target="_blank" rel="noreferrer">
+              <a href={contactInfo.ig} target="_blank" rel="noreferrer">
                 <LargeInstagramIcon />
               </a>
             )}
@@ -55,35 +48,35 @@ export default function ContactInfoArea({ width, flexDirection, margin }) {
         ) : null}
         <div>
           {contactInfo.mobile && (
-            <ContactInfoWrapper className="mb-5">
+            <ContactInfoWrapper>
               <MobileIcon />
-              <InfoSpan className="ml-2">{contactInfo.mobile}</InfoSpan>
+              <InfoSpan>{contactInfo.mobile}</InfoSpan>
             </ContactInfoWrapper>
           )}
           {contactInfo.phone && (
-            <ContactInfoWrapper className="mb-5">
+            <ContactInfoWrapper>
               <PhoneIcon />
-              <InfoSpan className="ml-2">{contactInfo.phone}</InfoSpan>
+              <InfoSpan>{contactInfo.phone}</InfoSpan>
             </ContactInfoWrapper>
           )}
         </div>
         <div>
           {contactInfo.line && (
-            <ContactInfoWrapper className="mb-5">
+            <ContactInfoWrapper>
               <LineIcon />
-              <InfoSpan className="ml-2">{contactInfo.line}</InfoSpan>
+              <InfoSpan>{contactInfo.line}</InfoSpan>
             </ContactInfoWrapper>
           )}
           {contactInfo.email && (
-            <ContactInfoWrapper className="mb-5">
+            <ContactInfoWrapper>
               <EmailIcon />
-              <InfoSpan className="ml-2">{contactInfo.email}</InfoSpan>
+              <InfoSpan>{contactInfo.email}</InfoSpan>
             </ContactInfoWrapper>
           )}
           {contactInfo.address && (
-            <ContactInfoWrapper className="mb-5">
+            <ContactInfoWrapper>
               <AddressIcon />
-              <InfoSpan className="ml-2">{contactInfo.address}</InfoSpan>
+              <InfoSpan>{contactInfo.address}</InfoSpan>
             </ContactInfoWrapper>
           )}
         </div>

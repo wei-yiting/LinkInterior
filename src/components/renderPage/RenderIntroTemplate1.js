@@ -2,20 +2,25 @@ import React from 'react';
 
 import RenderHeroImage from './renderItems/RenderHeroImage';
 import RenderDropdownInfo from './renderItems/RenderDropdownInfo';
-// import { RowWrapper } from '../../styles/layout/TemplateLayout';
+import RenderIntroParagraph from './renderItems/RenderIntroParagraph';
+import RenderKeyWordTags from './renderItems/RenderKeyWordTags';
+import RenderImagesWall from './renderItems/RenderImagesWall';
+import RenderContact from './renderItems/RenderContact';
+import RenderServiceProvideCity from './renderItems/RenderServiceProvideCity';
+import { RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function RenderIntroTemplate1() {
   return (
     <>
       <RenderHeroImage />
-      <RenderDropdownInfo flexDirection="row" />
-      {/* <IntroParagraph title="業者介紹" />
-      <KeywordTags />
-      <ImagesWall />
+      <RenderDropdownInfo flexDirection="row" margin="50px auto 30px" />
+      <RenderIntroParagraph title="業者介紹" />
+      <RenderKeyWordTags />
+      <RenderImagesWall />
       <RowWrapper flexDirection="row">
-        <ContactInfoArea width="55%" margin="30px 0" />
-        <ServiceProvideCity width="40%" margin="30px 0" />
-      </RowWrapper> */}
+        <RenderContact width="50%" margin="30px 0" />
+        <RenderServiceProvideCity width="40%" margin="30px 0" />
+      </RowWrapper>
     </>
   );
 }

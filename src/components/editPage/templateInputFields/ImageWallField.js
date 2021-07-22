@@ -11,11 +11,11 @@ import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateL
 import { inputField } from '../../../styles/theme';
 import { Heading4 } from '../../../styles/sharedStyledComponents/headings';
 
-const numberOfImages = 8;
+const numberOfImages = 6;
 
 const ImageUploadContainer = styled.div`
   width: 100%;
-  height: 400px;
+  height: 500px;
   border: ${inputField.border};
   border-radius: ${inputField.borderRadius};
   background-color: white;
@@ -28,7 +28,7 @@ const ImageUploadContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: calc(25% - 1rem);
+  width: calc(33% - 1rem);
   height: 45%;
   margin: 0 0.5rem;
   background-size: cover;
@@ -43,7 +43,7 @@ const ButtonWrapper = styled.div`
 `;
 
 const ImagePlaceholderWrapper = styled.div`
-  width: calc(25% - 1rem);
+  width: calc(33.3% - 1rem);
   height: 45%;
   margin: 0 0.5rem;
 `;

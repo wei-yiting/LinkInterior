@@ -12,16 +12,14 @@ export default function RenderIntroPage() {
 
   return (
     <>
-      <IntroPageMainContainer>
-        {loading && <PageLoading />}
-        {error && <PageError />}
-        {!loading && !error && (
-          <>
-            <RenderIntroTemplateArea />
-            <BlocksArea />
-          </>
-        )}
-      </IntroPageMainContainer>
+      {loading && <PageLoading />}
+      {error && <PageError />}
+      {!loading && !error && (
+        <IntroPageMainContainer>
+          <RenderIntroTemplateArea />
+          <BlocksArea />
+        </IntroPageMainContainer>
+      )}
     </>
   );
 }

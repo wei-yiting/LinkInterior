@@ -8,9 +8,9 @@ export default function RenderIntroTemplateArea() {
   const { templateType } = useContext(IntroRenderContext);
 
   return (
-    <>
+    <div style={{ marginTop: '40px' }}>
       {templateType === 1 ? <RenderIntroTemplate1 /> : null}
       {templateType === 2 ? <RenderIntroTemplate2 /> : null}
-    </>
+    </div>
   );
 }

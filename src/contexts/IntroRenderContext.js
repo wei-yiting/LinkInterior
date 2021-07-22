@@ -21,8 +21,8 @@ export default function IntroRenderContextProvider({ children, pageId }) {
       intro: data.templateContent.intro,
       location: data.templateContent.location,
       profession: data.templateContent.profession,
-      keywordTags: data.templateContent.keywordTags,
-      contact: data.templateContent.contact,
+      introTags: data.templateContent.introTags,
+      contactInfo: data.templateContent.contact,
       serviceArea: data.templateContent.serviceArea,
       imageGalleryUrls: data.templateContent.imageGalleryUrls,
     };

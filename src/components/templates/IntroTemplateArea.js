@@ -16,9 +16,9 @@ export default function IntroTemplateArea() {
   }
 
   return (
-    <div>
+    <>
       <TemplateMenu />
       <Template />
-    </div>
+    </>
   );
 }

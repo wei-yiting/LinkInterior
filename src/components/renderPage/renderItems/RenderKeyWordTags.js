@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import uuid from 'react-uuid';
 
-import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
+import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
 import { SectionWrapper, TagArea } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import { TagsList, Tag } from '../../../styles/sharedStyledComponents/tags';
 
-export default function KeywordTags() {
-  const { introTags } = useContext(IntroCompileContext);
+export default function RenderKeyWordTags() {
+  const { introTags } = useContext(IntroRenderContext);
 
   const renderedTags = introTags.map((tag) => {
     return (

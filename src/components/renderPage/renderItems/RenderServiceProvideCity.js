@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { allCities } from '../../../utils/constants/city';
 
-import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
+import { allCities } from '../../../utils/constants/city';
+import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
 import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 
-export default function ServiceProvideCity({ margin, width }) {
-  const { selectedServiceCities } = useContext(IntroCompileContext);
-  const sortedCities = allCities.filter((city) => selectedServiceCities.includes(city));
+export default function RenderServiceProvideCity({ margin, width }) {
+  const { serviceArea } = useContext(IntroRenderContext);
+  const sortedCities = allCities.filter((city) => serviceArea.includes(city));
 
   return (
     <SectionWrapper width={width} margin={margin} flex="none">

@@ -18,7 +18,7 @@ export default function PreviewIntroTemplate1() {
       <KeywordTags />
       <ImagesWall />
       <RowWrapper flexDirection="row">
-        <ContactInfoArea width="55%" margin="30px 0" />
+        <ContactInfoArea width="50%" margin="30px 0" />
         <ServiceProvideCity width="40%" margin="30px 0" />
       </RowWrapper>
     </>

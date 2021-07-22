@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import uuid from 'react-uuid';
 
-import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
+import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
 import {
   SectionWrapper,
   ImagesGalleryContainer,
   ImageContainer,
 } from '../../../styles/layoutStyledComponents/TemplateLayout';
 
-export default function ImagesWall() {
-  const { imagesGalleryUrls } = useContext(IntroCompileContext);
-  return imagesGalleryUrls.length ? (
+export default function RenderImagesWall() {
+  const { imageGalleryUrls } = useContext(IntroRenderContext);
+  return imageGalleryUrls.length ? (
     <SectionWrapper width="90%">
       <ImagesGalleryContainer>
-        {imagesGalleryUrls.map((imageUrl) => (
+        {imageGalleryUrls.map((imageUrl) => (
           <ImageContainer key={uuid()} style={{ backgroundImage: `url("${imageUrl}")` }} />
         ))}
       </ImagesGalleryContainer>

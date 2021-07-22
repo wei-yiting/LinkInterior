@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 
-import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
+import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
 import {
   SectionWrapper,
   IntroParagraphText,
 } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import { Heading1 } from '../../../styles/sharedStyledComponents/headings';
 
-export default function IntroParagraph({ title }) {
-  const { intro } = useContext(IntroCompileContext);
+export default function RenderIntroParagraph({ title }) {
+  const { intro } = useContext(IntroRenderContext);
   return (
     <SectionWrapper>
       <Heading1>{title}</Heading1>
