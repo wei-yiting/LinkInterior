@@ -8,16 +8,16 @@ import {
 
 import { LocationIcon, ProfessionIcon } from '../../../utils/icons';
 
-export default function RenderDropdownInfo(flexDirection, margin, infoMargin, infoJustifyContent) {
+export default function RenderDropdownInfo({ flexDirection, margin, justifyContent, infoMargin }) {
   const { location, profession } = useContext(IntroRenderContext);
 
   return (
     <SectionWrapper flexDirection={flexDirection} margin={margin}>
-      <DropdownContainer justifyContent={infoJustifyContent} margin={infoMargin}>
+      <DropdownContainer justifyContent={justifyContent} margin={infoMargin}>
         <LocationIcon />
         <span className="text-xl">{location}</span>
       </DropdownContainer>
-      <DropdownContainer justifyContent={infoJustifyContent} margin={infoMargin}>
+      <DropdownContainer justifyContent={justifyContent} margin={infoMargin}>
         <ProfessionIcon />
         <span className="text-xl">{profession}</span>
       </DropdownContainer>

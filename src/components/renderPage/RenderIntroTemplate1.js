@@ -3,7 +3,7 @@ import React from 'react';
 import RenderHeroImage from './renderItems/RenderHeroImage';
 import RenderDropdownInfo from './renderItems/RenderDropdownInfo';
 import RenderIntroParagraph from './renderItems/RenderIntroParagraph';
-import RenderKeyWordTags from './renderItems/RenderKeyWordTags';
+import RenderKeywordTags from './renderItems/RenderKeywordTags';
 import RenderImagesWall from './renderItems/RenderImagesWall';
 import RenderContact from './renderItems/RenderContact';
 import RenderServiceProvideCity from './renderItems/RenderServiceProvideCity';
@@ -15,7 +15,7 @@ export default function RenderIntroTemplate1() {
       <RenderHeroImage />
       <RenderDropdownInfo flexDirection="row" margin="50px auto 30px" />
       <RenderIntroParagraph title="業者介紹" />
-      <RenderKeyWordTags />
+      <RenderKeywordTags />
       <RenderImagesWall />
       <RowWrapper flexDirection="row">
         <RenderContact width="50%" margin="30px 0" />

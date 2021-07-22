@@ -6,13 +6,15 @@ import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateL
 import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 
 export default function RenderServiceProvideCity({ margin, width }) {
-  const { serviceArea } = useContext(IntroRenderContext);
+  const { serviceArea, templateType } = useContext(IntroRenderContext);
   const sortedCities = allCities.filter((city) => serviceArea.includes(city));
 
   return (
     <SectionWrapper width={width} margin={margin} flex="none">
       <Heading3>服務地區</Heading3>
-      <p className="text-lg border-t-2 border-gray-100 pt-3 px-3">{sortedCities.join('、')}</p>
+      <p className={`text-lg ${templateType === 1 && 'border-t-2 border-gray-100 pt-3 px-3'}`}>
+        {sortedCities.join('、')}
+      </p>
     </SectionWrapper>
   );
 }

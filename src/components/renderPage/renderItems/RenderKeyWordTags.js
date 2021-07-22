@@ -5,7 +5,7 @@ import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
 import { SectionWrapper, TagArea } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import { TagsList, Tag } from '../../../styles/sharedStyledComponents/tags';
 
-export default function RenderKeyWordTags() {
+export default function RenderKeywordTags() {
   const { introTags } = useContext(IntroRenderContext);
 
   const renderedTags = introTags.map((tag) => {
