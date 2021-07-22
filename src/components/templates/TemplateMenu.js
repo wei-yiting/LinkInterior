@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components/macro';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
-import { SectionWrapper } from '../../styles/layout/TemplateLayout';
+import { SectionWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
 import { color } from '../../styles/theme';
 
 const activeStyle = { background: color.main[500], color: 'white' };

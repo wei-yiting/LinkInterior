@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
-import EditIntroTemplate1 from '../edit/EditIntroTemplate1';
-import PreviewIntroTemplate1 from '../preview/PreviewIntroTemplate1';
+import EditIntroTemplate1 from '../editPage/EditIntroTemplate1';
+import PreviewIntroTemplate1 from '../previewPage/PreviewIntroTemplate1';
 
 export default function IntroTemplate1() {
   const { isEditMode } = useContext(IntroCompileContext);

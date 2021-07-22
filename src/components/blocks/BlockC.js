@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 
-import EditBlockC from '../edit/EditBlockC';
-import PreviewBlockC from '../preview/PreviewBlockC';
+import EditBlockC from '../editPage/EditBlockC';
+import PreviewBlockC from '../previewPage/PreviewBlockC';
 import { lightLinearGradients } from '../../utils/constants/linearGradient';
 
 const BlockC = ({ blockIdx, blockContent }) => {

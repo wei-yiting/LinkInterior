@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { useAuth } from '../contexts/AuthContext';
-import Main from '../styles/layout/GeneralLayout';
+import { MainWrapper } from '../styles/layoutStyledComponents/GeneralLayout';
 import Logo from '../utils/logo/Logo';
 
 const LogIn = () => {
@@ -28,7 +28,7 @@ const LogIn = () => {
   };
 
   return (
-    <Main className="flex flex-col items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <MainWrapper className="flex flex-col items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8 flex flex-col justify-center items-center">
         <div className="h-20 w-20 text-center">
           <Logo className="text-center" />
@@ -91,7 +91,7 @@ const LogIn = () => {
           </Link>
         </div>
       </div>
-    </Main>
+    </MainWrapper>
   );
 };
 

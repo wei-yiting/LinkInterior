@@ -16,14 +16,15 @@ import {
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLine, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
-
 import {
   contactIconStyle,
   introIconStyle,
   imageIconStyle,
   toggleSwitchIconStyle,
   largeMediaIconStyle,
-} from '../../styles/styleObject/icons';
+} from '../../styles/styleObject/iconsStyle';
+
+import './icon.css';
 
 export const LocationIcon = () => {
   return <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth style={introIconStyle} />;
@@ -96,13 +97,24 @@ export const EyeIcon = () => {
 };
 
 export const LargeWebsiteIcon = () => {
-  return <FontAwesomeIcon icon={faLaptop} fixedWidth style={largeMediaIconStyle} />;
+  return (
+    <FontAwesomeIcon icon={faLaptop} fixedWidth style={largeMediaIconStyle} className="link" />
+  );
 };
 
 export const LargeFacebookIcon = () => {
-  return <FontAwesomeIcon icon={faFacebookSquare} fixedWidth style={largeMediaIconStyle} />;
+  return (
+    <FontAwesomeIcon
+      icon={faFacebookSquare}
+      fixedWidth
+      style={largeMediaIconStyle}
+      className="link"
+    />
+  );
 };
 
 export const LargeInstagramIcon = () => {
-  return <FontAwesomeIcon icon={faInstagram} fixedWidth style={largeMediaIconStyle} />;
+  return (
+    <FontAwesomeIcon icon={faInstagram} fixedWidth style={largeMediaIconStyle} className="link" />
+  );
 };

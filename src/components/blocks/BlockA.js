@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 
-import EditBlockA from '../edit/EditBlockA';
-import PreviewBlockA from '../preview/PreviewBlockA';
+import EditBlockA from '../editPage/EditBlockA';
+import PreviewBlockA from '../previewPage/PreviewBlockA';
 
 export default function BlockA({ blockIdx, blockContent }) {
   const { isEditMode } = useContext(IntroCompileContext);

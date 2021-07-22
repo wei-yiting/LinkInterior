@@ -22,5 +22,6 @@ export const auth = firebase.auth();
 export const firebaseTimeStamp = firebase.firestore.FieldValue.serverTimestamp;
 
 export const usersCollection = db.collection('users');
+export const serviceIntroCollection = db.collection('serviceIntroPages');
 
 export default firebase;

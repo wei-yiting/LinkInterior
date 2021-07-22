@@ -7,7 +7,7 @@ import { Heading2 } from '../../styles/sharedStyledComponents/headings';
 
 const PublishOptionsContainer = styled.div`
   display: flex;
-  margin: 100px auto 50px;
+  margin: 150px auto 50px;
   padding: 70px 40px 70px 60px;
   width: 100%;
   justify-content: space-around;

@@ -10,7 +10,7 @@ import SignUp from './pages/SignUp';
 import IntroCompile from './pages/IntroCompile';
 import ServiceIntro from './pages/ServiceIntro';
 import Header from './components/Header/Header';
-import Main from './styles/layout/GeneralLayout';
+import { MainWrapper } from './styles/layoutStyledComponents/GeneralLayout';
 import AuthContextProvider from './contexts/AuthContext';
 import PrivateRoute from './components/PrivateRoutes';
 
@@ -22,15 +22,15 @@ const App = () => {
         <AuthContextProvider>
           <Header />
           <Switch>
-            <Main>
+            <MainWrapper>
               <Route path="/" exact component={ServicesOverview} />
               <Route path="/log-in" component={LogIn} />
               <Route path="/sign-up" component={SignUp} />
               <IntroCompileContextProvider>
                 <PrivateRoute path="/intro-compile" component={IntroCompile} />
               </IntroCompileContextProvider>
-              <Route path="/service/:id" component={ServiceIntro} />
-            </Main>
+              <Route path="/service/:pageId" component={ServiceIntro} />
+            </MainWrapper>
           </Switch>
         </AuthContextProvider>
       </BrowserRouter>

@@ -7,7 +7,7 @@ import BlockMenu from './BlockMenu';
 import BlockA from './BlockA';
 import BlockB from './BlockB';
 import BlockC from './BlockC';
-import { BlocksAreaContainer } from '../../styles/layout/BlockLayout';
+import { BlocksAreaContainer } from '../../styles/layoutStyledComponents/BlockLayout';
 import { Heading2 } from '../../styles/sharedStyledComponents/headings';
 
 export default function BlockArea() {
