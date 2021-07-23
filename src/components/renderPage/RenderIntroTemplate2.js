@@ -2,13 +2,13 @@ import React, { useContext } from 'react';
 
 import { IntroRenderContext } from '../../contexts/IntroRenderContext';
 import { Title } from '../../styles/sharedStyledComponents/headings';
-import RenderProfileImage from './renderItems/RenderProfileImage';
-import RenderDropdownInfo from './renderItems/RenderDropdownInfo';
-import RenderIntroParagraph from './renderItems/RenderIntroParagraph';
-import RenderKeyWordTags from './renderItems/RenderKeywordTags';
-import RenderImagesWall from './renderItems/RenderImagesWall';
-import RenderContact from './renderItems/RenderContact';
-import RenderServiceProvideCity from './renderItems/RenderServiceProvideCity';
+import RenderProfileImage from './renderTemplateItems/RenderProfileImage';
+import RenderDropdownInfo from './renderTemplateItems/RenderDropdownInfo';
+import RenderIntroParagraph from './renderTemplateItems/RenderIntroParagraph';
+import RenderKeyWordTags from './renderTemplateItems/RenderKeywordTags';
+import RenderImagesWall from './renderTemplateItems/RenderImagesWall';
+import RenderContact from './renderTemplateItems/RenderContact';
+import RenderServiceProvideCity from './renderTemplateItems/RenderServiceProvideCity';
 import { SectionWrapper, RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function RenderIntroTemplate2() {

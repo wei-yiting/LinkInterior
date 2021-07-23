@@ -1,12 +1,12 @@
 import React from 'react';
 
-import RenderHeroImage from './renderItems/RenderHeroImage';
-import RenderDropdownInfo from './renderItems/RenderDropdownInfo';
-import RenderIntroParagraph from './renderItems/RenderIntroParagraph';
-import RenderKeywordTags from './renderItems/RenderKeywordTags';
-import RenderImagesWall from './renderItems/RenderImagesWall';
-import RenderContact from './renderItems/RenderContact';
-import RenderServiceProvideCity from './renderItems/RenderServiceProvideCity';
+import RenderHeroImage from './renderTemplateItems/RenderHeroImage';
+import RenderDropdownInfo from './renderTemplateItems/RenderDropdownInfo';
+import RenderIntroParagraph from './renderTemplateItems/RenderIntroParagraph';
+import RenderKeywordTags from './renderTemplateItems/RenderKeywordTags';
+import RenderImagesWall from './renderTemplateItems/RenderImagesWall';
+import RenderContact from './renderTemplateItems/RenderContact';
+import RenderServiceProvideCity from './renderTemplateItems/RenderServiceProvideCity';
 import { RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function RenderIntroTemplate1() {
