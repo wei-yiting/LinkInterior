@@ -2,14 +2,12 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components/macro';
 import { Link, useHistory } from 'react-router-dom';
-// import compressImage from '../utils/imageProcess/resizeImage';
 
 import imageCompressAndStorage from '../utils/imageProcess/imageCompressAndStorage';
 import Loader from '../components/shared/Loader';
 import UploadImageForm from '../components/shared/UploadImageForm';
 import Logo from '../utils/logo/Logo';
 import { useAuth } from '../contexts/AuthContext';
-// import imageUpload from '../utils/firebase/storage/singleImageUpload';
 
 const ProfileImage = styled.img`
   width: 100%;
@@ -18,7 +16,7 @@ const ProfileImage = styled.img`
   object-position: center;
 `;
 
-const SignUp = () => {
+export default function SignUp() {
   const { signUp } = useAuth();
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState(null);
@@ -200,6 +198,4 @@ const SignUp = () => {
       </div>
     </div>
   );
-};
-
-export default SignUp;
+}
