@@ -9,11 +9,11 @@ import {
 } from '../../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function ImagesWall() {
-  const { imagesGalleryUrls } = useContext(IntroCompileContext);
-  return imagesGalleryUrls.length ? (
+  const { localImagesGalleryUrls } = useContext(IntroCompileContext);
+  return localImagesGalleryUrls.length ? (
     <SectionWrapper width="90%">
       <ImagesGalleryContainer>
-        {imagesGalleryUrls.map((imageUrl) => (
+        {localImagesGalleryUrls.map((imageUrl) => (
           <ImageContainer key={uuid()} style={{ backgroundImage: `url("${imageUrl}")` }} />
         ))}
       </ImagesGalleryContainer>

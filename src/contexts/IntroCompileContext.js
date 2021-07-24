@@ -25,7 +25,8 @@ export default function IntroCompileContextProvider({ children }) {
   const [heroImageUrl, setHeroImageUrl] = useState('');
   const [contactInfo, setContactInfo] = useState(DEFAULT_CONTACT_INFO);
   const [selectedServiceCities, setSelectedServiceCities] = useState([]);
-  const [imagesGalleryUrls, setImagesGalleryUrls] = useState([]);
+  const [localImagesGalleryUrls, setLocalImagesGalleryUrls] = useState([]);
+  const [selectedGalleryImages, setSelectedGalleryImages] = useState([]);
   const [templateType, setTemplateType] = useState(1);
   const [isPublished, setIsPublished] = useState(false);
   const [blockList, setBlockList] = useState([]);
@@ -49,8 +50,10 @@ export default function IntroCompileContextProvider({ children }) {
     setContactInfo,
     selectedServiceCities,
     setSelectedServiceCities,
-    imagesGalleryUrls,
-    setImagesGalleryUrls,
+    selectedGalleryImages,
+    setSelectedGalleryImages,
+    localImagesGalleryUrls,
+    setLocalImagesGalleryUrls,
     isPublished,
     setIsPublished,
     blockList,

@@ -5,7 +5,7 @@ import styled from 'styled-components/macro';
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 import ImagePlaceholder from './ImagePlaceholder';
-import imageUpload from '../../../utils/firebase/storage/singleImageUpload';
+// import imageUpload from '../../../utils/firebase/storage/singleImageUpload';
 // import multipleImagesUpload from '../../../utils/firebase/storage/multipleImageUpload';
 import { lightLinearGradients } from '../../../utils/constants/linearGradient';
 import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
@@ -13,6 +13,9 @@ import { inputField } from '../../../styles/theme';
 import { Heading4 } from '../../../styles/sharedStyledComponents/headings';
 
 const numberOfImages = 6;
+const DEFAULT_IMAGE_PLACEHOLDER_RANDOM_COLOR_IDX = [...Array(numberOfImages)].map(() => {
+  return Math.floor(Math.random() * lightLinearGradients.length);
+});
 
 const ImageUploadContainer = styled.div`
   width: 100%;
@@ -22,16 +25,16 @@ const ImageUploadContainer = styled.div`
   background-color: white;
   padding: 1rem;
   display: flex;
-  align-items: space-between;
+  align-items: center;
   justify-content: flex-start;
   position: relative;
   flex-wrap: wrap;
 `;
 
 const ImageContainer = styled.div`
-  width: calc(33% - 1rem);
+  width: calc(33.3% - 1rem);
   height: 45%;
-  margin: 0 0.5rem;
+  margin: 0.5rem;
   background-size: cover;
   background-position: center;
 `;
@@ -46,20 +49,40 @@ const ButtonWrapper = styled.div`
 const ImagePlaceholderWrapper = styled.div`
   width: calc(33.3% - 1rem);
   height: 45%;
-  margin: 0 0.5rem;
+  margin: 0.5rem;
 `;
 
 export default function ImageWallField() {
-  const { imagesGalleryUrls, setImagesGalleryUrls } = useContext(IntroCompileContext);
-  const [selectedGalleryImages, setSelectedGalleryImages] = useState([]);
-  const [uploadedGalleryImages, setUploadedGalleryImages] = useState(null);
-  const [numOfPlaceholders, setNumOfPlaceholders] = useState(numberOfImages);
-  const [randomIdxList, setRandomIdxList] = useState([]);
+  const {
+    localImagesGalleryUrls,
+    setLocalImagesGalleryUrls,
+    selectedGalleryImages,
+    setSelectedGalleryImages,
+  } = useContext(IntroCompileContext);
+  const [previewGalleryImages, setPreviewGalleryImages] = useState(null);
+  const [randomIdxList, setRandomIdxList] = useState(DEFAULT_IMAGE_PLACEHOLDER_RANDOM_COLOR_IDX);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (localImagesGalleryUrls) {
+      const currentImages = localImagesGalleryUrls.map((imageUrl) => {
+        return <ImageContainer key={uuid()} style={{ backgroundImage: `url("${imageUrl}")` }} />;
+      });
+      setPreviewGalleryImages(currentImages);
+      setIsLoading(false);
+    }
+  }, [localImagesGalleryUrls]);
+
+  useEffect(() => {
+    setRandomIdxList(
+      [...DEFAULT_IMAGE_PLACEHOLDER_RANDOM_COLOR_IDX].slice(selectedGalleryImages.length),
+    );
+  }, [selectedGalleryImages]);
 
   const handleImagesSelected = (evt) => {
     if (evt.target.files) {
       const imageArray = Array.from(evt.target.files).map((file) => URL.createObjectURL(file));
-      setImagesGalleryUrls((prevImages) => prevImages.concat(imageArray));
+      setLocalImagesGalleryUrls((prevImages) => prevImages.concat(imageArray));
       Array.from(evt.target.files).map((file) => URL.revokeObjectURL(file));
       for (let i = 0; i < evt.target.files.length; i += 1) {
         const newImage = evt.target.files[i];
@@ -68,33 +91,6 @@ export default function ImageWallField() {
       }
     }
   };
-
-  const handleImagesUpload = () => {
-    selectedGalleryImages.forEach((image) => {
-      imageUpload(image);
-    });
-  };
-
-  useEffect(() => {
-    if (imagesGalleryUrls) {
-      const currentImages = imagesGalleryUrls.map((imageUrl) => {
-        return <ImageContainer key={uuid()} style={{ backgroundImage: `url("${imageUrl}")` }} />;
-      });
-      setUploadedGalleryImages(currentImages);
-    }
-  }, [imagesGalleryUrls]);
-
-  useEffect(() => {
-    setNumOfPlaceholders(numberOfImages - imagesGalleryUrls.length);
-  }, [imagesGalleryUrls]);
-
-  useEffect(() => {
-    setRandomIdxList(
-      [...Array(numOfPlaceholders)].map(() => {
-        return Math.floor(Math.random() * lightLinearGradients.length);
-      }),
-    );
-  }, [numOfPlaceholders]);
 
   const imagePlaceholders = randomIdxList.map((idx) => {
     return (
@@ -108,13 +104,10 @@ export default function ImageWallField() {
     <SectionWrapper width="90%">
       <Heading4>我的相簿</Heading4>
       <ImageUploadContainer>
-        {uploadedGalleryImages}
-        {imagePlaceholders}
+        {previewGalleryImages}
+        {!isLoading && imagePlaceholders}
         <ButtonWrapper>
-          <input type="file" multiple onChange={handleImagesSelected} />
-          <button type="button" onClick={handleImagesUpload}>
-            上傳圖片
-          </button>
+          <input type="file" multiple onChange={handleImagesSelected} accept=".jpg, .png, .jpeg" />
         </ButtonWrapper>
       </ImageUploadContainer>
     </SectionWrapper>

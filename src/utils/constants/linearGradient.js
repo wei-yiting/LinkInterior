@@ -1,4 +1,4 @@
-export const vabrantLinearGradients = [
+export const vibrantLinearGradients = [
   ['#F0C27B', '#4B1248'],
   ['#70e1f5', '#ffd194'],
   ['#649173', '#DBD5A4'],
@@ -6,7 +6,7 @@ export const vabrantLinearGradients = [
 ];
 
 export const randomLinearGradient =
-  vabrantLinearGradients[Math.floor(Math.random() * vabrantLinearGradients.length)];
+  vibrantLinearGradients[Math.floor(Math.random() * vibrantLinearGradients.length)];
 
 export const lightLinearGradients = [
   ['#D3CCE3', '#E9E4F0'],
