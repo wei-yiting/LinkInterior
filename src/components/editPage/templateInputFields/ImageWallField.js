@@ -5,7 +5,8 @@ import styled from 'styled-components/macro';
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 import ImagePlaceholder from './ImagePlaceholder';
-import multipleImagesUpload from '../../../utils/firebase/storage/multipleImageUpload';
+import imageUpload from '../../../utils/firebase/storage/singleImageUpload';
+// import multipleImagesUpload from '../../../utils/firebase/storage/multipleImageUpload';
 import { lightLinearGradients } from '../../../utils/constants/linearGradient';
 import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import { inputField } from '../../../styles/theme';
@@ -56,16 +57,22 @@ export default function ImageWallField() {
   const [randomIdxList, setRandomIdxList] = useState([]);
 
   const handleImagesSelected = (evt) => {
-    for (let i = 0; i < evt.target.files.length; i += 1) {
-      const newImage = evt.target.files[i];
-      newImage.id = uuid();
-      setSelectedGalleryImages((prevState) => [...prevState, newImage]);
-      setImagesGalleryUrls([]);
+    if (evt.target.files) {
+      const imageArray = Array.from(evt.target.files).map((file) => URL.createObjectURL(file));
+      setImagesGalleryUrls((prevImages) => prevImages.concat(imageArray));
+      Array.from(evt.target.files).map((file) => URL.revokeObjectURL(file));
+      for (let i = 0; i < evt.target.files.length; i += 1) {
+        const newImage = evt.target.files[i];
+        newImage.id = uuid();
+        setSelectedGalleryImages((prevState) => [...prevState, newImage]);
+      }
     }
   };
 
   const handleImagesUpload = () => {
-    multipleImagesUpload(selectedGalleryImages, setImagesGalleryUrls);
+    selectedGalleryImages.forEach((image) => {
+      imageUpload(image);
+    });
   };
 
   useEffect(() => {

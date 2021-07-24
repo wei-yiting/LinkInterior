@@ -1,6 +1,6 @@
 import { storage } from '../index';
 
-const multipleImagesUpload = (images, urlsSetter) => {
+const multipleImagesUpload = (images) => {
   const promises = [];
   images.forEach((file) => {
     const uploadTask = storage.ref(`images/${file.name}`).put(file);
@@ -16,8 +16,8 @@ const multipleImagesUpload = (images, urlsSetter) => {
           .ref('images')
           .child(file.name)
           .getDownloadURL()
-          .then((url) => {
-            urlsSetter((prevState) => [...prevState, url]);
+          .then(() => {
+            console.log('all uploaded');
           });
       },
     );

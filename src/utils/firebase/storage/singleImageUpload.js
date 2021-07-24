@@ -1,6 +1,6 @@
 import { storage } from '../index';
 
-const imageUpload = (file, urlSetter) => {
+const imageUpload = (file) => {
   const uploadTask = storage.ref(`images/${file.name}`).put(file);
   uploadTask.on(
     'state_changed',
@@ -13,8 +13,8 @@ const imageUpload = (file, urlSetter) => {
         .ref('images')
         .child(file.name)
         .getDownloadURL()
-        .then((url) => {
-          urlSetter(url);
+        .then(() => {
+          console.log('upload!');
         });
     },
   );
