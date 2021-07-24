@@ -1,8 +1,8 @@
 import { storage } from '../index';
 
-const imageUpload = (file) => {
+const imageUpload = async (file) => {
   const uploadTask = storage.ref(`images/${file.name}`).put(file);
-  uploadTask.on(
+  const storageUrl = uploadTask.on(
     'state_changed',
     () => {},
     (error) => {
@@ -13,11 +13,13 @@ const imageUpload = (file) => {
         .ref('images')
         .child(file.name)
         .getDownloadURL()
-        .then(() => {
-          console.log('upload!');
+        .then((url) => {
+          return url;
         });
     },
   );
+  console.log(storageUrl);
+  return storageUrl;
 };
 
 export default imageUpload;

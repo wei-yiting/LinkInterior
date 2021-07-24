@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 
 import { color } from '../../styles/theme';
-import ProgressBar from './ProgressBar';
 
 const UploadArea = styled.form`
   display: flex;
@@ -35,18 +34,19 @@ const Error = styled.div`
   color: ${color.main[500]};
 `;
 
-const allowedFileType = ['image/png', 'image/jpeg'];
+const allowedFileType = ['image/png', 'image/jpeg', 'image/jpg'];
 
-const UploadImageForm = ({ children, url, setUrl }) => {
-  const [image, setImage] = useState(null);
+const UploadImageForm = ({ children, setUrl, setProfileLoaded, setImage }) => {
   const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
+    setProfileLoaded(false);
     const selectedFile = e.target.files[0];
     if (selectedFile && allowedFileType.includes(selectedFile.type)) {
       setImage(selectedFile);
-      // console.log('did setImage');
       setError('');
+      const localUrl = URL.createObjectURL(selectedFile);
+      setUrl(localUrl);
     } else {
       setImage(null);
       setError('請選擇一個圖檔 ( jpeg 或 png 檔 )');
@@ -55,13 +55,9 @@ const UploadImageForm = ({ children, url, setUrl }) => {
 
   return (
     <UploadArea>
-      <Output>
-        {error && <Error>{error}</Error>}
-        {image && <div>{image.name}</div>}
-        {image && <ProgressBar image={image} setImage={setImage} url={url} setUrl={setUrl} />}
-      </Output>
+      <Output>{error && <Error>{error}</Error>}</Output>
       <InputLabel>
-        <FileInput type="file" onChange={handleInputChange} />
+        <FileInput type="file" onChange={handleInputChange} accept=".jpg, .png, .jpeg" />
         {children}
       </InputLabel>
     </UploadArea>
