@@ -22,6 +22,8 @@ export const auth = firebase.auth();
 export const firebaseTimeStamp = firebase.firestore.FieldValue.serverTimestamp;
 
 export const usersCollection = db.collection('users');
+export const usersStatsRef = db.collection('users').doc('--stats--');
 export const serviceIntroCollection = db.collection('serviceIntroPages');
+export const increment = firebase.firestore.FieldValue.increment(1);
 
 export default firebase;
