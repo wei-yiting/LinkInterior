@@ -17,6 +17,7 @@ export default function ProfileImageField() {
     if (evt.target.files[0]) {
       setSelectedHeroImage(evt.target.files[0]);
       setHeroImageUrl(URL.createObjectURL(evt.target.files[0]));
+      URL.revokeObjectURL(evt.target.files[0]);
     }
   };
 
@@ -36,7 +37,7 @@ export default function ProfileImageField() {
       <HeroImageContainer width="400px" height="350px" style={imageContainerStyle}>
         <LightSelectImageInputButton
           fieldName="heroImage"
-          buttonText={selectedHeroImage ? ' 更換圖片' : '新增圖片'}
+          buttonText={selectedHeroImage ? ' 更換圖片' : '選擇圖片'}
           onSelectHandler={handleImageSelected}
         />
       </HeroImageContainer>

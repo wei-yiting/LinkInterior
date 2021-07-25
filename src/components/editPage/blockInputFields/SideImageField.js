@@ -20,7 +20,7 @@ const UploadedImageContainer = styled.div`
   height: 100%;
   background-position: center;
   background-size: cover;
-  background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+  background: linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
     center / cover no-repeat url('${(props) => props.url}');
 `;
 
@@ -33,11 +33,9 @@ const ButtonWrapper = styled.div`
 
 export default function SideImageField({ blockIdx, randomBgIdx }) {
   const { blockList, setBlockList } = useContext(IntroCompileContext);
-  // const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageSelected = (evt) => {
     if (evt.target.files[0]) {
-      // setSelectedImage(evt.target.files[0]);
       setBlockList(
         blockList.map((block, index) => {
           if (index === blockIdx) {
@@ -50,12 +48,9 @@ export default function SideImageField({ blockIdx, randomBgIdx }) {
           return block;
         }),
       );
+      URL.revokeObjectURL(evt.target.files[0]);
     }
   };
-
-  // const handleImageUpload = () => {
-  //   blockImageUpload(selectedImage, blockList, setBlockList, blockIdx);
-  // };
 
   return (
     <ImageArea>
@@ -67,7 +62,7 @@ export default function SideImageField({ blockIdx, randomBgIdx }) {
       <ButtonWrapper>
         <LightSmallSelectImageInputButton
           fieldName={`blockImage${blockIdx}`}
-          buttonText={blockList[blockIdx].localImageUrl ? '更換圖片' : '新增圖片'}
+          buttonText={blockList[blockIdx].localImageUrl ? '更換圖片' : '選擇圖片'}
           onSelectHandler={handleImageSelected}
         />
       </ButtonWrapper>

@@ -32,19 +32,19 @@ export default function Example() {
         }}
         className={classNames(
           !isEditMode ? 'bg-main-300' : 'bg-gray-200',
-          'relative inline-flex flex-shrink-0 h- w-11 border border-main-300 rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-main-100 shadow-xl',
+          'relative inline-flex flex-shrink-0 h- w-11 border border-main-300 rounded-full cursor-pointer transition-colors ease-in-out duration-500 focus:outline-none focus:ring-1 focus:ring-offset-2 focus:ring-main-100 shadow-xl',
         )}
       >
         <span className="sr-only">Use setting</span>
         <span
           className={classNames(
             !isEditMode ? 'translate-x-5' : 'translate-x-0',
-            'pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-200',
+            'pointer-events-none relative inline-block h-5 w-5 rounded-full bg-white shadow transform ring-0 transition ease-in-out duration-500',
           )}
         >
           <span
             className={classNames(
-              !isEditMode ? 'opacity-0 ease-out duration-100' : 'opacity-100 ease-in duration-200',
+              !isEditMode ? 'opacity-0 ease-out duration-100' : 'opacity-100 ease-in duration-300',
               'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity',
             )}
             aria-hidden="true"
@@ -53,7 +53,7 @@ export default function Example() {
           </span>
           <span
             className={classNames(
-              !isEditMode ? 'opacity-100 ease-in duration-200' : 'opacity-0 ease-out duration-100',
+              !isEditMode ? 'opacity-100 ease-in duration-200' : 'opacity-0 ease-out duration-300',
               'absolute inset-0 h-full w-full flex items-center justify-center transition-opacity',
             )}
             aria-hidden="true"

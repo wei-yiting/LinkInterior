@@ -6,19 +6,21 @@ import { AddIcon } from '../../utils/icons';
 
 const SolidLabel = styled.label`
   font-size: 1.125rem;
-  background-color: ${color.main[300]};
+  background-color: ${color.main[400]};
   padding: 0.75rem 1.5rem 0.75rem 1.25rem;
   color: white;
   border-radius: 0.5rem;
   letter-spacing: 0.1rem;
   border: 4px solid white;
   transition: background-color 0.1s, border 0.2s;
+  opacity: 0.9;
   :hover {
-    background-color: ${color.main[400]};
+    background-color: ${color.main[500]};
     border: 4px solid ${color.gray[100]};
+    opacity: 1;
   }
   :active {
-    background-color: ${color.main[500]};
+    background-color: ${color.main[600]};
     border: 4px solid ${color.gray[200]};
     color: ${color.gray[100]};
   }

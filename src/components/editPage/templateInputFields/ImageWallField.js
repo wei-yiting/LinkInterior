@@ -5,8 +5,6 @@ import styled from 'styled-components/macro';
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 import ImagePlaceholder from './ImagePlaceholder';
-// import imageUpload from '../../../utils/firebase/storage/singleImageUpload';
-// import multipleImagesUpload from '../../../utils/firebase/storage/multipleImageUpload';
 import { lightLinearGradients } from '../../../utils/constants/linearGradient';
 import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import { inputField } from '../../../styles/theme';
@@ -71,7 +69,7 @@ export default function ImageWallField() {
           <ImageContainer
             key={uuid()}
             style={{
-              background: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+              background: `linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
           center / cover no-repeat url("${imageUrl}")`,
             }}
           />
@@ -118,7 +116,7 @@ export default function ImageWallField() {
         <ButtonWrapper>
           <DarkSelectImageInputButton
             fieldName="imageGallery"
-            buttonText={selectedGalleryImages.length !== 0 ? '新增更多圖片' : '選擇圖片'}
+            buttonText={selectedGalleryImages.length !== 0 ? '新增更多圖片' : '新增圖片'}
             onSelectHandler={handleImagesSelected}
             multiple
           />

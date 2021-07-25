@@ -14,13 +14,7 @@ const CompanyName = styled.span`
   color: white;
   font-weight: 600;
   letter-spacing: 0.1em;
-`;
-
-const ButtonWrapper = styled.div`
-  position: absolute;
-  bottom: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: 1.5rem auto;
 `;
 
 export default function HeroImageField() {
@@ -33,6 +27,7 @@ export default function HeroImageField() {
     if (evt.target.files[0]) {
       setSelectedHeroImage(evt.target.files[0]);
       setHeroImageUrl(URL.createObjectURL(evt.target.files[0]));
+      URL.revokeObjectURL(evt.target.files[0]);
     }
   };
 
@@ -51,13 +46,11 @@ export default function HeroImageField() {
     <div>
       <HeroImageContainer style={imageContainerStyle}>
         <CompanyName>{currentUser.username}</CompanyName>
-        <ButtonWrapper>
-          <LightSelectImageInputButton
-            fieldName="heroImage"
-            buttonText={selectedHeroImage ? ' 更換圖片' : '新增圖片'}
-            onSelectHandler={handleImageSelected}
-          />
-        </ButtonWrapper>
+        <LightSelectImageInputButton
+          fieldName="heroImage"
+          buttonText={selectedHeroImage ? ' 更換圖片' : '選擇圖片'}
+          onSelectHandler={handleImageSelected}
+        />
       </HeroImageContainer>
     </div>
   );

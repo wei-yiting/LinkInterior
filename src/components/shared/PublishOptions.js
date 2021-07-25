@@ -58,7 +58,7 @@ export default function PublishOptions({ save, publish }) {
           <p>
             公開此頁圖文內容，讓所有人能透過這個網頁認識你
             <br />
-            （未來可以再修改更新內容）
+            （發佈後可再編輯更新這個頁面）
           </p>
         </ActionWrapper>
       </PublishOptionsContainer>
