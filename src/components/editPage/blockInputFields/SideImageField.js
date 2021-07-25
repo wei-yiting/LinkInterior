@@ -1,15 +1,18 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components/macro';
 
+import { LightSmallSelectImageInputButton } from '../../shared/SelectImageInputButton';
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
-import blockImageUpload from '../../../utils/firebase/storage/blockImageUpload';
 import ImagePlaceholder from '../templateInputFields/ImagePlaceholder';
 
 const ImageArea = styled.div`
   position: relative;
   width: 45%;
   height: 100%;
-  margin: auto;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const UploadedImageContainer = styled.div`
@@ -23,39 +26,50 @@ const UploadedImageContainer = styled.div`
 
 const ButtonWrapper = styled.div`
   position: absolute;
-  display: flex;
-  justify-content: center;
-  bottom: 20%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 `;
 
 export default function SideImageField({ blockIdx, randomBgIdx }) {
   const { blockList, setBlockList } = useContext(IntroCompileContext);
-  const [selectedImage, setSelectedImage] = useState(null);
+  // const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageSelected = (evt) => {
     if (evt.target.files[0]) {
-      setSelectedImage(evt.target.files[0]);
+      // setSelectedImage(evt.target.files[0]);
+      setBlockList(
+        blockList.map((block, index) => {
+          if (index === blockIdx) {
+            return {
+              ...block,
+              imageFile: evt.target.files[0],
+              localImageUrl: URL.createObjectURL(evt.target.files[0]),
+            };
+          }
+          return block;
+        }),
+      );
     }
   };
 
-  const handleImageUpload = () => {
-    blockImageUpload(selectedImage, blockList, setBlockList, blockIdx);
-  };
+  // const handleImageUpload = () => {
+  //   blockImageUpload(selectedImage, blockList, setBlockList, blockIdx);
+  // };
 
   return (
     <ImageArea>
-      {blockList[blockIdx].imageUrl ? (
-        <UploadedImageContainer url={blockList[blockIdx].imageUrl} />
+      {blockList[blockIdx].localImageUrl ? (
+        <UploadedImageContainer url={blockList[blockIdx].localImageUrl} />
       ) : (
         <ImagePlaceholder idx={randomBgIdx} />
       )}
       <ButtonWrapper>
-        <input type="file" onChange={handleImageSelected} />
-        <button type="button" onClick={handleImageUpload}>
-          上傳
-        </button>
+        <LightSmallSelectImageInputButton
+          fieldName={`blockImage${blockIdx}`}
+          buttonText={blockList[blockIdx].localImageUrl ? '更換圖片' : '新增圖片'}
+          onSelectHandler={handleImageSelected}
+        />
       </ButtonWrapper>
     </ImageArea>
   );

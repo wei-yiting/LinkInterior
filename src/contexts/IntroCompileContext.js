@@ -18,6 +18,8 @@ const DEFAULT_CONTACT_INFO = {
 
 export default function IntroCompileContextProvider({ children }) {
   const [isEditMode, setIsEditMode] = useState(true);
+  const [templateType, setTemplateType] = useState(1);
+  const [selectedHeroImage, setSelectedHeroImage] = useState(null);
   const [intro, setIntro] = useState('');
   const [city, setCity] = useState(allCityOptions[0]);
   const [profession, setProfession] = useState(professionOptions[0]);
@@ -27,7 +29,6 @@ export default function IntroCompileContextProvider({ children }) {
   const [selectedServiceCities, setSelectedServiceCities] = useState([]);
   const [localImagesGalleryUrls, setLocalImagesGalleryUrls] = useState([]);
   const [selectedGalleryImages, setSelectedGalleryImages] = useState([]);
-  const [templateType, setTemplateType] = useState(1);
   const [isPublished, setIsPublished] = useState(false);
   const [blockList, setBlockList] = useState([]);
 
@@ -36,6 +37,8 @@ export default function IntroCompileContextProvider({ children }) {
     setIsEditMode,
     templateType,
     setTemplateType,
+    selectedHeroImage,
+    setSelectedHeroImage,
     intro,
     setIntro,
     city,

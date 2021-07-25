@@ -14,7 +14,8 @@ export default function BlockMenu() {
         id: uuid(),
         type,
         text: '',
-        imageUrl: '',
+        localImageUrl: '',
+        imageFile: null,
       },
     ]);
   };

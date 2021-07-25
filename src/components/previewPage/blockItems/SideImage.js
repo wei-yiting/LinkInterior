@@ -7,6 +7,9 @@ const ImageArea = styled.div`
   position: relative;
   width: 45%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const UploadedImageContainer = styled.div`

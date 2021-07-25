@@ -44,8 +44,8 @@ export const RemoveTagIcon = () => {
   );
 };
 
-export const AddIcon = () => {
-  return <FontAwesomeIcon icon={faPlus} fixedWidth />;
+export const AddIcon = ({ style }) => {
+  return <FontAwesomeIcon icon={faPlus} fixedWidth style={style} />;
 };
 
 export const MobileIcon = () => {

@@ -8,7 +8,7 @@ const PreviewBlockB = ({ blockContent, randomBgIdx }) => {
   return (
     <BlockContainer>
       <SideText text={blockContent.text} />
-      <SideImage imageUrl={blockContent.imageUrl} randomBgIdx={randomBgIdx} />
+      <SideImage imageUrl={blockContent.localImageUrl} randomBgIdx={randomBgIdx} />
     </BlockContainer>
   );
 };

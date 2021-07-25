@@ -11,6 +11,7 @@ import { lightLinearGradients } from '../../../utils/constants/linearGradient';
 import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import { inputField } from '../../../styles/theme';
 import { Heading4 } from '../../../styles/sharedStyledComponents/headings';
+import { DarkSelectImageInputButton } from '../../shared/SelectImageInputButton';
 
 const numberOfImages = 6;
 const DEFAULT_IMAGE_PLACEHOLDER_RANDOM_COLOR_IDX = [...Array(numberOfImages)].map(() => {
@@ -66,7 +67,15 @@ export default function ImageWallField() {
   useEffect(() => {
     if (localImagesGalleryUrls) {
       const currentImages = localImagesGalleryUrls.map((imageUrl) => {
-        return <ImageContainer key={uuid()} style={{ backgroundImage: `url("${imageUrl}")` }} />;
+        return (
+          <ImageContainer
+            key={uuid()}
+            style={{
+              background: `linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+          center / cover no-repeat url("${imageUrl}")`,
+            }}
+          />
+        );
       });
       setPreviewGalleryImages(currentImages);
       setIsLoading(false);
@@ -107,7 +116,12 @@ export default function ImageWallField() {
         {previewGalleryImages}
         {!isLoading && imagePlaceholders}
         <ButtonWrapper>
-          <input type="file" multiple onChange={handleImagesSelected} accept=".jpg, .png, .jpeg" />
+          <DarkSelectImageInputButton
+            fieldName="imageGallery"
+            buttonText={selectedGalleryImages.length !== 0 ? '新增更多圖片' : '選擇圖片'}
+            onSelectHandler={handleImagesSelected}
+            multiple
+          />
         </ButtonWrapper>
       </ImageUploadContainer>
     </SectionWrapper>

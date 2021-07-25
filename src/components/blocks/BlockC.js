@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useContext } from 'react';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 
@@ -6,18 +6,15 @@ import EditBlockC from '../editPage/EditBlockC';
 import PreviewBlockC from '../previewPage/PreviewBlockC';
 import { lightLinearGradients } from '../../utils/constants/linearGradient';
 
+const DEFAULT_RANDOM_BG_IDX = Math.floor(Math.random() * lightLinearGradients.length);
+
 const BlockC = ({ blockIdx, blockContent }) => {
   const { isEditMode } = useContext(IntroCompileContext);
-  const [randomBgIdx, setRandomBgIdx] = useState(0);
-
-  useEffect(() => {
-    setRandomBgIdx(Math.floor(Math.random() * lightLinearGradients.length));
-  }, []);
 
   return isEditMode ? (
-    <EditBlockC blockIdx={blockIdx} randomBgIdx={randomBgIdx} />
+    <EditBlockC blockIdx={blockIdx} randomBgIdx={DEFAULT_RANDOM_BG_IDX} />
   ) : (
-    <PreviewBlockC blockContent={blockContent} randomBgIdx={randomBgIdx} />
+    <PreviewBlockC blockContent={blockContent} randomBgIdx={DEFAULT_RANDOM_BG_IDX} />
   );
 };
 

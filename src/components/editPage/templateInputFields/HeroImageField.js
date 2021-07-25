@@ -4,7 +4,7 @@ import styled from 'styled-components/macro';
 import { useAuth } from '../../../contexts/AuthContext';
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
-import singleImageUpload from '../../../utils/firebase/storage/singleImageUpload';
+import { LightSelectImageInputButton } from '../../shared/SelectImageInputButton';
 import { randomLinearGradient } from '../../../utils/constants/linearGradient';
 import { HeroImageContainer } from '../../../styles/layoutStyledComponents/TemplateLayout';
 
@@ -18,25 +18,22 @@ const CompanyName = styled.span`
 
 const ButtonWrapper = styled.div`
   position: absolute;
-  bottom: 20%;
+  bottom: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
 `;
 
 export default function HeroImageField() {
   const { currentUser } = useAuth();
-  const { heroImageUrl, setHeroImageUrl } = useContext(IntroCompileContext);
-  const [selectedHeroImage, setSelectedHeroImage] = useState(null);
+  const { selectedHeroImage, setSelectedHeroImage, heroImageUrl, setHeroImageUrl } =
+    useContext(IntroCompileContext);
   const [imageContainerStyle, setimageContainerStyle] = useState({});
 
   const handleImageSelected = (evt) => {
     if (evt.target.files[0]) {
       setSelectedHeroImage(evt.target.files[0]);
+      setHeroImageUrl(URL.createObjectURL(evt.target.files[0]));
     }
-  };
-
-  const handleImageUpload = () => {
-    singleImageUpload(selectedHeroImage, setHeroImageUrl);
   };
 
   useEffect(() => {
@@ -55,10 +52,11 @@ export default function HeroImageField() {
       <HeroImageContainer style={imageContainerStyle}>
         <CompanyName>{currentUser.username}</CompanyName>
         <ButtonWrapper>
-          <input type="file" onChange={handleImageSelected} />
-          <button type="button" onClick={handleImageUpload}>
-            上傳圖片
-          </button>
+          <LightSelectImageInputButton
+            fieldName="heroImage"
+            buttonText={selectedHeroImage ? ' 更換圖片' : '新增圖片'}
+            onSelectHandler={handleImageSelected}
+          />
         </ButtonWrapper>
       </HeroImageContainer>
     </div>
