@@ -1,5 +1,5 @@
 import { storage } from '../firebase';
-import imageCompress from './imageCompress';
+import imageCompress from './compressImage';
 
 const imageCompressAndStorage = async (file, directory, width = 600, size = 0.5) => {
   return new Promise((resolve, reject) => {
