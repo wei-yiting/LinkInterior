@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 
-import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
-import { HeroImageContainer } from '../../../styles/layoutStyledComponents/TemplateLayout';
+import { IntroRenderContext } from '../../../../contexts/IntroRenderContext';
+import { HeroImageContainer } from '../../../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function ProfileImage() {
   const { heroImageUrl } = useContext(IntroRenderContext);

@@ -8,13 +8,13 @@ import PageError from '../shared/PageError';
 import { IntroPageMainContainer } from '../../styles/layoutStyledComponents/GeneralLayout';
 
 export default function RenderIntroPage() {
-  const { error, loading } = useContext(IntroRenderContext);
+  const { error, loading, data } = useContext(IntroRenderContext);
 
   return (
     <>
       {loading && <PageLoading />}
       {error && <PageError />}
-      {!loading && !error && (
+      {data && (
         <IntroPageMainContainer>
           <RenderIntroTemplateArea />
           <RenderBlocksArea />

@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 
-import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
+import { IntroRenderContext } from '../../../../contexts/IntroRenderContext';
 import {
   SectionWrapper,
   ContactArea,
   SocailMediaContainer,
   ContactInfoWrapper,
   InfoSpan,
-} from '../../../styles/layoutStyledComponents/TemplateLayout';
-import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
+} from '../../../../styles/layoutStyledComponents/TemplateLayout';
+import { Heading3 } from '../../../../styles/sharedStyledComponents/headings';
 import {
   MobileIcon,
   PhoneIcon,
@@ -18,7 +18,7 @@ import {
   LargeWebsiteIcon,
   LargeFacebookIcon,
   LargeInstagramIcon,
-} from '../../../utils/icons';
+} from '../../../../utils/icons';
 
 export default function RenderContact({ width, flexDirection, margin }) {
   const { contactInfo } = useContext(IntroRenderContext);

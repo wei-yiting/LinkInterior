@@ -29,6 +29,5 @@ export default function usePageData(collection, docId = '') {
       isMounted = false;
     };
   }, [collection, docId]);
-
   return { loading, error, data };
 }

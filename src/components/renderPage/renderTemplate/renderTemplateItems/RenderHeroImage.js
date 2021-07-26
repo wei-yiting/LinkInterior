@@ -3,8 +3,8 @@ import React, { useContext } from 'react';
 import {
   HeroImageContainer,
   HeroImageCompanyName,
-} from '../../../styles/layoutStyledComponents/TemplateLayout';
-import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
+} from '../../../../styles/layoutStyledComponents/TemplateLayout';
+import { IntroRenderContext } from '../../../../contexts/IntroRenderContext';
 
 export default function RenderHeroImage() {
   const { companyName, heroImageUrl } = useContext(IntroRenderContext);

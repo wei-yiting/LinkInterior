@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 
-import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
+import { IntroRenderContext } from '../../../../contexts/IntroRenderContext';
 import {
   SectionWrapper,
   IntroParagraphText,
-} from '../../../styles/layoutStyledComponents/TemplateLayout';
-import { Heading1 } from '../../../styles/sharedStyledComponents/headings';
+} from '../../../../styles/layoutStyledComponents/TemplateLayout';
+import { Heading1 } from '../../../../styles/sharedStyledComponents/headings';
 
 export default function RenderIntroParagraph({ title }) {
   const { intro } = useContext(IntroRenderContext);

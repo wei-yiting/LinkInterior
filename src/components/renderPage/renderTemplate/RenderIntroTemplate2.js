@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
-import { IntroRenderContext } from '../../contexts/IntroRenderContext';
-import { Title } from '../../styles/sharedStyledComponents/headings';
+import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
+import { Title } from '../../../styles/sharedStyledComponents/headings';
 import RenderProfileImage from './renderTemplateItems/RenderProfileImage';
 import RenderDropdownInfo from './renderTemplateItems/RenderDropdownInfo';
 import RenderIntroParagraph from './renderTemplateItems/RenderIntroParagraph';
@@ -9,7 +9,7 @@ import RenderKeyWordTags from './renderTemplateItems/RenderKeywordTags';
 import RenderImagesWall from './renderTemplateItems/RenderImagesWall';
 import RenderContact from './renderTemplateItems/RenderContact';
 import RenderServiceProvideCity from './renderTemplateItems/RenderServiceProvideCity';
-import { SectionWrapper, RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
+import { SectionWrapper, RowWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function RenderIntroTemplate2() {
   const { companyName } = useContext(IntroRenderContext);

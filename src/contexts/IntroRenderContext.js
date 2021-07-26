@@ -11,11 +11,12 @@ export default function IntroRenderContextProvider({ children, pageId }) {
   let valueProvided = {};
   if (data) {
     valueProvided = {
+      data,
       error,
       loading,
       isPublish: data.isPublished,
       templateType: data.templateType,
-      blocks: data.blocks,
+      blockList: data.blocks,
       companyName: data.companyName,
       heroImageUrl: data.templateContent.heroImageUrl,
       intro: data.templateContent.intro,

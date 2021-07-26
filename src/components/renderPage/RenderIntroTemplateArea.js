@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 
 import { IntroRenderContext } from '../../contexts/IntroRenderContext';
-import RenderIntroTemplate1 from './RenderIntroTemplate1';
-import RenderIntroTemplate2 from './RenderIntroTemplate2';
+import RenderIntroTemplate1 from './renderTemplate/RenderIntroTemplate1';
+import RenderIntroTemplate2 from './renderTemplate/RenderIntroTemplate2';
 
 export default function RenderIntroTemplateArea() {
   const { templateType } = useContext(IntroRenderContext);

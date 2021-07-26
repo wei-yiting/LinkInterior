@@ -1,33 +1,15 @@
 import React from 'react';
-import styled from 'styled-components/macro';
 
+import {
+  SideImageWrapper,
+  SideImageContainer,
+} from '../../../styles/layoutStyledComponents/BlockLayout';
 import ImagePlaceholder from '../../editPage/templateInputFields/ImagePlaceholder';
-
-const ImageArea = styled.div`
-  position: relative;
-  width: 45%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const UploadedImageContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  background-position: center;
-  background-size: cover;
-  background-image: url('${(props) => props.url}');
-`;
 
 export default function SideImage({ imageUrl, randomBgIdx }) {
   return (
-    <ImageArea>
-      {imageUrl ? (
-        <UploadedImageContainer url={imageUrl} />
-      ) : (
-        <ImagePlaceholder idx={randomBgIdx} />
-      )}
-    </ImageArea>
+    <SideImageWrapper>
+      {imageUrl ? <SideImageContainer url={imageUrl} /> : <ImagePlaceholder idx={randomBgIdx} />}
+    </SideImageWrapper>
   );
 }

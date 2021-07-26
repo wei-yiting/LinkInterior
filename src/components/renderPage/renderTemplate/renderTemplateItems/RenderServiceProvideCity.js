@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 
-import { allCities } from '../../../utils/constants/city';
-import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
-import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
-import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
+import { allCities } from '../../../../utils/constants/city';
+import { IntroRenderContext } from '../../../../contexts/IntroRenderContext';
+import { SectionWrapper } from '../../../../styles/layoutStyledComponents/TemplateLayout';
+import { Heading3 } from '../../../../styles/sharedStyledComponents/headings';
 
 export default function RenderServiceProvideCity({ margin, width }) {
   const { serviceArea, templateType } = useContext(IntroRenderContext);

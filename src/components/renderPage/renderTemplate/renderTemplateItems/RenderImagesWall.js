@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 import uuid from 'react-uuid';
 
-import { IntroRenderContext } from '../../../contexts/IntroRenderContext';
+import { IntroRenderContext } from '../../../../contexts/IntroRenderContext';
 import {
   SectionWrapper,
   ImagesGalleryContainer,
   ImageContainer,
-} from '../../../styles/layoutStyledComponents/TemplateLayout';
+} from '../../../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function RenderImagesWall() {
   const { imageGalleryUrls } = useContext(IntroRenderContext);
