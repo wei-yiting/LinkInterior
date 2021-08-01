@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-export default function usePageData(collection, docId = '') {
+export default function useFetchPage(collection, docId = '') {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);

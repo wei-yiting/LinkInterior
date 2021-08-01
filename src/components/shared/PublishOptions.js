@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 
+// import useIntroUpload from '../../hooks/useIntroUpload';
+// import useEventListener from '../../hooks/useEventListener';
 import { PrimaryButton, OutlineButton } from '../../styles/sharedStyledComponents/buttons';
 import { color } from '../../styles/theme';
 import { Heading2 } from '../../styles/sharedStyledComponents/headings';
+import Uploading from './Uploading';
 
 const PublishOptionsContainer = styled.div`
   display: flex;
@@ -34,15 +37,29 @@ const ActionWrapper = styled.div`
   }
 `;
 
-export default function PublishOptions({ save, publish }) {
+const PublishOptions = React.memo(() => {
+  // const saveRef = useRef();
+  // const publishRef = useRef();
+  // const savePage = useEventListener('click', useIntroUpload);
+  // const publishPage = useEventListener('click', useIntroUpload);
+  const [isSaving, setIsSaving] = useState(false);
+  const [isPublishing, setIsPublishing] = useState(false);
   return (
     <>
+      {isSaving && <Uploading publishStatus="false" />}
+      {isPublishing && <Uploading publishStatus="true" />}
       <PublishOptionsContainer>
         <Heading2 fontColor={color.gray[500]} fontWeight="500">
           完成編輯
         </Heading2>
         <ActionWrapper>
-          <OutlineButton onClick={save} width="70%">
+          <OutlineButton
+            // ref={saveRef}
+            onClick={() => {
+              setIsSaving(true);
+            }}
+            width="70%"
+          >
             儲存編輯內容
           </OutlineButton>
           <p>
@@ -52,7 +69,13 @@ export default function PublishOptions({ save, publish }) {
           </p>
         </ActionWrapper>
         <ActionWrapper>
-          <PrimaryButton onClick={publish} width="70%">
+          <PrimaryButton
+            // ref={publishRef}
+            onClick={() => {
+              setIsPublishing(true);
+            }}
+            width="70%"
+          >
             發佈我的介紹頁面
           </PrimaryButton>
           <p>
@@ -64,4 +87,6 @@ export default function PublishOptions({ save, publish }) {
       </PublishOptionsContainer>
     </>
   );
-}
+});
+
+export default PublishOptions;

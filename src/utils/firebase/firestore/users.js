@@ -11,6 +11,7 @@ export const createNewUserdata = async (uid, email, username, profileUrl = '') =
     createdAt: firebaseTimeStamp(),
     publishStatus: 0,
     userSeqId: totalUser + 1,
+    userUid: uid,
   });
 };
 

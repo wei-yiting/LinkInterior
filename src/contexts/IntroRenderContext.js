@@ -1,7 +1,7 @@
 import React, { createContext } from 'react';
 
 import { serviceIntroCollection } from '../utils/firebase/index';
-import usePageData from '../hooks/usePageData';
+import usePageData from '../hooks/useFetchPage';
 
 export const IntroRenderContext = createContext();
 

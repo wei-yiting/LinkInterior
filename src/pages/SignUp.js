@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import styled from 'styled-components/macro';
 import { Link, useHistory } from 'react-router-dom';
 
-import imageCompressAndStorage from '../utils/imageProcess/imageCompressAndStorage';
+import { singleImageCompressAndStorage } from '../utils/imageProcess/imageCompressAndStorage';
 import Loader from '../components/shared/Loader';
 import UploadImageForm from '../components/shared/UploadImageForm';
 import Logo from '../utils/logo/Logo';
@@ -39,7 +39,7 @@ export default function SignUp() {
       setLoading(true);
       let profileStorageUrl;
       if (image) {
-        profileStorageUrl = await imageCompressAndStorage(image, 'userProfile', 600);
+        profileStorageUrl = await singleImageCompressAndStorage(image, 'userProfile', 600);
       }
       await signUp(
         emailRef.current.value,

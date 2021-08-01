@@ -8,7 +8,7 @@ import BlockArea from '../components/blocks/BlockArea';
 import PublishOptions from '../components/shared/PublishOptions';
 import { IntroPageMainContainer } from '../styles/layoutStyledComponents/GeneralLayout';
 
-export default function IntrCompile() {
+export default function IntroCompile() {
   const { isEditMode } = useContext(IntroCompileContext);
 
   return (
