@@ -6,7 +6,7 @@ import usePageData from '../hooks/useFetchPage';
 export const IntroRenderContext = createContext();
 
 export default function IntroRenderContextProvider({ children, pageId }) {
-  const { error, data, loading } = usePageData(serviceIntroCollection, pageId);
+  const { error, data, loading } = usePageData(serviceIntroCollection, 'companySeqId', pageId);
 
   let valueProvided = {};
   if (data) {

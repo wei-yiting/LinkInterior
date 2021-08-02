@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 import { color } from '../../styles/theme';
 import useIntroUpload from '../../hooks/useIntroUpload';
+import { useAuth } from '../../contexts/AuthContext';
 
 const LoaderBackground = styled.div`
   width: 100vw;
@@ -41,20 +42,20 @@ const Spinner = styled.div`
   }
 `;
 
-const Uploading = ({ size, perSpin, borderWidth }) => {
+const Uploading = ({ publishStatus }) => {
+  const { currentUser } = useAuth();
   const history = useHistory();
-  const { isUploading } = useIntroUpload(true);
+  const { isUploading } = useIntroUpload(publishStatus);
   useEffect(() => {
     if (!isUploading) {
-      history.push('/');
+      history.push(`/service/${currentUser.userSeqId}`);
     }
     console.log(isUploading);
   }, [isUploading]);
 
   return (
     <LoaderBackground>
-      <Spinner size={size} perSpin={perSpin} borderWidth={borderWidth} />
-      {/* {uploadError && uploadError} */}
+      <Spinner />
     </LoaderBackground>
   );
 };

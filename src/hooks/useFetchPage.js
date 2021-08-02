@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react';
 
-export default function useFetchPage(collection, docId = '') {
+export default function useFetchPage(collection, term, pageId = '') {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  const pageIdToNum = parseInt(pageId, 10);
 
   useEffect(() => {
     let isMounted = true;
 
     setLoading(true);
     collection
-      .doc(docId)
+      .where(term, '==', pageIdToNum)
       .get()
-      .then((snapshot) => {
+      .then((querySnapshot) => {
         if (isMounted) {
-          setData(snapshot.data());
-          setError(null);
+          querySnapshot.forEach((doc) => {
+            setData(doc.data());
+            setError(null);
+          });
         }
       })
       .catch((err) => {
@@ -28,6 +32,6 @@ export default function useFetchPage(collection, docId = '') {
     return () => {
       isMounted = false;
     };
-  }, [collection, docId]);
+  }, []);
   return { loading, error, data };
 }
