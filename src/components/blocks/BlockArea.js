@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 import { useAuth } from '../../contexts/AuthContext';
 
-import BlockMenu from './BlockMenu';
+import ThumbnailBlockMenu from './ThumbnailBlockMenu';
 import BlockA from './BlockA';
 import BlockB from './BlockB';
 import BlockC from './BlockC';
@@ -29,11 +29,13 @@ export default function BlockArea() {
   });
 
   return isEditMode ? (
-    <BlocksAreaContainer>
-      <Heading2>更多關於我的介紹</Heading2>
-      {renderedBlocks}
-      <BlockMenu />
-    </BlocksAreaContainer>
+    <>
+      <BlocksAreaContainer>
+        <Heading2>更多關於我的介紹</Heading2>
+        {renderedBlocks}
+      </BlocksAreaContainer>
+      <ThumbnailBlockMenu />
+    </>
   ) : (
     blockList.length !== 0 && (
       <BlocksAreaContainer>

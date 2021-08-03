@@ -14,6 +14,7 @@ import {
   faTrashAlt,
   faPen,
   faEye,
+  faPlusCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLine, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -102,6 +103,10 @@ export const EditIcon = () => {
 
 export const EyeIcon = () => {
   return <FontAwesomeIcon icon={faEye} fixedWidth style={toggleSwitchIconStyle} />;
+};
+
+export const CirclePlusIcon = ({ style }) => {
+  return <FontAwesomeIcon icon={faPlusCircle} fixedWidth style={style} />;
 };
 
 export const LargeWebsiteIcon = () => {

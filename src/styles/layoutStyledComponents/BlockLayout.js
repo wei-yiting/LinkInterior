@@ -26,9 +26,9 @@ export const BlocksAreaContainer = styled.div`
 export const FullWidthParagraph = styled.p`
   width: 80%;
   white-space: pre-wrap;
-  text-align: left;
-  line-height: 1.5em;
-  margin: 60px auto;
+  text-align: center;
+  line-height: 2em;
+  margin: 30px auto;
 `;
 
 export const SideImageWrapper = styled.div`
@@ -59,5 +59,5 @@ export const SideTextWrapper = styled.div`
 export const SideParagraph = styled.p`
   white-space: pre-wrap;
   text-align: center;
-  line-height: 1.5em;
+  line-height: 1.75em;
 `;
