@@ -1,11 +1,11 @@
 import React from 'react';
 
-const ServicesOverview = () => {
+import ServiceInforCard from '../components/overview/ServiceInfoCard';
+
+export default function ServicesOverview() {
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <p>服務總覽頁</p>
+    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <ServiceInforCard />
     </div>
   );
-};
-
-export default ServicesOverview;
+}

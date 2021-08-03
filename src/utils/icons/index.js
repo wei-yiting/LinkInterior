@@ -26,6 +26,14 @@ import {
 
 import './icon.css';
 
+export const OverviewLocationIcon = ({ style }) => {
+  return <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth style={style} />;
+};
+
+export const OverviewProfessionIcon = ({ style }) => {
+  return <FontAwesomeIcon icon={faBriefcase} fixedWidth style={style} />;
+};
+
 export const LocationIcon = () => {
   return <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth style={introIconStyle} />;
 };

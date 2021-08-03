@@ -70,7 +70,7 @@ export default function useIntroUpload(isPublished) {
               companySeqId: currentUser.userSeqId,
               intro,
               keywordTags: introTags,
-              location: city,
+              location: city.name,
               serviceArea: selectedServiceCities,
               profession: profession.name,
             };
