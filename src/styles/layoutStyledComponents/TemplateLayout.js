@@ -48,7 +48,7 @@ export const TagArea = styled.div`
   align-items: flex-start;
   flex-wrap: wrap;
   min-height: 48px;
-  width: 75%;
+  width: 100%;
   padding: 0 8px;
 `;
 

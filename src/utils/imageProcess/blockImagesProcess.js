@@ -18,7 +18,7 @@ export default async function blockImagesProcess(blockList) {
 
     const blocksWithImageCompressedUrl = [...blocksWithoutImage];
 
-    multipleImagesCompressedAndStorage(imagesArray)
+    multipleImagesCompressedAndStorage(imagesArray, 'blockImage')
       .then((urlArray) => {
         indexArray.forEach((index, i) => {
           blocksWithImageCompressedUrl[index].image = urlArray[i];

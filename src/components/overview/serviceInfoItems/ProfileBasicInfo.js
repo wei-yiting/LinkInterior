@@ -43,23 +43,18 @@ const InfoText = styled.p`
   letter-spacing: 0.05em;
 `;
 
-const profileUrl =
-  'https://firebasestorage.googleapis.com/v0/b/linkinterior-450c8.appspot.com/o/userProfile%2F%2BC5rEcU7R52Qq5h1gQkKJw.jpg?alt=media&token=5d5da0d2-bed9-4db0-adf5-c5820bc45afb';
-const location = '臺中市';
-const profession = '室內設計';
-
-export default function ProfileBasicInfo() {
+export default function ProfileBasicInfo({ data }) {
   return (
     <ProfileWrapper>
-      <ProfileImage image={profileUrl} />
+      <ProfileImage image={data.profileUrl} />
       <BasicInfoWrapper>
         <RowWrapper>
           <OverviewLocationIcon style={iconStyle} />
-          <InfoText>{location}</InfoText>
+          <InfoText>{data.location}</InfoText>
         </RowWrapper>
         <RowWrapper>
           <OverviewProfessionIcon style={iconStyle} />
-          <InfoText>{profession}</InfoText>
+          <InfoText>{data.profession}</InfoText>
         </RowWrapper>
       </BasicInfoWrapper>
     </ProfileWrapper>
