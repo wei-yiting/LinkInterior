@@ -12,7 +12,7 @@ export default function IntroCompile() {
   const { isEditMode } = useContext(IntroCompileContext);
 
   return (
-    <div className={isEditMode ? 'bg-gray-50' : ''}>
+    <div className={isEditMode ? 'bg-gray-50' : 'bg-white'}>
       <IntroPageMainContainer>
         <ToggleSwitch />
         <IntroTemplateArea />

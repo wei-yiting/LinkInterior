@@ -27,7 +27,7 @@ import {
   largeMediaIconStyle,
 } from '../../styles/styleObject/iconsStyle';
 
-import './icon.css';
+import '../../styles/css/fontawesomeIcon.css';
 
 export const OverviewLocationIcon = ({ style }) => {
   return <FontAwesomeIcon icon={faMapMarkerAlt} fixedWidth style={style} />;

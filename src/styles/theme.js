@@ -26,7 +26,7 @@ export const color = {
   error: {
     light: '#C17C74',
     vibrant: '#B6465F',
-    dark: '#9F2042',
+    dark: '#982649',
   },
 };
 

@@ -9,7 +9,7 @@ import KeywordTags from './templateItems/KeywordTags';
 import ProfileImage from './templateItems/ProfileImage';
 import ContactInfoArea from './templateItems/ContactInfoArea';
 import ServiceProvideCity from './templateItems/ServiceProvideCity';
-import ImagesWall from './templateItems/ImagesWall';
+import ImagesSlider from './templateItems/ImagesSlider';
 import { SectionWrapper, RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function PreviewIntroTemplate2() {
@@ -31,7 +31,7 @@ export default function PreviewIntroTemplate2() {
       </RowWrapper>
       <IntroParagraph title="業者介紹" />
       <KeywordTags />
-      <ImagesWall />
+      <ImagesSlider />
       <ServiceProvideCity />
       <ContactInfoArea
         width="80%"

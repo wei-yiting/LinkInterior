@@ -6,7 +6,7 @@ import RenderProfileImage from './renderTemplateItems/RenderProfileImage';
 import RenderDropdownInfo from './renderTemplateItems/RenderDropdownInfo';
 import RenderIntroParagraph from './renderTemplateItems/RenderIntroParagraph';
 import RenderKeyWordTags from './renderTemplateItems/RenderKeywordTags';
-import RenderImagesWall from './renderTemplateItems/RenderImagesWall';
+import RenderImagesSlider from './renderTemplateItems/RenderImagesSlider';
 import RenderContact from './renderTemplateItems/RenderContact';
 import RenderServiceProvideCity from './renderTemplateItems/RenderServiceProvideCity';
 import { SectionWrapper, RowWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
@@ -30,7 +30,7 @@ export default function RenderIntroTemplate2() {
       </RowWrapper>
       <RenderIntroParagraph title="業者介紹" />
       <RenderKeyWordTags />
-      <RenderImagesWall />
+      <RenderImagesSlider />
       <RenderServiceProvideCity />
       <RenderContact
         width="80%"
