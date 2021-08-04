@@ -45,12 +45,11 @@ export const ProfessionIcon = () => {
   return <FontAwesomeIcon icon={faBriefcase} fixedWidth style={introIconStyle} />;
 };
 
-export const RemoveTagIcon = () => {
+export const DeleteIcon = ({ style }) => {
   return (
     <FontAwesomeIcon
       icon={faTimes}
-      fixedWidth
-      style={{ color: 'white', marginLeft: '0.5rem', cursor: 'pointer' }}
+      style={style || { color: 'white', marginLeft: '0.5rem', cursor: 'pointer' }}
     />
   );
 };

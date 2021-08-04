@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
 import uuid from 'react-uuid';
 import styled from 'styled-components/macro';
+import { TiDelete } from 'react-icons/ti';
 
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
-
 import ImagePlaceholder from './ImagePlaceholder';
 import { lightLinearGradients } from '../../../utils/constants/linearGradient';
 import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
-import { inputField } from '../../../styles/theme';
+import { inputField, color } from '../../../styles/theme';
 import { Heading4 } from '../../../styles/sharedStyledComponents/headings';
 import { DarkSelectImageInputButton } from '../../shared/SelectImageInputButton';
+// import { DeleteIcon } from '../../../utils/icons/fontAwesome';
 
 const numberOfImages = 6;
 const DEFAULT_IMAGE_PLACEHOLDER_RANDOM_COLOR_IDX = [...Array(numberOfImages)].map(() => {
@@ -31,12 +32,45 @@ const ImageUploadContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  width: calc(33.3% - 1rem);
+  width: calc(33.33% - 1rem);
   height: 45%;
   margin: 0.5rem;
   background-size: cover;
   background-position: center;
 `;
+
+const ImageOverlay = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.1s;
+  transition: background-color 0.2s;
+  :hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+`;
+
+const DeleteIconContainer = styled.div`
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  opacity: 0.7;
+  transition: opacity 0.1s;
+  :hover {
+    cursor: pointer;
+    opacity: 0.85;
+  }
+  :active {
+    opacity: 1;
+    top: 2.75px;
+    right: 2.75px;
+  }
+`;
+
+const deleteIconStyle = {
+  fontSize: '2rem',
+  color: color.gray[200],
+};
 
 const ButtonWrapper = styled.div`
   position: absolute;
@@ -62,17 +96,32 @@ export default function ImageWallField() {
   const [randomIdxList, setRandomIdxList] = useState(DEFAULT_IMAGE_PLACEHOLDER_RANDOM_COLOR_IDX);
   const [isLoading, setIsLoading] = useState(true);
 
+  const removeImage = (removeIdx) => {
+    setLocalImagesGalleryUrls(localImagesGalleryUrls.filter((_, index) => index !== removeIdx));
+    setSelectedGalleryImages(selectedGalleryImages.filter((_, index) => index !== removeIdx));
+  };
+
   useEffect(() => {
     if (localImagesGalleryUrls) {
-      const currentImages = localImagesGalleryUrls.map((imageUrl) => {
+      const currentImages = localImagesGalleryUrls.map((imageUrl, index) => {
         return (
           <ImageContainer
             key={uuid()}
             style={{
-              background: `linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
+              background: `linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.35)),
           center / cover no-repeat url("${imageUrl}")`,
             }}
-          />
+          >
+            <ImageOverlay>
+              <DeleteIconContainer
+                onClick={() => {
+                  removeImage(index);
+                }}
+              >
+                <TiDelete style={deleteIconStyle} />
+              </DeleteIconContainer>
+            </ImageOverlay>
+          </ImageContainer>
         );
       });
       setPreviewGalleryImages(currentImages);
