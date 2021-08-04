@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import uuid from 'react-uuid';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
-import { AddIcon } from '../../utils/icons';
+import { AddIcon } from '../../utils/icons/fontAwesome';
 
 export default function BlockMenu() {
   const { blockList, setBlockList } = useContext(IntroCompileContext);

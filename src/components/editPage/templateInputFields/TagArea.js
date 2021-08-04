@@ -4,7 +4,7 @@ import uuid from 'react-uuid';
 
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
-import { RemoveTagIcon } from '../../../utils/icons';
+import { RemoveTagIcon } from '../../../utils/icons/fontAwesome';
 import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import { TagsList, Tag } from '../../../styles/sharedStyledComponents/tags';
 import { Heading4 } from '../../../styles/sharedStyledComponents/headings';

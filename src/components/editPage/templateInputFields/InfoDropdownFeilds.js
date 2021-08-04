@@ -6,7 +6,7 @@ import {
   SectionWrapper,
   DropdownContainer,
 } from '../../../styles/layoutStyledComponents/TemplateLayout';
-import { LocationIcon, ProfessionIcon } from '../../../utils/icons';
+import { LocationIcon, ProfessionIcon } from '../../../utils/icons/fontAwesome';
 import Dropdown from './Dropdown';
 import { allCityOptions } from '../../../utils/constants/city';
 import professionOptions from '../../../utils/constants/profession';

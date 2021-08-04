@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import { color } from '../../styles/theme';
-import { AddIcon } from '../../utils/icons';
+import { AddIcon } from '../../utils/icons/fontAwesome';
 
 const SolidLabel = styled.label`
   font-size: 1.125rem;

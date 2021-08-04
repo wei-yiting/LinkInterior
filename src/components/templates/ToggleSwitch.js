@@ -4,7 +4,7 @@ import styled from 'styled-components/macro';
 import { Switch } from '@headlessui/react';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
-import { EditIcon, EyeIcon } from '../../utils/icons';
+import { EditIcon, EyeIcon } from '../../utils/icons/fontAwesome';
 
 const SwitchContainer = styled.label`
   position: fixed;

@@ -4,7 +4,7 @@ import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 
 import { BlockContainer } from '../../styles/layoutStyledComponents/BlockLayout';
 import FullWidthTextInput from './blockInputFields/FullWidthTextInput';
-import { TrashIcon } from '../../utils/icons';
+import { TrashIcon } from '../../utils/icons/fontAwesome';
 
 export default function EditBlockA({ blockIdx }) {
   const { blockList, setBlockList } = useContext(IntroCompileContext);

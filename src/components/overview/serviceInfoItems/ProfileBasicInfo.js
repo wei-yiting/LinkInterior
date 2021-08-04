@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { OverviewLocationIcon, OverviewProfessionIcon } from '../../../utils/icons';
+import { OverviewLocationIcon, OverviewProfessionIcon } from '../../../utils/icons/fontAwesome';
 import { color } from '../../../styles/theme';
 
 const iconStyle = {

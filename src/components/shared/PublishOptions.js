@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/macro';
 
-// import useIntroUpload from '../../hooks/useIntroUpload';
-// import useEventListener from '../../hooks/useEventListener';
 import { PrimaryButton, OutlineButton } from '../../styles/sharedStyledComponents/buttons';
 import { color } from '../../styles/theme';
 import { Heading2 } from '../../styles/sharedStyledComponents/headings';

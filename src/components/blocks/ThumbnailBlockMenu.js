@@ -7,7 +7,7 @@ import fullWidthTextThumbnail from '../../utils/images/blocksThumbnail/fullWidth
 import imageLeftThumbnail from '../../utils/images/blocksThumbnail/imageLeft.png';
 import imageRightThumbnail from '../../utils/images/blocksThumbnail/imageRight.png';
 import { color } from '../../styles/theme';
-import { CirclePlusIcon } from '../../utils/icons';
+import { CirclePlusIcon } from '../../utils/icons/fontAwesome';
 
 const BlockMenuArea = styled.section`
   width: 100%;

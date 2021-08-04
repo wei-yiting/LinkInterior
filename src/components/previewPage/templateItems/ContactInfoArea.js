@@ -18,7 +18,7 @@ import {
   LargeWebsiteIcon,
   LargeFacebookIcon,
   LargeInstagramIcon,
-} from '../../../utils/icons';
+} from '../../../utils/icons/fontAwesome';
 
 const addHttp = (url) => {
   if (!url.startsWith('http')) {

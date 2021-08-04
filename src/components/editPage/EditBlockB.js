@@ -5,7 +5,7 @@ import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 import { BlockContainer } from '../../styles/layoutStyledComponents/BlockLayout';
 import SideTextInput from './blockInputFields/SideTextInput';
 import SideImageField from './blockInputFields/SideImageField';
-import { TrashIcon } from '../../utils/icons';
+import { TrashIcon } from '../../utils/icons/fontAwesome';
 
 export default function EditBlockB({ blockIdx, randomBgIdx }) {
   const { blockList, setBlockList } = useContext(IntroCompileContext);

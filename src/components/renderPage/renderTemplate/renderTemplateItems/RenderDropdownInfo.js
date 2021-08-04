@@ -6,7 +6,7 @@ import {
   DropdownContainer,
 } from '../../../../styles/layoutStyledComponents/TemplateLayout';
 
-import { LocationIcon, ProfessionIcon } from '../../../../utils/icons';
+import { LocationIcon, ProfessionIcon } from '../../../../utils/icons/fontAwesome';
 
 export default function RenderDropdownInfo({ flexDirection, margin, justifyContent, infoMargin }) {
   const { location, profession } = useContext(IntroRenderContext);

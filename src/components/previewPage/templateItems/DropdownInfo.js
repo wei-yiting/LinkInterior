@@ -5,7 +5,7 @@ import {
   SectionWrapper,
   DropdownContainer,
 } from '../../../styles/layoutStyledComponents/TemplateLayout';
-import { LocationIcon, ProfessionIcon } from '../../../utils/icons';
+import { LocationIcon, ProfessionIcon } from '../../../utils/icons/fontAwesome';
 
 export default function DropdownInfo({ flexDirection, margin, justifyContent, infoMargin }) {
   const { city, profession } = useContext(IntroCompileContext);

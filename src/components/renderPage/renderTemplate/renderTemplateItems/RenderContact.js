@@ -18,7 +18,7 @@ import {
   LargeWebsiteIcon,
   LargeFacebookIcon,
   LargeInstagramIcon,
-} from '../../../../utils/icons';
+} from '../../../../utils/icons/fontAwesome';
 
 export default function RenderContact({ width, flexDirection, margin }) {
   const { contactInfo } = useContext(IntroRenderContext);

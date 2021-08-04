@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import { ImageIcon } from '../../../utils/icons';
+import { ImageIcon } from '../../../utils/icons/fontAwesome';
 import { lightLinearGradients } from '../../../utils/constants/linearGradient';
 
 // const randomIdx = Math.floor(Math.random() * lightLinearGradients.length);

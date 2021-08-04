@@ -13,7 +13,7 @@ import {
   WebsiteIcon,
   FacebookIcon,
   InstagramIcon,
-} from '../../../utils/icons';
+} from '../../../utils/icons/fontAwesome';
 
 export default function ContactInputFields({
   width,

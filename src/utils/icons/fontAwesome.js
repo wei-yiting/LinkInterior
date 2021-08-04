@@ -15,6 +15,8 @@ import {
   faPen,
   faEye,
   faPlusCircle,
+  faChevronRight,
+  faChevronLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLine, faFacebookSquare, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -107,6 +109,14 @@ export const EyeIcon = () => {
 
 export const CirclePlusIcon = ({ style }) => {
   return <FontAwesomeIcon icon={faPlusCircle} fixedWidth style={style} />;
+};
+
+export const ChevronRightIcon = ({ style }) => {
+  return <FontAwesomeIcon icon={faChevronRight} fixedWidth style={style} />;
+};
+
+export const ChevronLeftIcon = ({ style }) => {
+  return <FontAwesomeIcon icon={faChevronLeft} fixedWidth style={style} />;
 };
 
 export const LargeWebsiteIcon = () => {
