@@ -85,6 +85,11 @@ const ImagePlaceholderWrapper = styled.div`
   margin: 0.5rem;
 `;
 
+const Warning = styled.p`
+  color: ${color.error.light};
+  margin: 0.375rem 0 1rem;
+`;
+
 export default function ImageWallField() {
   const {
     localImagesGalleryUrls,
@@ -95,8 +100,10 @@ export default function ImageWallField() {
   const [previewGalleryImages, setPreviewGalleryImages] = useState(null);
   const [randomIdxList, setRandomIdxList] = useState(DEFAULT_IMAGE_PLACEHOLDER_RANDOM_COLOR_IDX);
   const [isLoading, setIsLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const removeImage = (removeIdx) => {
+    setErrorMessage('');
     setLocalImagesGalleryUrls(localImagesGalleryUrls.filter((_, index) => index !== removeIdx));
     setSelectedGalleryImages(selectedGalleryImages.filter((_, index) => index !== removeIdx));
   };
@@ -137,13 +144,18 @@ export default function ImageWallField() {
 
   const handleImagesSelected = (evt) => {
     if (evt.target.files) {
-      const imageArray = Array.from(evt.target.files).map((file) => URL.createObjectURL(file));
-      setLocalImagesGalleryUrls((prevImages) => prevImages.concat(imageArray));
-      Array.from(evt.target.files).map((file) => URL.revokeObjectURL(file));
-      for (let i = 0; i < evt.target.files.length; i += 1) {
-        const newImage = evt.target.files[i];
-        newImage.id = uuid();
-        setSelectedGalleryImages((prevState) => [...prevState, newImage]);
+      setErrorMessage('');
+      if (evt.target.files.length + selectedGalleryImages.length <= numberOfImages) {
+        const imageArray = Array.from(evt.target.files).map((file) => URL.createObjectURL(file));
+        setLocalImagesGalleryUrls((prevImages) => prevImages.concat(imageArray));
+        Array.from(evt.target.files).map((file) => URL.revokeObjectURL(file));
+        for (let i = 0; i < evt.target.files.length; i += 1) {
+          const newImage = evt.target.files[i];
+          newImage.id = uuid();
+          setSelectedGalleryImages((prevState) => [...prevState, newImage]);
+        }
+      } else {
+        setErrorMessage('最多上傳六張照片');
       }
     }
   };
@@ -159,6 +171,7 @@ export default function ImageWallField() {
   return (
     <SectionWrapper width="90%">
       <Heading4>我的相簿</Heading4>
+      {errorMessage && <Warning>{errorMessage}</Warning>}
       <ImageUploadContainer>
         {previewGalleryImages}
         {!isLoading && imagePlaceholders}

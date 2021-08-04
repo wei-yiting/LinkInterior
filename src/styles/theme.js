@@ -23,6 +23,11 @@ export const color = {
     800: '#244247',
     900: '#182d31',
   },
+  error: {
+    light: '#C17C74',
+    vibrant: '#B6465F',
+    dark: '#9F2042',
+  },
 };
 
 export const inputField = {
