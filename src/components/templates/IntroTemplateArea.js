@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
-import TemplateMenu from './TemplateMenu';
+import ThumbnailTemplateMenu from './ThumbnailTemplateMenu';
 import IntroTemplate1 from './IntroTemplate1';
 import IntroTemplate2 from './IntroTemplate2';
 
@@ -17,7 +17,7 @@ export default function IntroTemplateArea() {
 
   return (
     <>
-      <TemplateMenu />
+      <ThumbnailTemplateMenu />
       <Template />
     </>
   );

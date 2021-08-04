@@ -59,7 +59,7 @@ const Thumbnail = styled.div`
     opacity: 0;
     background-color: ${color.gray[50]};
 
-    p {
+    span {
       font-size: 0.875rem;
       font-weight: 500;
       letter-spacing: 0.1em;
@@ -155,7 +155,7 @@ export default function BlockMenu() {
         >
           <IconContainer>
             <CirclePlusIcon style={iconStyle} />
-            <p>全幅文字</p>
+            <span>全幅文字</span>
           </IconContainer>
           <HoverOverlay />
           <img src={fullWidthTextThumbnail} alt="全幅文字" />
@@ -167,7 +167,7 @@ export default function BlockMenu() {
         >
           <IconContainer>
             <CirclePlusIcon style={iconStyle} />
-            <p>左文右圖</p>
+            <span>左文右圖</span>
           </IconContainer>
           <HoverOverlay />
           <img src={imageRightThumbnail} alt="左文右圖" />
@@ -179,7 +179,7 @@ export default function BlockMenu() {
         >
           <IconContainer>
             <CirclePlusIcon style={iconStyle} />
-            <p>左圖右文</p>
+            <span>左圖右文</span>
           </IconContainer>
           <HoverOverlay />
           <img src={imageLeftThumbnail} alt="左圖右文" />
