@@ -119,7 +119,7 @@ const Header = () => {
                   </>
                 ) : (
                   <Link to="/log-in">
-                    <div>業者登入</div>
+                    <div className="hover:text-main-500 delay-150">業者登入</div>
                   </Link>
                 )}
               </div>

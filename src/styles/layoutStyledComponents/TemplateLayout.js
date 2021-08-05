@@ -41,6 +41,7 @@ export const DropdownContainer = styled.div`
 export const IntroParagraphText = styled.p`
   white-space: pre-wrap;
   margin: 0.75rem 1.5rem;
+  line-height: 2rem;
 `;
 
 export const TagArea = styled.div`

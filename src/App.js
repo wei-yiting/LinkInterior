@@ -5,6 +5,7 @@ import IntroCompileContextProvider from './contexts/IntroCompileContext';
 
 import GlobalStyles from './styles/GlobalStyle';
 import ServicesOverview from './pages/ServicesOverview';
+import Landing from './pages/Landing';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import IntroCompile from './pages/IntroCompile';
@@ -23,7 +24,8 @@ const App = () => {
           <Header />
           <Switch>
             <MainWrapper>
-              <Route path="/" exact component={ServicesOverview} />
+              <Route path="/" exact component={Landing} />
+              <Route path="/services" component={ServicesOverview} />
               <Route path="/log-in" component={LogIn} />
               <Route path="/sign-up" component={SignUp} />
               <IntroCompileContextProvider>
