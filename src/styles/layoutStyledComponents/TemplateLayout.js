@@ -74,7 +74,7 @@ export const ImageContainer = styled.div`
 
 export const ContactArea = styled.div`
   background-color: ${color.gray[100]};
-  padding: 1.75rem 3rem 1.25rem;
+  padding: 1.75rem 3rem 0.75rem;
   width: 100%;
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};

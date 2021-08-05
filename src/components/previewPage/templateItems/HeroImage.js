@@ -26,7 +26,9 @@ export default function HeroImage() {
 
   return (
     <HeroImageContainer style={imageContainerStyle}>
-      <HeroImageCompanyName>{currentUser.username}</HeroImageCompanyName>
+      <HeroImageCompanyName>
+        {currentUser ? currentUser.username : '你的註冊名稱'}
+      </HeroImageCompanyName>
     </HeroImageContainer>
   );
 }

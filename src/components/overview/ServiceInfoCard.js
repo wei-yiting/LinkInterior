@@ -10,11 +10,11 @@ import { color } from '../../styles/theme';
 import { Heading1 } from '../../styles/sharedStyledComponents/headings';
 
 const CardWrapper = styled.div`
-  margin: 2rem 20px;
+  margin: 1rem 15px;
 `;
 
 const Card = styled.article`
-  width: 400px;
+  width: 390px;
   height: 100%;
   background-color: white;
   border-radius: 10px;

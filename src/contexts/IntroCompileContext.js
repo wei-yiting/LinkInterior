@@ -31,11 +31,7 @@ export default function IntroCompileContextProvider({ children }) {
   const [selectedGalleryImages, setSelectedGalleryImages] = useState([]);
   const [isPublished, setIsPublished] = useState(false);
   const [blockList, setBlockList] = useState([]);
-  // const [isUploading, setIsUploading] = useState(true);
-  // const [uploadError, setUploadError] = useState('');
-  // const [blocksWithImageCompressedUrl, setBlocksWithImageCompressedUrl] = useState([]);
-  // const [isProcessingBlockImage, setIsProcessingBlockImage] = useState(false);
-  // const [isProcessingImages, setIsProcessingImages] = useState(false);
+  const [emptyFieldReminder, setEmptyFieldReminder] = useState('');
 
   const valueProvided = {
     isEditMode,
@@ -66,16 +62,8 @@ export default function IntroCompileContextProvider({ children }) {
     setIsPublished,
     blockList,
     setBlockList,
-    // isUploading,
-    // setIsUploading,
-    // uploadError,
-    // setUploadError,
-    // blocksWithImageCompressedUrl,
-    // setBlocksWithImageCompressedUrl,
-    // isProcessingBlockImage,
-    // setIsProcessingBlockImage,
-    // isProcessingImages,
-    // setIsProcessingImages,
+    emptyFieldReminder,
+    setEmptyFieldReminder,
   };
   return (
     <IntroCompileContext.Provider value={valueProvided}>{children}</IntroCompileContext.Provider>

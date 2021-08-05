@@ -39,7 +39,7 @@ export default function BlockArea() {
   ) : (
     blockList.length !== 0 && (
       <BlocksAreaContainer>
-        <Heading2>{`更多關於  ${currentUser.username}`}</Heading2>
+        <Heading2>{`更多關於  ${currentUser ? currentUser.username : '你的註冊名稱'}`}</Heading2>
         {renderedBlocks}
       </BlocksAreaContainer>
     )

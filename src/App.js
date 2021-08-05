@@ -9,6 +9,7 @@ import Landing from './pages/Landing';
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import IntroCompile from './pages/IntroCompile';
+import IntroCompileTrial from './pages/IntroCompileTrial';
 import ServiceIntro from './pages/ServiceIntro';
 import Header from './components/Header/Header';
 import { MainWrapper } from './styles/layoutStyledComponents/GeneralLayout';
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="/sign-up" component={SignUp} />
             <IntroCompileContextProvider>
               <PrivateRoute path="/intro-compile" component={IntroCompile} />
+              <Route path="/compile-trial" component={IntroCompileTrial} />
             </IntroCompileContextProvider>
             <Route path="/service/:pageId" component={ServiceIntro} />
           </MainWrapper>

@@ -16,7 +16,6 @@ let serviceIntroUploadData;
 let servicesOverviewUploadData;
 
 export default function useIntroUpload(isPublished) {
-  console.log('start useIntroUpload hook');
   const [isUploading, setIsUploading] = useState(true);
   const [isUploadingToDb, setIsUploadingToDb] = useState(false);
   const [uploadError, setUploadError] = useState('');
@@ -75,8 +74,6 @@ export default function useIntroUpload(isPublished) {
               profession: profession.name,
             };
             setIsUploadingToDb(true);
-            console.log(serviceIntroUploadData);
-            console.log(servicesOverviewUploadData);
           })
           .catch(() => {
             setUploadError('在處理您的圖片時發生錯誤');
@@ -88,9 +85,7 @@ export default function useIntroUpload(isPublished) {
     });
 
   useEffect(() => {
-    console.log('into useEffect', serviceIntroUploadData, servicesOverviewUploadData);
     if (isUploading && isUploadingToDb) {
-      console.log('start upload to db');
       const dbPromises = [];
       const newServiceIntro = serviceIntroCollection
         .doc(currentUser.userUid)
@@ -107,7 +102,6 @@ export default function useIntroUpload(isPublished) {
 
       Promise.all(dbPromises)
         .then(() => {
-          console.log('all collection success!');
           setIsUploading(false);
         })
         .catch(() => {

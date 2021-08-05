@@ -5,8 +5,6 @@ import { IntroCompileContext } from '../contexts/IntroCompileContext';
 import ToggleSwitch from '../components/templates/ToggleSwitch';
 import IntroTemplateArea from '../components/templates/IntroTemplateArea';
 import BlockArea from '../components/blocks/BlockArea';
-import PublishOnly from '../components/shared/PublishOnly';
-// import PublishOptions from '../components/shared/PublishOptions';
 import { IntroPageMainContainer } from '../styles/layoutStyledComponents/GeneralLayout';
 
 export default function IntroCompile() {
@@ -18,8 +16,6 @@ export default function IntroCompile() {
         <ToggleSwitch />
         <IntroTemplateArea />
         <BlockArea />
-        {/* <PublishOptions /> */}
-        <PublishOnly />
       </IntroPageMainContainer>
     </div>
   );

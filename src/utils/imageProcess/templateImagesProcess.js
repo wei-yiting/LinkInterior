@@ -21,7 +21,6 @@ export default function templateImagesProcess(heroImage, galleryImages) {
 
   // useEffect(() => {
   // setIsProcessingImages(true);
-
   const compressedHeroImageUrl = singleImageCompressAndStorage(
     heroImage,
     'introHeroImage',

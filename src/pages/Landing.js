@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { Link } from 'react-router-dom';
 
 import templateSwitchVideo from '../utils/video/templateSwitch.mp4';
 import publishVideo from '../utils/video/publish.mp4';
@@ -76,7 +77,9 @@ export default function Landing() {
           <br />
           按下發佈，讓大家透過網頁認識你
         </Subtitle>
-        <DarkerButton>免註冊，直接體驗</DarkerButton>
+        <Link to="/compile-trial">
+          <DarkerButton>免註冊，直接體驗</DarkerButton>
+        </Link>
       </Header>
       <VideoContainer width="800px">
         <video src={editPreviewVideo} loop autoPlay muted>

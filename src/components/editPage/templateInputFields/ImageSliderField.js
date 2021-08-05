@@ -29,6 +29,7 @@ const ImageUploadContainer = styled.div`
   justify-content: flex-start;
   position: relative;
   overflow-x: scroll;
+  overflow-y: hidden;
 `;
 
 const ImageContainer = styled.div`

@@ -45,7 +45,7 @@ export default function HeroImageField() {
   return (
     <div>
       <HeroImageContainer style={imageContainerStyle}>
-        <CompanyName>{currentUser.username}</CompanyName>
+        <CompanyName>{currentUser ? currentUser.username : '你的註冊名稱'}</CompanyName>
         <LightSelectImageInputButton
           fieldName="heroImage"
           buttonText={selectedHeroImage ? ' 更換圖片' : '選擇圖片'}

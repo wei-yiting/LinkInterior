@@ -50,7 +50,6 @@ const Uploading = ({ publishStatus }) => {
     if (!isUploading) {
       history.push(`/service/${currentUser.userSeqId}`);
     }
-    console.log(isUploading);
   }, [isUploading]);
 
   return (

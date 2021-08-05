@@ -9,7 +9,7 @@ const ServiceCardsContainer = styled.main`
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  max-width: 1280px;
+  max-width: 1260px;
   height: fit-content;
   margin: 0 auto;
   padding: 80px 0 100px;

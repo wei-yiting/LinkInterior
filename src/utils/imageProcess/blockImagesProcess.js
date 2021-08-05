@@ -23,9 +23,6 @@ export default async function blockImagesProcess(blockList) {
         indexArray.forEach((index, i) => {
           blocksWithImageCompressedUrl[index].image = urlArray[i];
         });
-
-        console.log(blocksWithImageCompressedUrl);
-
         resolve(blocksWithImageCompressedUrl);
       })
       .catch((err) => {
