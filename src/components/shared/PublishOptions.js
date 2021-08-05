@@ -36,10 +36,6 @@ const ActionWrapper = styled.div`
 `;
 
 const PublishOptions = React.memo(() => {
-  // const saveRef = useRef();
-  // const publishRef = useRef();
-  // const savePage = useEventListener('click', useIntroUpload);
-  // const publishPage = useEventListener('click', useIntroUpload);
   const [isSaving, setIsSaving] = useState(false);
   const [isPublishing, setIsPublishing] = useState(false);
   return (
@@ -52,7 +48,6 @@ const PublishOptions = React.memo(() => {
         </Heading2>
         <ActionWrapper>
           <OutlineButton
-            // ref={saveRef}
             onClick={() => {
               setIsSaving(true);
             }}
@@ -68,7 +63,6 @@ const PublishOptions = React.memo(() => {
         </ActionWrapper>
         <ActionWrapper>
           <PrimaryButton
-            // ref={publishRef}
             onClick={() => {
               setIsPublishing(true);
             }}

@@ -68,3 +68,29 @@ export const OutlineButton = styled.button`
     background-color: ${color.main[400]};
   }
 `;
+
+export const DarkerButton = styled.button`
+  font-size: ${({ fontSize }) => fontSize || '1.125rem'};
+  letter-spacing: 0.075em;
+  background-color: ${color.main[600]};
+  border: 2px solid ${color.main[600]};
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.75em 3em;
+  width: ${({ width }) => width || 'auto'};
+  transition: all 0.2s;
+  font-weight: 500;
+  transition: all 0.2s;
+
+  :focus {
+    outline: none;
+  }
+
+  :hover {
+    transform: translateY(-3px);
+  }
+
+  :active {
+    transform: translateY(0px);
+  }
+`;

@@ -5,6 +5,7 @@ const TextLogo = styled.h1`
   color: black;
   font-size: ${({ fontSize }) => fontSize || '2.25rem'};
   margin: 0;
+  text-align: ${({ textAlign }) => textAlign || ''};
 `;
 
 export default TextLogo;
