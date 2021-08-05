@@ -69,6 +69,7 @@ export const DarkSelectImageInputButton = ({
   buttonText,
   onSelectHandler,
   multiple,
+  iconStyle,
 }) => {
   return (
     <SolidLabel htmlFor={fieldName}>
@@ -80,7 +81,7 @@ export const DarkSelectImageInputButton = ({
         style={{ display: 'none' }}
         multiple={multiple || false}
       />
-      <AddIcon style={{ color: 'white', marginRight: '0.25rem' }} />
+      <AddIcon style={iconStyle || { color: 'white', marginRight: '0.25rem' }} />
       {buttonText}
     </SolidLabel>
   );

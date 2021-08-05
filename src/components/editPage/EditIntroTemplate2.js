@@ -8,7 +8,7 @@ import TagArea from './templateInputFields/TagArea';
 import ProfileImageField from './templateInputFields/ProfileImageField';
 import ContactInputFields from './templateInputFields/ContactInputFields';
 import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInput';
-import ImageWallField from './templateInputFields/ImageWallField';
+import ImageSliderField from './templateInputFields/ImageSliderField';
 import { SectionWrapper, RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
 import { Title } from '../../styles/sharedStyledComponents/headings';
 
@@ -31,7 +31,7 @@ export default function EditIntroTemplate2() {
       </RowWrapper>
       <IntroField title="我的介紹" />
       <TagArea title="關鍵字標籤" />
-      <ImageWallField />
+      <ImageSliderField />
       <ServiceProvideCityInput width="fit-content" />
       <ContactInputFields
         width="80%"

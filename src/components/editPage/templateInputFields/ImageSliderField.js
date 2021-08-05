@@ -7,7 +7,7 @@ import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import ImagePlaceholder from './ImagePlaceholder';
 import { lightLinearGradients } from '../../../utils/constants/linearGradient';
 import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
-import { inputField, color } from '../../../styles/theme';
+import { color } from '../../../styles/theme';
 import { Heading4 } from '../../../styles/sharedStyledComponents/headings';
 import { DarkSelectImageInputButton } from '../../shared/SelectImageInputButton';
 
@@ -18,24 +18,26 @@ const DEFAULT_IMAGE_PLACEHOLDER_RANDOM_COLOR_IDX = [...Array(numberOfImages)].ma
 
 const ImageUploadContainer = styled.div`
   width: 100%;
-  height: 750px;
-  border: ${inputField.border};
-  border-radius: ${inputField.borderRadius};
-  background-color: white;
-  padding: 1rem;
+  height: 240px;
+  border-left: 30px solid ${color.gray[100]};
+  border-right: 30px solid ${color.gray[100]};
+  border-radius: 5px;
+  background-color: ${color.gray[100]};
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   position: relative;
-  flex-wrap: wrap;
+  overflow-x: scroll;
 `;
 
 const ImageContainer = styled.div`
-  width: calc(33.33% - 1rem);
-  height: 30%;
-  margin: 0.5rem;
+  width: 23%;
+  height: 170px;
+  margin: 15px;
   background-size: cover;
   background-position: center;
+  flex-shrink: 0;
 `;
 
 const ImageOverlay = styled.div`
@@ -74,14 +76,15 @@ const deleteIconStyle = {
 const ButtonWrapper = styled.div`
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: ${({ leftPosition }) => `${leftPosition}px`};
   transform: translate(-50%, -50%);
 `;
 
 const ImagePlaceholderWrapper = styled.div`
-  width: calc(33.3% - 1rem);
-  height: 30%;
-  margin: 0.5rem;
+  width: 23%;
+  height: 170px;
+  margin: 15px;
+  flex-shrink: 0;
 `;
 
 const Warning = styled.p`
@@ -89,7 +92,7 @@ const Warning = styled.p`
   margin: 0.375rem 0 1rem;
 `;
 
-export default function ImageWallField() {
+export default function ImageSliderField() {
   const {
     localImagesGalleryUrls,
     setLocalImagesGalleryUrls,
@@ -174,14 +177,17 @@ export default function ImageWallField() {
       <ImageUploadContainer>
         {previewGalleryImages}
         {!isLoading && imagePlaceholders}
-        <ButtonWrapper>
-          <DarkSelectImageInputButton
-            fieldName="imageGallery"
-            buttonText={selectedGalleryImages.length !== 0 ? '新增更多圖片' : '新增圖片'}
-            onSelectHandler={handleImagesSelected}
-            multiple
-          />
-        </ButtonWrapper>
+        {localImagesGalleryUrls.length < numberOfImages ? (
+          <ButtonWrapper leftPosition={250 * localImagesGalleryUrls.length + 160}>
+            <DarkSelectImageInputButton
+              fieldName="imageGallery"
+              buttonText={selectedGalleryImages.length !== 0 ? '' : '新增圖片'}
+              onSelectHandler={handleImagesSelected}
+              multiple
+              iconStyle={{ color: 'white', margin: '0', fontSize: '1.5rem' }}
+            />
+          </ButtonWrapper>
+        ) : null}
       </ImageUploadContainer>
     </SectionWrapper>
   );
