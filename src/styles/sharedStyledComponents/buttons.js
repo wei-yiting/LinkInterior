@@ -24,7 +24,7 @@ export const PrimaryButton = styled.button`
   border: 2px solid ${color.main[400]};
   color: white;
   border-radius: 0.5rem;
-  padding: 0.75em 3em;
+  padding: ${({ padding }) => padding || '0.75em 3em'};
   width: ${({ width }) => width || 'auto'};
   transition: all 0.2s;
   font-weight: 500;

@@ -48,7 +48,7 @@ export default function SignUp() {
         profileStorageUrl,
       );
 
-      history.push('/');
+      history.push('/log-in');
     } catch {
       setError('Failed to create an account');
     }
@@ -181,7 +181,7 @@ export default function SignUp() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-main-600 hover:bg-main-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-500 disabled:bg-gray-200"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-main-600 hover:bg-main-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-500 disabled:bg-gray-200 duration-150"
               >
                 註冊
               </button>
@@ -189,7 +189,7 @@ export default function SignUp() {
           </form>
           <div className="text-base flex justify-center mt-5">
             <Link to="/log-in">
-              <span className="font-medium text-main-600 hover:text-main-500">
+              <span className="font-medium text-main-600 hover:text-main-500 hover:border-main-500 border-b-4 border-white duration-150">
                 已有帳戶？點此登入
               </span>
             </Link>

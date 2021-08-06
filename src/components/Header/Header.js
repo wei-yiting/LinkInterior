@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import { useAuth } from '../../contexts/AuthContext';
 import Breadcrumbs from './Breadcrumbs';
@@ -18,6 +18,7 @@ function classNames(...classes) {
 }
 
 const Header = () => {
+  const { pathname } = useLocation();
   const { currentUser, logOut } = useAuth();
   const [error, setError] = useState('');
   const history = useHistory();
@@ -36,14 +37,23 @@ const Header = () => {
       {() => (
         <>
           <TextLogo style={textLogoStyle}>LinkInterior</TextLogo>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="max-w-full mx-auto px-4 sm:px-16 lg:px-32 relative">
             <div className="flex justify-between h-16 relative">
               <Breadcrumbs />
 
               <div className="hidden sm:ml-6 sm:flex sm:items-center">
                 {currentUser ? (
                   <>
-                    <div className="mr-3 text-base">{currentUser.username}</div>
+                    {pathname.includes('/service') ? null : (
+                      <Link to="/services">
+                        <div className="mr-12 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white duration-150">
+                          已發佈頁面總覽
+                        </div>
+                      </Link>
+                    )}
+                    <div className="mr-3 text-base border-b-4 border-white">
+                      {currentUser.username}
+                    </div>
                     <Menu as="div" className="ml-3 relative">
                       {({ opened }) => (
                         <>
@@ -92,7 +102,7 @@ const Header = () => {
                                       'block px-4 py-2 text-sm text-gray-700',
                                     )}
                                   >
-                                    我的介紹專頁
+                                    建立我的頁面
                                   </Link>
                                 )}
                               </Menu.Item>
@@ -118,9 +128,36 @@ const Header = () => {
                     </Menu>
                   </>
                 ) : (
-                  <Link to="/log-in">
-                    <div className="hover:text-main-500 delay-150">業者登入</div>
-                  </Link>
+                  <>
+                    {pathname.includes('/service') ? null : (
+                      <Link to="/services">
+                        <div className="mr-8 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white duration-150">
+                          已發佈頁面總覽
+                        </div>
+                      </Link>
+                    )}
+                    {pathname === '/compile-trial' ? null : (
+                      <Link to="/compile-trial">
+                        <div className="mr-8 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white duration-150">
+                          頁面建立試用
+                        </div>
+                      </Link>
+                    )}
+                    {pathname === '/log-in' ? null : (
+                      <Link to="/log-in">
+                        <div className="mr-4 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white duration-150">
+                          登入
+                        </div>
+                      </Link>
+                    )}
+                    {pathname === '/sign-up' ? null : (
+                      <Link to="sign-up">
+                        <div className="text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white duration-150">
+                          註冊
+                        </div>
+                      </Link>
+                    )}
+                  </>
                 )}
               </div>
             </div>

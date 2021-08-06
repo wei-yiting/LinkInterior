@@ -21,7 +21,7 @@ const LogIn = () => {
       setLoading(true);
       const logInInfo = await logIn(emailRef.current.value, passwordRef.current.value);
       console.log(logInInfo.uid);
-      history.push('/');
+      history.push('/services');
     } catch {
       setError('Failed to log in');
     }
@@ -77,7 +77,7 @@ const LogIn = () => {
             <button
               disabled={loading}
               type="submit"
-              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-base font-medium rounded-md text-white bg-main-600 hover:bg-main-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-500 tracking-widest font-semi-bold"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-base font-medium rounded-md text-white bg-main-600 hover:bg-main-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-main-500 tracking-widest font-semi-bold duration-150"
             >
               登入
             </button>
@@ -85,7 +85,7 @@ const LogIn = () => {
         </form>
         <div className="text-base flex justify-center">
           <Link to="/sign-up">
-            <span className="font-medium text-main-600 hover:text-main-500">
+            <span className="font-medium text-main-600 hover:text-main-500 hover:border-main-500 border-b-4 border-white duration-150">
               還沒有帳戶？點此註冊
             </span>
           </Link>
