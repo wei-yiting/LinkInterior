@@ -5,15 +5,26 @@ import { Switch } from '@headlessui/react';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 import { EditIcon, EyeIcon } from '../../utils/icons/fontAwesome';
+import { color } from '../../styles/theme';
 
 const SwitchContainer = styled.label`
   position: fixed;
-  top: 100px;
+  top: 130px;
   right: 10vw;
   width: 60px;
   height: 34px;
   z-index: 10;
-  transform: scale(1.75);
+  transform: scale(2.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Title = styled.div`
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  color: ${color.main[300]};
+  margin-bottom: 0.3rem;
 `;
 
 function classNames(...classes) {
@@ -25,6 +36,7 @@ export default function Example() {
 
   return (
     <SwitchContainer>
+      <Title>編輯 / 預覽</Title>
       <Switch
         checked={!isEditMode}
         onChange={() => {

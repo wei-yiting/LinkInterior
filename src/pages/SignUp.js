@@ -47,8 +47,8 @@ export default function SignUp() {
         usernameRef.current.value,
         profileStorageUrl,
       );
-
-      history.push('/log-in');
+      history.push('/services');
+      window.location.reload();
     } catch {
       setError('Failed to create an account');
     }

@@ -46,8 +46,15 @@ const Header = () => {
                   <>
                     {pathname.includes('/service') ? null : (
                       <Link to="/services">
-                        <div className="mr-12 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white duration-150">
+                        <div className="mr-12 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white pb-1 duration-150">
                           已發佈頁面總覽
+                        </div>
+                      </Link>
+                    )}
+                    {pathname === '/intro-compile' ? null : (
+                      <Link to="/intro-compile">
+                        <div className="mr-8 text-white bg-main-500 px-5 py-2 rounded-2xl tracking-wider hover:bg-main-600 duration-150">
+                          開始建立我的頁面
                         </div>
                       </Link>
                     )}
@@ -93,7 +100,7 @@ const Header = () => {
                               static
                               className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             >
-                              <Menu.Item>
+                              {/* <Menu.Item>
                                 {({ active }) => (
                                   <Link
                                     to="/intro-compile"
@@ -105,7 +112,7 @@ const Header = () => {
                                     建立我的頁面
                                   </Link>
                                 )}
-                              </Menu.Item>
+                              </Menu.Item> */}
                               <Menu.Item>
                                 {({ active }) => (
                                   <button
@@ -131,14 +138,14 @@ const Header = () => {
                   <>
                     {pathname.includes('/service') ? null : (
                       <Link to="/services">
-                        <div className="mr-8 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white duration-150">
+                        <div className="mr-8 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 pb-1 border-white duration-150">
                           已發佈頁面總覽
                         </div>
                       </Link>
                     )}
                     {pathname === '/compile-trial' ? null : (
                       <Link to="/compile-trial">
-                        <div className="mr-8 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white duration-150">
+                        <div className="mr-8 text-white bg-main-500 px-5 py-2 rounded-2xl tracking-wider hover:bg-main-600 duration-150">
                           頁面建立試用
                         </div>
                       </Link>

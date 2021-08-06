@@ -93,11 +93,7 @@ const PublishOptions = React.memo(() => {
           <PrimaryButton onClick={checkRequiredFieldAndPublish} width="50%">
             發佈我的介紹頁面
           </PrimaryButton>
-          <span>
-            上傳圖文，讓大家看到這個介紹我的頁面
-            <br />
-            （已用預覽模式確認此頁面內容無誤）
-          </span>
+          <span>上傳圖文，讓大家看到這個介紹我的頁面</span>
         </ActionWrapper>
       </PublishOptionsContainer>
     </>

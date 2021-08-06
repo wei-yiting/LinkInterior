@@ -11,10 +11,10 @@ export default function Breadcrumbs() {
   const [companyName, setCompanyName] = useState('');
   const pages = [
     { name: '已發佈頁面總覽', to: '/services', current: pathname.includes('/service') },
-    { name: '我的頁面', to: '/services/', current: pathname === '/intro-compile' },
+    { name: '我的頁面', to: '', current: pathname === '/intro-compile' },
     {
       name: '頁面建立試用',
-      to: '/compile-trial/',
+      to: '',
       current: pathname === '/compile-trial',
     },
     {
@@ -72,7 +72,7 @@ export default function Breadcrumbs() {
                     {page.name}
                   </Link>
                 ) : (
-                  <div className="ml-4 text-base font-medium text-gray-500 border-b-4 border-white">
+                  <div className="ml-4 text-base font-medium text-gray-500 border-gray-500 border-b-2">
                     {' '}
                     {page.name}
                   </div>

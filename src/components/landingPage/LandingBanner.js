@@ -45,9 +45,6 @@ export default function LandingBanner() {
       <Link to="/compile-trial">
         <DarkerButton>免註冊，直接體驗</DarkerButton>
       </Link>
-      <p style={{ fontSize: '0.8rem', marginTop: '0.5rem', color: color.main[600] }}>
-        (沒有發佈功能)
-      </p>
     </Hero>
   );
 }
