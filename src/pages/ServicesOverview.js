@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
 
+import { MainWrapper } from '../styles/layoutStyledComponents/GeneralLayout';
 import { servicesOverviewCollection } from '../utils/firebase';
 import ServiceInfoCard from '../components/overview/ServiceInfoCard';
 import firestoreLooper from '../utils/firebase/tools/firestoreLooper';
@@ -43,11 +44,13 @@ export default function ServicesOverview() {
     : null;
 
   return (
-    <div className="flex flex-0 justify-center min-h-screen bg-gray-50">
-      <ServiceCardsContainer>
-        {renderedServiceCards}
-        {error && <div>{error}</div>}
-      </ServiceCardsContainer>
-    </div>
+    <MainWrapper>
+      <div className="flex flex-0 justify-center min-h-screen bg-gray-50">
+        <ServiceCardsContainer>
+          {renderedServiceCards}
+          {error && <div>{error}</div>}
+        </ServiceCardsContainer>
+      </div>
+    </MainWrapper>
   );
 }

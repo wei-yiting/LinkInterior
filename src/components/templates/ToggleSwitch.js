@@ -14,7 +14,7 @@ const SwitchContainer = styled.label`
   width: 60px;
   height: 34px;
   z-index: 10;
-  transform: scale(2.75);
+  transform: scale(2);
   display: flex;
   flex-direction: column;
   align-items: center;

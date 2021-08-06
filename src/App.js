@@ -12,7 +12,6 @@ import IntroCompile from './pages/IntroCompile';
 import IntroCompileTrial from './pages/IntroCompileTrial';
 import ServiceIntro from './pages/ServiceIntro';
 import Header from './components/Header/Header';
-import { MainWrapper } from './styles/layoutStyledComponents/GeneralLayout';
 import AuthContextProvider from './contexts/AuthContext';
 import PrivateRoute from './components/PrivateRoutes';
 
@@ -26,16 +25,14 @@ const App = () => {
             <Route path="/" exact component={Landing} />
             <Route component={Header} />
           </Switch>
-          <MainWrapper>
-            <Route path="/services" component={ServicesOverview} />
-            <Route path="/log-in" component={LogIn} />
-            <Route path="/sign-up" component={SignUp} />
-            <IntroCompileContextProvider>
-              <PrivateRoute path="/intro-compile" component={IntroCompile} />
-              <Route path="/compile-trial" component={IntroCompileTrial} />
-            </IntroCompileContextProvider>
-            <Route path="/service/:pageId" component={ServiceIntro} />
-          </MainWrapper>
+          <Route path="/services" component={ServicesOverview} />
+          <Route path="/log-in" component={LogIn} />
+          <Route path="/sign-up" component={SignUp} />
+          <IntroCompileContextProvider>
+            <PrivateRoute path="/intro-compile" component={IntroCompile} />
+            <Route path="/compile-trial" component={IntroCompileTrial} />
+          </IntroCompileContextProvider>
+          <Route path="/service/:pageId" component={ServiceIntro} />
         </AuthContextProvider>
       </BrowserRouter>
     </>

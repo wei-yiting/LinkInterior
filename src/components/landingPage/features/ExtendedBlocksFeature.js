@@ -1,25 +1,27 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import editPreviewVideo from '../../../utils/video/editPreview.mp4';
+import extendedBlockVideo from '../../../utils/video/extendedBlock.mp4';
 import { color } from '../../../styles/theme';
 
 const FeatureContainer = styled.section`
   display: flex;
   width: 100%;
-  margin-bottom: 150px;
+  margin: 100px 0;
   justify-content: space-between;
 `;
 
 const FeatureIntroWrapper = styled.div`
   display: flex;
+  width: 35%;
+  margin-left: auto;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 `;
 
 const FeatureTitle = styled.h3`
-  font-size: 2.5rem;
+  font-size: 2rem;
   letter-spacing: 0.1em;
   color: ${color.gray[600]};
   font-weight: 500;
@@ -35,28 +37,30 @@ const FeatureContent = styled.p`
 `;
 
 const VideoContainer = styled.div`
-  width: 75%;
+  width: 50%;
   height: fit-content;
   border-radius: 8px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.075);
   border: 1px solid ${color.gray[50]};
 `;
 
-export default function EditPreviewToggleFeature() {
+export default function ExtendedFeature() {
   return (
     <FeatureContainer>
       <FeatureIntroWrapper>
-        <FeatureTitle>即時預覽</FeatureTitle>
+        <FeatureTitle>擴充網頁內容</FeatureTitle>
         <FeatureContent>
-          編輯網頁過程
+          除了樣板的基本資訊以外
           <br />
-          可隨時切換至預覽模式
+          有更多想告訴大家的嗎？
           <br />
-          觀看網頁發佈的樣子
+          透過新增橫幅圖塊
+          <br />
+          為你的網頁增加更多內容
         </FeatureContent>
       </FeatureIntroWrapper>
-      <VideoContainer width="800px">
-        <video src={editPreviewVideo} loop autoPlay muted>
+      <VideoContainer>
+        <video src={extendedBlockVideo} loop autoPlay muted>
           <track default kind="captions" srcLang="zh-tw" />
         </video>
       </VideoContainer>
