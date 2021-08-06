@@ -9,6 +9,7 @@ const Hero = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 6rem;
 `;
 
 const Slogan = styled.h2`
