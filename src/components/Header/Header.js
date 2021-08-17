@@ -100,19 +100,6 @@ const Header = () => {
                               static
                               className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             >
-                              {/* <Menu.Item>
-                                {({ active }) => (
-                                  <Link
-                                    to="/intro-compile"
-                                    className={classNames(
-                                      active ? 'bg-gray-100' : '',
-                                      'block px-4 py-2 text-sm text-gray-700',
-                                    )}
-                                  >
-                                    建立我的頁面
-                                  </Link>
-                                )}
-                              </Menu.Item> */}
                               <Menu.Item>
                                 {({ active }) => (
                                   <button
@@ -158,7 +145,7 @@ const Header = () => {
                       </Link>
                     )}
                     {pathname === '/sign-up' ? null : (
-                      <Link to="sign-up">
+                      <Link to="/sign-up">
                         <div className="text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white duration-150">
                           註冊
                         </div>

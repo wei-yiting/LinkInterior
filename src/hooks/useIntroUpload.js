@@ -1,5 +1,4 @@
 import { useEffect, useContext, useState } from 'react';
-// import uuid from 'react-uuid';
 
 import {
   usersCollection,

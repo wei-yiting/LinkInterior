@@ -1,26 +1,11 @@
-// import { useContext } from 'react';
-// import { IntroCompileContext } from '../contexts/IntroCompileContext';
 import {
   singleImageCompressAndStorage,
   multipleImagesCompressedAndStorage,
 } from './imageCompressAndStorage';
 
 export default function templateImagesProcess(heroImage, galleryImages) {
-  // const {
-  //   selectedHeroImage,
-  //   selectedGalleryImages,
-  //   // blockList,
-  //   // setUploadError,
-  //   // setIsProcessingBlockImage,
-  //   // blocksWithImageCompressedUrl,
-  //   // setBlocksWithImageCompressedUrl,
-  //   // setIsProcessingImages,
-  // } = useContext(IntroCompileContext);
-
   const introImageProcessPromises = [];
 
-  // useEffect(() => {
-  // setIsProcessingImages(true);
   const compressedHeroImageUrl = singleImageCompressAndStorage(
     heroImage,
     'introHeroImage',
