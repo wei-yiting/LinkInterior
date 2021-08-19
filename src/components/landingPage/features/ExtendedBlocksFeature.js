@@ -75,7 +75,7 @@ export default function ExtendedFeature() {
         </FeatureContent>
       </FeatureIntroWrapper>
       <VideoContainer>
-        <video src={extendedBlockVideo} loop autoPlay muted>
+        <video src={extendedBlockVideo} loop autoPlay muted playsInline>
           <track default kind="captions" srcLang="zh-tw" />
         </video>
       </VideoContainer>

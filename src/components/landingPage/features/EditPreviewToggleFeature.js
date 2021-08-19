@@ -71,7 +71,7 @@ export default function EditPreviewToggleFeature() {
         </FeatureContent>
       </FeatureIntroWrapper>
       <VideoContainer width="800px">
-        <video src={editPreviewVideo} loop autoPlay muted>
+        <video src={editPreviewVideo} loop autoPlay muted playsInline>
           <track default kind="captions" srcLang="zh-tw" />
         </video>
       </VideoContainer>

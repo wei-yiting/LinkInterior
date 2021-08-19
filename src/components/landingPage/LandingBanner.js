@@ -19,7 +19,7 @@ const Hero = styled.section`
   align-items: center;
   margin-bottom: 8rem;
   @media (max-width: 900px) {
-    margin-bottom: 5rem;
+    margin: 4rem 0 8rem;
   }
 `;
 
