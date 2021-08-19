@@ -64,7 +64,8 @@ Build a custom hook for page publishing procedure
 
 - User can toggle between Edit Mode and Preview Mode any time during their page compiling process
 - Preview mode allow user to inspect final publishing result and adjusting accordingly, achieving WYSIWYG user experience.
-  <img src="src/utils/gif/editPreview.gif" width="650px">
+
+<img src="src/utils/gif/editPreview.gif" width="650px">
 
 <br>
 
