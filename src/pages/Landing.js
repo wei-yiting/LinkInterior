@@ -18,7 +18,11 @@ const MainContainer = styled.main`
 const DivLine = styled.div`
   border-top: 4px solid ${color.main[100]};
   width: ${({ width }) => width || '20%'};
+  min-width: ${({ minWidth }) => minWidth || '200px'};
   margin: 0 auto;
+  @media (max-width: 900px) {
+    border-top: 2px solid ${color.main[100]};
+  }
 `;
 
 const VerticalLine = styled.div`
@@ -37,7 +41,7 @@ export default function Landing() {
         <EditPreviewToggleFeature />
         <DivLine />
         <TemplateSwitchFeature />
-        <DivLine width="10%" />
+        <DivLine width="10%" minWidth="100px" />
         <ExtendedBlocksFeature />
         <VerticalLine />
         <PublishFeature />

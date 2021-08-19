@@ -13,6 +13,10 @@ const FeatureContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    margin: 20px 0;
+  }
 `;
 
 const FeatureIntroWrapper = styled.div`
@@ -22,6 +26,11 @@ const FeatureIntroWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 3rem 0 1.5rem;
+  @media (max-width: 900px) {
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0;
+  }
 `;
 
 const FeatureTitle = styled.h3`
@@ -39,6 +48,14 @@ const FeatureContent = styled.p`
   font-weight: 400;
   line-height: 1.75em;
   text-align: center;
+  @media (max-width: 900px) {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    span {
+      display: block;
+    }
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -47,6 +64,10 @@ const VideoContainer = styled.div`
   border-radius: 8px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.075);
   border: 1px solid ${color.gray[50]};
+  @media (max-width: 900px) {
+    width: 95%;
+    margin: 10px auto;
+  }
 `;
 
 export default function PublishFeature() {
@@ -59,10 +80,14 @@ export default function PublishFeature() {
       </VideoContainer>
       <FeatureIntroWrapper>
         <FeatureTitle>一鍵發佈</FeatureTitle>
-        <FeatureContent>完成編輯後，點擊發佈你的網頁立即建置完成</FeatureContent>
+        <FeatureContent>
+          完成編輯後，<span>點擊發佈你的網頁立即建置完成</span>
+        </FeatureContent>
       </FeatureIntroWrapper>
       <Link to="/sign-up">
-        <OutlineButton width="100%">馬上註冊，開始建立我的網頁</OutlineButton>
+        <OutlineButton width="100%">
+          馬上註冊，<span>開始建立我的網頁</span>
+        </OutlineButton>
       </Link>
     </FeatureContainer>
   );

@@ -9,6 +9,10 @@ const FeatureContainer = styled.section`
   width: 100%;
   margin: 100px 0 150px;
   justify-content: space-between;
+  @media (max-width: 900px) {
+    flex-direction: column;
+    margin: 50px 0;
+  }
 `;
 
 const FeatureIntroWrapper = styled.div`
@@ -17,6 +21,10 @@ const FeatureIntroWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  @media (max-width: 900px) {
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const FeatureTitle = styled.h3`
@@ -33,6 +41,9 @@ const FeatureContent = styled.p`
   color: ${color.gray[900]};
   font-weight: 400;
   line-height: 1.75em;
+  @media (max-width: 900px) {
+    text-align: center;
+  }
 `;
 
 const VideoContainer = styled.div`
@@ -41,6 +52,11 @@ const VideoContainer = styled.div`
   border-radius: 8px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.075);
   border: 1px solid ${color.gray[50]};
+  @media (max-width: 900px) {
+    width: 95%;
+    margin: 30px auto;
+    order: 2;
+  }
 `;
 
 export default function TemplateSwitchFeature() {

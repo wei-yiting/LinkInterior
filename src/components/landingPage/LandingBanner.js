@@ -10,6 +10,9 @@ const Hero = styled.section`
   flex-direction: column;
   align-items: center;
   margin-bottom: 8rem;
+  @media (max-width: 900px) {
+    margin-bottom: 5rem;
+  }
 `;
 
 const Slogan = styled.h2`
@@ -19,6 +22,9 @@ const Slogan = styled.h2`
   font-size: 4rem;
   letter-spacing: 0.1em;
   line-height: 1.5em;
+  @media (max-width: 900px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const Subtitle = styled.p`
@@ -28,6 +34,12 @@ const Subtitle = styled.p`
   font-size: 1rem;
   text-align: center;
   line-height: 1.5em;
+`;
+
+const MobileHiddenWrapper = styled.div`
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export default function LandingBanner() {
@@ -43,9 +55,11 @@ export default function LandingBanner() {
         <br />
         按下發佈，讓大家透過網頁認識你
       </Subtitle>
-      <Link to="/compile-trial">
-        <DarkerButton>免註冊，直接體驗</DarkerButton>
-      </Link>
+      <MobileHiddenWrapper>
+        <Link to="/compile-trial">
+          <DarkerButton>免註冊，直接體驗</DarkerButton>
+        </Link>
+      </MobileHiddenWrapper>
     </Hero>
   );
 }

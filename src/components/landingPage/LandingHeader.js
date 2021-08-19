@@ -13,6 +13,10 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3rem;
+  @media (max-width: 900px) {
+    justify-content: center;
+    margin: 2rem 1rem;
+  }
 `;
 
 const Navbar = styled.nav`
@@ -20,6 +24,9 @@ const Navbar = styled.nav`
   justify-content: flex-end;
   margin: 20px 30px;
   align-items: center;
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
 
 const NavItem = styled.div`
@@ -40,6 +47,11 @@ const LogoArea = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const LogoWrapper = styled.div`
