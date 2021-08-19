@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 import { OutlineButton } from '../../../styles/sharedStyledComponents/buttons';
 import publishVideo from '../../../utils/video/publish.mp4';
 import { color } from '../../../styles/theme';
+import {
+  MobileShowWrapper,
+  MobileHiddenWrapper,
+} from '../../../styles/layoutStyledComponents/responsiveLayout';
 
 const FeatureContainer = styled.section`
   display: flex;
@@ -67,19 +71,6 @@ const VideoContainer = styled.div`
   @media (max-width: 900px) {
     width: 95%;
     margin: 10px auto;
-  }
-`;
-
-const MobileHiddenWrapper = styled.div`
-  @media (max-width: 900px) {
-    display: none;
-  }
-`;
-
-const MobileShowWrapper = styled.div`
-  display: none;
-  @media (max-width: 900px) {
-    display: block;
   }
 `;
 

@@ -2,8 +2,16 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
-import { DarkerButton, OutlineButton } from '../../styles/sharedStyledComponents/buttons';
+import {
+  DarkerButton,
+  OutlineButton,
+  PrimaryButton,
+} from '../../styles/sharedStyledComponents/buttons';
 import { color } from '../../styles/theme';
+import {
+  MobileShowWrapper,
+  MobileHiddenWrapper,
+} from '../../styles/layoutStyledComponents/responsiveLayout';
 
 const Hero = styled.section`
   display: flex;
@@ -38,14 +46,13 @@ const Subtitle = styled.p`
 
 const ButtonsArea = styled.div`
   display: flex;
-  width: 800px;
+  width: 825px;
   margin: 0 auto;
   justify-content: space-between;
-`;
-
-const MobileHiddenWrapper = styled.div`
   @media (max-width: 900px) {
-    display: none;
+    width: 100%;
+    justify-content: center;
+    margin-top: 2rem;
   }
 `;
 
@@ -62,16 +69,21 @@ export default function LandingBanner() {
         <br />
         按下發佈，讓大家透過網頁認識你
       </Subtitle>
-      <ButtonsArea>
-        <MobileHiddenWrapper>
+      <MobileHiddenWrapper>
+        <ButtonsArea>
           <Link to="/compile-trial">
             <DarkerButton>先不註冊，體驗建立自己的專頁</DarkerButton>
           </Link>
           <Link to="/services">
             <OutlineButton>來去總覽，看其他業者建立的專頁</OutlineButton>
           </Link>
-        </MobileHiddenWrapper>
-      </ButtonsArea>
+        </ButtonsArea>
+      </MobileHiddenWrapper>
+      <MobileShowWrapper>
+        <Link to="/services">
+          <PrimaryButton padding="0.5em 4em">來去看專頁總覽</PrimaryButton>
+        </Link>
+      </MobileShowWrapper>
     </Hero>
   );
 }

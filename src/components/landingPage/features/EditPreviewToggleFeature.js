@@ -11,7 +11,7 @@ const FeatureContainer = styled.section`
   justify-content: space-between;
   @media (max-width: 900px) {
     flex-direction: column;
-    margin-bottom: 50px;
+    margin: 4rem 0 50px;
   }
 `;
 

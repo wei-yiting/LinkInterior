@@ -8,6 +8,7 @@ import TemplateSwitchFeature from '../components/landingPage/features/TemplateSw
 import ExtendedBlocksFeature from '../components/landingPage/features/ExtendedBlocksFeature';
 import PublishFeature from '../components/landingPage/features/PublishFeature';
 import { color } from '../styles/theme';
+import { MobileShowWrapper } from '../styles/layoutStyledComponents/responsiveLayout';
 
 const MainContainer = styled.main`
   margin: 0 auto 200px;
@@ -41,6 +42,9 @@ export default function Landing() {
       <LandingHeader />
       <LandingBanner />
       <MainContainer>
+        <MobileShowWrapper>
+          <DivLine minWidth="250px" />
+        </MobileShowWrapper>
         <EditPreviewToggleFeature />
         <DivLine />
         <TemplateSwitchFeature />

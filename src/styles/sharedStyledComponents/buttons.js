@@ -41,6 +41,12 @@ export const PrimaryButton = styled.button`
   :active {
     background-color: ${color.main[400]};
   }
+  @media (max-width: 900px) {
+    line-height: 1.5em;
+    span {
+      display: block;
+    }
+  }
 `;
 
 export const OutlineButton = styled.button`
