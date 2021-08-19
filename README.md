@@ -35,7 +35,7 @@ Demo: https://linkinterior.com.tw/
 
 <br/>
 
-## Essentail Development Introduction
+## Essentail Development Techniques
 
 ### React Components Structure Design
 
