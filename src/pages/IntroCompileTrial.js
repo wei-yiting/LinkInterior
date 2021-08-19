@@ -8,7 +8,7 @@ import BlockArea from '../components/blocks/BlockArea';
 import {
   MainWrapper,
   IntroPageMainContainer,
-} from '../styles/layoutStyledComponents/GeneralLayout';
+} from '../styles/layoutStyledComponents/generalLayout';
 
 export default function IntroCompile() {
   const { isEditMode } = useContext(IntroCompileContext);

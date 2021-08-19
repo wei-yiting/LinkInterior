@@ -7,7 +7,7 @@ import RenderKeywordTags from './renderTemplateItems/RenderKeywordTags';
 import RenderImagesWall from './renderTemplateItems/RenderImagesWall';
 import RenderContact from './renderTemplateItems/RenderContact';
 import RenderServiceProvideCity from './renderTemplateItems/RenderServiceProvideCity';
-import { RowWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
+import { RowWrapper } from '../../../styles/layoutStyledComponents/templateLayout';
 
 export default function RenderIntroTemplate1() {
   return (

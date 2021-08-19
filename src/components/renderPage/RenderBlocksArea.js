@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { IntroRenderContext } from '../../contexts/IntroRenderContext';
 import { Heading2 } from '../../styles/sharedStyledComponents/headings';
-import { BlocksAreaContainer } from '../../styles/layoutStyledComponents/BlockLayout';
+import { BlocksAreaContainer } from '../../styles/layoutStyledComponents/blockLayout';
 import RenderBlockA from './renderBlock/RenderBlockA';
 import RenderBlockB from './renderBlock/RenderBlockB';
 import RenderBlockC from './renderBlock/RenderBlockC';

@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 import { useAuth } from '../contexts/AuthContext';
-import { MainWrapper } from '../styles/layoutStyledComponents/GeneralLayout';
+import { MainWrapper } from '../styles/layoutStyledComponents/generalLayout';
 import Logo from '../utils/logo/Logo';
 
 const LogIn = () => {

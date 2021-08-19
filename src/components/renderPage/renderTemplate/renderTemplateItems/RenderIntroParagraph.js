@@ -4,7 +4,7 @@ import { IntroRenderContext } from '../../../../contexts/IntroRenderContext';
 import {
   SectionWrapper,
   IntroParagraphText,
-} from '../../../../styles/layoutStyledComponents/TemplateLayout';
+} from '../../../../styles/layoutStyledComponents/templateLayout';
 import { Heading1 } from '../../../../styles/sharedStyledComponents/headings';
 
 export default function RenderIntroParagraph({ title }) {

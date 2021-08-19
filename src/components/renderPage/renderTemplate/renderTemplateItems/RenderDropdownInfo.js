@@ -4,7 +4,7 @@ import { IntroRenderContext } from '../../../../contexts/IntroRenderContext';
 import {
   SectionWrapper,
   DropdownContainer,
-} from '../../../../styles/layoutStyledComponents/TemplateLayout';
+} from '../../../../styles/layoutStyledComponents/templateLayout';
 
 import { LocationIcon, ProfessionIcon } from '../../../../utils/icons/fontAwesome';
 

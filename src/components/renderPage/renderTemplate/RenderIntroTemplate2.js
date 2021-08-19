@@ -9,7 +9,7 @@ import RenderKeyWordTags from './renderTemplateItems/RenderKeywordTags';
 import RenderImagesSlider from './renderTemplateItems/RenderImagesSlider';
 import RenderContact from './renderTemplateItems/RenderContact';
 import RenderServiceProvideCity from './renderTemplateItems/RenderServiceProvideCity';
-import { SectionWrapper, RowWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
+import { SectionWrapper, RowWrapper } from '../../../styles/layoutStyledComponents/templateLayout';
 
 export default function RenderIntroTemplate2() {
   const { companyName } = useContext(IntroRenderContext);

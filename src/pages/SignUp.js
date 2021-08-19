@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import styled from 'styled-components/macro';
 import { Link, useHistory } from 'react-router-dom';
 
-import { MainWrapper } from '../styles/layoutStyledComponents/GeneralLayout';
+import { MainWrapper } from '../styles/layoutStyledComponents/generalLayout';
 import { singleImageCompressAndStorage } from '../utils/imageProcess/imageCompressAndStorage';
 import Loader from '../components/shared/Loader';
 import UploadImageForm from '../components/shared/UploadImageForm';

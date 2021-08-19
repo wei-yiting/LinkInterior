@@ -6,7 +6,7 @@ import {
   SectionWrapper,
   ImagesGalleryContainer,
   ImageContainer,
-} from '../../../../styles/layoutStyledComponents/TemplateLayout';
+} from '../../../../styles/layoutStyledComponents/templateLayout';
 
 export default function RenderImagesWall() {
   const { imageGalleryUrls } = useContext(IntroRenderContext);

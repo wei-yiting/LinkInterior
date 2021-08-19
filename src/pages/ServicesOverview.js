@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components/macro';
 
-import { MainWrapper } from '../styles/layoutStyledComponents/GeneralLayout';
+import { MainWrapper } from '../styles/layoutStyledComponents/generalLayout';
 import { servicesOverviewCollection } from '../utils/firebase';
 import ServiceInfoCard from '../components/overview/ServiceInfoCard';
 import firestoreLooper from '../utils/firebase/tools/firestoreLooper';

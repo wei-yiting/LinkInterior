@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import IntroPageContextProvider from '../contexts/IntroRenderContext';
 import RenderIntroPage from '../components/renderPage/RenderIntroPage';
-import { MainWrapper } from '../styles/layoutStyledComponents/GeneralLayout';
+import { MainWrapper } from '../styles/layoutStyledComponents/generalLayout';
 
 export default function ServiceIntro() {
   const { pageId } = useParams();
