@@ -7,7 +7,7 @@ import HeroImageField from './templateInputFields/HeroImageField';
 import ContactInputFields from './templateInputFields/ContactInputFields';
 import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInput';
 import ImageWallField from './templateInputFields/ImageWallField';
-import { RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
+import { RowWrapper } from '../../styles/layoutStyledComponents/templateLayout';
 
 export default function EditIntroTemplate1() {
   return (

@@ -13,6 +13,9 @@ const MainContainer = styled.main`
   margin: 0 auto 200px;
   width: 90%;
   max-width: 1200px;
+  @media (max-width: 900px) {
+    margin: 0 auto 100px;
+  }
 `;
 
 const DivLine = styled.div`

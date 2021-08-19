@@ -6,7 +6,7 @@ import { TiDelete } from 'react-icons/ti';
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import ImagePlaceholder from './ImagePlaceholder';
 import { lightLinearGradients } from '../../../utils/constants/linearGradient';
-import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
+import { SectionWrapper } from '../../../styles/layoutStyledComponents/templateLayout';
 import { color } from '../../../styles/theme';
 import { Heading4 } from '../../../styles/sharedStyledComponents/headings';
 import { DarkSelectImageInputButton } from '../../shared/SelectImageInputButton';

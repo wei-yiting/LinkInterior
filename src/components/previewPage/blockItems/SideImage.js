@@ -3,7 +3,7 @@ import React from 'react';
 import {
   SideImageWrapper,
   SideImageContainer,
-} from '../../../styles/layoutStyledComponents/BlockLayout';
+} from '../../../styles/layoutStyledComponents/blockLayout';
 import ImagePlaceholder from '../../editPage/templateInputFields/ImagePlaceholder';
 
 export default function SideImage({ imageUrl, randomBgIdx }) {

@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import { randomLinearGradient } from '../../../utils/constants/linearGradient';
-import { HeroImageContainer } from '../../../styles/layoutStyledComponents/TemplateLayout';
+import { HeroImageContainer } from '../../../styles/layoutStyledComponents/templateLayout';
 
 export default function ProfileImage() {
   const { heroImageUrl } = useContext(IntroCompileContext);

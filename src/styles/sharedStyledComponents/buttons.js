@@ -87,10 +87,10 @@ export const DarkerButton = styled.button`
   }
 
   :hover {
-    transform: translateY(-3px);
+    background-color: ${color.main[700]};
   }
 
   :active {
-    transform: translateY(0px);
+    background-color: ${color.main[800]};
   }
 `;

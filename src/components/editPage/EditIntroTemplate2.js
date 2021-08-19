@@ -9,7 +9,7 @@ import ProfileImageField from './templateInputFields/ProfileImageField';
 import ContactInputFields from './templateInputFields/ContactInputFields';
 import ServiceProvideCityInput from './templateInputFields/ServiceProvideCityInput';
 import ImageSliderField from './templateInputFields/ImageSliderField';
-import { SectionWrapper, RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
+import { SectionWrapper, RowWrapper } from '../../styles/layoutStyledComponents/templateLayout';
 import { Title } from '../../styles/sharedStyledComponents/headings';
 
 export default function EditIntroTemplate2() {

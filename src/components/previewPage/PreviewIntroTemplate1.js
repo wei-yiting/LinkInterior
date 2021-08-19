@@ -7,7 +7,7 @@ import HeroImage from './templateItems/HeroImage';
 import ContactInfoArea from './templateItems/ContactInfoArea';
 import ServiceProvideCity from './templateItems/ServiceProvideCity';
 import ImagesWall from './templateItems/ImagesWall';
-import { RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
+import { RowWrapper } from '../../styles/layoutStyledComponents/templateLayout';
 
 export default function PreviewIntroTemplate1() {
   return (

@@ -5,7 +5,7 @@ import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import {
   SectionWrapper,
   DropdownContainer,
-} from '../../../styles/layoutStyledComponents/TemplateLayout';
+} from '../../../styles/layoutStyledComponents/templateLayout';
 import { LocationIcon, ProfessionIcon } from '../../../utils/icons/fontAwesome';
 import Dropdown from './Dropdown';
 import { allCityOptions } from '../../../utils/constants/city';

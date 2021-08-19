@@ -7,7 +7,7 @@ import {
   SocailMediaContainer,
   ContactInfoWrapper,
   InfoSpan,
-} from '../../../styles/layoutStyledComponents/TemplateLayout';
+} from '../../../styles/layoutStyledComponents/templateLayout';
 import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 import {
   MobileIcon,

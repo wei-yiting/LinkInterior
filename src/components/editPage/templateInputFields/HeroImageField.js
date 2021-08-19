@@ -6,7 +6,7 @@ import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
 import { LightSelectImageInputButton } from '../../shared/SelectImageInputButton';
 import { randomLinearGradient } from '../../../utils/constants/linearGradient';
-import { HeroImageContainer } from '../../../styles/layoutStyledComponents/TemplateLayout';
+import { HeroImageContainer } from '../../../styles/layoutStyledComponents/templateLayout';
 
 const CompanyName = styled.span`
   font-size: 3rem;

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { IntroCompileContext } from '../../contexts/IntroCompileContext';
 
-import { BlockContainer } from '../../styles/layoutStyledComponents/BlockLayout';
+import { BlockContainer } from '../../styles/layoutStyledComponents/blockLayout';
 import SideTextInput from './blockInputFields/SideTextInput';
 import SideImageField from './blockInputFields/SideImageField';
 import { TrashIcon } from '../../utils/icons/fontAwesome';

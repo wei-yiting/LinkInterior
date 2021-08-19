@@ -2,7 +2,7 @@ import React from 'react';
 import uuid from 'react-uuid';
 import styled from 'styled-components/macro';
 
-import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
+import { SectionWrapper } from '../../../styles/layoutStyledComponents/templateLayout';
 import CheckBox from './CheckBox';
 import {
   northernCities,

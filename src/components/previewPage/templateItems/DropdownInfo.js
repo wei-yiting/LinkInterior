@@ -4,7 +4,7 @@ import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 import {
   SectionWrapper,
   DropdownContainer,
-} from '../../../styles/layoutStyledComponents/TemplateLayout';
+} from '../../../styles/layoutStyledComponents/templateLayout';
 import { LocationIcon, ProfessionIcon } from '../../../utils/icons/fontAwesome';
 
 export default function DropdownInfo({ flexDirection, margin, justifyContent, infoMargin }) {

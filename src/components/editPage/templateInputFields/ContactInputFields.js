@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SectionWrapper, ContactArea } from '../../../styles/layoutStyledComponents/TemplateLayout';
+import { SectionWrapper, ContactArea } from '../../../styles/layoutStyledComponents/templateLayout';
 import { ContactInputField, MediaInputField } from './InfoInputField';
 import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 

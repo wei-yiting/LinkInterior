@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { allCities } from '../../../utils/constants/city';
 
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
-import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
+import { SectionWrapper } from '../../../styles/layoutStyledComponents/templateLayout';
 import { Heading3 } from '../../../styles/sharedStyledComponents/headings';
 
 export default function ServiceProvideCity({ margin, width }) {

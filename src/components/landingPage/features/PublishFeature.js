@@ -70,6 +70,19 @@ const VideoContainer = styled.div`
   }
 `;
 
+const MobileHiddenWrapper = styled.div`
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+const MobileShowWrapper = styled.div`
+  display: none;
+  @media (max-width: 900px) {
+    display: block;
+  }
+`;
+
 export default function PublishFeature() {
   return (
     <FeatureContainer>
@@ -84,11 +97,16 @@ export default function PublishFeature() {
           完成編輯後，<span>點擊發佈你的網頁立即建置完成</span>
         </FeatureContent>
       </FeatureIntroWrapper>
-      <Link to="/sign-up">
-        <OutlineButton width="100%">
-          馬上註冊，<span>開始建立我的網頁</span>
-        </OutlineButton>
-      </Link>
+      <MobileHiddenWrapper>
+        <Link to="/sign-up">
+          <OutlineButton width="100%">馬上註冊，開始建立我的網頁</OutlineButton>
+        </Link>
+      </MobileHiddenWrapper>
+      <MobileShowWrapper>
+        <Link to="/services">
+          <OutlineButton width="100%">來去看其他人建立的網頁</OutlineButton>
+        </Link>
+      </MobileShowWrapper>
     </FeatureContainer>
   );
 }
