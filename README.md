@@ -1,7 +1,7 @@
 <p align="center">
   <img src="src/utils/images/readmeImages/logo.png" width="300px">
   <br/>
-A webpage builder platform for all kinds of interior services built with React/React context, featuring WYSIWYG user experience.<br/>
+A webpage builder SPA developed using React/React context, featuring WYSIWYG user experience.<br/>
 </p>
 <table>
 <tr>
@@ -25,17 +25,17 @@ Demo: https://linkinterior.com.tw/
 | React Router              | SPA, public and private route set up                                                                                                 |
 | React Context             | pass data through nested components tree                                                                                             |
 | styled-components         | CSS-In-JS library for styling                                                                                                        |
-| Tailwind CSS, Tailwind UI | assist accelerate development speed                                                                                                  |
+| Tailwind CSS, Tailwind UI | help accelerating development speed                                                                                                  |
 | Third-Party Modules       | [Browser Image Compression](https://www.npmjs.com/package/browser-image-compression), [Swiper](https://www.npmjs.com/package/swiper) |
 | Prettier                  | keep coding style consistent and better formatted                                                                                    |
-| ESLint                    | enhance development efficiency                                                                                                       |
-| Normalize.css             | cross browsers homogeneous style development                                                                                         |
+| ESLint                    | help debugging, enhance development efficiency                                                                                                       |
+| Normalize.css             | cross-browsers homogeneous style development                                                                                         |
 | Firebase                  | Firestore, Storage, Authentication, Hosting for Back-End                                                                             |
 | Miro                      | Wireframe Design                                                                                                                     |
 
 <br/>
 
-## Essentail Development Techniques
+## Key Development Techniques
 
 ### React Components Structure Design
 
@@ -44,7 +44,9 @@ Accomplish
 - WYSIWYG (edit/preview toggle)
 - Real-time Template Switch
 
-by nested components tree & shared components design
+by 
+1. shared React components design
+2. nested components tree with the usage of React Context to pass data
 <img src="src/utils/images/readmeImages/template-component-structure.jpg">
 
 ### Custom Hook For Page Publishing
@@ -55,10 +57,10 @@ Build a custom hook for page publishing procedure
 2. upload compressed image to Firebase Storage, retrieving URLs of uploaded images
 3. create new Firestore Database document with image urls and other data
 <p align="center">
-  <img src="src/utils/images/readmeImages/publish-custom-hook.jpg" width="600px">
+  <img src="src/utils/images/readmeImages/publish-custom-hook.jpg" width="750px">
 </p>
 
-## Features
+## Application Features
 
 ### WYSIWYG: Real-time Edit/Preview mode toggle
 
@@ -85,5 +87,6 @@ User can select different types of block and add more image, text content to the
 
 ### One-Click Publishing
 
-User can publish their own page with simply one-click. Few seconds later, their own page is published and ready for the world to visit.
+User can publish their own page with simply one-click. <br>
+After few seconds of processing, user's own page will be published and ready for the world to visit.
 <img src="src/utils/gif/publish.gif" width="650px">
