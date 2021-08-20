@@ -5,6 +5,16 @@ import { MainWrapper } from '../styles/layoutStyledComponents/generalLayout';
 import { servicesOverviewCollection } from '../utils/firebase';
 import ServiceInfoCard from '../components/overview/ServiceInfoCard';
 import firestoreLooper from '../utils/firebase/tools/firestoreLooper';
+import { Heading1 } from '../styles/sharedStyledComponents/headings';
+import { SmallerDesktopShowWrapper } from '../styles/layoutStyledComponents/responsiveLayout';
+import { color } from '../styles/theme';
+
+const TitleContainer = styled.div`
+  margin: 3.5rem auto 0;
+  width: fit-content;
+  border-bottom: 2px solid ${color.gray[400]};
+  padding: 0 1em;
+`;
 
 const ServiceCardsContainer = styled.main`
   display: flex;
@@ -12,10 +22,13 @@ const ServiceCardsContainer = styled.main`
   width: 90%;
   max-width: 1260px;
   height: fit-content;
-  margin: 0 auto;
-  padding: 80px 0 100px;
-  justify-content: flex-start;
+  margin: 80px auto 100px;
+  justify-content: center;
   align-items: stretch;
+
+  @media (max-width: 1024px) {
+    margin: 1rem auto 10rem;
+  }
 `;
 
 export default function ServicesOverview() {
@@ -45,7 +58,14 @@ export default function ServicesOverview() {
 
   return (
     <MainWrapper>
-      <div className="flex flex-0 justify-center min-h-screen bg-gray-50">
+      <div className="flex flex-0 justify-center min-h-screen bg-gray-50 flex-col">
+        <SmallerDesktopShowWrapper>
+          <TitleContainer>
+            <Heading1 textAlign="center" size="1.75rem" lineHeight="1.05em">
+              服務業者總覽
+            </Heading1>
+          </TitleContainer>
+        </SmallerDesktopShowWrapper>
         <ServiceCardsContainer>
           {renderedServiceCards}
           {error && <div>{error}</div>}

@@ -12,3 +12,10 @@ export const MobileShowWrapper = styled.div`
     display: block;
   }
 `;
+
+export const SmallerDesktopShowWrapper = styled.div`
+  display: none;
+  @media (max-width: 1024px) {
+    display: block;
+  }
+`;

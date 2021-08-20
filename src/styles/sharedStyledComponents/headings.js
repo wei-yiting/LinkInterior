@@ -12,12 +12,13 @@ export const Title = styled.h1`
 `;
 
 export const Heading1 = styled.h2`
-  font-size: ${fontSize.large[1]};
+  font-size: ${({ size }) => size || fontSize.large[1]};
   color: ${({ fontColor }) => fontColor || color.gray[600]};
   font-weight: ${({ fontWeight }) => fontWeight || '600'};
   letter-spacing: 0.075em;
-  line-height: 1.5em;
+  line-height: ${({ lineHeight }) => lineHeight || '1.5em'};
   margin: ${({ margin }) => margin || '0.5em 0'};
+  text-align: ${({ textAlign }) => textAlign || ''};
 `;
 
 export const Heading2 = styled.h3`
