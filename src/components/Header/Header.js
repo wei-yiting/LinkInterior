@@ -1,10 +1,16 @@
 import React, { Fragment, useState } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import { useAuth } from '../../contexts/AuthContext';
 import Breadcrumbs from './Breadcrumbs';
 import TextLogo from '../../utils/logo/TextLogo';
+
+const navigation = [
+  { name: '回首頁', to: '/', current: false },
+  { name: '服務業者總覽', to: '/services', current: false },
+];
 
 const textLogoStyle = {
   position: 'absolute',
@@ -34,20 +40,52 @@ const Header = () => {
 
   return (
     <Disclosure as="nav" className="bg-white shadow fixed w-full z-20">
-      {() => (
+      {({ open }) => (
         <>
-          <TextLogo style={textLogoStyle}>LinkInterior</TextLogo>
-          <div className="max-w-full mx-auto px-4 sm:px-16 lg:px-32 relative">
-            <div className="flex justify-between h-16 relative">
+          <div className="max-w-full mx-auto md:px-4 sm:px-16 lg:px-32 relative h-16">
+            <TextLogo style={textLogoStyle}>LinkInterior</TextLogo>
+
+            {/* hamburger menu */}
+            <div className="absolute inset-y-0 right-0 mr-4 flex items-center md:hidden">
+              <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-main-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <span className="sr-only">Open main menu</span>
+                {open ? (
+                  <XIcon className="block h-8 w-8" aria-hidden="true" />
+                ) : (
+                  <MenuIcon className="block h-8 w-8" aria-hidden="true" />
+                )}
+              </Disclosure.Button>
+            </div>
+            <Disclosure.Panel className="md:hidden pt-16 w-full">
+              <div className="px-6 pt-2 pb-8 space-y-1 z-30 bg-white">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.to}
+                    className={classNames(
+                      item.current
+                        ? 'text-main-600 font-semibold text-right text-xl'
+                        : 'text-gray-400 hover:bg-main-400 hover:text-white text-right text-xl',
+                      'block px-3 py-2 rounded-md text-base font-medium',
+                    )}
+                    aria-current={item.current ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </Disclosure.Panel>
+
+            <div className="hidden md:justify-start md:flex lg:justify-between h-16 relative">
               <Breadcrumbs />
 
-              <div className="hidden sm:ml-6 sm:flex sm:items-center">
+              <div className="hidden lg:ml-6 lg:flex sm:items-center">
                 {currentUser ? (
                   <>
                     {pathname.includes('/service') ? null : (
                       <Link to="/services">
                         <div className="mr-12 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 border-white pb-1 duration-150">
-                          已發佈頁面總覽
+                          服務業者總覽
                         </div>
                       </Link>
                     )}
@@ -126,7 +164,7 @@ const Header = () => {
                     {pathname.includes('/service') ? null : (
                       <Link to="/services">
                         <div className="mr-8 text-gray-700 tracking-wider hover:border-gray-500 border-b-4 pb-1 border-white duration-150">
-                          已發佈頁面總覽
+                          服務業者總覽
                         </div>
                       </Link>
                     )}

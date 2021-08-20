@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
+import HamburgerMenu from './HamburgerMenu';
 import { useAuth } from '../../contexts/AuthContext';
 import { PrimaryButton } from '../../styles/sharedStyledComponents/buttons';
 import TextLogo from '../../utils/logo/TextLogo';
@@ -13,10 +14,17 @@ const Header = styled.header`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 3rem;
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     justify-content: center;
     margin: 2rem 1rem;
+    position: relative;
   }
+`;
+
+const HamburgerMenuWrapper = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
 `;
 
 const Navbar = styled.nav`
@@ -24,7 +32,7 @@ const Navbar = styled.nav`
   justify-content: flex-end;
   margin: 20px 30px;
   align-items: center;
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 `;
@@ -63,43 +71,48 @@ export default function LandingHeader() {
   const { currentUser, logOut } = useAuth();
 
   return (
-    <Header>
-      <Link to="/">
-        <LogoArea>
-          <LogoWrapper>
-            <Logo />
-          </LogoWrapper>
-          <TextLogo fontSize="1.75rem" textAlign="center">
-            LinkInterior
-          </TextLogo>
-        </LogoArea>
-      </Link>
-      <Navbar>
-        <Link to="services">
-          <NavItem>已發佈頁面總覽</NavItem>
+    <>
+      <Header>
+        <Link to="/">
+          <LogoArea>
+            <LogoWrapper>
+              <Logo />
+            </LogoWrapper>
+            <TextLogo fontSize="1.75rem" textAlign="center">
+              LinkInterior
+            </TextLogo>
+          </LogoArea>
         </Link>
-        {currentUser ? (
-          <>
-            <NavItem onClick={logOut}>登出</NavItem>
-            <Link to="intro-compile">
-              <PrimaryButton fontSize="1rem" padding="0.75em 1em">
-                開始建立頁面
-              </PrimaryButton>
-            </Link>
-          </>
-        ) : (
-          <>
-            <Link to="log-in">
-              <NavItem>登入</NavItem>
-            </Link>
-            <Link to="sign-up">
-              <PrimaryButton fontSize="1rem" padding="0.75em 1em">
-                註冊，開始建立頁面
-              </PrimaryButton>
-            </Link>
-          </>
-        )}
-      </Navbar>
-    </Header>
+        <HamburgerMenuWrapper>
+          <HamburgerMenu />
+        </HamburgerMenuWrapper>
+        <Navbar>
+          <Link to="services">
+            <NavItem>已發佈頁面總覽</NavItem>
+          </Link>
+          {currentUser ? (
+            <>
+              <NavItem onClick={logOut}>登出</NavItem>
+              <Link to="intro-compile">
+                <PrimaryButton fontSize="1rem" padding="0.75em 1em">
+                  開始建立頁面
+                </PrimaryButton>
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link to="log-in">
+                <NavItem>登入</NavItem>
+              </Link>
+              <Link to="sign-up">
+                <PrimaryButton fontSize="1rem" padding="0.75em 1em">
+                  註冊，開始建立頁面
+                </PrimaryButton>
+              </Link>
+            </>
+          )}
+        </Navbar>
+      </Header>
+    </>
   );
 }
