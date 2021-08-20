@@ -57,7 +57,7 @@ Build a custom hook for page publishing procedure
 2. upload compressed image to Firebase Storage, retrieving URLs of uploaded images
 3. create new Firestore Database document with image urls and other data
 <p align="center">
-  <img src="src/utils/images/readmeImages/publish-custom-hook.jpg" width="600px">
+  <img src="src/utils/images/readmeImages/publish-custom-hook.jpg" width="750px">
 </p>
 
 ## Application Features
@@ -74,9 +74,6 @@ Build a custom hook for page publishing procedure
 ### Real-Time Template Switch
 
 In both Edit and Preview mode, user can switch between different template and decide which one best-presented their webpage.
-
-<br>
-
 <img src="src/utils/gif/templateSwitch.gif" width="650px">
 
 <br>
@@ -84,9 +81,6 @@ In both Edit and Preview mode, user can switch between different template and de
 ### Extended Page Content Using Block
 
 User can select different types of block and add more image, text content to their own page.
-
-<br>
-
 <img src="src/utils/gif/extendedBlock.gif" width="650px">
 
 <br>
@@ -95,7 +89,4 @@ User can select different types of block and add more image, text content to the
 
 User can publish their own page with simply one-click. <br>
 After few seconds of processing, user's own page will be published and ready for the world to visit.
-
-<br>
-
 <img src="src/utils/gif/publish.gif" width="650px">
