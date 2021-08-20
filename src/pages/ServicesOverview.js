@@ -6,16 +6,16 @@ import { servicesOverviewCollection } from '../utils/firebase';
 import ServiceInfoCard from '../components/overview/ServiceInfoCard';
 import firestoreLooper from '../utils/firebase/tools/firestoreLooper';
 import { Heading1 } from '../styles/sharedStyledComponents/headings';
-// import { SmallerDesktopShowWrapper } from '../styles/layoutStyledComponents/responsiveLayout';
 import { color } from '../styles/theme';
 
 const TitleContainer = styled.div`
-  margin: 3.5rem auto 0;
+  margin: 3.5rem 0 0 15vw;
   width: fit-content;
   border-bottom: 2px solid ${color.gray[400]};
   padding: 0 1em;
 
   @media (max-width: 900px) {
+    margin: 3.5rem auto 0;
   }
 `;
 
@@ -25,7 +25,7 @@ const ServiceCardsContainer = styled.main`
   width: 90%;
   max-width: 1260px;
   height: fit-content;
-  margin: 80px auto 100px;
+  margin: 50px auto 100px;
   justify-content: center;
   align-items: stretch;
 
@@ -62,13 +62,11 @@ export default function ServicesOverview() {
   return (
     <MainWrapper>
       <div className="flex flex-0 justify-center min-h-screen bg-gray-50 flex-col">
-        {/* <SmallerDesktopShowWrapper> */}
         <TitleContainer>
           <Heading1 textAlign="center" size="1.75rem" lineHeight="1.05em">
             服務業者總覽
           </Heading1>
         </TitleContainer>
-        {/* </SmallerDesktopShowWrapper> */}
         <ServiceCardsContainer>
           {renderedServiceCards}
           {error && <div>{error}</div>}
