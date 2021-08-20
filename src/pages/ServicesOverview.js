@@ -9,12 +9,12 @@ import { Heading1 } from '../styles/sharedStyledComponents/headings';
 import { color } from '../styles/theme';
 
 const TitleContainer = styled.div`
-  margin: 3.5rem 0 0 15vw;
+  margin: 3.5rem 0 0 calc((100vw - 1260px) / 2);
   width: fit-content;
   border-bottom: 2px solid ${color.gray[400]};
   padding: 0 1em;
 
-  @media (max-width: 900px) {
+  @media (max-width: 1400px) {
     margin: 3.5rem auto 0;
   }
 `;
