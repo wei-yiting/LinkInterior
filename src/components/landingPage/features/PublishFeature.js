@@ -33,7 +33,7 @@ const FeatureIntroWrapper = styled.div`
   @media (max-width: 900px) {
     align-items: center;
     width: 100%;
-    margin: 1rem 0;
+    margin: 1rem 0 2rem;
   }
 `;
 

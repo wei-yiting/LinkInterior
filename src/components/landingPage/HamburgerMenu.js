@@ -14,12 +14,12 @@ function classNames(...classes) {
 
 export default function LandingHamburger() {
   return (
-    <Disclosure as="nav" className="fixed flex lg:hidden relative w-full">
+    <Disclosure as="nav" className="fixed flex lg:hidden relative w-full pt-8">
       {({ open }) => (
         <>
           {/* hamburger menu */}
-          <div className="absolute inset-y-0 right-0 mr-4 flex items-center lg:hidden">
-            <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-main-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+          <div className="absolute inset-y-0 right-0 flex flex-0 items-center lg:hidden h-8">
+            <Disclosure.Button className="inline-flex p-2 rounded-md text-gray-400 hover:text-white hover:bg-main-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
               {open ? (
                 <XIcon className="block h-8 w-8" aria-hidden="true" />
@@ -28,8 +28,8 @@ export default function LandingHamburger() {
               )}
             </Disclosure.Button>
           </div>
-          <Disclosure.Panel className="lg:hidden pt-16">
-            <div className="px-6 pt-2 pb-8 space-y-1 z-30 bg-white">
+          <Disclosure.Panel className="lg:hidden pt-4 mt-4 bg-white bg-opacity-95 shadow rounded-lg">
+            <div className="px-6 pt-2 pb-8 space-y-1 z-30">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
@@ -37,7 +37,7 @@ export default function LandingHamburger() {
                   className={classNames(
                     item.current
                       ? 'text-main-600 font-semibold text-right text-xl'
-                      : 'text-gray-400 hover:bg-main-400 hover:text-white text-right text-xl',
+                      : 'text-gray-500 hover:bg-main-400 hover:text-white text-right text-xl',
                     'block px-3 py-2 rounded-md text-base font-medium',
                   )}
                   aria-current={item.current ? 'page' : undefined}
