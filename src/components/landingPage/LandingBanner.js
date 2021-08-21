@@ -46,8 +46,8 @@ const Subtitle = styled.p`
 
 const ButtonsArea = styled.div`
   display: flex;
-  width: 825px;
-  margin: 0 auto;
+  width: 815px;
+  margin: 30px auto 0;
   justify-content: space-between;
   @media (max-width: 900px) {
     width: 100%;

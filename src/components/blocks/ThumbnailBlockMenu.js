@@ -146,7 +146,7 @@ export default function BlockMenu() {
   return (
     <BlockMenuArea>
       <AreaTitle>新增圖文內容</AreaTitle>
-      <AreaExplain>（選擇橫幅樣式，點擊即可新增可編輯的圖文區塊）</AreaExplain>
+      <AreaExplain>（選擇橫幅樣式，點擊即可新增、編輯圖文區塊）</AreaExplain>
       <ThumbnailsContainer>
         <Thumbnail
           onClick={() => {

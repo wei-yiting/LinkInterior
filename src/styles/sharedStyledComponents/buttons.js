@@ -78,8 +78,8 @@ export const OutlineButton = styled.button`
 export const DarkerButton = styled.button`
   font-size: ${({ fontSize }) => fontSize || '1.125rem'};
   letter-spacing: 0.075em;
-  background-color: ${color.main[600]};
-  border: 2px solid ${color.main[600]};
+  background-color: ${color.main[500]};
+  border: 2px solid ${color.main[500]};
   color: white;
   border-radius: 0.5rem;
   padding: 0.75em 3em;
@@ -93,10 +93,10 @@ export const DarkerButton = styled.button`
   }
 
   :hover {
-    background-color: ${color.main[700]};
+    background-color: ${color.main[600]};
   }
 
   :active {
-    background-color: ${color.main[800]};
+    background-color: ${color.main[700]};
   }
 `;

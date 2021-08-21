@@ -19,7 +19,7 @@ export default function PreviewIntroTemplate2() {
       <RowWrapper>
         <ProfileImage />
         <SectionWrapper margin="100px 0 50px 100px" width="100%">
-          <Title>{currentUser ? currentUser.username : '你的註冊名稱'}</Title>
+          <Title>{currentUser ? currentUser.username : 'LinkInterior 網頁建置平台'}</Title>
           <DropdownInfo
             flexDirection="column"
             margin="0"

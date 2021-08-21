@@ -19,7 +19,7 @@ export default function EditIntroTemplate2() {
       <RowWrapper>
         <ProfileImageField />
         <SectionWrapper margin="100px 0 50px 100px" width="100%">
-          <Title>{currentUser ? currentUser.username : '你的註冊名稱'}</Title>
+          <Title>{currentUser ? currentUser.username : 'LinkInterior 網頁建置平台'}</Title>
           <InfoDropdownFields
             flexDirection="column"
             margin="0"
