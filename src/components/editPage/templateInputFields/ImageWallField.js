@@ -13,7 +13,7 @@ import { DarkSelectImageInputButton } from '../../shared/SelectImageInputButton'
 
 const numberOfImages = 9;
 const DEFAULT_IMAGE_PLACEHOLDER_RANDOM_COLOR_IDX = [...Array(numberOfImages)].map(() => {
-  return Math.floor(Math.random() * lightLinearGradients.length);
+  return Math.floor(Math.random() * lightLinearGradients.length) + 1;
 });
 
 const ImageUploadContainer = styled.div`

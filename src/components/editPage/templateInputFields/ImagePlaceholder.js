@@ -4,8 +4,6 @@ import styled from 'styled-components/macro';
 import { ImageIcon } from '../../../utils/icons/fontAwesome';
 import { lightLinearGradients } from '../../../utils/constants/linearGradient';
 
-// const randomIdx = Math.floor(Math.random() * lightLinearGradients.length);
-
 const ImageplaceholderContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -21,7 +19,9 @@ const ImageplaceholderContainer = styled.div`
 
 const ImagePlaceholder = ({ idx }) => {
   return (
-    <ImageplaceholderContainer idx={idx || Math.floor(Math.random() * lightLinearGradients.length)}>
+    <ImageplaceholderContainer
+      idx={idx ? idx - 1 : Math.floor(Math.random() * lightLinearGradients.length)}
+    >
       <ImageIcon />
     </ImageplaceholderContainer>
   );
