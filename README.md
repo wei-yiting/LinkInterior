@@ -73,7 +73,7 @@ Build a custom hook for page publishing procedure
 
 ### Real-Time Template Switch
 
-In both Edit and Preview mode, user can switch between different template and decide which one best-presented their webpage.
+In both Edit and Preview mode, user can switch template to inspect and decide which one best-presented their webpage.
 <img src="src/utils/gif/templateSwitch.gif" width="650px">
 
 <br>
