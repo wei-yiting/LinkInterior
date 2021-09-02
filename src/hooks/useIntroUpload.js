@@ -10,6 +10,7 @@ import { IntroCompileContext } from '../contexts/IntroCompileContext';
 import { useAuth } from '../contexts/AuthContext';
 import templateImagesProcess from '../utils/imageProcess/templateImagesProcess';
 import blockImagesProcess from '../utils/imageProcess/blockImagesProcess';
+import addHttp from '../utils/functions/urlProcess';
 
 let serviceIntroUploadData;
 let servicesOverviewUploadData;
@@ -35,6 +36,14 @@ export default function useIntroUpload(isPublished) {
   const publishStatus = isPublished ? 2 : 1;
   const isPublishing = isPublished === 'true';
 
+  // handle url, add "http"
+  let { website, fb, ig } = contactInfo;
+  const { mobile, phone, line, email, address } = contactInfo;
+  website = website ? addHttp(website) : '';
+  fb = fb ? addHttp(fb) : '';
+  ig = ig ? addHttp(ig) : '';
+  const contactInfoWithHttpUrl = { mobile, phone, line, email, address, website, fb, ig };
+
   templateImagesProcess(selectedHeroImage, selectedGalleryImages)
     .then((resolveArray) => {
       if (isUploading && !isUploadingToDb) {
@@ -48,7 +57,7 @@ export default function useIntroUpload(isPublished) {
               lastEditTime: firebaseTimeStamp(),
               isPublished: isPublishing,
               templateContent: {
-                contact: contactInfo,
+                contact: contactInfoWithHttpUrl,
                 heroImageUrl: compressedHeroImageUrl,
                 imageGalleryUrls: compressedImageGalleryUrls,
                 intro,

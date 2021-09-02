@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
+import addHttp from '../../../utils/functions/urlProcess';
 import {
   SectionWrapper,
   ContactArea,
@@ -19,13 +20,6 @@ import {
   LargeFacebookIcon,
   LargeInstagramIcon,
 } from '../../../utils/icons/fontAwesome';
-
-const addHttp = (url) => {
-  if (!url.startsWith('http')) {
-    return `http://${url}`;
-  }
-  return url;
-};
 
 export default function ContactInfoArea({ width, flexDirection, margin }) {
   const { contactInfo } = useContext(IntroCompileContext);
