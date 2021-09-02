@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import editPreviewVideo from '../../../utils/video/editPreview.mp4';
+import editPreviewVideo from '../../../utils/videos/editPreview.mp4';
 import { color } from '../../../styles/theme';
 
 const FeatureContainer = styled.section`

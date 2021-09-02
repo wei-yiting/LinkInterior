@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import templateSwitchVideo from '../../../utils/video/templateSwitch.mp4';
+import templateSwitchVideo from '../../../utils/videos/templateSwitch.mp4';
 import { color } from '../../../styles/theme';
 
 const FeatureContainer = styled.section`

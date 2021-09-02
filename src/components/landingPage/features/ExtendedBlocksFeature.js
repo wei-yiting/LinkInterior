@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import extendedBlockVideo from '../../../utils/video/extendedBlock.mp4';
+import extendedBlockVideo from '../../../utils/videos/extendedBlock.mp4';
 import { color } from '../../../styles/theme';
 
 const FeatureContainer = styled.section`

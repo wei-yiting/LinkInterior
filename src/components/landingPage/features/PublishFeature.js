@@ -3,7 +3,7 @@ import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom';
 
 import { OutlineButton } from '../../../styles/sharedStyledComponents/buttons';
-import publishVideo from '../../../utils/video/publish.mp4';
+import publishVideo from '../../../utils/videos/publish.mp4';
 import { color } from '../../../styles/theme';
 import {
   MobileShowWrapper,
