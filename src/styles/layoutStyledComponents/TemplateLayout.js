@@ -10,6 +10,11 @@ export const SectionWrapper = styled.section`
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
   align-items: ${({ alignItems }) => alignItems || 'flex-start'};
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
+
+  @media (max-width: 768px) {
+    margin: 30px auto 20px;
+    width: 95%;
+  }
 `;
 
 export const RowWrapper = styled.div`
@@ -17,6 +22,9 @@ export const RowWrapper = styled.div`
   width: 80%;
   margin: 0 auto;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const HeroImageContainer = styled.div`
@@ -27,6 +35,10 @@ export const HeroImageContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    height: 30vh;
+  }
 `;
 
 export const DropdownContainer = styled.div`
@@ -42,6 +54,9 @@ export const IntroParagraphText = styled.p`
   white-space: pre-wrap;
   margin: 0.75rem 1.5rem;
   line-height: 2rem;
+  @media (max-width: 768px) {
+    margin: 0.25rem 0;
+  }
 `;
 
 export const TagArea = styled.div`
@@ -103,4 +118,7 @@ export const HeroImageCompanyName = styled.span`
   color: white;
   font-weight: 600;
   letter-spacing: 0.1em;
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
 `;

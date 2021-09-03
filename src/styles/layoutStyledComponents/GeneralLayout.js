@@ -13,4 +13,9 @@ export const IntroPageMainContainer = styled.main`
   padding: 20px 0 100px;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 0 100px;
+  }
 `;
