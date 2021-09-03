@@ -11,7 +11,7 @@ import {
 export default function RenderImagesWall() {
   const { imageGalleryUrls } = useContext(IntroRenderContext);
   return imageGalleryUrls.length ? (
-    <SectionWrapper width="90%">
+    <SectionWrapper width="90%" mobileWidth="95%">
       <ImagesGalleryContainer>
         {imageGalleryUrls.map((imageUrl) => (
           <ImageContainer key={uuid()} style={{ backgroundImage: `url("${imageUrl}")` }} />

@@ -17,7 +17,7 @@ export default function RenderIntroTemplate1() {
       <RenderIntroParagraph title="業者介紹" />
       <RenderKeywordTags />
       <RenderImagesWall />
-      <RowWrapper>
+      <RowWrapper justifyContent="column-reverse">
         <RenderContact width="50%" margin="30px 0" />
         <RenderServiceProvideCity width="40%" margin="30px 0" />
       </RowWrapper>

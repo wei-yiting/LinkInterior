@@ -7,6 +7,9 @@ export const TagsList = styled.ul`
   flex-wrap: wrap;
   padding: 0;
   margin: 8px 0 0 0;
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 export const Tag = styled.li`

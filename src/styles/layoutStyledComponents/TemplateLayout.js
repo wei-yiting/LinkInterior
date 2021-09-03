@@ -12,8 +12,8 @@ export const SectionWrapper = styled.section`
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
 
   @media (max-width: 768px) {
-    margin: 30px auto 20px;
-    width: 95%;
+    margin: 30px auto 15px;
+    width: ${({ mobileWidth }) => mobileWidth || '90%'};
   }
 `;
 
@@ -23,7 +23,8 @@ export const RowWrapper = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   @media (max-width: 768px) {
-    flex-direction: column;
+    flex-direction: ${({ justifyContent }) => justifyContent || 'column'};
+    width: 100%;
   }
 `;
 
@@ -85,6 +86,13 @@ export const ImageContainer = styled.div`
   margin: 0.5rem;
   background-size: cover;
   background-position: center;
+  @media (max-width: 768px) {
+    width: 100%;
+    margin: 0 0 2rem;
+    :last-child {
+      margin: 0;
+    }
+  }
 `;
 
 export const ContactArea = styled.div`
@@ -95,21 +103,46 @@ export const ContactArea = styled.div`
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
   flex: 1;
   justify-content: space-around;
+  @media (max-width: 768px) {
+    padding: 2rem 1rem 1.5rem;
+  }
 `;
 
 export const ContactInfoWrapper = styled.div`
   margin-bottom: 1.25rem;
+  @media (max-width: 768px) {
+    margin: 0 0 1rem 0.5rem;
+    display: flex;
+    align-items: center;
+    svg {
+      transform: scale(1.2);
+      display: block;
+      margin-top: 0.25rem;
+    }
+  }
 `;
+
 export const InfoSpan = styled.span`
   margin-left: 0.5rem;
   font-size: 1.0625rem;
   font-weight: 500;
   color: ${color.gray[700]};
+  @media (max-width: 768px) {
+    font-size: 1.125rem;
+    line-height: 1.5em;
+    display: block;
+  }
 `;
 
 export const SocailMediaContainer = styled.div`
   display: flex;
   margin-bottom: 1.25rem;
+  @media (max-width: 768px) {
+    transform: scale(1.2);
+    transform-origin: top left;
+    margin-bottom: 2rem;
+    width: fit-content;
+  }
 `;
 
 export const HeroImageCompanyName = styled.span`

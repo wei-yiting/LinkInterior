@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
 
-export const MainWrapper = styled.section`
+export const MainWrapper = styled.div`
   min-height: calc(100vh - 4rem);
   width: 100%;
   padding-top: 4rem;
