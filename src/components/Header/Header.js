@@ -57,7 +57,7 @@ const Header = () => {
               </Disclosure.Button>
             </div>
             <Disclosure.Panel className="md:hidden pt-16 w-full">
-              <div className="px-6 pt-2 pb-8 space-y-1 z-30 bg-white">
+              <div className="px-6 pt-2 pb-8 space-y-1 z-30 bg-white bg-opacity-80">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -65,7 +65,7 @@ const Header = () => {
                     className={classNames(
                       item.current
                         ? 'text-main-600 font-semibold text-right text-xl'
-                        : 'text-gray-400 hover:bg-main-400 hover:text-white text-right text-xl',
+                        : 'text-main-600 hover:bg-main-400 hover:text-white text-right text-xl tracking-wider	',
                       'block px-3 py-2 rounded-md text-base font-medium',
                     )}
                     aria-current={item.current ? 'page' : undefined}
