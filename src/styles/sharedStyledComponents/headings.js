@@ -9,6 +9,10 @@ export const Title = styled.h1`
   letter-spacing: 0.075em;
   line-height: 1.5em;
   margin: 0.5em 0;
+  @media (max-width: 768px) {
+    margin: ${({ introCompanyName }) => (introCompanyName ? '0 auto' : ' 0.5em 0')};
+    font-size: ${({ introCompanyName }) => (introCompanyName ? '2.25rem' : '')};
+  }
 `;
 
 export const Heading1 = styled.h2`

@@ -8,16 +8,27 @@ import {
 
 import { LocationIcon, ProfessionIcon } from '../../../../utils/icons/fontAwesome';
 
-export default function RenderDropdownInfo({ flexDirection, margin, justifyContent, infoMargin }) {
+export default function RenderDropdownInfo({
+  flexDirection,
+  margin,
+  justifyContent,
+  infoMargin,
+  template2 = false,
+}) {
   const { location, profession } = useContext(IntroRenderContext);
 
   return (
-    <SectionWrapper flexDirection={flexDirection} margin={margin}>
-      <DropdownContainer justifyContent={justifyContent} margin={infoMargin}>
+    <SectionWrapper
+      flexDirection={flexDirection}
+      margin={margin}
+      type="dropdown"
+      template2={template2}
+    >
+      <DropdownContainer justifyContent={justifyContent} margin={infoMargin} template2={template2}>
         <LocationIcon />
         <span className="text-xl">{location}</span>
       </DropdownContainer>
-      <DropdownContainer justifyContent={justifyContent} margin={infoMargin}>
+      <DropdownContainer justifyContent={justifyContent} margin={infoMargin} template2={template2}>
         <ProfessionIcon />
         <span className="text-xl">{profession}</span>
       </DropdownContainer>

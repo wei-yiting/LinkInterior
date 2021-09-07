@@ -19,16 +19,17 @@ export default function RenderIntroTemplate2() {
       <RowWrapper>
         <RenderProfileImage />
         <SectionWrapper margin="100px 0 50px 100px" width="100%">
-          <Title>{companyName}</Title>
+          <Title introCompanyName>{companyName}</Title>
           <RenderDropdownInfo
             flexDirection="column"
             margin="0"
             justifyContent="flex-start"
             infoMargin="1rem 0"
+            template2
           />
         </SectionWrapper>
       </RowWrapper>
-      <RenderIntroParagraph title="業者介紹" />
+      <RenderIntroParagraph title="業者介紹" template2 />
       <RenderKeyWordTags />
       <RenderImagesSlider />
       <RenderServiceProvideCity />

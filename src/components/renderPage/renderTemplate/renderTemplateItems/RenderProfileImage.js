@@ -15,5 +15,5 @@ export default function ProfileImage() {
     setimageContainerStyle(containerStyle);
   }, [heroImageUrl]);
 
-  return <HeroImageContainer width="400px" height="350px" style={imageContainerStyle} />;
+  return <HeroImageContainer width="400px" height="350px" template2 style={imageContainerStyle} />;
 }

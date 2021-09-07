@@ -12,7 +12,10 @@ export const SectionWrapper = styled.section`
   flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
 
   @media (max-width: 768px) {
-    margin: 30px auto 15px;
+    margin: ${({ type, template2 }) =>
+      (template2 && type === 'dropdown' && '0.25rem auto 0') ||
+      (template2 && type === 'introParagraph' && '0.5rem auto') ||
+      '30px auto 15px'};
     width: ${({ mobileWidth }) => mobileWidth || '90%'};
   }
 `;
@@ -38,7 +41,9 @@ export const HeroImageContainer = styled.div`
   flex-direction: column;
 
   @media (max-width: 768px) {
-    height: 30vh;
+    height: ${({ template2 }) => (template2 ? '45vw' : '30vh')};
+    width: ${({ template2 }) => (template2 ? '45vw' : '100%')};
+    margin: ${({ template2 }) => template2 && '5vh auto 0'};
   }
 `;
 
@@ -49,6 +54,11 @@ export const DropdownContainer = styled.div`
   width: 100%;
   flex: 1;
   margin: ${({ margin }) => margin || '0'};
+  @media (max-width: 768px) {
+    justify-content: ${({ template2 }) => template2 && 'center'};
+    margin: ${({ template2 }) => template2 && '0.75rem 0'};
+    padding-right: ${({ template2 }) => template2 && '1rem'};
+  }
 `;
 
 export const IntroParagraphText = styled.p`
