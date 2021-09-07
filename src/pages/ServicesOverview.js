@@ -17,6 +17,9 @@ const TitleContainer = styled.div`
   @media (max-width: 1400px) {
     margin: 3.5rem auto 0;
   }
+  @media (max-width: 768px) {
+    margin: 2rem auto 0;
+  }
 `;
 
 const ServiceCardsContainer = styled.main`
@@ -31,6 +34,10 @@ const ServiceCardsContainer = styled.main`
 
   @media (max-width: 1024px) {
     margin: 1rem auto 10rem;
+  }
+
+  @media (max-width: 768px) {
+    margin: 2rem auto 7.5rem;
   }
 `;
 
