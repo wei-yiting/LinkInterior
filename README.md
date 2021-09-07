@@ -13,8 +13,23 @@ LinkInterior is a webpage builder for interior engineering/design services to pu
   <img src="src/utils/images/readmeImages/homepage.png" width="800px">
 </p>
 
-<p align="center" font-size="20px">
-Demo: https://linkinterior.com.tw/
+<p align="center">
+  <b>
+  Demo: https://linkinterior.com.tw/
+  </b>
+</p>
+
+<br/>
+<p align="center">
+  <b>
+  Test Account
+  </b>
+</p>
+<p align="center">
+  Email: test@gmail.com
+</p>
+<p align="center">
+  Password: test123
 </p>
 
 ## Used Skills
