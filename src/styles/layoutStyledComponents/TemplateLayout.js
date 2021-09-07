@@ -141,7 +141,6 @@ export const SocailMediaContainer = styled.div`
     transform: scale(1.2);
     transform-origin: top center;
     margin: 0 auto 2rem;
-    width: 85vw;
     justify-content: center;
   }
 `;
@@ -152,7 +151,12 @@ export const HeroImageCompanyName = styled.span`
   color: white;
   font-weight: 600;
   letter-spacing: 0.1em;
+  line-height: 1.375em;
+  width: 90%;
+  text-align: center;
+
   @media (max-width: 768px) {
     font-size: 2rem;
+    width: 80%;
   }
 `;
