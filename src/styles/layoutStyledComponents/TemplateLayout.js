@@ -139,9 +139,10 @@ export const SocailMediaContainer = styled.div`
   margin-bottom: 1.25rem;
   @media (max-width: 768px) {
     transform: scale(1.2);
-    transform-origin: top left;
-    margin-bottom: 2rem;
-    width: fit-content;
+    transform-origin: top center;
+    margin: 0 auto 2rem;
+    width: 85vw;
+    justify-content: center;
   }
 `;
 
