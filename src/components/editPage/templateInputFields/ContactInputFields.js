@@ -20,12 +20,12 @@ export default function ContactInputFields({
   margin,
   contactInputStyle,
   mediaInputStyle,
-  flexDirection,
+  template2 = false,
 }) {
   return (
     <SectionWrapper width={width} flex="none" margin={margin}>
       <Heading3>我的聯絡資訊</Heading3>
-      <ContactArea flexDirection={flexDirection}>
+      <ContactArea template2={template2}>
         <div style={contactInputStyle}>
           <ContactInputField type="tel" placeholder="手機號碼" name="mobile">
             <MobileIcon />

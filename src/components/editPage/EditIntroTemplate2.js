@@ -35,7 +35,7 @@ export default function EditIntroTemplate2() {
       <ServiceProvideCityInput width="fit-content" />
       <ContactInputFields
         width="80%"
-        flexDirection="row"
+        template2
         contactInputStyle={{ width: '40%' }}
         mediaInputStyle={{ width: '50%' }}
       />
