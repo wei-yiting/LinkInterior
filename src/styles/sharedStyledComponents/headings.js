@@ -11,7 +11,8 @@ export const Title = styled.h1`
   margin: 0.5em 0;
   @media (max-width: 768px) {
     margin: ${({ introCompanyName }) => (introCompanyName ? '0 auto' : ' 0.5em 0')};
-    font-size: ${({ introCompanyName }) => (introCompanyName ? '2.25rem' : '')};
+    font-size: ${({ introCompanyName }) => introCompanyName && '2.25rem'};
+    text-align: ${({ introCompanyName }) => introCompanyName && 'center'};
   }
 `;
 
