@@ -10,7 +10,7 @@ import { color } from '../../styles/theme';
 const SideTemplateMenuContainer = styled.aside`
   position: fixed;
   left: 0;
-  top: 100px;
+  top: 15vh;
   z-index: 100;
 `;
 
@@ -50,11 +50,11 @@ const RightIconWrapper = styled.div`
 
 const TemplateMenu = styled.div`
   position: fixed;
-  left: ${({ visible }) => (visible ? '0' : '-225px')};
-  top: 100px;
+  left: ${({ visible }) => (visible ? '0' : '-26vh')};
+  top: 15vh;
   transition: 0.5s ease-in-out;
-  width: 225px;
-  height: fit-content;
+  width: 25vh;
+  height: 70vh;
   background-color: ${color.gray[200]};
   padding: 0.5rem 2rem 1rem 1rem;
   border-radius: 0 5px 5px 0;
@@ -76,6 +76,14 @@ const MenuTitle = styled.p`
   border-bottom: 1px solid ${color.main[500]};
   width: 100px;
   padding-bottom: 0.2rem;
+`;
+
+const ThumbnailsWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding-bottom: 2rem;
 `;
 
 const ThumbnailContainer = styled.div`
@@ -156,12 +164,14 @@ export default function ThumbnailTemplateMenu() {
           <p>收合樣板選單</p>
         </LeftIconWrapper>
         <MenuTitle>樣板選單</MenuTitle>
-        <ThumbnailContainer onClick={() => setTemplateType(1)} isSelected={templateType === 1}>
-          <img src={ThumbnailIntroTemplate1} alt="樣板一" />
-        </ThumbnailContainer>
-        <ThumbnailContainer onClick={() => setTemplateType(2)} isSelected={templateType === 2}>
-          <img src={ThumbnailIntroTemplate2} alt="樣板二" />
-        </ThumbnailContainer>
+        <ThumbnailsWrapper>
+          <ThumbnailContainer onClick={() => setTemplateType(1)} isSelected={templateType === 1}>
+            <img src={ThumbnailIntroTemplate1} alt="樣板一" />
+          </ThumbnailContainer>
+          <ThumbnailContainer onClick={() => setTemplateType(2)} isSelected={templateType === 2}>
+            <img src={ThumbnailIntroTemplate2} alt="樣板二" />
+          </ThumbnailContainer>
+        </ThumbnailsWrapper>
       </TemplateMenu>
     </SideTemplateMenuContainer>
   );
