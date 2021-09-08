@@ -88,6 +88,9 @@ export const ImagesGalleryContainer = styled.div`
   justify-content: flex-start;
   position: relative;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+    padding: 0.5rem;
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -97,8 +100,13 @@ export const ImageContainer = styled.div`
   background-size: cover;
   background-position: center;
   @media (max-width: 768px) {
-    width: 100%;
-    margin: 0 0 2rem;
+    width: ${({ template2 }) => (template2 ? '47.5%' : '100%')};
+    height: ${({ template2 }) => template2 && '30vw'};
+    margin: ${({ template2 }) => (template2 ? '0 0 1rem' : '0 0 2rem')};
+    justify-content: ${({ template2 }) => (template2 ? 'space-beteen' : 'flex-start')};
+    :nth-child(2n + 1) {
+      margin: ${({ template2 }) => template2 && '0 0.75rem 0.75rem 0'};
+    }
     :last-child {
       margin: 0;
     }

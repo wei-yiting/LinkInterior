@@ -6,7 +6,7 @@ export const TagsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   padding: 0;
-  margin: 8px 0 0 0;
+  margin-top: 8px;
   @media (max-width: 768px) {
     justify-content: center;
   }
@@ -28,5 +28,8 @@ export const Tag = styled.li`
 
   span {
     letter-spacing: 0.075em;
+  }
+  @media (max-width: 768px) {
+    margin: 0 6px 12px 0;
   }
 `;

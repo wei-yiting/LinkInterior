@@ -6,10 +6,15 @@ import RenderProfileImage from './renderTemplateItems/RenderProfileImage';
 import RenderDropdownInfo from './renderTemplateItems/RenderDropdownInfo';
 import RenderIntroParagraph from './renderTemplateItems/RenderIntroParagraph';
 import RenderKeyWordTags from './renderTemplateItems/RenderKeywordTags';
+import RenderImagesWall from './renderTemplateItems/RenderImagesWall';
 import RenderImagesSlider from './renderTemplateItems/RenderImagesSlider';
 import RenderContact from './renderTemplateItems/RenderContact';
 import RenderServiceProvideCity from './renderTemplateItems/RenderServiceProvideCity';
 import { SectionWrapper, RowWrapper } from '../../../styles/layoutStyledComponents/templateLayout';
+import {
+  MobileHiddenWrapper,
+  MobileShowWrapper,
+} from '../../../styles/layoutStyledComponents/responsiveLayout';
 
 export default function RenderIntroTemplate2() {
   const { companyName } = useContext(IntroRenderContext);
@@ -31,7 +36,12 @@ export default function RenderIntroTemplate2() {
       </RowWrapper>
       <RenderIntroParagraph title="業者介紹" template2 />
       <RenderKeyWordTags />
-      <RenderImagesSlider />
+      <MobileHiddenWrapper>
+        <RenderImagesSlider />
+      </MobileHiddenWrapper>
+      <MobileShowWrapper>
+        <RenderImagesWall template2 />
+      </MobileShowWrapper>
       <RenderServiceProvideCity />
       <RenderContact
         width="80%"
