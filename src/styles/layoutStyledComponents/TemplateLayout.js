@@ -118,11 +118,12 @@ export const ContactArea = styled.div`
   padding: 1.75rem 3rem 0.75rem;
   width: 100%;
   display: flex;
-  flex-direction: ${({ flexDirection }) => flexDirection || 'column'};
+  flex-direction: ${({ template2 }) => (template2 ? 'row' : 'column')};
   flex: 1;
   justify-content: space-around;
   @media (max-width: 768px) {
     padding: 2rem 1rem 1.5rem;
+    flex-direction: ${({ template2 }) => template2 && 'column'};
   }
 `;
 

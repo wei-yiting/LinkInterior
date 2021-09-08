@@ -20,13 +20,13 @@ import {
   LargeInstagramIcon,
 } from '../../../../utils/icons/fontAwesome';
 
-export default function RenderContact({ width, flexDirection, margin }) {
+export default function RenderContact({ width, template2 = false, margin }) {
   const { contactInfo } = useContext(IntroRenderContext);
 
   return (
-    <SectionWrapper width={width} flex="none" margin={margin}>
+    <SectionWrapper width={width} flex="none" margin={margin} template2={template2}>
       <Heading3>業者聯絡資訊</Heading3>
-      <ContactArea flexDirection={flexDirection}>
+      <ContactArea template2={template2}>
         {contactInfo.website || contactInfo.fb || contactInfo.ig ? (
           <SocailMediaContainer>
             {contactInfo.website && (

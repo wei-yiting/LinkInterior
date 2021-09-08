@@ -43,12 +43,7 @@ export default function RenderIntroTemplate2() {
         <RenderImagesWall template2 />
       </MobileShowWrapper>
       <RenderServiceProvideCity />
-      <RenderContact
-        width="80%"
-        flexDirection="row"
-        margin="30px auto"
-        justifyContent="space-around"
-      />
+      <RenderContact width="80%" template2 margin="30px auto" justifyContent="space-around" />
     </>
   );
 }
