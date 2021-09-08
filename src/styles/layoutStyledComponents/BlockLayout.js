@@ -10,6 +10,11 @@ export const BlockContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   margin: 30px auto 50px;
+
+  @media (max-width: 768px) {
+    flex-direction: ${({ type }) => (type === 'blockB' ? 'column-reverse' : 'column')};
+    height: fit-content;
+  }
 `;
 
 export const BlocksAreaContainer = styled.div`
@@ -21,6 +26,12 @@ export const BlocksAreaContainer = styled.div`
   justify-content: space-around;
   flex-direction: column;
   border-top: 2px solid ${color.gray[200]};
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 30px auto 25px;
+    padding-top: 30px;
+  }
 `;
 
 export const FullWidthParagraph = styled.p`
@@ -29,6 +40,12 @@ export const FullWidthParagraph = styled.p`
   text-align: center;
   line-height: 2em;
   margin: 30px auto;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: left;
+    padding: 0 5vw;
+  }
 `;
 
 export const SideImageWrapper = styled.div`
@@ -38,6 +55,11 @@ export const SideImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
 `;
 
 export const SideImageContainer = styled.div`
@@ -46,6 +68,13 @@ export const SideImageContainer = styled.div`
   background-position: center;
   background-size: cover;
   background-image: url('${(props) => props.url}');
+  box-shadow: 2px 2px 4px ${color.gray[100]};
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 5vw;
+    height: 50vw;
+  }
 `;
 
 export const SideTextWrapper = styled.div`
@@ -54,10 +83,20 @@ export const SideTextWrapper = styled.div`
   align-items: center;
   width: 45%;
   height: 100%;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    text-align: left;
+    padding: 0 5vw;
+  }
 `;
 
 export const SideParagraph = styled.p`
   white-space: pre-wrap;
   text-align: center;
   line-height: 1.75em;
+
+  @media (max-width: 768px) {
+    text-align: left;
+  }
 `;

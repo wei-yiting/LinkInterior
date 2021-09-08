@@ -27,7 +27,9 @@ export default function RenderBlocksArea() {
   return (
     blockList.length !== 0 && (
       <BlocksAreaContainer>
-        <Heading2>{`更多關於  ${companyName}`}</Heading2>
+        <Heading2 introBlocksTitle>
+          更多關於 <span>{companyName}</span>
+        </Heading2>
         {renderedBlocks}
       </BlocksAreaContainer>
     )

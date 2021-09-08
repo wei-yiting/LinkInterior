@@ -33,6 +33,16 @@ export const Heading2 = styled.h3`
   letter-spacing: 0.075em;
   line-height: 1.5em;
   margin: 0.5em 0;
+  @media (max-width: 768px) {
+    text-align: ${({ introBlocksTitle }) => introBlocksTitle && 'center'};
+
+    span {
+      display: ${({ introBlocksTitle }) => introBlocksTitle && 'block'};
+      font-size: ${({ introBlocksTitle }) => introBlocksTitle && '1.675rem'};
+      margin-top: ${({ introBlocksTitle }) => introBlocksTitle && '0.5rem'};
+      line-height: ${({ introBlocksTitle }) => introBlocksTitle && '1.4em'};
+    }
+  }
 `;
 
 export const Heading3 = styled.h4`

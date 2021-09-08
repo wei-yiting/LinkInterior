@@ -6,7 +6,7 @@ import RenderSideImage from './renderBlockItems/RenderSideImage';
 
 export default function RenderBlockC({ blockContent }) {
   return (
-    <BlockContainer>
+    <BlockContainer type="blockC">
       <RenderSideImage imageUrl={blockContent.image} />
       <RenderSideText text={blockContent.text} />
     </BlockContainer>
