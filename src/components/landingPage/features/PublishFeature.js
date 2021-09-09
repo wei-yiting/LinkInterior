@@ -78,8 +78,8 @@ export default function PublishFeature() {
   return (
     <FeatureContainer>
       <VideoContainer>
-        <video src={publishVideo} loop autoPlay muted playsInline>
-          <track default kind="captions" srcLang="zh-tw" />
+        <video autoPlay loop muted playsInline>
+          <source src={publishVideo} />
         </video>
       </VideoContainer>
       <FeatureIntroWrapper>

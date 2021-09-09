@@ -63,8 +63,8 @@ export default function TemplateSwitchFeature() {
   return (
     <FeatureContainer>
       <VideoContainer>
-        <video src={templateSwitchVideo} loop autoPlay muted playsInline>
-          <track default kind="captions" srcLang="zh-tw" />
+        <video autoPlay loop muted playsInline>
+          <source src={templateSwitchVideo} />
         </video>
       </VideoContainer>
       <FeatureIntroWrapper>
