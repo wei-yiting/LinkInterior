@@ -37,6 +37,7 @@ const Title = styled.div`
   text-align: center;
   color: ${color.main[300]};
   margin-bottom: 0.075rem;
+  z-index: 10;
 
   @media (max-width: 1600px) {
     right: 5vw;
