@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import {
   HeroImageContainer,
   HeroImageCompanyName,
-} from '../../../../styles/layoutStyledComponents/templateLayout';
+} from '../../../../styles/layoutStyledComponents/TemplateLayout';
 import { IntroRenderContext } from '../../../../contexts/IntroRenderContext';
 
 export default function RenderHeroImage() {

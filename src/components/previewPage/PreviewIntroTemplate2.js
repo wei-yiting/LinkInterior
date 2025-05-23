@@ -10,7 +10,7 @@ import ProfileImage from './templateItems/ProfileImage';
 import ContactInfoArea from './templateItems/ContactInfoArea';
 import ServiceProvideCity from './templateItems/ServiceProvideCity';
 import ImagesSlider from './templateItems/ImagesSlider';
-import { SectionWrapper, RowWrapper } from '../../styles/layoutStyledComponents/templateLayout';
+import { SectionWrapper, RowWrapper } from '../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function PreviewIntroTemplate2() {
   const { currentUser } = useAuth();

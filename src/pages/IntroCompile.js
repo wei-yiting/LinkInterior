@@ -9,7 +9,7 @@ import PublishOnly from '../components/shared/PublishOnly';
 import {
   MainWrapper,
   IntroPageMainContainer,
-} from '../styles/layoutStyledComponents/generalLayout';
+} from '../styles/layoutStyledComponents/GeneralLayout';
 
 export default function IntroCompile() {
   const { isEditMode } = useContext(IntroCompileContext);

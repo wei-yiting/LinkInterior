@@ -10,7 +10,7 @@ import RenderImagesWall from './renderTemplateItems/RenderImagesWall';
 import RenderImagesSlider from './renderTemplateItems/RenderImagesSlider';
 import RenderContact from './renderTemplateItems/RenderContact';
 import RenderServiceProvideCity from './renderTemplateItems/RenderServiceProvideCity';
-import { SectionWrapper, RowWrapper } from '../../../styles/layoutStyledComponents/templateLayout';
+import { SectionWrapper, RowWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import {
   MobileHiddenWrapper,
   MobileShowWrapper,

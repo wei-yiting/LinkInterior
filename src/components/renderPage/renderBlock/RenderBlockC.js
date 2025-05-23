@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BlockContainer } from '../../../styles/layoutStyledComponents/blockLayout';
+import { BlockContainer } from '../../../styles/layoutStyledComponents/BlockLayout';
 import RenderSideText from './renderBlockItems/RenderSideText';
 import RenderSideImage from './renderBlockItems/RenderSideImage';
 

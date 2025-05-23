@@ -6,7 +6,7 @@ import { randomLinearGradient } from '../../../utils/constants/linearGradient';
 import {
   SectionWrapper,
   HeroImageContainer,
-} from '../../../styles/layoutStyledComponents/templateLayout';
+} from '../../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function ProfileImageField() {
   const { selectedHeroImage, setSelectedHeroImage, heroImageUrl, setHeroImageUrl } =

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SideTextWrapper, SideParagraph } from '../../../styles/layoutStyledComponents/blockLayout';
+import { SideTextWrapper, SideParagraph } from '../../../styles/layoutStyledComponents/BlockLayout';
 
 export default function SideText({ text }) {
   return (

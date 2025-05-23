@@ -4,7 +4,7 @@ import uuid from 'react-uuid';
 import {
   SideTextWrapper,
   SideParagraph,
-} from '../../../../styles/layoutStyledComponents/blockLayout';
+} from '../../../../styles/layoutStyledComponents/BlockLayout';
 
 export default function RenderSideText({ text }) {
   const renderedText = text.split('\\n').map((item) => {

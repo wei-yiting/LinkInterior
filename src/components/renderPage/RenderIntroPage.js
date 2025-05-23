@@ -5,7 +5,7 @@ import RenderIntroTemplateArea from './RenderIntroTemplateArea';
 import RenderBlocksArea from './RenderBlocksArea';
 import PageLoading from '../shared/PageLoding';
 import PageError from '../shared/PageError';
-import { IntroPageMainContainer } from '../../styles/layoutStyledComponents/generalLayout';
+import { IntroPageMainContainer } from '../../styles/layoutStyledComponents/GeneralLayout';
 
 export default function RenderIntroPage() {
   const { error, loading, data } = useContext(IntroRenderContext);

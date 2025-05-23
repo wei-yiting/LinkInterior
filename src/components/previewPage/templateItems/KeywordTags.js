@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import uuid from 'react-uuid';
 
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
-import { SectionWrapper, TagArea } from '../../../styles/layoutStyledComponents/templateLayout';
+import { SectionWrapper, TagArea } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import { TagsList, Tag } from '../../../styles/sharedStyledComponents/tags';
 
 export default function KeywordTags() {

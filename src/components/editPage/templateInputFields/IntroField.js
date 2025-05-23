@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { IntroCompileContext } from '../../../contexts/IntroCompileContext';
 
-import { SectionWrapper } from '../../../styles/layoutStyledComponents/templateLayout';
+import { SectionWrapper } from '../../../styles/layoutStyledComponents/TemplateLayout';
 import TextArea from './TextArea';
 import { Heading1 } from '../../../styles/sharedStyledComponents/headings';
 

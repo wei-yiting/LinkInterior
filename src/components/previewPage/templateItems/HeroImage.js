@@ -6,7 +6,7 @@ import { randomLinearGradient } from '../../../utils/constants/linearGradient';
 import {
   HeroImageContainer,
   HeroImageCompanyName,
-} from '../../../styles/layoutStyledComponents/templateLayout';
+} from '../../../styles/layoutStyledComponents/TemplateLayout';
 
 export default function HeroImage() {
   const { currentUser } = useAuth();
