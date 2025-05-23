@@ -1,4 +1,5 @@
 import { useEffect, useContext, useState } from 'react';
+import { doc, setDoc, updateDoc } from 'firebase/firestore';
 
 import {
   usersCollection,
@@ -94,19 +95,11 @@ export default function useIntroUpload(isPublished) {
 
   useEffect(() => {
     if (isUploading && isUploadingToDb) {
-      const dbPromises = [];
-      const newServiceIntro = serviceIntroCollection
-        .doc(currentUser.userUid)
-        .set(serviceIntroUploadData);
-      dbPromises.push(newServiceIntro);
-
-      const newServicesOverview = servicesOverviewCollection
-        .doc(currentUser.userUid)
-        .set(servicesOverviewUploadData);
-      dbPromises.push(newServicesOverview);
-
-      const updateUserStatus = usersCollection.doc(currentUser.userUid).update({ publishStatus });
-      dbPromises.push(updateUserStatus);
+      const dbPromises = [
+        setDoc(doc(serviceIntroCollection, currentUser.userUid), serviceIntroUploadData),
+        setDoc(doc(servicesOverviewCollection, currentUser.userUid), servicesOverviewUploadData),
+        updateDoc(doc(usersCollection, currentUser.userUid), { publishStatus }),
+      ];
 
       Promise.all(dbPromises)
         .then(() => {
@@ -116,7 +109,7 @@ export default function useIntroUpload(isPublished) {
           setUploadError('在上傳您的資訊到資料庫時發生錯誤');
         });
     }
-  }, [isUploadingToDb]);
+  }, [isUploading, isUploadingToDb, currentUser.userUid, publishStatus]);
 
   return { isUploading, uploadError };
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { XMarkIcon, Bars3Icon as MenuIcon } from '@heroicons/react/24/outline';
+
 import { Link } from 'react-router-dom';
 
 const navigation = [
@@ -22,7 +23,7 @@ export default function LandingHamburger() {
             <Disclosure.Button className="inline-flex p-2 rounded-md text-gray-400 hover:text-white hover:bg-main-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="sr-only">Open main menu</span>
               {open ? (
-                <XIcon className="block h-8 w-8" aria-hidden="true" />
+                <XMarkIcon className="block h-8 w-8" aria-hidden="true" />
               ) : (
                 <MenuIcon className="block h-8 w-8" aria-hidden="true" />
               )}

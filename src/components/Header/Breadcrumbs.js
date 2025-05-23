@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ChevronRightIcon } from '@heroicons/react/solid';
+import { query, where, getDocs } from 'firebase/firestore';
+import { ChevronRightIcon } from '@heroicons/react/24/solid';
 
 import Logo from '../../utils/logo/Logo';
 import { servicesOverviewCollection } from '../../utils/firebase';
+
+// 建立查詢物件
+
+// 讀取資料（保留 Promise 風格）
 
 export default function Breadcrumbs() {
   const { pathname } = useLocation();
@@ -28,16 +33,18 @@ export default function Breadcrumbs() {
     if (pathname.includes('/service/')) {
       const pageId = pathname.split('/').pop();
       const pageIdToNum = parseInt(pageId, 10);
-      servicesOverviewCollection
-        .where('companySeqId', '==', pageIdToNum)
-        .get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
+      const q = query(
+        servicesOverviewCollection, // 你在 firebase.js 匯出的 collection
+        where('companySeqId', '==', pageIdToNum),
+      );
+      getDocs(q)
+        .then((snapshot) => {
+          snapshot.forEach((doc) => {
             setCompanyName(doc.data().companyName);
           });
         })
-        .catch(() => {
-          console.log("can't get company name");
+        .catch((err) => {
+          console.log("can't get company name", err);
         });
     }
   }, [pathname]);

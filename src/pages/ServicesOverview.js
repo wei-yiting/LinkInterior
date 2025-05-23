@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { query, where, getDocs } from 'firebase/firestore';
 import styled from 'styled-components/macro';
 
 import { MainWrapper } from '../styles/layoutStyledComponents/GeneralLayout';
@@ -46,9 +47,7 @@ export default function ServicesOverview() {
   const [servicesData, setServicesData] = useState(null);
 
   const getAllServicesData = () => {
-    servicesOverviewCollection
-      .where('isPublished', '==', true)
-      .get()
+    getDocs(query(servicesOverviewCollection, where('isPublished', '==', true)))
       .then((snapshot) => {
         const data = firestoreLooper(snapshot);
         setServicesData(data);

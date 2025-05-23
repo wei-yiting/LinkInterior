@@ -1,12 +1,17 @@
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/storage';
-import 'firebase/auth';
+import { initializeApp } from 'firebase/app';
+import {
+  getFirestore,
+  collection,
+  doc,
+  serverTimestamp as _serverTimestamp,
+  increment as _increment,
+} from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
+import { getAuth } from 'firebase/auth';
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
   storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
@@ -14,19 +19,19 @@ const firebaseConfig = {
   measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
 };
 
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+const app = initializeApp(firebaseConfig);
 
-export const storage = firebase.storage();
-export const auth = firebase.auth();
+export const db = getFirestore(app);
+export const storage = getStorage(app);
+export const auth = getAuth(app);
 
 // firestore
-export const firebaseTimeStamp = firebase.firestore.FieldValue.serverTimestamp;
-export const increment = firebase.firestore.FieldValue.increment(1);
+export const firebaseTimeStamp = _serverTimestamp;
+export const increment = _increment(1);
 
-export const usersCollection = db.collection('users');
-export const usersStatsRef = db.collection('users').doc('--stats--');
-export const serviceIntroCollection = db.collection('serviceIntroPages');
-export const servicesOverviewCollection = db.collection('servicesOverview');
+export const usersCollection = collection(db, 'users');
+export const usersStatsRef = doc(db, 'users', '--stats--');
+export const serviceIntroCollection = collection(db, 'serviceIntroPages');
+export const servicesOverviewCollection = collection(db, 'servicesOverview');
 
-export default firebase;
+export default app;

@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { XMarkIcon, Bars3Icon as MenuIcon } from '@heroicons/react/24/outline';
+
 import { Link, useHistory, useLocation } from 'react-router-dom';
 
 import { useAuth } from '../../contexts/AuthContext';
@@ -50,7 +51,7 @@ const Header = () => {
               <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-main-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                 <span className="sr-only">Open main menu</span>
                 {open ? (
-                  <XIcon className="block h-8 w-8" aria-hidden="true" />
+                  <XMarkIcon className="block h-8 w-8" aria-hidden="true" />
                 ) : (
                   <MenuIcon className="block h-8 w-8" aria-hidden="true" />
                 )}

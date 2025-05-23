@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { query, where, getDocs } from 'firebase/firestore';
 
 export default function useFetchPage(collection, term, pageId = '') {
   const [data, setData] = useState(null);
@@ -10,28 +11,35 @@ export default function useFetchPage(collection, term, pageId = '') {
   useEffect(() => {
     let isMounted = true;
 
-    setLoading(true);
-    collection
-      .where(term, '==', pageIdToNum)
-      .get()
-      .then((querySnapshot) => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const q = query(collection, where(term, '==', pageIdToNum));
+
+        const snapshot = await getDocs(q);
+
         if (isMounted) {
-          querySnapshot.forEach((doc) => {
-            setData(doc.data());
-            setError(null);
-          });
+          snapshot.forEach((doc) => setData(doc.data()));
+          setError(null);
         }
-      })
-      .catch((err) => {
+      } catch (err) {
         if (isMounted) {
           setError(err);
           setData(null);
         }
-      })
-      .finally(() => isMounted && setLoading(false));
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    fetchData();
+
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [collection, term, pageIdToNum]);
+
   return { loading, error, data };
 }
