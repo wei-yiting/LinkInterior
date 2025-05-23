@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"src/**/*.{js,jsx}\" --fix",
     "format": "prettier --write \"src/**/*.{js,jsx}\""
@@ -40,7 +40,6 @@
     "web-vitals": "^0.2.4"
   },
   "devDependencies": {
-    "@craco/craco": "^7.1.0",
     "@tailwindcss/forms": "^0.5.10",
     "autoprefixer": "^10.4.21",
     "eslint": "^7.14.0",
